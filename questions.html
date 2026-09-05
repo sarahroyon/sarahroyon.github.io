@@ -18,9 +18,7 @@
 
   <main id="main">
     <section id="setup" class="setup" aria-labelledby="setup-title">
-      <p class="eyebrow">QCM pour s’entraîner</p>
       <h1 id="setup-title" tabindex="-1">Questions européennes</h1>
-      <p class="intro">Choisissez parmi les sujets disponibles.</p>
 
       <p id="loading" role="status">Chargement des sujets…</p>
       <div id="load-error" class="notice" role="alert" hidden>
@@ -30,8 +28,7 @@
       <noscript><p class="notice">Activez JavaScript pour accéder aux questionnaires.</p></noscript>
 
       <form id="source-form" hidden>
-        <fieldset class="source-fieldset">
-          <legend>Choisir un sujet</legend>
+        <fieldset class="source-fieldset" aria-label="Sujets disponibles">
           <div id="source-options" class="source-groups">
             <section id="official-sources" class="source-group" aria-labelledby="official-sources-title">
               <h2 id="official-sources-title">Sujets officiels</h2>
@@ -45,7 +42,6 @@
         </fieldset>
         <div class="start-row">
           <button class="button primary" type="submit">Commencer le QCM <span aria-hidden="true">→</span></button>
-          <p>Vous pourrez revenir sur chaque réponse avant de terminer.</p>
         </div>
       </form>
     </section>
@@ -68,7 +64,6 @@
             <ol id="question-index" class="question-index"></ol>
           </nav>
           <p class="index-help"><span class="legend-dot" aria-hidden="true"></span> Réponse renseignée</p>
-          <p class="small muted index-description">Cliquez sur un numéro pour retrouver une question et vos choix.</p>
           <button id="finish" class="button primary finish-button" type="submit" form="quiz-form">Terminer le QCM</button>
           <button id="edit" class="button secondary finish-button" type="button" hidden>Modifier mes réponses</button>
           <p id="save-status" class="save-status small muted" role="status"></p>
@@ -86,7 +81,6 @@
             <p id="results-description"></p>
             <dl id="result-stats" class="result-stats"></dl>
             <p id="score-explanation" class="small muted"></p>
-            <p class="small muted">Les corrigés disponibles ont été établis à partir de sources institutionnelles pour cet entraînement.</p>
           </section>
           <form id="quiz-form">
             <div id="question-cards" class="question-cards"></div>

@@ -24,6 +24,12 @@ function sourceTitle(source) {
   return source.titre || (source.cadre === "Orient" ? "Cadre d’Orient" : "Cadre général");
 }
 
+function sourceYear(source) {
+  return source.type === "sujet_zero"
+    ? source.date_creation_pdf?.slice(0, 4) || ""
+    : source.annee_concours || "";
+}
+
 function formatPoints(points) {
   return (points > 0 ? "+" : "") + numberFormat.format(points) + " pt";
 }
@@ -111,10 +117,11 @@ async function loadData() {
       input.required = true;
       const personal = source.type === "creation";
       const sample = source.type === "sujet_zero";
-      label.append(element("span", "source-code", personal ? source.code_concours || "Entraînement" : source.code_concours + " · " + (sample ? "Sujet zéro" : source.annee_concours)), input,
+      const year = sourceYear(source);
+      label.append(element("span", "source-code", personal ? source.code_concours || "Entraînement" : source.code_concours + (year ? " · " + year : "")), input,
         element("span", "source-title", sourceTitle(source)),
-        element("span", "source-details", (personal ? source.auteur : sample ? "Sujet fictif officiel · Concours externe" : "Annale · Concours externe") + " · " + questions.length + " questions"),
-        element("span", "source-status", available ? available + " corrigés disponibles sur " + questions.length
+        element("span", "source-details", (personal ? source.auteur : sample ? "Sujet fictif officiel · Concours externe" : "Annale · Concours externe") + " · " + questions.length + " questions"));
+      label.append(element("span", "source-status", available ? available + " corrigés disponibles sur " + questions.length
           + (neutralized ? " · " + neutralized + " questions neutralisées" : "") : "Corrigés à venir · entraînement libre"));
       $(personal ? "training-source-options" : "official-source-options").append(label);
     }
@@ -206,6 +213,7 @@ function observeQuestions() {
 
 function startQuiz(sourceId) {
   const source = base.sources[sourceId];
+  const year = sourceYear(source);
   const questions = getQuestions(base, sourceId);
   session = { sourceId, source, questions, bareme: base.baremes[source.bareme], ...readSaved(sourceId, questions) };
   observer?.disconnect();
@@ -215,10 +223,10 @@ function startQuiz(sourceId) {
   $("question-index").replaceChildren();
   setIndexExpanded(false);
   $("quiz-eyebrow").textContent = source.type === "creation"
-    ? sourceTitle(source) + " · Entraînement personnel · " + source.auteur
+    ? sourceTitle(source) + " · " + source.code_concours + " · Entraînement personnel · " + source.auteur
     : source.type === "sujet_zero"
-      ? sourceTitle(source) + " · " + source.code_concours + " · Sujet fictif · Externe"
-      : sourceTitle(source) + " · " + source.code_concours + " " + source.annee_concours + " · Externe";
+      ? sourceTitle(source) + " · " + source.code_concours + (year ? " " + year : "") + " · Sujet fictif · Externe"
+      : sourceTitle(source) + " · " + source.code_concours + " " + year + " · Externe";
   $("answer-instructions").textContent = source.mode_reponse_qcm === "une_seule"
     ? "Une seule réponse est possible par question. Choisissez votre réponse ; vous pourrez la modifier avant de terminer."
     : source.mode_reponse_qcm === "une_ou_plusieurs"
@@ -231,7 +239,7 @@ function startQuiz(sourceId) {
     ? available + " questions sur " + questions.length + " disposent d’un corrigé."
       + (neutralized ? " " + neutralized + " questions ambiguës ou sans proposition exacte sont neutralisées ; leur corrigé explique pourquoi." : "")
       + (Number.isFinite(session.bareme.bonne_reponse)
-        ? " Le score portera uniquement sur les questions disposant d’une réponse vérifiable et d’un barème."
+        ? ""
         : " Le sujet ne précise pas de barème : les réponses sont vérifiées sans note chiffrée.")
     : "Les corrigés de ce sujet ne sont pas encore disponibles. Vous pouvez vous entraîner et conserver vos choix, sans note pour le moment.";
   $("annale-link").href = source.url;

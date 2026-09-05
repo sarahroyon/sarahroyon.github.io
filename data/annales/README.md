@@ -15,7 +15,7 @@ Les deux annales officielles portent sur l’épreuve écrite d’admissibilité
 
 Le « Sujet zéro officiel » (V0), identifié par `meae-sujet-v0-officiel-questions-europeennes` et de type `sujet_zero`, est un sujet fictif du ministère commun aux concours externes des cadres d’Orient et général. Il présente la deuxième épreuve d’admissibilité (2 heures, coefficient 3), sans date d’épreuve ni session de concours. Le zéro est écrit en toutes lettres dans l’interface pour éviter la confusion avec la lettre O.
 
-Le sujet « Entraînement 3 », identifié par `sarah-royon-sciences-po-entrainement`, est classé comme `creation` dans la section des sujets d’entraînement. Le fichier fourni l’attribue à Sarah Royon ; sa couverture porte la mention Sciences Po, « Galop du samedi 5 avril 2025 », « Questions européennes — MEAE SCO, SCG » et une durée de deux heures. La date du galop est conservée dans `date_epreuve`, sans lui attribuer d’année de session ni de coefficient. Les codes `SCO / SCG` reproduisent ceux de la couverture.
+Le sujet « Entraînement 3 », identifié par `sarah-royon-sciences-po-entrainement`, est classé comme `creation` dans la section des sujets d’entraînement. Le fichier fourni l’attribue à Sarah Royon ; sa couverture porte la mention Sciences Po, « Galop du samedi 5 avril 2025 », « Questions européennes — MEAE SCO, SCG » et une durée de deux heures. La date du galop est conservée dans `date_epreuve`, sans lui attribuer d’année de session ni de coefficient. Les codes `SCO / SCG` restent ceux de la couverture ; à la demande de l’autrice, la banque présente les trois entraînements avec `code_concours: "SAEO / SAEG"` et `cadre: "Orient et général"`, comme le sujet zéro.
 
 Les titres affichés sont « Entraînement 1 », « Entraînement 2 » et « Entraînement 3 », dans l’ordre d’ajout à la banque. Ils correspondent respectivement aux anciens « Sujet 3 », « Concours blanc 2 » et « Sciences Po ». Leurs PDF sont nommés `entrainement-1.pdf`, `entrainement-2.pdf` et `entrainement-3.pdf`. Les identifiants des sources et des questions sont conservés pour préserver les séances sauvegardées ; le contenu des PDF et leurs empreintes SHA-256 ne changent pas.
 
@@ -93,7 +93,7 @@ Chaque sujet d’entraînement conserve son auteur, un titre court, le lien au P
 
 Le PDF de l’entraînement 3 compte dix pages. La couverture est la page PDF 1 ; les QRC, les consignes et les quatre premiers QCM sont en page PDF 2, sans numéro imprimé. Les pages PDF 3 à 10 portent les numéros imprimés 2 à 9. Aucune date de création PDF n’a été déduite de la date explicite du galop.
 
-Le sujet V0 conserve son éditeur institutionnel, son lien local et son empreinte SHA-256. Sa date de création PDF (`2024-12-18`) provient uniquement des métadonnées. Ses trois pages ne portent pas de numéro imprimé : seul `page_pdf` est renseigné. La couverture annonce un maximum de 60 QCM pour l’épreuve ; le document fourni en contient effectivement 10.
+Le sujet V0 conserve son éditeur institutionnel, son lien local et son empreinte SHA-256. Sa date de création PDF (`2024-12-18`) provient uniquement des métadonnées. Seule l’année 2024 est affichée, à côté de « SAEO / SAEG » en haut de sa carte et dans l’en-tête du questionnaire. Cette année est celle du document, sans lui attribuer de date d’épreuve ni de session de concours. Ses trois pages ne portent pas de numéro imprimé : seul `page_pdf` est renseigné. La couverture annonce un maximum de 60 QCM pour l’épreuve ; le document fourni en contient effectivement 10.
 
 ## Ajouter des questions personnelles
 
