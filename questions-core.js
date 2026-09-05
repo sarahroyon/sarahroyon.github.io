@@ -11,9 +11,13 @@ function getQuestions(base, sourceId) {
     .sort((a, b) => a.source.numero - b.source.numero);
 }
 
+function isNeutralized(question) {
+  return question.type === "qcm" && question.correction?.neutralisee === true;
+}
+
 function hasCorrection(question) {
   const correction = question.correction;
-  return Array.isArray(correction?.reponses) && correction.reponses.length > 0
+  return !isNeutralized(question) && Array.isArray(correction?.reponses) && correction.reponses.length > 0
     && correction.reponses.every(letter => Object.hasOwn(question.choix, letter))
     && new Set(correction.reponses).size === correction.reponses.length;
 }
@@ -30,6 +34,7 @@ function cleanAnswers(questions, answers) {
 }
 
 function evaluateQuestion(question, selected, bareme) {
+  if (isNeutralized(question)) return { status: "neutralized", points: null };
   if (!hasCorrection(question)) return { status: "pending", points: null };
   if (selected.length === 0) return { status: "skipped", points: bareme.absence_de_reponse };
   const correct = question.correction.reponses;
@@ -56,9 +61,10 @@ function summarize(questions, answers, bareme) {
     incorrect: results.filter(result => result.status === "incorrect").length,
     skipped: results.filter(result => result.status === "skipped").length,
     partial: results.filter(result => result.status === "partial").length,
-    pending: results.filter(result => result.status === "pending").length
+    pending: results.filter(result => result.status === "pending").length,
+    neutralized: results.filter(result => result.status === "neutralized").length
   };
 }
 
-return { getSourceIds, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize };
+return { getSourceIds, getQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
 })();

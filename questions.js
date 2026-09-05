@@ -1,12 +1,12 @@
 (() => {
 "use strict";
 
-const { getSourceIds, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { getSourceIds, getQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
 const numberFormat = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 2 });
-const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrecte", skipped: "Sans réponse", pending: "Corrigé à venir", partial: "Réponse partielle" };
+const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrecte", skipped: "Sans réponse", pending: "Corrigé à venir", partial: "Réponse partielle", neutralized: "Question neutralisée" };
 let base;
 let session;
 let observer;
@@ -94,11 +94,14 @@ async function loadData() {
       throw new Error("Sources des questions invalides");
     }
     base = data;
-    $("source-options").replaceChildren();
+    $("official-source-options").replaceChildren();
+    $("training-source-options").replaceChildren();
     for (const [index, sourceId] of sourceIds.entries()) {
       const source = base.sources[sourceId];
       const questions = getQuestions(base, sourceId);
       const corrected = questions.filter(hasCorrection).length;
+      const neutralized = questions.filter(isNeutralized).length;
+      const available = corrected + neutralized;
       const label = element("label", "source-option");
       const input = element("input");
       input.type = "radio";
@@ -107,12 +110,16 @@ async function loadData() {
       input.checked = index === 0;
       input.required = true;
       const personal = source.type === "creation";
-      label.append(element("span", "source-code", personal ? "Entraînement personnel" : source.code_concours + " · " + source.annee_concours), input,
+      const sample = source.type === "sujet_zero";
+      label.append(element("span", "source-code", personal ? source.code_concours || "Entraînement" : source.code_concours + " · " + (sample ? "Sujet V0" : source.annee_concours)), input,
         element("span", "source-title", sourceTitle(source)),
-        element("span", "source-details", (personal ? source.auteur : "Annale · Concours externe") + " · " + questions.length + " questions"),
-        element("span", "source-status", corrected ? corrected + " corrigés disponibles sur " + questions.length : "Corrigés à venir · entraînement libre"));
-      $("source-options").append(label);
+        element("span", "source-details", (personal ? source.auteur : sample ? "Sujet fictif officiel · Concours externe" : "Annale · Concours externe") + " · " + questions.length + " questions"),
+        element("span", "source-status", available ? available + " corrigés disponibles sur " + questions.length
+          + (neutralized ? " · " + neutralized + " questions neutralisées" : "") : "Corrigés à venir · entraînement libre"));
+      $(personal ? "training-source-options" : "official-source-options").append(label);
     }
+    $("official-sources").hidden = !$("official-source-options").children.length;
+    $("training-sources").hidden = !$("training-source-options").children.length;
     $("source-form").hidden = false;
     updateStartButton();
   } catch {
@@ -209,15 +216,23 @@ function startQuiz(sourceId) {
   setIndexExpanded(false);
   $("quiz-eyebrow").textContent = source.type === "creation"
     ? sourceTitle(source) + " · Entraînement personnel · " + source.auteur
-    : sourceTitle(source) + " · " + source.code_concours + " " + source.annee_concours + " · Externe";
+    : source.type === "sujet_zero"
+      ? sourceTitle(source) + " · " + source.code_concours + " · Sujet fictif · Externe"
+      : sourceTitle(source) + " · " + source.code_concours + " " + source.annee_concours + " · Externe";
   $("answer-instructions").textContent = source.mode_reponse_qcm === "une_seule"
     ? "Une seule réponse est possible par question. Choisissez votre réponse ; vous pourrez la modifier avant de terminer."
     : source.mode_reponse_qcm === "une_ou_plusieurs"
       ? "Une ou plusieurs réponses sont possibles. Cochez vos choix ; vous pourrez les modifier avant de terminer."
       : "Cochez vos choix. Le sujet ne précise pas le nombre de réponses possibles ; plusieurs cases peuvent être sélectionnées.";
   const corrected = questions.filter(hasCorrection).length;
-  $("correction-availability").textContent = corrected
-    ? corrected + " questions sur " + questions.length + " disposent d’un corrigé. Le bilan et les points porteront uniquement sur ces questions."
+  const neutralized = questions.filter(isNeutralized).length;
+  const available = corrected + neutralized;
+  $("correction-availability").textContent = available
+    ? available + " questions sur " + questions.length + " disposent d’un corrigé."
+      + (neutralized ? " " + neutralized + " questions ambiguës ou sans proposition exacte sont neutralisées ; leur corrigé explique pourquoi." : "")
+      + (Number.isFinite(session.bareme.bonne_reponse)
+        ? " Le score portera uniquement sur les questions disposant d’une réponse vérifiable et d’un barème."
+        : " Le sujet ne précise pas de barème : les réponses sont vérifiées sans note chiffrée.")
     : "Les corrigés de ce sujet ne sont pas encore disponibles. Vous pouvez vous entraîner et conserver vos choix, sans note pour le moment.";
   $("annale-link").href = source.url;
   $("progress").max = questions.length;
@@ -285,7 +300,11 @@ function renderFeedback(question, result) {
     return;
   }
   const correction = question.correction;
-  feedback.append(element("p", "", (correction.reponses.length > 1 ? "Réponses attendues : " : "Réponse attendue : ") + correction.reponses.map(letter => letter.toUpperCase()).join(", ") + "."));
+  if (result.status === "neutralized") {
+    feedback.append(element("p", "", "Cette question est exclue du bilan des bonnes et mauvaises réponses et du calcul des points, quel que soit votre choix."));
+  } else {
+    feedback.append(element("p", "", (correction.reponses.length > 1 ? "Réponses attendues : " : "Réponse attendue : ") + correction.reponses.map(letter => letter.toUpperCase()).join(", ") + "."));
+  }
   if (result.status === "partial" && result.points === null) {
     feedback.append(element("p", "", "Votre sélection est incomplète. Le sujet ne précise pas le barème de ce cas : cette question est exclue du score."));
   }
@@ -316,10 +335,16 @@ function renderResults() {
       + (summary.pending ? " Les " + summary.pending + " questions sans corrigé sont exclues du score." : "")
       + (summary.partial ? " Les sélections partielles sont signalées dans les corrections." : "")
     : "Vos choix sont conservés. Aucune note ne peut être calculée pour cette séance avec les corrigés et le barème disponibles.";
+  if (summary.neutralized) {
+    $("results-description").textContent += " " + summary.neutralized + " questions sont neutralisées et expliquées dans le corrigé ; elles ne comptent ni comme bonnes ni comme mauvaises réponses.";
+  }
   const stats = $("result-stats");
   stats.replaceChildren();
-  stats.hidden = !summary.graded;
-  for (const [label, value] of [["Bonnes réponses", summary.correct], ["Réponses incorrectes", summary.incorrect], ["Sans réponse", summary.skipped]]) {
+  stats.hidden = session.questions.length === summary.pending;
+  const counts = [["Bonnes réponses", summary.correct], ["Réponses incorrectes", summary.incorrect], ["Sans réponse", summary.skipped]];
+  if (summary.partial) counts.push(["Réponses partielles", summary.partial]);
+  if (summary.neutralized) counts.push(["Questions neutralisées", summary.neutralized]);
+  for (const [label, value] of counts) {
     const group = element("div");
     group.append(element("dt", "", label), element("dd", "", String(value)));
     stats.append(group);

@@ -40,6 +40,9 @@ h2 { font-size: 1.1rem; font-weight: 600; }
 #loading, #load-error { margin-top: 36px; }
 .source-fieldset { border: 0; padding: 0; margin: 46px 0 0; min-width: 0; }
 .source-fieldset legend { padding: 0; margin-bottom: 18px; font-size: .9rem; font-weight: 600; }
+.source-groups { display: grid; gap: 32px; }
+.source-group h2 { margin-bottom: 18px; }
+.source-group + .source-group { border-top: 1px solid var(--border); padding-top: 32px; }
 .source-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
 .source-option { display: grid; grid-template-columns: 1fr auto; gap: 12px; position: relative; padding: 26px; border: 1px solid var(--border); border-radius: 12px; background: var(--white); cursor: pointer; transition: border-color .15s, background .15s; }
 .source-option:hover { border-color: #91ac9c; }
@@ -112,7 +115,7 @@ progress::-moz-progress-bar { background: var(--green); }
 .feedback > * + * { margin-top: 10px; }
 .feedback-heading { font-weight: 650; color: var(--green); }
 .feedback.incorrect .feedback-heading, .feedback.skipped .feedback-heading { color: var(--error); }
-.feedback.pending .feedback-heading { color: var(--muted); }
+.feedback.pending .feedback-heading, .feedback.neutralized .feedback-heading { color: var(--muted); }
 .feedback ul { padding-left: 19px; font-size: .8rem; overflow-wrap: anywhere; }
 .feedback li + li { margin-top: 5px; }
 .results { background: #edf3ed; border: 1px solid #c4d5c7; padding: 28px; border-radius: 11px; margin-bottom: 22px; scroll-margin-top: 24px; }

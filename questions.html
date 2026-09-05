@@ -20,7 +20,7 @@
     <section id="setup" class="setup" aria-labelledby="setup-title">
       <p class="eyebrow">QCM pour s’entraîner</p>
       <h1 id="setup-title" tabindex="-1">Questions européennes</h1>
-      <p class="intro"> Choisissez parmi les sujets disponibles.</p>
+      <p class="intro">Choisissez parmi les sujets disponibles.</p>
 
       <p id="loading" role="status">Chargement des sujets…</p>
       <div id="load-error" class="notice" role="alert" hidden>
@@ -32,7 +32,16 @@
       <form id="source-form" hidden>
         <fieldset class="source-fieldset">
           <legend>Choisir un sujet</legend>
-          <div id="source-options" class="source-options"></div>
+          <div id="source-options" class="source-groups">
+            <section id="official-sources" class="source-group" aria-labelledby="official-sources-title">
+              <h2 id="official-sources-title">Annales officielles et sujet V0</h2>
+              <div id="official-source-options" class="source-options"></div>
+            </section>
+            <section id="training-sources" class="source-group" aria-labelledby="training-sources-title">
+              <h2 id="training-sources-title">Sujets d’entraînement</h2>
+              <div id="training-source-options" class="source-options"></div>
+            </section>
+          </div>
         </fieldset>
         <div class="start-row">
           <button class="button primary" type="submit">Commencer le QCM <span aria-hidden="true">→</span></button>

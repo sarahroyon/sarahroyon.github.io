@@ -1,14 +1,21 @@
 # Questions européennes — annales et sujets d’entraînement
 
-La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **166 questions** : 160 QCM avec leurs 626 choix, et 6 questions à réponse courte (QRC). Son nom de fichier historique est conservé ; la nature de chaque sujet est donnée par `sources[id].type`.
+La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **262 questions** : 250 QCM avec leurs 959 choix, et 12 questions à réponse courte (QRC). Son nom de fichier historique est conservé ; la nature de chaque sujet est donnée par `sources[id].type`.
 
 | Sujet | QCM | QRC | Date de l’épreuve | Document |
 | --- | ---: | ---: | --- | --- |
 | Secrétaire des affaires étrangères, cadre d’Orient (SAEO), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeo_2026-questions_europeennes_externe.pdf) |
 | Secrétaire des affaires étrangères, cadre général (SAEG), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeg_2026-questions_europeennes_qcm-qrc_externe.pdf) |
-| Sujet SAEG 3 — entraînement personnel de Sarah Royon | 40 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/SUJET%20-%20SAEG%203.pdf) |
+| Sujet SAEG 3 — entraînement personnel de Sarah Royon | 40 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/SUJET%20-%20SAEG%203_Sarah%20Royon.pdf) |
+| SAEG — Concours blanc 2 — entraînement personnel de Sarah Royon | 40 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/Sujet%20-%20SAEG%20concours%20blanc%202_Sarah_Royon.pdf) |
+| Sujet V0 officiel — SAEO et SAEG | 10 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/sujet%20v0%20officiel.pdf) |
+| Sciences Po — entraînement de Sarah Royon | 40 | 2 | 5 avril 2025 | [PDF fourni](../qcm_qe_saeg/Sujet%20-%20Sc%20Po%20-%20Sarah%20Royon.pdf) |
 
-Les deux annales officielles portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3). Le « Sujet SAEG 3 » est une création personnelle, identifiée par `sarah-royon-saeg-3-entrainement`, et n’est rattaché à aucune session de concours.
+Les deux annales officielles portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3). Les sujets personnels « Sujet 3 » et « Concours blanc 2 », identifiés par `sarah-royon-saeg-3-entrainement` et `sarah-royon-saeg-concours-blanc-2-entrainement`, ne sont rattachés à aucune session de concours.
+
+Le « Sujet V0 officiel », identifié par `meae-sujet-v0-officiel-questions-europeennes` et de type `sujet_zero`, est un sujet fictif du ministère commun aux concours externes des cadres d’Orient et général. Il présente la deuxième épreuve d’admissibilité (2 heures, coefficient 3), sans date d’épreuve ni session de concours.
+
+Le sujet « Sciences Po », identifié par `sarah-royon-sciences-po-entrainement`, est classé comme `creation` dans la section des sujets d’entraînement. Le fichier fourni l’attribue à Sarah Royon ; sa couverture porte la mention Sciences Po, « Galop du samedi 5 avril 2025 », « Questions européennes — MEAE SCO, SCG » et une durée de deux heures. La date du galop est conservée dans `date_epreuve`, sans lui attribuer d’année de session ni de coefficient. Les codes `SCO / SCG` reproduisent ceux de la couverture.
 
 ## Format 2.0.0
 
@@ -68,7 +75,7 @@ Exemple réel :
 - `source.id` référence une entrée de `sources`. Les autres champs indiquent le numéro dans la partie QCM ou QRC et les pages.
 - `note` est une chaîne facultative, présente uniquement lorsqu’une particularité de transcription doit être conservée.
 
-Les QCM sont numérotés de 1 à 60 dans chaque annale, et de 1 à 40 dans le sujet personnel. Les QRC sont numérotées 1 et 2 dans chaque document. Les occurrences proches entre sujets restent distinctes.
+Les QCM sont numérotés de 1 à 60 dans chaque annale, de 1 à 40 dans chacun des trois sujets d’entraînement et de 1 à 10 dans le sujet V0. Les QRC sont numérotées 1 et 2 dans chaque document. Les occurrences proches entre sujets restent distinctes.
 
 ## Sources et dates
 
@@ -78,9 +85,13 @@ Une source de type `annale` contient le concours, son code, le cadre, la voie, l
 
 `page_pdf` compte toutes les pages à partir de 1, couvertures comprises. `page_imprimee` reprend le numéro visible. Pour SAEO, la page PDF 3 correspond à la page imprimée 1 ; pour SAEG, elle porte le numéro imprimé 3. Le lien vers une page se construit à partir de l’URL de la source et de `#page=N`.
 
-Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour l’annale SAEO, conformément à sa consigne, `non_precise` pour l’annale SAEG et `une_seule` pour le sujet personnel SAEG 3. Aucune consigne de réponse unique n’est déduite pour l’annale SAEG. Les QRC attendent du texte libre.
+Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour l’annale SAEO, conformément à sa consigne, `non_precise` pour l’annale SAEG et le sujet V0, et `une_seule` pour les trois sujets d’entraînement. Aucune consigne de réponse unique n’est déduite pour l’annale SAEG ou le sujet V0. Les QRC attendent du texte libre ; elles sont conservées dans la base et accessibles dans les PDF, mais ne sont pas affichées dans l’interface QCM.
 
-Le sujet personnel conserve son auteur, le titre du fichier fourni, le lien au PDF local (relatif à la racine du site), son empreinte SHA-256 et sa consigne. `date_creation_pdf: "2025-06-26"` provient uniquement des métadonnées du PDF ; ce n’est ni une date d’épreuve ni une année de concours. Sa première page ne porte pas de numéro imprimé : `page_imprimee` est omis pour cette page. Les pages PDF 2 à 9 portent les mêmes numéros imprimés.
+Chaque sujet d’entraînement conserve son auteur, un titre court, le lien au PDF local (relatif à la racine du site), son empreinte SHA-256 et sa consigne. `date_creation_pdf` provient uniquement des métadonnées du PDF : `2025-06-26` pour SAEG 3 et `2025-05-08` pour le concours blanc 2. Ce n’est ni une date d’épreuve ni une année de concours. La première page de ces deux sujets ne porte pas de numéro imprimé : `page_imprimee` y est omis. Leurs autres pages portent les mêmes numéros imprimés et PDF, jusqu’à 9 pour SAEG 3 et 10 pour le concours blanc 2.
+
+Le PDF Sciences Po compte dix pages. La couverture est la page PDF 1 ; les QRC, les consignes et les quatre premiers QCM sont en page PDF 2, sans numéro imprimé. Les pages PDF 3 à 10 portent les numéros imprimés 2 à 9. Aucune date de création PDF n’a été déduite de la date explicite du galop.
+
+Le sujet V0 conserve son éditeur institutionnel, son lien local et son empreinte SHA-256. Sa date de création PDF (`2024-12-18`) provient uniquement des métadonnées. Ses trois pages ne portent pas de numéro imprimé : seul `page_pdf` est renseigné. La couverture annonce un maximum de 60 QCM pour l’épreuve ; le document fourni en contient effectivement 10.
 
 ## Ajouter des questions personnelles
 
@@ -100,19 +111,25 @@ Chaque nouvelle question doit avoir un identifiant unique et référencer cette 
 
 ## Corrections
 
-**Les PDF ne fournissent aucun corrigé du jury.** Les questions SAEO QCM 1 à 10 ont été corrigées pour cet outil le 5 septembre 2026, après vérification auprès de sources institutionnelles et de documents primaires. Chaque correction contient les lettres correctes, une explication et ses références. Il s’agit de corrections établies pour l’entraînement, pas d’un corrigé officiel du concours.
+**Les PDF ne fournissent aucun corrigé du jury.** Parmi les 262 questions, 220 disposent d’un corrigé établi pour cet outil : 203 QCM avec une réponse vérifiable, 7 QCM neutralisés avec une explication du problème, et 10 QRC avec des éléments de réponse. Chaque correction comporte ses références institutionnelles. Il s’agit de corrections établies pour l’entraînement, pas d’un corrigé officiel du concours.
 
-Les 156 autres entrées, dont les 42 questions du sujet personnel, conservent `correction: null`. Cette valeur signifie « correction indisponible », et non « aucun choix correct ». Le PDF « Sujet SAEG 3 » ne fournit aucun corrigé ; aucune réponse n’est déduite de la mise en forme.
+Les 42 questions du sujet Sciences Po conservent `correction: null` : son PDF ne contient pas de corrigé et aucune réponse n’a été déduite de la mise en forme ou des similitudes avec d’autres sujets. Ses 40 QCM sont disponibles en entraînement libre avec sauvegarde des choix, sans validation des réponses ni note.
+
+Les 42 questions du concours blanc 2 et les 12 questions du sujet V0 ont été corrigées le 5 septembre 2026. Les questions d’actualité sont replacées dans le contexte du printemps 2025 pour le concours blanc 2 et de la fin de 2024 pour le sujet V0, sans attribuer de date d’épreuve aux PDF. Les explications précisent les changements de période ou de périmètre : notamment le budget actualisé du FED (concours blanc 2, QCM 11), les catégories de personnel de la Commission (QCM 23), les prix constants des enveloppes budgétaires et les étapes de l’adhésion à Schengen.
+
+Les QCM 4, 5, 6, 18, 20, 30 et 31 du concours blanc 2 sont neutralisés : les formulations ne permettent pas d’identifier une réponse unique exacte, ou aucune proposition ne convient. Leurs énoncés et choix sont conservés ; les explications détaillent le problème. L’interface affiche « Question neutralisée », la justification et les sources, sans classer le choix de l’étudiant comme juste ou faux et sans lui attribuer de points. Les autres QCM des deux nouveaux sujets sont vérifiés automatiquement ; le bilan affiche les bonnes et mauvaises réponses sans note chiffrée, leurs PDF ne précisant pas de barème.
 
 Une correction QCM renseignée doit contenir :
 
-- `reponses` : tableau non vide des lettres correctes, par exemple `["a", "c"]`, toutes présentes dans `choix`.
+- `reponses` : tableau non vide des lettres correctes, par exemple `["a", "c"]`, toutes présentes dans `choix`, sauf pour une question neutralisée.
 - `explication` : justification rédigée.
 - `sources` : tableau non vide des références du corrigé, sous forme d’objets `{ "titre": "…", "url": "…" }`.
 
-Pour une QRC, utiliser `reponse` pour la réponse rédigée et `sources` pour ses références. Cette convention servira aux futures corrections rédigées ; aucune QRC n’est actuellement corrigée.
+Pour une QRC, les corrections existantes utilisent `reponses: []`, `explication` pour les éléments de réponse rédigés et `sources` pour leurs références.
 
-Ne remplacer `null` par un objet qu’après vérification de son contenu. Ainsi, un QCM est utilisable dans une séance corrigée seulement si sa correction est renseignée. Pour les questions d’actualité, la vérification doit tenir compte de la date de l’épreuve.
+Pour un QCM neutralisé, la correction conserve ces trois champs, avec `reponses: []`, et ajoute le champ facultatif `neutralisee: true`. Le tableau vide ne désigne pas une réponse à sélectionner. Le moteur distingue ce cas de `correction: null`, qui signifie toujours « correction indisponible ». Une QRC n’est pas neutralisée du seul fait que son tableau de réponses est vide.
+
+Ne remplacer `null` par un objet qu’après vérification de son contenu. Un QCM peut faire l’objet d’une validation automatique seulement s’il possède des lettres correctes et n’est pas neutralisé. Pour les questions d’actualité, la vérification doit tenir compte de la date de l’épreuve ou préciser le contexte retenu lorsque celle-ci manque.
 
 ## Barème
 
@@ -134,7 +151,9 @@ Les valeurs sont exprimées en points :
 
 Les totaux 12 et 8 correspondent à l’épreuve complète d’origine. Le nombre N de questions, les réponses de l’étudiant et son score appartiendront à la séance d’entraînement, pas à la banque de questions.
 
-Le barème `sarah-royon-saeg-3-entrainement` reprend uniquement les points donnés dans le PDF personnel : 5 points par QRC, soit 10 points au total. Le document ne précise pas le barème du QCM : `bonne_reponse`, `mauvaise_reponse`, `absence_de_reponse` et `qcm_total_points` restent à `null`. Le barème des annales officielles n’est pas appliqué à ce sujet.
+Les barèmes `sarah-royon-saeg-3-entrainement`, `sarah-royon-saeg-concours-blanc-2-entrainement` et `sarah-royon-sciences-po-entrainement` reprennent uniquement les points donnés dans chaque PDF d’entraînement : 5 points par QRC, soit 10 points au total. Les documents ne précisent pas le barème du QCM : `bonne_reponse`, `mauvaise_reponse`, `absence_de_reponse` et `qcm_total_points` restent à `null`. Le barème des annales officielles n’est pas appliqué à ces sujets.
+
+Le barème `meae-sujet-v0-officiel-questions-europeennes` conserve tous ses champs à `null` : le sujet V0 ne précise aucun nombre de points, pour les QCM comme pour les QRC.
 
 ## Utilisation
 
@@ -158,17 +177,23 @@ const lienPage = question.source.page_pdf === undefined
   : source.url + "#page=" + question.source.page_pdf;
 ```
 
-Actuellement, `qcmCorriges` contient les 10 premières questions SAEO. Le futur tirage devra respecter le nombre de questions corrigées disponibles.
+Actuellement, `qcmCorriges` contient 210 questions, dont 7 neutralisées. Pour sélectionner les QCM dont les réponses sont vérifiables automatiquement, utiliser `QcmCore.hasCorrection(question)` : il en reste 203. Les 40 QCM de Sciences Po sont disponibles sans corrigé. Les QRC et les éléments de réponse disponibles sont conservés dans la banque ; l’interface d’entraînement reste consacrée aux QCM.
 
 ## Transcription et migration
 
 Extraction initiale du 5 septembre 2026 : reconnaissance de texte des PDF officiels et contrôle visuel de chaque page contenant des questions. Retours à la ligne, espaces de mise en page, apostrophes et ligatures ont été normalisés ; le gras, les couleurs et les retraits ne sont pas reproduits.
 
-Les formulations, dates, chiffres et l’ordre des choix sont conservés, y compris les éventuelles coquilles. L’extraction initiale et la migration n’ont pas actualisé les énoncés. La vérification effectuée pour les dix premiers corrigés est présentée dans la section « Corrections » ; les énoncés d’origine restent conservés. Les six notes particulières figurent dans `note`, notamment « 15 juin 1979 » (SAEO QCM 8), « 0,5% du PNB » (SAEO QCM 22) et « à son siège » (SAEG QCM 10).
+L’extraction conserve les formulations, dates, chiffres et l’ordre des choix, y compris les éventuelles coquilles. L’extraction initiale et la migration n’ont pas actualisé les énoncés. Une modification ultérieure demandée par l’autrice remplace la proposition « 705 » par « 720 » dans la question 17 du sujet SAEG 3. Les particularités de transcription figurent dans `note`, notamment « 15 juin 1979 » (SAEO QCM 8), « 0,5% du PNB » (SAEO QCM 22) et « à son siège » (SAEG QCM 10).
 
 Le passage au format 2.0.0 remplace `documents` par `sources`, mutualise les barèmes, transforme les choix en objets indexés par lettre et réduit les références de chaque question à leur localisation. Les corrections absentes deviennent `null`. La langue et la méthode sont documentées ici ; les statistiques, listes de pages, noms de fichier déductibles des URL et numéros avec ponctuation ne sont plus stockés dans le JSON.
 
 Contrôles de migration : conservation des 124 identifiants, des énoncés, des 480 choix et de leur ordre, des six notes, des numéros et pages, des métadonnées essentielles, des consignes et du barème. Les références de sources et de barèmes sont résolues et le JSON est relu après écriture.
 
 Import de « Sujet SAEG 3 » : extraction de la couche texte du PDF avec ses tables de caractères, puis contrôle visuel des neuf pages. Les 40 QCM, leurs 146 propositions et les 2 QRC sont conservés. Les lettres A, B, C, D deviennent a, b, c, d ; les propositions présentées avec des cases sans lettre reçoivent ces identifiants dans leur ordre d’origine. Les retours à la ligne et les césures de mise en page sont supprimés, sans actualiser les formulations, les chiffres ou les choix. Les QRC précèdent le QCM dans le PDF ; leurs numéros et leur page d’origine sont conservés dans la base.
+
+Import de « SAEG — Concours blanc 2 » : extraction de la couche texte et contrôle visuel des dix pages. Les 40 QCM, leurs 157 propositions et les 2 QRC sont conservés, avec leurs numéros et pages d’origine. Les cases sans lettre reçoivent les identifiants a à e dans leur ordre d’origine : la question 3 comporte cinq choix, les questions 19, 21, 27 et 30 en comportent trois, les autres quatre. Seuls les espaces, retours à la ligne et césures de mise en page sont normalisés. Les QRC figurent en première page avant les QCM. La consigne prévoit une seule bonne réponse par QCM ; les ambiguïtés repérées lors de la correction sont documentées ci-dessus.
+
+Import du « Sujet V0 officiel » : transcription et contrôle visuel des trois pages du PDF. Les 10 QCM et leurs 30 propositions sont conservés dans leur ordre d’origine, avec les identifiants a, b, c pour les cases sans lettre. Les QCM 1 à 9 figurent en page PDF 2 ; le QCM 10 et les 2 QRC figurent en page PDF 3. Les espaces, retours à la ligne et apostrophes sont normalisés, sans actualiser les énoncés ni déduire de réponses des choix proposés.
+
+Import de « Sciences Po » le 6 septembre 2026 : reconnaissance de texte et contrôle visuel des dix pages du PDF. Les 40 QCM, leurs 146 propositions et les 2 QRC sont conservés, avec leurs numéros et pages d’origine. Les cases sans lettre sont indexées a à d dans leur ordre d’apparition ; quatorze QCM ont trois choix et les vingt-six autres en ont quatre. Les retours à la ligne, césures, espaces, apostrophes et guillemets sont normalisés. Les chiffres et formulations ne sont pas actualisés. La répétition « peut (...) peut » de la question 7 est conservée et signalée dans `note`. Les 220 questions et les cinq sources déjà présentes sont conservées à l’identique lors de cet import.
 
