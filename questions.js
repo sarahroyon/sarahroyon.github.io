@@ -111,7 +111,7 @@ async function loadData() {
       input.required = true;
       const personal = source.type === "creation";
       const sample = source.type === "sujet_zero";
-      label.append(element("span", "source-code", personal ? source.code_concours || "Entraînement" : source.code_concours + " · " + (sample ? "Sujet V0" : source.annee_concours)), input,
+      label.append(element("span", "source-code", personal ? source.code_concours || "Entraînement" : source.code_concours + " · " + (sample ? "Sujet zéro" : source.annee_concours)), input,
         element("span", "source-title", sourceTitle(source)),
         element("span", "source-details", (personal ? source.auteur : sample ? "Sujet fictif officiel · Concours externe" : "Annale · Concours externe") + " · " + questions.length + " questions"),
         element("span", "source-status", available ? available + " corrigés disponibles sur " + questions.length

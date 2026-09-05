@@ -48,13 +48,13 @@ window.QcmAnnales = {
     },
     "sarah-royon-saeg-3-entrainement": {
       "type": "creation",
-      "titre": "Sujet 3",
+      "titre": "Entraînement 1",
       "auteur": "Sarah Royon",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEG",
       "cadre": "général",
       "epreuve": "Questions européennes",
-      "url": "data/qcm_qe_saeg/SUJET%20-%20SAEG%203_Sarah%20Royon.pdf",
+      "url": "data/qcm_qe_saeg/entrainement-1.pdf",
       "sha256": "3a53535ba639a190bf5e5dbc3fa9528bfcb047fe3717f3803a6a01c31a7d8e80",
       "date_creation_pdf": "2025-06-26",
       "mode_reponse_qcm": "une_seule",
@@ -64,13 +64,13 @@ window.QcmAnnales = {
     },
     "sarah-royon-saeg-concours-blanc-2-entrainement": {
       "type": "creation",
-      "titre": "Concours blanc 2",
+      "titre": "Entraînement 2",
       "auteur": "Sarah Royon",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEG",
       "cadre": "général",
       "epreuve": "Questions européennes",
-      "url": "data/qcm_qe_saeg/Sujet%20-%20SAEG%20concours%20blanc%202_Sarah_Royon.pdf",
+      "url": "data/qcm_qe_saeg/entrainement-2.pdf",
       "sha256": "98c369dfd3f7fc1b208fffed5896aa6f0cdfc28b165f1ca15629b8da5f16a9da",
       "date_creation_pdf": "2025-05-08",
       "mode_reponse_qcm": "une_seule",
@@ -80,7 +80,7 @@ window.QcmAnnales = {
     },
     "meae-sujet-v0-officiel-questions-europeennes": {
       "type": "sujet_zero",
-      "titre": "Sujet V0 officiel",
+      "titre": "Sujet zéro officiel",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEO / SAEG",
       "cadre": "Orient et général",
@@ -99,7 +99,7 @@ window.QcmAnnales = {
     },
     "sarah-royon-sciences-po-entrainement": {
       "type": "creation",
-      "titre": "Sciences Po",
+      "titre": "Entraînement 3",
       "auteur": "Sarah Royon",
       "editeur": "Sciences Po",
       "concours": "Secrétaire des affaires étrangères",
@@ -109,7 +109,7 @@ window.QcmAnnales = {
       "epreuve": "Questions européennes",
       "nature_epreuve": "Galop d’entraînement",
       "duree_minutes": 120,
-      "url": "data/qcm_qe_saeg/Sujet%20-%20Sc%20Po%20-%20Sarah%20Royon.pdf",
+      "url": "data/qcm_qe_saeg/entrainement-3.pdf",
       "sha256": "e796016f9b277b325352cbf2a53edcbc2180c2238036c97955a45244d4ca4bd9",
       "mode_reponse_qcm": "une_seule",
       "consigne_nombre_reponses": "Pour chaque question, une seule bonne réponse est possible.",
@@ -5378,12 +5378,14 @@ window.QcmAnnales = {
       "choix": {
         "a": "Les décisions prises dans le cadre d’une habilitation sont juridiquement imputées à l’ensemble du collège des commissaires.",
         "b": "L’absence de délibération collective sur une décision de la Commission peut constituer une violation substantielle des formes affectant sa légalité.",
-        "c": "La Commission peut déléguer à un commissaire le pouvoir de prendre des décisions comportant une marge d’appréciation, à condition que le collège ait préalablement défini les lignes directrices.",
+        "c": "La Commission peut habiliter un commissaire à arrêter seul une décision de principe dont le contenu n’a pas été préalablement défini par le collège.",
         "d": "Le règlement intérieur de la Commission prévoit des mécanismes dérogatoires à la délibération collégiale, comme la consultation écrite pour les actes techniques non contestés."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : les propositions ne permettent pas d’identifier sans ambiguïté une violation de la collégialité. La jurisprudence AKZO admet l’habilitation d’un commissaire pour des actes de gestion ou d’administration, sous le contrôle et la responsabilité du collège ; les décisions de principe restent réservées à celui-ci. La proposition c est trop générale : une marge d’appréciation ne suffit pas, à elle seule, à rendre toute habilitation illégale. Il faudrait préciser que le commissaire tranche seul une question de principe que le collège n’a pas arrêtée. Une procédure écrite régulière respecte également la collégialité.",
+        "reponses": [
+          "c"
+        ],
+        "explication": "La proposition c contrevient à la collégialité : une habilitation ne permet pas à un commissaire de décider seul d’une question de principe que le collège n’a pas tranchée. La jurisprudence AKZO admet en revanche des habilitations pour des mesures de gestion ou d’administration clairement définies, sous le contrôle et la responsabilité du collège. Les décisions ainsi prises restent imputables à la Commission. Une procédure écrite régulière respecte également la collégialité ; celle-ci n’exige donc pas une réunion orale pour chaque acte.",
         "sources": [
           {
             "titre": "CJCE — Arrêt AKZO Chemie / Commission, 23 septembre 1986, affaire 5/85, points 30 à 37",
@@ -5393,43 +5395,45 @@ window.QcmAnnales = {
             "titre": "Tribunal — Arrêt Estonie / Commission, 23 septembre 2009, T-324/05, points 65 à 78",
             "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=ecli:ECLI:EU:T:2009:381"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 4,
         "page_pdf": 2,
         "page_imprimee": 2
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la proposition c précise que la décision de principe n’a pas été préalablement définie par le collège."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-005",
       "type": "qcm",
-      "enonce": "Parmi les propositions suivantes, laquelle est correcte concernant la procédure de motion de censure au Parlement européen et ses conséquences ?",
+      "enonce": "Au printemps 2025, parmi les propositions suivantes, laquelle est correcte concernant la procédure de motion de censure au Parlement européen et ses conséquences ?",
       "choix": {
         "a": "Une motion de censure peut être déposée par tout groupe politique ou tout député européen, sans condition de nombre minimal de signataires.",
-        "b": "Si une motion de censure a été déposée dans les deux mois précédents, une nouvelle motion peut être déposée uniquement si elle est soutenue par au moins 10% des députés européens, soit 72 membres sur 720.",
+        "b": "Lorsqu’une motion a déjà été soumise au vote au cours des deux derniers mois, le dépôt d’une nouvelle motion exige au moins 20 % des députés, soit 144 sur 720.",
         "c": "En cas d’adoption d’une motion de censure, la Commission européenne est immédiatement dissoute et les commissaires restent en fonction jusqu’à la nomination de leur remplaçant.",
         "d": "Une motion de censure contre la Commission européenne peut être déposée sans justification, et elle peut être votée immédiatement après sa réception par le président du Parlement européen."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : aucune proposition ne restitue correctement l’ensemble de la règle. L’article 131 du règlement intérieur de juillet 2024 exige normalement un dixième des députés pour déposer une motion motivée. Si une motion a été mise aux voix au cours des deux mois précédents, le seuil passe à un cinquième, soit 144 députés sur 720 : b confond dépôt et mise aux voix et ne donne pas ce seuil renforcé. Le vote est soumis à des délais et à une double majorité : deux tiers des suffrages exprimés représentant la majorité des membres du Parlement. En cas d’adoption, la Commission démissionne collectivement et expédie les affaires courantes jusqu’à son remplacement ; elle n’est pas immédiatement dissoute au sens de c.",
+        "reponses": [
+          "b"
+        ],
+        "explication": "Selon l’article 131 du règlement intérieur du Parlement de juillet 2024, le seuil ordinaire de dépôt est de 10 % des membres. Il est porté à 20 %, soit 144 députés sur 720, lorsqu’une motion a déjà été mise aux voix au cours des deux mois précédents. Le fait déclencheur est le vote d’une motion, pas son simple dépôt. Toute motion doit être motivée et respecter les délais de débat et de vote. Son adoption exige les deux tiers des suffrages exprimés représentant la majorité des membres du Parlement. La Commission démissionne alors collectivement et assure les affaires courantes jusqu’à son remplacement.",
         "sources": [
           {
             "titre": "Parlement européen — Règlement intérieur de juillet 2024, article 131 : motion de censure",
             "url": "https://www.europarl.europa.eu/doceo/document/RULES-10-2024-07-16-RULE-131_FR.html"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 5,
         "page_pdf": 2,
         "page_imprimee": 2
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : le contexte du printemps 2025 est explicité et la proposition b corrige le seuil ainsi que son fait déclencheur."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-006",
@@ -5437,13 +5441,15 @@ window.QcmAnnales = {
       "enonce": "Quel est le rôle du Parlement européen dans les négociations commerciales internationales depuis l’entrée en vigueur du traité de Lisbonne en 2009 ?",
       "choix": {
         "a": "Le Parlement européen dispose uniquement d’un siège d’observateur sans pouvoir de décision dans les négociations commerciales internationales.",
-        "b": "Le Parlement européen peut désormais bloquer un accord commercial en cas de désaccord avec le Conseil, mais il ne participe pas activement aux négociations.",
-        "c": "Le Parlement européen est un co-législateur sur un pied d’égalité avec le Conseil, et son approbation est désormais obligatoire pour la ratification des accords commerciaux internationaux.",
+        "b": "Le Parlement européen conduit directement les négociations commerciales au nom de l’Union, à la place de la Commission.",
+        "c": "Le Parlement européen est colégislateur avec le Conseil pour la politique commerciale commune, et son approbation est requise pour la conclusion des accords commerciaux.",
         "d": "Le Parlement européen est uniquement consulté avant la signature des accords commerciaux, mais son approbation n’est pas requise pour leur ratification."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : c décrit le plus complètement les compétences du Parlement, mais b peut aussi être tenue pour exacte si elle signifie qu’il n’est pas lui-même le négociateur. Depuis Lisbonne, le Parlement est colégislateur pour les mesures de politique commerciale et son approbation est requise pour la conclusion des accords commerciaux concernés. La Commission conduit les négociations sur mandat du Conseil ; le Parlement est informé, exerce une influence politique et peut refuser son approbation. La consigne impose une seule réponse, alors que b et c se recouvrent. Il faut distinguer la négociation, la législation commerciale interne et l’approbation de l’accord.",
+        "reponses": [
+          "c"
+        ],
+        "explication": "Depuis le traité de Lisbonne, le Parlement européen partage avec le Conseil le pouvoir législatif pour les mesures définissant la politique commerciale commune. Il doit également approuver les accords commerciaux avant leur conclusion par le Conseil et peut ainsi empêcher cette conclusion. Il ne conduit pas les négociations : cette tâche revient à la Commission, sur mandat du Conseil. Le Parlement doit être informé et peut exercer une influence politique sur leur déroulement. Il faut distinguer cette approbation européenne des éventuelles ratifications nationales requises pour un accord mixte.",
         "sources": [
           {
             "titre": "Parlement européen — Accords commerciaux : procédure et pouvoir d’approbation",
@@ -5453,15 +5459,15 @@ window.QcmAnnales = {
             "titre": "Conseil de l’Union européenne — Déroulement des négociations commerciales",
             "url": "https://www.consilium.europa.eu/fr/infographics/eu-trade-negotiations/"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 6,
         "page_pdf": 2,
         "page_imprimee": 2
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la proposition b attribue désormais à tort la négociation au Parlement ; c distingue l’approbation de l’accord des ratifications nationales."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-007",
@@ -5803,14 +5809,16 @@ window.QcmAnnales = {
       "type": "qcm",
       "enonce": "Le Corps européen de solidarité permet :",
       "choix": {
-        "a": "D’effectuer un volontariat dans un organisme européen relevant de l’administration publique.",
+        "a": "D’effectuer un volontariat exclusivement dans des organismes relevant de l’administration publique.",
         "b": "De participer à des actions de solidarité à titre professionnel, rémunéré par l’Union.",
         "c": "De s’engager dans des activités solidaires, en France ou à l’étranger, dans des domaines variés, sans finalité commerciale.",
         "d": "De postuler à des missions de coopération militaire et humanitaire dans le cadre de la PSDC."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée au regard de la consigne de réponse unique : c décrit correctement le programme, mais a n’est pas exclue. Le Corps européen de solidarité propose notamment des activités de volontariat au service de la collectivité, dans le pays de résidence ou à l’étranger. Les organismes d’accueil admissibles peuvent être publics ou privés, y compris des collectivités ou organismes relevant de l’administration publique, sous les conditions du programme. Il ne s’agit ni d’un recrutement militaire ni d’un emploi automatiquement rémunéré par l’Union ; la prise en charge des frais et l’argent de poche du volontaire ne constituent pas un salaire.",
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Corps européen de solidarité permet aux jeunes de participer à des activités de solidarité au bénéfice de la collectivité, notamment par le volontariat ou des projets de solidarité, dans leur pays ou à l’étranger. Les organismes participant au programme peuvent être publics ou privés, sous ses conditions d’éligibilité : ils ne sont donc pas exclusivement des administrations publiques. La prise en charge des frais et l’argent de poche d’un volontaire ne constituent pas un salaire versé au titre d’un emploi de l’Union. Le programme ne recrute pas pour des missions militaires de la PSDC.",
         "sources": [
           {
             "titre": "Portail européen de la jeunesse — Corps européen de solidarité",
@@ -5820,15 +5828,15 @@ window.QcmAnnales = {
             "titre": "Portail européen de la jeunesse — Organismes publics et privés admissibles au Corps européen de solidarité",
             "url": "https://youth.europa.eu/solidarity/faq/8_en"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 18,
         "page_pdf": 5,
         "page_imprimee": 5
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la proposition a limite désormais à tort les organismes d’accueil au seul secteur public."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-019",
@@ -5864,31 +5872,33 @@ window.QcmAnnales = {
       "enonce": "Parmi les propositions formulées en mars 2025 dans le cadre du plan “ReArmEurope”, laquelle est exacte ?",
       "choix": {
         "a": "La Commission propose de créer une armée européenne placée sous commandement direct de l’UE.",
-        "b": "Les États membres pourront exclure temporairement leurs dépenses militaires du calcul du déficit public au titre du Pacte de stabilité.",
+        "b": "La Commission propose d’activer la clause dérogatoire nationale pour autoriser temporairement une hausse des dépenses de défense au-delà de la trajectoire de dépenses nettes, sans les exclure du calcul du déficit public.",
         "c": "Le plan “ReArmEurope” prévoit la création d’une taxe européenne affectée au financement de l’aide militaire à l’Ukraine.",
         "d": "Les États membres seront obligés d’allouer 2% de leur PIB à la défense dans le cadre d’un règlement contraignant de l’Union."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : b évoque une véritable mesure du plan ReArm Europe, mais la décrit de façon comptablement inexacte. La clause dérogatoire nationale permet temporairement de s’écarter de la trajectoire de dépenses nettes pour une hausse des dépenses de défense, dans la limite de 1,5 % du PIB par an sur quatre ans à partir de 2025. Ces dépenses restent comptabilisées dans le déficit et la dette publics ; elles ne sont pas retirées du calcul du déficit. Le plan ne crée pas une armée sous commandement direct de l’Union et n’impose pas à tous les États, par règlement, un seuil de 2 % du PIB.",
+        "reponses": [
+          "b"
+        ],
+        "explication": "Dans sa communication du 19 mars 2025, la Commission propose une activation coordonnée de la clause dérogatoire nationale. À la demande d’un État et sur recommandation de la Commission, le Conseil peut autoriser un écart à la trajectoire de dépenses nettes justifié par une hausse des dépenses de défense. La flexibilité proposée porte sur 2025-2028, avec un plafond annuel de 1,5 % du PIB et une hausse des dépenses de défense mesurée par rapport à 2021. Les dépenses concernées restent enregistrées dans les comptes publics et dans le déficit : l’assouplissement concerne l’appréciation du respect des règles budgétaires. Il ne crée ni armée européenne ni obligation générale de consacrer 2 % du PIB à la défense.",
         "sources": [
+          {
+            "titre": "Commission européenne — Communication du 19 mars 2025 : clause dérogatoire nationale pour les dépenses de défense",
+            "url": "https://defence-industry-space.ec.europa.eu/document/download/a57304ce-1a98-4a2c-aed5-36485884f1a0_en?filename=Communication-on-the-national-escape-clause.pdf&prefLang=it"
+          },
           {
             "titre": "Conseil de l’Union européenne — Activation coordonnée de la clause dérogatoire nationale, 30 avril 2025",
             "url": "https://www.consilium.europa.eu/en/press/press-releases/2025/04/30/coordinated-activation-of-the-national-escape-clause/"
-          },
-          {
-            "titre": "Conseil de l’Union européenne — Clause dérogatoire nationale pour les dépenses de défense",
-            "url": "https://www.consilium.europa.eu/en/policies/national-escape-clause-for-defence-expenditure-nec/"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 20,
         "page_pdf": 6,
         "page_imprimee": 6
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la proposition b décrit un assouplissement de la trajectoire de dépenses, au lieu d’une exclusion comptable du déficit."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-021",
@@ -6152,57 +6162,61 @@ window.QcmAnnales = {
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-030",
       "type": "qcm",
-      "enonce": "Quelle affirmation décrit correctement la procédure législative spéciale dans l’Union européenne ?",
+      "enonce": "Dans une procédure législative spéciale où le Conseil adopte l’acte après approbation du Parlement européen, quelle affirmation est correcte ?",
       "choix": {
         "a": "Le Conseil et le Parlement européen sont égaux en tant que colégislateurs, mais le Parlement peut amender la proposition législative à tout moment.",
         "b": "Le Conseil est le seul législateur et le Parlement européen peut seulement accepter ou rejeter la proposition, sans pouvoir l’amender.",
         "c": "Le Parlement européen est le seul législateur et le Conseil n’a qu’un rôle consultatif sur les propositions législatives."
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : b décrit une procédure législative spéciale d’approbation, mais pas toutes les procédures législatives spéciales. Dans l’approbation, le Parlement peut accepter ou refuser le texte sans l’amender formellement. Dans la consultation, il rend un avis et peut proposer des modifications, mais son accord n’est pas juridiquement requis pour l’adoption. L’article 289 § 2 TFUE prévoit, selon la base juridique, l’adoption par le Conseil avec participation du Parlement ou, dans certains cas, l’inverse. L’énoncé doit préciser la procédure visée pour que b constitue une réponse unique exacte.",
+        "reponses": [
+          "b"
+        ],
+        "explication": "Dans la procédure d’approbation visée par l’énoncé, le Conseil adopte l’acte législatif avec l’accord préalable du Parlement. Celui-ci peut approuver ou rejeter le texte, mais ne peut pas l’amender formellement dans cette procédure. Son refus empêche l’adoption. Cette règle doit être distinguée de la procédure législative spéciale de consultation, où le Parlement rend un avis sans disposer du même droit de veto, et de la procédure législative ordinaire, dans laquelle il est colégislateur à égalité avec le Conseil.",
         "sources": [
           {
             "titre": "Conseil de l’Union européenne — Procédures législatives spéciales : approbation et consultation",
             "url": "https://www.consilium.europa.eu/en/council-eu/decision-making/special-legislative-procedures/"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 30,
         "page_pdf": 7,
         "page_imprimee": 7
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : l’énoncé vise expressément l’approbation d’un acte adopté par le Conseil, plutôt que toutes les procédures législatives spéciales."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-031",
       "type": "qcm",
-      "enonce": "Parmi les pays suivants, lequel est membre de l’Union européenne mais ne fait pas partie de l’Espace Schengen ?",
+      "enonce": "Au printemps 2025, parmi les pays suivants, lequel est membre de l’Union européenne mais ne fait pas partie de l’espace Schengen ?",
       "choix": {
         "a": "La Suède",
-        "b": "La Bulgarie",
+        "b": "L’Irlande",
         "c": "La Grèce",
         "d": "L’Estonie"
       },
       "correction": {
-        "reponses": [],
-        "explication": "Question neutralisée : au printemps 2025, les quatre pays proposés — Suède, Bulgarie, Grèce et Estonie — appartiennent à l’espace Schengen. Pour la Bulgarie, les contrôles aux frontières intérieures aériennes et maritimes ont été levés le 31 mars 2024, puis les contrôles terrestres le 1er janvier 2025. Répondre « Bulgarie » serait donc périmé dans le contexte de ce sujet. Les réponses pertinentes auraient été l’Irlande ou Chypre, qui ne figurent pas parmi les choix.",
+        "reponses": [
+          "b"
+        ],
+        "explication": "Au printemps 2025, l’Irlande est membre de l’Union européenne mais ne fait pas partie de l’espace Schengen. La Suède, la Grèce et l’Estonie en sont membres. L’appartenance à l’Union et l’appartenance à Schengen ne se confondent donc pas. La Bulgarie, qui figurait dans le choix initial, participe pleinement à Schengen depuis la levée des contrôles terrestres le 1er janvier 2025, après celle des contrôles aériens et maritimes en mars 2024.",
         "sources": [
           {
             "titre": "Conseil de l’Union européenne — Espace Schengen et élargissements",
             "url": "https://www.consilium.europa.eu/en/policies/schengen-area/"
           }
-        ],
-        "neutralisee": true
+        ]
       },
       "source": {
         "id": "sarah-royon-saeg-concours-blanc-2-entrainement",
         "numero": 31,
         "page_pdf": 7,
         "page_imprimee": 7
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la date de référence est précisée et le choix b « La Bulgarie » est remplacé par « L’Irlande »."
     },
     {
       "id": "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-032",
@@ -6852,7 +6866,18 @@ window.QcmAnnales = {
         "b": "Environ 18 milliards d’euros",
         "c": "Environ 24 milliards d’euros"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’accord de partenariat approuvé en juin 2022 prévoit 18,4 milliards d’euros de fonds européens pour la France au titre de la politique de cohésion 2021-2027. La proposition « environ 18 milliards » correspond donc à l’enveloppe annoncée. Ce montant ne représente ni l’ensemble des financements européens destinés à la France, ni les crédits de la PAC ou du plan de relance.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Accord de partenariat avec la France : 18,4 milliards d’euros pour 2021-2027",
+            "url": "https://european-social-fund-plus.ec.europa.eu/fr/node/718"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 1,
@@ -6869,7 +6894,22 @@ window.QcmAnnales = {
         "c": "Il est nommé par le Conseil européen à la majorité qualifiée pour une durée de 5 ans (et n’est pas soumis au vote d’approbation du Parlement européen comme les autres commissaires)",
         "d": "Il est désigné directement par la Commission européenne pour une durée de 3 ans"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 18 TUE prévoit une nomination par le Conseil européen à la majorité qualifiée, avec l’accord du président de la Commission. Le Haut représentant est aussi vice-président de la Commission : il participe au vote d’approbation du Parlement européen portant sur le collège dans son ensemble, prévu à l’article 17 TUE. La durée normale du mandat du collège est de cinq ans. Le Parlement n’effectue donc pas une nomination individuelle du Haut représentant.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 18 TUE : nomination du Haut représentant",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016M018"
+          },
+          {
+            "titre": "EUR-Lex — Article 17 TUE : missions et nomination de la Commission",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016M017"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 2,
@@ -6886,7 +6926,18 @@ window.QcmAnnales = {
         "c": "Au moins cinq États membres représentant plus de 40 % de la population de l’Union européenne",
         "d": "Trois États membres représentant plus de 30 % de la population de l’Union européenne"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Dans le système ordinaire de majorité qualifiée, une coalition représentant plus de 35 % de la population de l’Union peut bloquer la décision si elle réunit au moins quatre États membres. L’exigence de quatre États empêche trois grands États de bloquer seuls une décision par leur seul poids démographique. La majorité d’adoption requiert normalement 55 % des États membres représentant au moins 65 % de la population de l’Union.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 16 TUE : composition et présidence du Conseil",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016M016"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 3,
@@ -6902,7 +6953,22 @@ window.QcmAnnales = {
         "b": "Une mesure permettant de suspendre temporairement certaines règles budgétaires du Pacte de stabilité et de croissance",
         "c": "Une mesure qui a permis aux États membres de suspendre temporairement leur participation à l’Union économique et monétaire en raison des conséquences économiques de la crise sanitaire"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Il s’agit de la clause dérogatoire générale du Pacte de stabilité et de croissance, activée de manière coordonnée le 23 mars 2020 face à la pandémie et désactivée à la fin de 2023. Elle autorisait un écart temporaire par rapport aux trajectoires d’ajustement budgétaire normalement exigées, sous réserve de ne pas compromettre la soutenabilité à moyen terme. La formule « suspendre certaines règles » résume cet assouplissement : les procédures du Pacte et les valeurs de référence des traités n’étaient pas abolies.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Recommandation budgétaire de 2020, considérant 5 : activation et portée de la clause dérogatoire générale",
+            "url": "https://data.consilium.europa.eu/doc/document/ST-8423-2020-INIT/en/pdf"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — Recommandation budgétaire de 2023, considérant 7 : désactivation de la clause fin 2023",
+            "url": "https://data.consilium.europa.eu/doc/document/ST-9840-2023-REV-1/en/pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 4,
@@ -6918,7 +6984,18 @@ window.QcmAnnales = {
         "b": "81",
         "c": "98"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Au 5 avril 2025, la France dispose de 81 sièges au Parlement européen pour la législature 2024-2029. Elle en comptait 76 pendant la précédente législature après le retrait du Royaume-Uni. La réponse doit être rattachée à la date du galop, qui intervient après les élections européennes de juin 2024.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Répartition des 720 sièges pour la législature 2024-2029",
+            "url": "https://www.europarl.europa.eu/topics/en/article/20180126STO94114/how-many-meps-will-each-eu-country-get-in-2024"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 5,
@@ -6935,7 +7012,22 @@ window.QcmAnnales = {
         "b": "Non, elle ne peut adopter que des actes délégués ou d’exécution.",
         "c": "Oui, dans tous les domaines couverts par les compétences exclusives de l’Union."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La réponse b exprime la distinction attendue : la Commission ne peut pas adopter seule un acte législatif au sens de l’article 289 TFUE. Elle propose normalement la législation et peut adopter des actes non législatifs contraignants, notamment des actes délégués ou d’exécution. La formulation « ne peut adopter que » est toutefois trop restrictive si on l’étend à tous ses actes : elle adopte aussi, par exemple, des décisions individuelles en matière de concurrence. Un acte contraignant n’est donc pas nécessairement un acte législatif.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 289 TFUE : définition des actes législatifs",
+            "url": "https://eur-lex.europa.eu/eli/treaty/tfeu_2016/art_289/oj/eng"
+          },
+          {
+            "titre": "EUR-Lex — Article 17 TUE : missions et nomination de la Commission",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016M017"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 6,
@@ -6953,7 +7045,18 @@ window.QcmAnnales = {
         "c": "Directement ou indirectement mais surtout actuellement restreindre le commerce intracommunautaire",
         "d": "Indirectement restreindre le commerce intracommunautaire"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Dans l’arrêt Dassonville du 11 juillet 1974, la Cour retient les entraves au commerce entre États membres qui peuvent être directes ou indirectes, actuelles ou potentielles. La réponse b est la seule à réunir ces quatre possibilités. Une entrave n’a donc pas besoin d’être déjà effective pour relever de l’interdiction. Les mots « mais surtout » de la proposition ne figurent pas dans cette définition et ne créent aucune hiérarchie entre les hypothèses ; la répétition « peut (...) peut » provient de l’énoncé.",
+        "sources": [
+          {
+            "titre": "CJCE — Arrêt Dassonville, 11 juillet 1974, affaire 8/74, point 5",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61974CJ0008"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 7,
@@ -6971,7 +7074,18 @@ window.QcmAnnales = {
         "b": "Le Comité des représentants permanents (Coreper).",
         "c": "Le comité de conciliation, composé de membres du Parlement et du Conseil."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Si le Conseil n’approuve pas tous les amendements du Parlement à l’issue de la deuxième lecture, un comité de conciliation est réuni. Il rassemble à parité des représentants du Conseil et du Parlement et cherche à élaborer un projet commun dans un délai de six semaines, susceptible d’être prolongé. La Commission participe aux travaux et facilite le rapprochement des positions, mais elle ne remplace pas ce comité. Le projet commun doit ensuite être approuvé par les deux colégislateurs.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Procédure législative ordinaire : comité de conciliation",
+            "url": "https://www.consilium.europa.eu/en/council-eu/decision-making/ordinary-legislative-procedure/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 8,
@@ -6988,7 +7102,22 @@ window.QcmAnnales = {
         "b": "Une présidence tournante exercée par chaque État membre pour une durée de 6 mois.",
         "c": "Une présidence assurée conjointement par trois États membres selon un système de troïka."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La présidence des formations du Conseil est exercée à tour de rôle par un État membre pendant six mois. Trois présidences successives coordonnent leur programme sur dix-huit mois dans un trio, mais cela ne signifie pas que trois États exercent ensemble la présidence. Le Conseil des affaires étrangères constitue une exception : il est présidé par le Haut représentant. Il faut distinguer cette présidence tournante de celle du Conseil européen.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 16 TUE : composition et présidence du Conseil",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016M016"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — Calendrier des présidences du Conseil",
+            "url": "https://www.consilium.europa.eu/en/council-eu/presidency-council-eu/timeline-presidencies-of-the-council-of-the-eu/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 9,
@@ -7005,7 +7134,18 @@ window.QcmAnnales = {
         "b": "Il représente les intérêts des chefs d’État et de gouvernement auprès du Conseil.",
         "c": "Il prépare les travaux du Conseil en assurant la coordination des États membres et filtre les dossiers techniques."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Coreper, composé des représentants permanents des États membres ou de leurs adjoints, prépare les travaux du Conseil. Il examine les dossiers transmis par les groupes de travail, coordonne les positions nationales et recherche des compromis afin de réserver aux ministres les questions nécessitant un arbitrage politique. Il joue ainsi un rôle de préparation et de filtrage, sans se substituer au Conseil pour l’adoption des actes.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Rôle du Comité des représentants permanents (Coreper)",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/how-the-work-in-the-council-is-organised/what-is-coreper/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 10,
@@ -7023,7 +7163,22 @@ window.QcmAnnales = {
         "c": "Oui, mais l’accord a été suspendu dans certains pays membres de l’UE à cause de contestations juridiques",
         "d": "Non, le CETA n’a pas encore été ratifié par la totalité des États membres de l’UE, empêchant son application"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Au 5 avril 2025, le CETA s’applique provisoirement depuis le 21 septembre 2017, mais son entrée en vigueur intégrale reste subordonnée à l’achèvement des ratifications nationales. La réponse b est celle attendue, avec une précision : ce sont notamment la protection des investissements et le règlement des différends entre investisseurs et États qui restent exclus, et non toutes les dispositions relatives aux investissements. Certaines règles concernant les investissements directs s’appliquent déjà. L’absence de ratification par tous les États membres n’empêche donc pas l’application provisoire d’une grande partie de l’accord, contrairement à la proposition d.",
+        "sources": [
+          {
+            "titre": "Commission européenne — CETA : application provisoire depuis le 21 septembre 2017",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/canada/eu-canada-agreements_en"
+          },
+          {
+            "titre": "EUR-Lex — Décision (UE) 2017/38, article 1 : périmètre de l’application provisoire du CETA",
+            "url": "https://eur-lex.europa.eu/eli/dec/2017/38/oj"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 11,
@@ -7040,7 +7195,18 @@ window.QcmAnnales = {
         "b": "Par les États membres, via la Facilité européenne pour la paix (FEP)",
         "c": "Par le budget de l’UE exclusivement"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Facilité européenne pour la paix est un instrument extérieur au budget de l’Union, financé par des contributions des États membres. Elle prend notamment en charge les coûts communs des opérations militaires de la PSDC. La réponse b doit être comprise dans cette limite : les autres dépenses restent largement à la charge des États qui engagent leurs personnels et leurs moyens. Ces opérations ne sont financées ni exclusivement par le budget de l’UE, ni par le budget de l’OTAN.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Facilité européenne pour la paix : financement des coûts communs des opérations",
+            "url": "https://www.consilium.europa.eu/en/policies/european-peace-facility/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 12,
@@ -7058,7 +7224,18 @@ window.QcmAnnales = {
         "c": "Garantir un accès exclusif des membres de l’OTAN aux ressources des opérations humanitaires de l’UE",
         "d": "Limiter la coopération militaire entre l’OTAN et l’UE aux seules missions de maintien de la paix"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les arrangements Berlin Plus, finalisés en 2003, permettent à l’Union de recourir aux capacités de planification ainsi qu’à des moyens et capacités de l’OTAN pour des opérations militaires dirigées par l’UE. Ils organisent une coopération opérationnelle entre les deux organisations. Leur objet principal n’est pas de financer les opérations européennes par le budget de l’OTAN, ni de réserver à celle-ci les moyens humanitaires de l’Union.",
+        "sources": [
+          {
+            "titre": "OTAN — Les arrangements Berlin Plus et l’accès de l’UE aux moyens de l’OTAN, 1er juillet 2003",
+            "url": "https://www.nato.int/en/news-and-events/events/transcripts/2003/07/01/taking-eu-nato-relations-forward"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 13,
@@ -7076,7 +7253,22 @@ window.QcmAnnales = {
         "c": "Un organe informel qui réunit les chefs d’État des 20 pays de la zone euro pour coordonner les politiques fiscales",
         "d": "Une institution de l’UE chargée de superviser la politique monétaire de l’Euro et de fixer les taux d’intérêt"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’Eurogroupe est une réunion informelle des ministres chargés des finances des pays de la zone euro. Il coordonne leurs échanges sur les questions économiques et budgétaires liées à la monnaie unique. Au 5 avril 2025, la zone euro compte 20 États, la Croatie l’ayant rejointe le 1er janvier 2023. L’Eurogroupe ne réunit pas les chefs d’État et de gouvernement et ne fixe pas les taux d’intérêt directeurs, qui relèvent de la Banque centrale européenne.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Eurogroupe : composition et rôle",
+            "url": "https://www.consilium.europa.eu/en/eurogroup/"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — La Croatie devient le vingtième membre de la zone euro le 1er janvier 2023",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2022/07/12/croatia-set-to-join-the-euro-area-on-1-january-2023-council-adopts-final-required-legal-acts/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 14,
@@ -7094,7 +7286,18 @@ window.QcmAnnales = {
         "c": "Un renforcement des contrôles aux frontières et une meilleure répartition des demandes d’asile entre États membres",
         "d": "Une obligation pour tous les pays de l’UE d’accueillir le même nombre de demandeurs d’asile"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le pacte sur la migration et l’asile adopté en mai 2024 associe notamment un filtrage aux frontières extérieures, des procédures d’asile à la frontière et un mécanisme de solidarité entre États membres. Cette solidarité peut prendre plusieurs formes, dont des relocalisations ou des contributions financières ; elle n’impose pas à chaque pays d’accueillir le même nombre de personnes. Le règlement Dublin III est remplacé, mais la logique de détermination de l’État responsable demeure : il ne s’agit pas d’une suppression de tout ce système. Au 5 avril 2025, la préparation de la mise en application du pacte est en cours.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Adoption du pacte sur la migration et l’asile, 14 mai 2024",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/05/14/the-council-adopts-the-eu-s-pact-on-migration-and-asylum/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 15,
@@ -7105,20 +7308,32 @@ window.QcmAnnales = {
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-016",
       "type": "qcm",
-      "enonce": "Quelle est la procédure de \"carton jaune\" dans le cadre du principe de subsidiarité ?",
+      "enonce": "Quelle est la règle générale du « carton jaune » lorsqu’une proposition législative de la Commission est contestée au regard du principe de subsidiarité ?",
       "choix": {
         "a": "Si un tiers des parlements nationaux émettent un avis motivé négatif, la Commission doit abandonner la proposition sans possibilité de modification",
-        "b": "Si un quart des parlements nationaux émettent un avis motivé négatif, la Commission doit reconsidérer sa proposition, la modifier, ou la maintenir avec une justification supplémentaire",
+        "b": "Si les avis motivés défavorables représentent au moins un tiers des voix attribuées aux parlements nationaux, la Commission doit réexaminer sa proposition ; elle peut la maintenir, la modifier ou la retirer en motivant sa décision.",
         "c": "Si la moitié des parlements nationaux émettent un avis motivé négatif, la proposition doit être annulée sans possibilité de recours",
         "d": "Si un tiers des parlements nationaux émettent un avis motivé négatif, la Commission est obligée de soumettre la proposition à un vote au Parlement européen avant de prendre une décision finale"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le carton jaune impose un réexamen lorsque les avis motivés émis dans les huit semaines atteignent au moins un tiers des voix attribuées aux parlements nationaux. Chaque État dispose de deux voix, réparties entre ses chambres s’il possède un parlement bicaméral. Le seuil est abaissé à un quart pour les projets relevant de l’article 76 TFUE, mais l’énoncé vise ici la règle générale. Après réexamen, la Commission peut maintenir, modifier ou retirer sa proposition et doit expliquer sa décision. Le mécanisme n’entraîne donc ni retrait automatique, ni obligation de soumettre préalablement le texte à un vote du Parlement européen.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Contrôle de subsidiarité : seuils et conséquences du carton jaune",
+            "url": "https://commission.europa.eu/law/law-making-process/adopting-eu-law/relations-national-parliaments/subsidiarity-control-mechanism_fr"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 16,
         "page_pdf": 5,
         "page_imprimee": 4
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : l’énoncé vise la règle générale et la proposition b corrige le seuil, son décompte en voix et les suites du réexamen."
     },
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-017",
@@ -7129,7 +7344,18 @@ window.QcmAnnales = {
         "b": "Le CoPS est responsable de la gestion des crises au sein de l’UE et de l’exécution des missions militaires.",
         "c": "Le CoPS est l’organe décisionnaire principal de l’Union européenne en matière de sécurité intérieure."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le nom officiel est « Comité politique et de sécurité » (COPS). Il suit la situation internationale, contribue à la définition de la PESC et prépare les décisions du Conseil. Sous la responsabilité du Conseil et du Haut représentant, il exerce aussi le contrôle politique et la direction stratégique des opérations de gestion de crise. Cela ne signifie pas qu’il assure lui-même le commandement opérationnel ou l’exécution des missions militaires, ni qu’il est l’organe principal de sécurité intérieure de l’Union.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Comité politique et de sécurité : missions",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/search-the-list-of-council-preparatory-bodies/political-security-committee/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 17,
@@ -7145,15 +7371,31 @@ window.QcmAnnales = {
         "a": "À aider les citoyens à faire appel des décisions rendues par les institutions européennes devant la Cour de justice de l’Union européenne",
         "b": "À enquêter sur les plaintes des citoyens concernant des cas de mauvaise administration de la part des institutions et organes de l’Union européenne",
         "c": "À superviser la mise en œuvre des législations européennes dans les États membres",
-        "d": "À proposer des réformes dans les domaines où il constate une mauvaise gestion des affaires européennes"
+        "d": "À imposer aux institutions européennes des réformes juridiquement contraignantes dans les domaines où il constate une mauvaise administration"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Médiateur européen enquête sur les cas de mauvaise administration des institutions et organes de l’Union, sur plainte ou de sa propre initiative. Il peut rechercher une solution, formuler des recommandations et proposer des améliorations administratives, mais ses conclusions n’ont pas de force juridiquement contraignante. La proposition d lui attribue donc un pouvoir qu’il ne possède pas. Il n’est ni une juridiction d’appel des décisions européennes, ni l’autorité chargée de contrôler l’application générale du droit de l’Union par les États membres.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Missions et pouvoirs du Médiateur européen",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/18/le-mediateur-europeen"
+          },
+          {
+            "titre": "Parlement européen — Élection du Médiateur européen, décembre 2024 : recommandations non contraignantes",
+            "url": "https://www.europarl.europa.eu/RegData/etudes/ATAG/2024/767149/EPRS_ATA%282024%29767149_FR.pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 18,
         "page_pdf": 5,
         "page_imprimee": 4
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la proposition d attribue désormais au Médiateur un pouvoir de réforme contraignant qu’il ne possède pas."
     },
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-019",
@@ -7164,7 +7406,22 @@ window.QcmAnnales = {
         "b": "Environ 70 milliards d’euros",
         "c": "Environ 90 milliards d’euros"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La réponse « environ 70 milliards d’euros » correspond à l’enveloppe de 70,8 milliards exprimée aux prix constants de 2018 pour NDICI–Europe dans le monde sur 2021-2027. La même enveloppe initiale représente environ 79,5 milliards d’euros aux prix courants. La convention de prix, omise dans l’énoncé, est donc essentielle : la réponse b est retenue en prix de 2018 et ne doit pas être mémorisée comme un montant de 70 milliards en euros courants. Cet instrument regroupe l’essentiel des financements de voisinage, de développement et de coopération internationale.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Rubrique 6 du CFP 2021-2027 : NDICI à 70,8 milliards d’euros aux prix de 2018",
+            "url": "https://www.europarl.europa.eu/RegData/etudes/BRIE/2021/690546/EPRS_BRI%282021%29690546_EN.pdf"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — Accord sur NDICI–Europe dans le monde : 79,5 milliards d’euros aux prix courants, 17 mars 2021",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2021/03/17/neighbourhood-development-and-international-cooperation-instrument-global-europe-eu-ambassadors-greenlight-final-compromise-text-with-a-view-to-an-agreement-with-the-ep/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 19,
@@ -7175,36 +7432,68 @@ window.QcmAnnales = {
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-020",
       "type": "qcm",
-      "enonce": "Combien d’États membres participent actuellement au Parquet européen ?",
+      "enonce": "Au 5 avril 2025, combien d’États membres participent au Parquet européen ?",
       "choix": {
         "a": "15",
-        "b": "22",
+        "b": "24",
         "c": "27"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Au 5 avril 2025, 24 États membres participent au Parquet européen. La participation de la Pologne a été confirmée le 29 février 2024, puis celle de la Suède le 16 juillet 2024, portant le total de 22 à 24. Les trois États de l’Union non participants à cette date sont le Danemark, la Hongrie et l’Irlande. Le nombre demandé porte sur la participation à la coopération renforcée, à distinguer de la mise en place progressive des moyens opérationnels dans les nouveaux États participants.",
+        "sources": [
+          {
+            "titre": "Parquet européen — Rapport annuel 2024, publié en mars 2025 : adhésion de la Pologne et de la Suède",
+            "url": "https://www.eppo.europa.eu/sites/default/files/2025-03/EPPO%20Annual%20Report%202024_2.pdf"
+          },
+          {
+            "titre": "EUR-Lex — Décision (UE) 2024/1952 du 16 juillet 2024 : participation de la Suède au Parquet européen",
+            "url": "https://eur-lex.europa.eu/eli/dec/2024/1952/oj/eng"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 20,
         "page_pdf": 5,
         "page_imprimee": 4
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la date du galop est explicite et le choix b passe de 22 à 24 États membres."
     },
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-021",
       "type": "qcm",
-      "enonce": "La procédure de l’article 7 du Traité sur l’Union européenne a-t-elle abouti à des sanctions contre la Pologne et la Hongrie ?",
+      "enonce": "Au 5 avril 2025, la procédure de l’article 7 du traité sur l’Union européenne a-t-elle abouti à des sanctions contre la Pologne et la Hongrie ?",
       "choix": {
         "a": "Oui, des sanctions ont été prises, y compris la suspension des droits de vote au Conseil de l’UE pour les deux pays",
-        "b": "Non, la procédure a été bloquée en raison du soutien mutuel entre la Pologne et la Hongrie",
+        "b": "Non, aucune sanction au titre de l’article 7 n’a été prononcée ; la procédure concernant la Pologne a été close en mai 2024 et celle concernant la Hongrie se poursuit.",
         "c": "Oui, la Hongrie a été sanctionnée financièrement en 2022, mais la Pologne ne l’a pas été"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Au 5 avril 2025, aucune sanction au titre de l’article 7, notamment aucune suspension du droit de vote, n’a été prononcée contre ces deux pays. La procédure concernant la Pologne a pris fin en mai 2024 après le retrait de la proposition motivée de la Commission ; celle concernant la Hongrie se poursuit. La suspension de fonds décidée à l’égard de la Hongrie en 2022 relève du mécanisme de conditionnalité budgétaire et ne constitue pas une sanction de l’article 7. La distinction entre ces instruments explique pourquoi la proposition c ne répond pas à la question.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Chronologie de l’article 7 : clôture de la procédure concernant la Pologne en mai 2024",
+            "url": "https://www.consilium.europa.eu/en/policies/article-7-procedures/timeline-the-story-of-article-7/"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — Procédures de l’article 7 et étapes des sanctions",
+            "url": "https://www.consilium.europa.eu/en/policies/article-7-procedures/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 21,
         "page_pdf": 6,
         "page_imprimee": 5
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : la date du galop est explicitée et la proposition b tient compte de la clôture de la procédure concernant la Pologne."
     },
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-022",
@@ -7216,7 +7505,22 @@ window.QcmAnnales = {
         "c": "L’Union européenne a un statut d’observateur dans les deux organisations",
         "d": "L’Union européenne est un membre à part entière de l’ONU et a un statut d’observateur permanent à l’OMC"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’Union dispose d’un statut d’observateur à l’ONU. Depuis la résolution 65/276 de 2011, elle bénéficie de droits de participation renforcés à l’Assemblée générale, sans droit de vote : elle n’est pas un État membre de l’ONU. En revanche, elle est membre à part entière de l’Organisation mondiale du commerce depuis le 1er janvier 1995. Les États membres de l’Union sont eux aussi membres de l’OMC, où la Commission représente les intérêts commerciaux communs.",
+        "sources": [
+          {
+            "titre": "Nations unies — Résolution 65/276 du 3 mai 2011 : participation de l’Union européenne à l’Assemblée générale",
+            "url": "https://www.eeas.europa.eu/sites/default/files/n1052910.pdf"
+          },
+          {
+            "titre": "Organisation mondiale du commerce — L’Union européenne et l’OMC",
+            "url": "https://www.wto.org/english/thewto_e/countries_e/european_communities_e.htm"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 22,
@@ -7234,7 +7538,18 @@ window.QcmAnnales = {
         "c": "Donner à l’Union européenne la possibilité d’agir au-delà de ses compétences explicites si cela est nécessaire pour atteindre les objectifs des traités",
         "d": "Permettre de modifier certaines règles de prise de décision dans le cadre du Conseil de l’UE, notamment en passant de l’unanimité à la majorité qualifiée"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 352 TFUE permet d’adopter une mesure nécessaire à un objectif des traités lorsque ceux-ci n’ont pas prévu les pouvoirs d’action requis, dans le cadre des politiques qu’ils définissent. Le Conseil statue à l’unanimité, sur proposition de la Commission et après approbation du Parlement européen. La formule « au-delà de ses compétences explicites » doit donc être encadrée : cette clause ne permet ni de réviser les traités, ni d’attribuer librement de nouvelles compétences à l’Union. Elle ne peut pas servir à atteindre des objectifs de la PESC. Le passage de l’unanimité à la majorité qualifiée relève des clauses passerelles.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 352 TFUE : conditions et limites de la clause de flexibilité",
+            "url": "https://eur-lex.europa.eu/eli/treaty/tfeu_2016/art_352/oj/eng"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 23,
@@ -7252,7 +7567,22 @@ window.QcmAnnales = {
         "c": "L’existence d’une économie de marché viable",
         "d": "La capacité à assumer les obligations découlant de l’adhésion"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’adoption de l’euro avant l’adhésion ne figure pas parmi les critères de Copenhague. Ceux-ci portent sur la stabilité démocratique et l’État de droit, les droits de l’homme et des minorités, l’existence d’une économie de marché viable capable de faire face à la concurrence, ainsi que la capacité à reprendre et appliquer les obligations de l’Union. L’entrée dans l’Union et l’adoption de l’euro sont deux étapes distinctes ; cette dernière obéit notamment à des critères de convergence.",
+        "sources": [
+          {
+            "titre": "Conseil de l’Union européenne — Fonctionnement de l’élargissement : critères d’adhésion",
+            "url": "https://www.consilium.europa.eu/fr/policies/how-enlargement-works/"
+          },
+          {
+            "titre": "Conseil de l’Union européenne — La Croatie devient le vingtième membre de la zone euro le 1er janvier 2023",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2022/07/12/croatia-set-to-join-the-euro-area-on-1-january-2023-council-adopts-final-required-legal-acts/"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 24,
@@ -7270,7 +7600,18 @@ window.QcmAnnales = {
         "c": "La révision des traités se fait principalement par une conférence intergouvernementale où seuls les États membres prennent des décisions, sans intervention du Parlement européen.",
         "d": "La révision des traités suit une procédure simplifiée permettant à la majorité qualifiée des États membres de modifier les traités sans consultation du Parlement européen."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La réponse b décrit le mieux le rôle de la Convention, mais son ordre des étapes est simplifié. L’initiative d’une révision ordinaire peut venir d’un État membre, du Parlement ou de la Commission. Après consultation du Parlement et de la Commission, le Conseil européen peut décider d’examiner les modifications ; son président convoque alors une Convention réunissant notamment des représentants du Parlement européen. Une conférence intergouvernementale arrête ensuite les modifications, qui nécessitent la ratification de tous les États membres. Le Conseil européen peut renoncer à la Convention si l’ampleur des modifications ne la justifie pas, avec l’approbation du Parlement. Celui-ci intervient donc avant et pendant la Convention, et pas seulement après elle.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Révision des traités de l’Union : article 48 TUE",
+            "url": "https://eur-lex.europa.eu/FR/legal-content/summary/revision-of-eu-treaties.html?fromSummary=01"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 25,
@@ -7288,7 +7629,18 @@ window.QcmAnnales = {
         "c": "La Serbie",
         "d": "Le Monténégro"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le Monténégro utilise l’euro sans être membre de l’Union européenne. Il a adopté unilatéralement cette monnaie en 2002 ; il n’appartient pas pour autant à la zone euro au sens institutionnel et ne participe pas aux décisions de la Banque centrale européenne. La Norvège, l’Islande et la Serbie disposent chacune de leur propre monnaie.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Utilisation de l’euro en dehors de la zone euro",
+            "url": "https://economy-finance.ec.europa.eu/euro/use-euro/euro-outside-euro-area_en"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 26,
@@ -7306,7 +7658,18 @@ window.QcmAnnales = {
         "c": "L’article 88-4 permet au Gouvernement de soumettre au Parlement uniquement les projets d’actes qui concernent directement les États membres",
         "d": "L’article 88-4 impose au Gouvernement de transmettre au Parlement uniquement les projets d’actes qui concernent directement les États membres"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 88-4 impose au Gouvernement de soumettre à l’Assemblée nationale et au Sénat les projets d’actes législatifs européens ainsi que les autres projets ou propositions d’actes de l’Union, dès leur transmission au Conseil de l’Union européenne. La réponse b est donc celle attendue : la transmission n’est pas limitée aux seuls actes législatifs. Il faut toutefois conserver la condition de transmission au Conseil, absente de la proposition ; l’article ne vise pas indistinctement tous les documents produits par la Commission. Les deux assemblées peuvent adopter des résolutions européennes.",
+        "sources": [
+          {
+            "titre": "Légifrance — Constitution française, article 88-4, en vigueur depuis le 1er décembre 2009",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000018077021"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 27,
@@ -7323,7 +7686,18 @@ window.QcmAnnales = {
         "b": "28",
         "c": "54"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Au 5 avril 2025, la Cour de justice, en tant que juridiction, compte un juge par État membre, soit 27 juges. Il faut distinguer cette Cour de l’institution « Cour de justice de l’Union européenne », qui comprend aussi le Tribunal. Ce dernier compte deux juges par État membre, soit 54 postes de juge. Le QCM emploie donc le nom de l’institution au sens courant pour désigner la Cour de justice : c’est dans ce sens que la réponse a est retenue. Les avocats généraux ne sont pas inclus dans ce nombre de juges.",
+        "sources": [
+          {
+            "titre": "Union européenne — Cour de justice de l’Union européenne : composition des deux juridictions",
+            "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/court-justice-european-union-cjeu_fr"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 28,
@@ -7341,7 +7715,18 @@ window.QcmAnnales = {
         "c": "Un ensemble de procédures permettant aux États membres de l’UE de participer à l’adoption de mesures d’exécution d’actes législatifs",
         "d": "Une méthode d’évaluation de l’impact des politiques européennes sur les citoyens"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La comitologie permet aux États membres de contrôler l’exercice des compétences d’exécution confiées à la Commission, au moyen de comités composés de leurs représentants. Selon la procédure prévue par l’acte de base, ces comités rendent un avis sur un projet d’acte d’exécution. Il ne s’agit ni de la procédure législative elle-même, ni du régime des actes délégués, qui obéit à des règles distinctes.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Comitologie : champ d’application et fonctionnement des comités",
+            "url": "https://commission.europa.eu/law/law-making-process/adopting-eu-law/implementing-and-delegated-acts/comitology_fr"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 29,
@@ -7359,7 +7744,18 @@ window.QcmAnnales = {
         "c": "L’initiative doit obtenir au moins 2 millions de signatures valables et être soutenue par des signataires issus d’au moins 10 pays membres de l’Union européenne",
         "d": "L’initiative doit obtenir au moins 1 million de signatures valables et être soutenue uniquement par des signataires issus de 3 pays membres de l’Union européenne"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Pour être présentée à la Commission après la collecte, une initiative citoyenne européenne doit réunir au moins un million de déclarations de soutien valables, avec les seuils nationaux minimaux atteints dans au moins sept États membres. La collecte intervient après la constitution du groupe d’organisateurs et l’enregistrement de l’initiative : le million de signatures n’est donc pas exigé pour lancer la démarche. Une initiative ayant atteint les seuils oblige la Commission à l’examiner et à expliquer sa réponse, mais pas à présenter automatiquement une proposition législative.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Initiative citoyenne européenne : fiche d’information de 2024",
+            "url": "https://citizens-initiative.europa.eu/sites/default/files/2024-09/Fiche%20d%27information%20g%C3%A9n%C3%A9rale_2024.pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 30,
@@ -7377,7 +7773,22 @@ window.QcmAnnales = {
         "c": "Le Parlement européen peut saisir la Cour de justice uniquement en cas de non-transposition d’une directive par un État membre",
         "d": "Le Parlement européen peut saisir la Cour exclusivement pour contester des actes législatifs adoptés par le Conseil, mais pas par la Commission européenne"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Parlement européen peut demander un avis préalable sur la compatibilité d’un accord international envisagé avec les traités, sur le fondement de l’article 218, paragraphe 11, TFUE. Il dispose aussi des recours en annulation et en carence prévus aux articles 263 et 265 TFUE. Son recours en annulation ne se limite d’ailleurs pas aux seuls actes législatifs cités dans la proposition b. En revanche, il ne peut pas engager directement contre un État membre un recours en manquement pour défaut de transposition d’une directive.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Pouvoirs du Parlement, notamment ses recours devant la Cour",
+            "url": "https://www.europarl.europa.eu/factsheets/FR/sheet/19/le-parlement-europeen-pouvoirs"
+          },
+          {
+            "titre": "EUR-Lex — Article 218, paragraphe 11, TFUE : avis sur les accords internationaux",
+            "url": "https://eur-lex.europa.eu/eli/treaty/tfeu_2016/art_218/oj/eng"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 31,
@@ -7395,7 +7806,18 @@ window.QcmAnnales = {
         "c": "Le Comité des régions est un organe consultatif de l’Union européenne, composé de 350 membres, qui peut être consulté par la Commission, le Conseil, ou le Parlement dans des domaines spécifiques, notamment en matière de politique de cohésion",
         "d": "Le Comité des régions est un organe décisionnel composé de 280 membres, qui vote sur toutes les propositions législatives de la Commission européenne"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Comité européen des régions est un organe consultatif représentant les collectivités régionales et locales. Le traité fixe un plafond de 350 membres, mais son effectif est de 329 depuis le retrait du Royaume-Uni : la réponse c confond le maximum juridique et la composition effective. Sa consultation est obligatoire dans les domaines prévus par les traités, notamment la cohésion, et peut être facultative dans d’autres domaines. Le Comité peut également rendre des avis de sa propre initiative ; il ne vote pas les lois européennes.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Comité européen des régions : composition et consultations",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/16/le-comite-europeen-des-regions"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 32,
@@ -7413,7 +7835,18 @@ window.QcmAnnales = {
         "c": "Un projet de surveillance des océans, exclusivement axé sur la détection de la pollution marine.",
         "d": "Un système de communication satellitaire utilisé pour améliorer la connectivité Internet dans les zones rurales d’Europe."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Copernicus est le programme européen d’observation de la Terre. Son origine remonte à l’initiative GMES lancée en 1998 ; le nom Copernicus a été adopté ultérieurement, en 2012. Il combine des observations spatiales et des mesures in situ pour fournir des informations sur les terres, les océans, l’atmosphère, le climat, les situations d’urgence et la sécurité. La date de 1998 renvoie donc au lancement de l’initiative à l’origine du programme, et non au premier satellite Sentinel. Ce n’est ni un programme d’exploration de Mars ni un réseau de télécommunications.",
+        "sources": [
+          {
+            "titre": "Copernicus — Histoire du programme européen d’observation de la Terre",
+            "url": "https://www.copernicus.eu/en/news/news/observer-history-copernicus"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 33,
@@ -7431,7 +7864,18 @@ window.QcmAnnales = {
         "c": "L’UE utilise toutes ses langues officielles comme langues de travail dans ses institutions",
         "d": "L’UE n’autorise que l’anglais, le français et l’allemand comme langues de travail dans ses institutions"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le règlement n° 1 reconnaît les 24 langues comme langues officielles et langues de travail des institutions de l’Union. La réponse c décrit ce statut juridique. Cela ne signifie pas que les 24 langues sont utilisées simultanément dans chaque réunion ou document interne : l’article 6 permet aux institutions de préciser les modalités de leur régime linguistique dans leur règlement intérieur. L’usage fréquent de l’anglais, du français ou de l’allemand dans certains travaux ne supprime donc pas le statut des autres langues.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Règlement n° 1 fixant le régime linguistique, articles 1 et 6",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:01958R0001-20130701"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 34,
@@ -7442,20 +7886,36 @@ window.QcmAnnales = {
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-035",
       "type": "qcm",
-      "enonce": "Laquelle parmi ces propositions n’est pas une exception possible à la libre circulation des marchandises au sein de l’UE ?",
+      "enonce": "Parmi les motifs suivants, lequel ne peut pas justifier une restriction à la libre circulation des marchandises au titre de l’article 36 TFUE ?",
       "choix": {
         "a": "Protection de la santé publique",
-        "b": "Protection de la propriété intellectuelle",
+        "b": "Protection des entreprises nationales contre la concurrence des produits des autres États membres",
         "c": "Protection des trésors nationaux",
         "d": "Protection de la moralité publique"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 36 TFUE permet notamment de justifier certaines restrictions par la protection de la santé, de la moralité publique ou des trésors nationaux ayant une valeur artistique, historique ou archéologique. La protection économique des entreprises nationales contre les produits des autres États membres n’est pas un motif admis par cet article. Même lorsqu’un motif légitime existe, la restriction doit être justifiée et proportionnée et ne peut constituer une discrimination arbitraire ou une restriction commerciale déguisée. La propriété intellectuelle, mentionnée dans le choix initial, peut en revanche relever de la protection de la propriété industrielle et commerciale.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 36 TFUE : dérogations à la libre circulation des marchandises",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016E036"
+          },
+          {
+            "titre": "CJCE — Arrêt Deutsche Grammophon, 8 juin 1971, affaire 78/70 : propriété intellectuelle et libre circulation",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61970CJ0078"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 35,
         "page_pdf": 9,
         "page_imprimee": 8
-      }
+      },
+      "note": "Adaptation du sujet d’origine pour l’entraînement : l’énoncé précise la base juridique et le choix b remplace la propriété intellectuelle par un objectif de protection économique nationale."
     },
     {
       "id": "sarah-royon-sciences-po-entrainement-qcm-036",
@@ -7467,7 +7927,22 @@ window.QcmAnnales = {
         "c": "La CJUE est compétente pour contrôler l’intégralité des actions menées par l’Union européenne dans le domaine de la PESC",
         "d": "La CJUE n’a aucune compétence en matière de PESC"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 275 TFUE exclut en principe la compétence de la Cour pour les dispositions relatives à la PESC et les actes adoptés sur leur fondement. Il réserve toutefois le contrôle du respect de l’article 40 TUE, qui protège la délimitation entre la PESC et les autres compétences de l’Union, ainsi que le contrôle des mesures restrictives visant des personnes physiques ou morales. La réponse b reprend ces exceptions. Cette exclusion s’interprète strictement : l’arrêt KS et KD du 10 septembre 2024 confirme aussi la possibilité de contrôler certains actes qui ne sont pas directement liés à des choix politiques ou stratégiques de la PESC.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 275 TFUE : compétence juridictionnelle en matière de PESC",
+            "url": "https://eur-lex.europa.eu/eli/treaty/tfeu_2016/art_275/oj/eng"
+          },
+          {
+            "titre": "CJUE — Arrêt KS et KD, 10 septembre 2024 : actes de la PESC non directement liés aux choix politiques ou stratégiques",
+            "url": "https://curia.europa.eu/jcms/upload/docs/application/pdf/2024-09/cp240134fr.pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 36,
@@ -7485,7 +7960,18 @@ window.QcmAnnales = {
         "c": "La Charte ne s’applique qu’aux institutions de l’UE, et non aux États membres.",
         "d": "Les États membres doivent toujours appliquer la Charte indépendamment de leur législation nationale."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La réponse a doit être lue dans le champ du droit de l’Union. Depuis l’entrée en vigueur du traité de Lisbonne, la Charte est juridiquement contraignante. Selon son article 51, elle s’impose aux institutions et organes de l’Union et aux États membres uniquement lorsqu’ils mettent en œuvre le droit de l’Union. Elle ne s’applique donc pas indistinctement à toute situation nationale, contrairement à la proposition d. Son application n’est pas subordonnée à une acceptation facultative de chaque État ; l’invocation de ses dispositions reste soumise à leur champ et aux conditions du recours concerné.",
+        "sources": [
+          {
+            "titre": "Agence des droits fondamentaux de l’Union européenne — Article 51 de la Charte : champ d’application",
+            "url": "https://fra.europa.eu/fr/eu-charter/charter/article/51-champ-dapplication"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 37,
@@ -7502,7 +7988,18 @@ window.QcmAnnales = {
         "b": "Si la Cour de justice de l’UE constate une violation grave des principes démocratiques.",
         "c": "Si les autorités judiciaires de son État membre prennent une décision en ce sens, conformément au droit national."
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Une déchéance peut résulter d’une décision des autorités judiciaires nationales compétentes, dans les conditions fixées par le droit de l’État où le député a été élu. Le Parlement européen est informé de la fin du mandat et en prend acte selon les règles applicables. Le Conseil européen ne dispose pas d’un pouvoir général de révocation d’un député européen. La CJUE n’est pas davantage habilitée à le déchoir directement pour une violation générale des principes démocratiques.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Fin du mandat et remplacement d’un député européen",
+            "url": "https://www.europarl.europa.eu/news/fr/faq/6/comment-un-depute-demissionnaire-est-il-remplace"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 38,
@@ -7520,7 +8017,22 @@ window.QcmAnnales = {
         "c": "Le traité d’Amsterdam",
         "d": "Le traité de Lisbonne"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le traité de Maastricht, signé le 7 février 1992 et entré en vigueur le 1er novembre 1993, a institué la citoyenneté de l’Union européenne. Celle-ci appartient à toute personne possédant la nationalité d’un État membre ; elle s’ajoute à la citoyenneté nationale sans la remplacer. Elle est notamment associée à la libre circulation et à des droits électoraux, de pétition et de protection consulaire dans les conditions prévues par les traités.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Traité de Maastricht : signature et entrée en vigueur",
+            "url": "https://www.europarl.europa.eu/about-parliament/fr/in-the-past/the-parliament-and-the-treaties/maastricht-treaty"
+          },
+          {
+            "titre": "EUR-Lex — Article 20 TFUE : droits des citoyens de l’Union",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016E020"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 39,
@@ -7538,7 +8050,22 @@ window.QcmAnnales = {
         "c": "Non, la citoyenneté européenne est inaliénable",
         "d": "Oui, en cas de perte de la nationalité d’un État membre"
       },
-      "correction": null,
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La citoyenneté de l’Union dépend de la possession de la nationalité d’au moins un État membre. La perte de cette nationalité peut donc entraîner la perte du statut de citoyen européen, sauf si la personne conserve la nationalité d’un autre État membre. Les États restent compétents en matière de nationalité, mais doivent respecter le droit de l’Union lorsqu’une décision entraîne cette conséquence. La jurisprudence, notamment l’arrêt Tjebbes de 2019, exige un examen de proportionnalité des conséquences individuelles de la perte du statut. Il ne s’agit pas d’une sanction européenne autonome automatiquement attachée à une infraction pénale.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Article 20 TFUE : droits des citoyens de l’Union",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:12016E020"
+          },
+          {
+            "titre": "CJUE — Rapport annuel 2019 : arrêt Tjebbes sur la perte de nationalité et de citoyenneté de l’Union",
+            "url": "https://curia.europa.eu/jcms/upload/docs/application/pdf/2020-04/_ra_2019_fr_.pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 40,
@@ -7551,7 +8078,20 @@ window.QcmAnnales = {
       "type": "qrc",
       "enonce": "L’Union européenne peut-elle combler son retard en matière d’innovation et de compétitivité ?",
       "choix": {},
-      "correction": null,
+      "correction": {
+        "reponses": [],
+        "explication": "Éléments de réponse et plan possible, dans le contexte du 5 avril 2025 ; il ne s’agit pas d’un corrigé officiel. Problématique : comment transformer les atouts scientifiques, industriels et commerciaux de l’Union en gains durables de productivité et en entreprises capables de se développer à l’échelle mondiale ? I. Le retard tient à des obstacles structurels que les atouts européens ne suffisent pas à compenser. Le rapport Draghi de septembre 2024 souligne le décalage d’innovation avec les États-Unis et la Chine, les difficultés de financement et de croissance des entreprises innovantes, ainsi que le coût de l’énergie et les dépendances stratégiques. La fragmentation du marché et des financements limite la diffusion des innovations. L’Union conserve toutefois une recherche de qualité, une base industrielle et un vaste marché intérieur. II. Un rattrapage est possible à condition de coordonner l’investissement et les réformes. La boussole présentée par la Commission le 29 janvier 2025 articule trois priorités : réduire le déficit d’innovation, associer décarbonation et compétitivité, et réduire les dépendances. Cela suppose de soutenir la recherche puis sa commercialisation, de développer le financement des entreprises en croissance, de mieux intégrer les marchés des capitaux et de l’énergie, et d’investir dans les compétences. La simplification doit faciliter l’activité tout en préservant les objectifs sociaux et environnementaux. L’efficacité dépendra des financements publics et privés mobilisés, de la coordination des États et de la capacité à éviter une concurrence déséquilibrée entre budgets nationaux. Conclusion : l’Union dispose des moyens d’un rattrapage, mais celui-ci n’est pas acquis. Au 5 avril 2025, la boussole reste une feuille de route dont les résultats doivent encore être démontrés.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Rapport Draghi sur l’avenir de la compétitivité européenne, septembre 2024",
+            "url": "https://commission.europa.eu/topics/competitiveness/draghi-report_en"
+          },
+          {
+            "titre": "Commission européenne — Boussole pour la compétitivité, 29 janvier 2025",
+            "url": "https://commission.europa.eu/news-and-media/news/steering-eu-towards-greater-sustainable-competitiveness-2025-01-29_en"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 1,
@@ -7563,7 +8103,28 @@ window.QcmAnnales = {
       "type": "qrc",
       "enonce": "La politique commerciale de l’Union européenne répond-elle efficacement aux enjeux actuels ?",
       "choix": {},
-      "correction": null,
+      "correction": {
+        "reponses": [],
+        "explication": "Éléments de réponse et plan possible, dans le contexte du 5 avril 2025 ; il ne s’agit pas d’un corrigé officiel. Problématique : la puissance commerciale du marché unique permet-elle de maintenir l’ouverture tout en protégeant les intérêts économiques et stratégiques européens ? I. Une politique commune qui apporte des débouchés et un pouvoir de négociation. L’Union négocie pour un vaste marché et recherche une politique commerciale ouverte, durable et plus ferme depuis la stratégie de 2021. Les accords réduisent les obstacles aux échanges, diversifient les partenaires et peuvent protéger les indications géographiques ou promouvoir des engagements sociaux et environnementaux. Le CETA, appliqué provisoirement depuis 2017, illustre des résultats concrets. L’accord politique avec le Mercosur annoncé le 6 décembre 2024 ouvre une perspective de diversification, mais ne constitue pas encore un accord entré en vigueur à la date du sujet. II. Une efficacité limitée par la fragmentation géopolitique et les tensions internes. Les droits de douane annoncés par les États-Unis le 2 avril 2025 soulignent la vulnérabilité des exportateurs européens et la nécessité de combiner négociation et capacité de réaction. Les dépendances d’approvisionnement, les subventions étrangères et la répartition inégale des gains commerciaux entre secteurs compliquent aussi l’action européenne. Les préoccupations agricoles, sociales et climatiques pèsent sur l’acceptation et la ratification des accords. Une réponse efficace suppose de diversifier les partenaires, de mobiliser de manière proportionnée les instruments de défense commerciale et de soutenir les entreprises et travailleurs exposés, tout en défendant les règles multilatérales. Conclusion : la politique commerciale est un atout réel, mais elle ne peut garantir seule la compétitivité ou la sécurité économique ; sa cohérence avec les politiques industrielle, énergétique et climatique reste déterminante.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Stratégie commerciale ouverte, durable et ferme, 18 février 2021",
+            "url": "https://malta.representation.ec.europa.eu/news/commission-sets-course-open-sustainable-and-assertive-eu-trade-policy-2021-02-18_en"
+          },
+          {
+            "titre": "Commission européenne — CETA : application provisoire depuis le 21 septembre 2017",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/canada/eu-canada-agreements_en"
+          },
+          {
+            "titre": "Conseil européen — Réaction à l’accord politique UE–Mercosur, 6 décembre 2024",
+            "url": "https://www.consilium.europa.eu/en/european-council/president/x-posts/2024-12-06-153900/"
+          },
+          {
+            "titre": "Commission européenne — Déclaration du 3 avril 2025 sur les droits de douane annoncés par les États-Unis",
+            "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/statement_25_964/STATEMENT_25_964_EN.pdf"
+          }
+        ]
+      },
       "source": {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 2,
