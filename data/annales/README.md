@@ -1,13 +1,14 @@
-# Annales de questions européennes — concours externes 2026
+# Questions européennes — annales et sujets d’entraînement
 
-La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **124 questions** : 120 QCM avec leurs 480 choix, et 4 questions à réponse courte (QRC).
+La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **166 questions** : 160 QCM avec leurs 626 choix, et 6 questions à réponse courte (QRC). Son nom de fichier historique est conservé ; la nature de chaque sujet est donnée par `sources[id].type`.
 
-| Concours externe | QCM | QRC | Date de l’épreuve | Source officielle |
+| Sujet | QCM | QRC | Date de l’épreuve | Document |
 | --- | ---: | ---: | --- | --- |
 | Secrétaire des affaires étrangères, cadre d’Orient (SAEO), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeo_2026-questions_europeennes_externe.pdf) |
 | Secrétaire des affaires étrangères, cadre général (SAEG), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeg_2026-questions_europeennes_qcm-qrc_externe.pdf) |
+| Sujet SAEG 3 — entraînement personnel de Sarah Royon | 40 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/SUJET%20-%20SAEG%203.pdf) |
 
-Les deux sujets portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3).
+Les deux annales officielles portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3). Le « Sujet SAEG 3 » est une création personnelle, identifiée par `sarah-royon-saeg-3-entrainement`, et n’est rattaché à aucune session de concours.
 
 ## Format 2.0.0
 
@@ -67,7 +68,7 @@ Exemple réel :
 - `source.id` référence une entrée de `sources`. Les autres champs indiquent le numéro dans la partie QCM ou QRC et les pages.
 - `note` est une chaîne facultative, présente uniquement lorsqu’une particularité de transcription doit être conservée.
 
-Les QCM sont numérotés de 1 à 60 dans chaque sujet. Les QRC recommencent à 1 et 2. Les occurrences proches entre concours restent distinctes.
+Les QCM sont numérotés de 1 à 60 dans chaque annale, et de 1 à 40 dans le sujet personnel. Les QRC sont numérotées 1 et 2 dans chaque document. Les occurrences proches entre sujets restent distinctes.
 
 ## Sources et dates
 
@@ -77,7 +78,9 @@ Une source de type `annale` contient le concours, son code, le cadre, la voie, l
 
 `page_pdf` compte toutes les pages à partir de 1, couvertures comprises. `page_imprimee` reprend le numéro visible. Pour SAEO, la page PDF 3 correspond à la page imprimée 1 ; pour SAEG, elle porte le numéro imprimé 3. Le lien vers une page se construit à partir de l’URL de la source et de `#page=N`.
 
-Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour SAEO, conformément à sa consigne, et `non_precise` pour SAEG. Aucune consigne de réponse unique n’est déduite pour SAEG. Les QRC attendent du texte libre.
+Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour l’annale SAEO, conformément à sa consigne, `non_precise` pour l’annale SAEG et `une_seule` pour le sujet personnel SAEG 3. Aucune consigne de réponse unique n’est déduite pour l’annale SAEG. Les QRC attendent du texte libre.
+
+Le sujet personnel conserve son auteur, le titre du fichier fourni, le lien au PDF local (relatif à la racine du site), son empreinte SHA-256 et sa consigne. `date_creation_pdf: "2025-06-26"` provient uniquement des métadonnées du PDF ; ce n’est ni une date d’épreuve ni une année de concours. Sa première page ne porte pas de numéro imprimé : `page_imprimee` est omis pour cette page. Les pages PDF 2 à 9 portent les mêmes numéros imprimés.
 
 ## Ajouter des questions personnelles
 
@@ -99,7 +102,7 @@ Chaque nouvelle question doit avoir un identifiant unique et référencer cette 
 
 **Les PDF ne fournissent aucun corrigé du jury.** Les questions SAEO QCM 1 à 10 ont été corrigées pour cet outil le 5 septembre 2026, après vérification auprès de sources institutionnelles et de documents primaires. Chaque correction contient les lettres correctes, une explication et ses références. Il s’agit de corrections établies pour l’entraînement, pas d’un corrigé officiel du concours.
 
-Les 114 autres entrées conservent `correction: null`. Cette valeur signifie « correction indisponible », et non « aucun choix correct ».
+Les 156 autres entrées, dont les 42 questions du sujet personnel, conservent `correction: null`. Cette valeur signifie « correction indisponible », et non « aucun choix correct ». Le PDF « Sujet SAEG 3 » ne fournit aucun corrigé ; aucune réponse n’est déduite de la mise en forme.
 
 Une correction QCM renseignée doit contenir :
 
@@ -130,6 +133,8 @@ Les valeurs sont exprimées en points :
 `selection_partielle: null` indique que les sujets ne détaillent pas le calcul lorsqu’une sélection de plusieurs réponses n’est que partiellement correcte. Ce cas doit être précisé avant l’implémentation de la notation automatique ; `null` ne vaut pas zéro.
 
 Les totaux 12 et 8 correspondent à l’épreuve complète d’origine. Le nombre N de questions, les réponses de l’étudiant et son score appartiendront à la séance d’entraînement, pas à la banque de questions.
+
+Le barème `sarah-royon-saeg-3-entrainement` reprend uniquement les points donnés dans le PDF personnel : 5 points par QRC, soit 10 points au total. Le document ne précise pas le barème du QCM : `bonne_reponse`, `mauvaise_reponse`, `absence_de_reponse` et `qcm_total_points` restent à `null`. Le barème des annales officielles n’est pas appliqué à ce sujet.
 
 ## Utilisation
 
@@ -164,4 +169,6 @@ Les formulations, dates, chiffres et l’ordre des choix sont conservés, y comp
 Le passage au format 2.0.0 remplace `documents` par `sources`, mutualise les barèmes, transforme les choix en objets indexés par lettre et réduit les références de chaque question à leur localisation. Les corrections absentes deviennent `null`. La langue et la méthode sont documentées ici ; les statistiques, listes de pages, noms de fichier déductibles des URL et numéros avec ponctuation ne sont plus stockés dans le JSON.
 
 Contrôles de migration : conservation des 124 identifiants, des énoncés, des 480 choix et de leur ordre, des six notes, des numéros et pages, des métadonnées essentielles, des consignes et du barème. Les références de sources et de barèmes sont résolues et le JSON est relu après écriture.
+
+Import de « Sujet SAEG 3 » : extraction de la couche texte du PDF avec ses tables de caractères, puis contrôle visuel des neuf pages. Les 40 QCM, leurs 146 propositions et les 2 QRC sont conservés. Les lettres A, B, C, D deviennent a, b, c, d ; les propositions présentées avec des cases sans lettre reçoivent ces identifiants dans leur ordre d’origine. Les retours à la ligne et les césures de mise en page sont supprimés, sans actualiser les formulations, les chiffres ou les choix. Les QRC précèdent le QCM dans le PDF ; leurs numéros et leur page d’origine sont conservés dans la base.
 

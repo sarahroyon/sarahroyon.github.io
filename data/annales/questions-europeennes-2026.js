@@ -45,6 +45,22 @@ window.QcmAnnales = {
       "consigne_qcm": "Pour répondre, veuillez cocher les cases correspondant à vos réponses sur la copie prévue à cet effet.",
       "page_pdf_consignes": 2,
       "bareme": "questions-europeennes-2026"
+    },
+    "sarah-royon-saeg-3-entrainement": {
+      "type": "creation",
+      "titre": "Sujet SAEG 3",
+      "auteur": "Sarah Royon",
+      "concours": "Secrétaire des affaires étrangères",
+      "code_concours": "SAEG",
+      "cadre": "général",
+      "epreuve": "Questions européennes",
+      "url": "data/qcm_qe_saeg/SUJET%20-%20SAEG%203.pdf",
+      "sha256": "3a53535ba639a190bf5e5dbc3fa9528bfcb047fe3717f3803a6a01c31a7d8e80",
+      "date_creation_pdf": "2025-06-26",
+      "mode_reponse_qcm": "une_seule",
+      "consigne_nombre_reponses": "Pour chaque question, une seule bonne réponse est possible.",
+      "page_pdf_consignes": 1,
+      "bareme": "sarah-royon-saeg-3-entrainement"
     }
   },
   "baremes": {
@@ -55,6 +71,15 @@ window.QcmAnnales = {
       "qcm_total_points": 12,
       "qrc_total_points": 8,
       "qrc_points_par_question": 4,
+      "selection_partielle": null
+    },
+    "sarah-royon-saeg-3-entrainement": {
+      "bonne_reponse": null,
+      "mauvaise_reponse": null,
+      "absence_de_reponse": null,
+      "qcm_total_points": null,
+      "qrc_total_points": 10,
+      "qrc_points_par_question": 5,
       "selection_partielle": null
     }
   },
@@ -2401,6 +2426,732 @@ window.QcmAnnales = {
         "numero": 2,
         "page_pdf": 11,
         "page_imprimee": 11
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-001",
+      "type": "qcm",
+      "enonce": "Le Parlement européen a son siège à :",
+      "choix": {
+        "a": "Strasbourg",
+        "b": "Bruxelles",
+        "c": "Strasbourg et Bruxelles"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 1,
+        "page_pdf": 1
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-002",
+      "type": "qcm",
+      "enonce": "Quelle est l’application de la Charte des droits fondamentaux de l’Union européenne ?",
+      "choix": {
+        "a": "La Charte est contraignante pour les États membres et peut être invoquée par toute personne en cas de violation des droits garantis par l’UE.",
+        "b": "La Charte est contraignante uniquement pour les États membres qui ont accepté de l’appliquer dans leurs législations nationales.",
+        "c": "La Charte ne s’applique qu’aux institutions de l’UE, et non aux États membres.",
+        "d": "Les États membres doivent toujours appliquer la Charte indépendamment de leur législation nationale."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 2,
+        "page_pdf": 1
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-003",
+      "type": "qcm",
+      "enonce": "Parmi les affirmations suivantes, laquelle est correcte concernant la stratégie européenne « De la ferme à la table » ?",
+      "choix": {
+        "a": "Elle a permis l’adoption de l’ensemble des 27 textes législatifs initialement prévus, notamment l’interdiction totale des pesticides de synthèse dès 2025.",
+        "b": "Elle est devenue contraignante après son adoption par le Parlement européen en octobre 2021 et s’impose désormais aux États membres.",
+        "c": "Elle figure explicitement parmi les priorités de la lettre de mission du commissaire européen à l’agriculture nommé en décembre 2024.",
+        "d": "Elle fixait des objectifs chiffrés ambitieux, comme la réduction de 50 % des pesticides d’ici 2030, mais plusieurs propositions ont été abandonnées, notamment sous la pression du contexte agricole et politique."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 3,
+        "page_pdf": 1
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-004",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le programme FARM, annoncé en 2022 par l’Union européenne ?",
+      "choix": {
+        "a": "Un plan européen de relocalisation des exploitations agricoles pour limiter leur impact environnemental.",
+        "b": "Un mécanisme d’aide alimentaire réservé aux pays membres de l’Union confrontés à la hausse des prix agricoles.",
+        "c": "Une initiative européenne de solidarité internationale visant à faire face aux déséquilibres agricoles mondiaux provoqués par la guerre en Ukraine, fondée sur les piliers du commerce, de la solidarité et de l’investissement.",
+        "d": "Un programme d’achat massif de terres agricoles par l’UE dans des pays tiers pour sécuriser ses propres approvisionnements."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 4,
+        "page_pdf": 1
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-005",
+      "type": "qcm",
+      "enonce": "Quelle affirmation décrit correctement la ”vision pour l’agriculture et l’alimentation” présentée par la Commission européenne en février 2025 ?",
+      "choix": {
+        "a": "Elle marque un tournant vers davantage de flexibilité pour les États membres dans la gestion des plans stratégiques, tout en prévoyant un allègement des contraintes administratives pour les agriculteurs.",
+        "b": "Elle met fin aux paiements directs de la PAC pour les remplacer par une taxe carbone sur les produits agricoles importés.",
+        "c": "Elle conditionne désormais toutes les aides agricoles à des objectifs contraignants de reforestation et de réduction des cheptels.",
+        "d": "Elle abandonne toute référence à la durabilité environnementale dans la définition des politiques agricoles européennes."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 5,
+        "page_pdf": 2,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-006",
+      "type": "qcm",
+      "enonce": "La procédure législative spéciale donne le pouvoir de décision au :",
+      "choix": {
+        "a": "Conseil",
+        "b": "Conseil européen",
+        "c": "Parlement européen"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 6,
+        "page_pdf": 2,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-007",
+      "type": "qcm",
+      "enonce": "Dans la procédure législative ordinaire :",
+      "choix": {
+        "a": "Le Parlement européen a le dernier mot par rapport au Conseil",
+        "b": "Le Parlement européen et le Conseil sont sur un pied d’égalité",
+        "c": "Le Conseil a le dernier mot par rapport au Parlement européen"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 7,
+        "page_pdf": 2,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-008",
+      "type": "qcm",
+      "enonce": "Quelle affirmation décrit correctement le contenu du ”Space Act” proposé par la Commission européenne en juin 2025 ?",
+      "choix": {
+        "a": "Il propose d’harmoniser les règles encadrant les activités spatiales dans l’Union européenne afin de créer un marché intérieur de l’espace plus cohérent, résilient et durable.",
+        "b": "Il se limite à renforcer la dimension militaire de la politique spatiale européenne en confiant l’usage de tous les satellites à la défense européenne.",
+        "c": "Il impose aux États membres un moratoire de cinq ans sur les lancements de satellites commerciaux afin de réduire les débris spatiaux."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 8,
+        "page_pdf": 2,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-009",
+      "type": "qcm",
+      "enonce": "Une coopération renforcée :",
+      "choix": {
+        "a": "Désigne la zone euro instituée entre les États satisfaisant à des critères de convergence",
+        "b": "Permet à un groupe d’États de coopérer en prenant appui sur le cadre institutionnel et juridique de l’Union",
+        "c": "Autorise les institutions de l’Union à coopérer avec des États tiers"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 9,
+        "page_pdf": 2,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-010",
+      "type": "qcm",
+      "enonce": "Laquelle des affirmations suivantes reflète correctement l’état des compétences de l’Union européenne en matière de santé ?",
+      "choix": {
+        "a": "L’Union européenne peut définir une politique commune de santé publique contraignante pour tous les États membres, comme elle le fait en matière de commerce.",
+        "b": "Depuis le traité de Lisbonne, l’Union dispose d’une compétence exclusive en matière de santé, permettant d’imposer des standards minimaux à tous les systèmes de soins nationaux.",
+        "c": "L’Union européenne n’a aucun rôle en matière de santé : seule l’Organisation mondiale de la santé (OMS) peut intervenir en Europe.",
+        "d": "L’Union européenne dispose d’une compétence d’appui en matière de santé, les États membres conservant l’essentiel de la responsabilité dans ce domaine."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 10,
+        "page_pdf": 3,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-011",
+      "type": "qcm",
+      "enonce": "Parmi ces autorités, qui ne fait pas partie du Conseil européen ?",
+      "choix": {
+        "a": "Le président de la Commission",
+        "b": "Le président du Conseil européen",
+        "c": "Le président du Parlement européen"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 11,
+        "page_pdf": 3,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-012",
+      "type": "qcm",
+      "enonce": "Selon la directive 2005/36/CE sur la reconnaissance des qualifications professionnelles, dans lequel des cas suivants un médecin peut-il bénéficier d’une reconnaissance automatique de son diplôme pour exercer dans un autre État membre ?",
+      "choix": {
+        "a": "S’il est spécialiste, mais uniquement si son diplôme a été validé dans un État tiers, reconnu ensuite par un État membre.",
+        "b": "S’il est médecin généraliste diplômé dans un État membre, dans le respect des normes de formation harmonisées par l’Union.",
+        "c": "S’il exerce dans un État membre depuis au moins trois mois, quelle que soit la provenance de son diplôme.",
+        "d": "S’il a obtenu une autorisation d’exercer dans son pays d’origine, sans qu’aucune vérification de formation ne soit nécessaire."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 12,
+        "page_pdf": 3,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-013",
+      "type": "qcm",
+      "enonce": "En 2023, quelle était l’ampleur de l’excédent commercial de l’Union européenne vis-à-vis des États-Unis, selon les données de la Commission européenne ?",
+      "choix": {
+        "a": "Environ 48 milliards d’euros, soit un écart modéré dans un volume d’échanges de plus de 1 600 milliards d’euros.",
+        "b": "Environ 300 milliards d’euros, comme régulièrement avancé par plusieurs responsables politiques américains.",
+        "c": "Environ 150 milliards d’euros, correspondant à l’écart entre les exportations de biens uniquement.",
+        "d": "Environ 20 milliards d’euros, la balance commerciale étant quasiment à l’équilibre si l’on intègre les services."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 13,
+        "page_pdf": 3,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-014",
+      "type": "qcm",
+      "enonce": "Qui est le commissaire européen actuellement en charge de l’immigration et des affaires intérieures ?",
+      "choix": {
+        "a": "Teresa Ribera",
+        "b": "Magnus Brunner",
+        "c": "Raffaele Fitto",
+        "d": "Stéphane Séjourné"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 14,
+        "page_pdf": 3,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-015",
+      "type": "qcm",
+      "enonce": "Depuis l’entrée en vigueur de l’accord de commerce et de coopération entre l’Union européenne et le Royaume-Uni, lequel des énoncés suivants décrit correctement le cadre des échanges commerciaux entre les deux parties ?",
+      "choix": {
+        "a": "Les échanges de marchandises sont désormais soumis à des droits de douane, mais sans quotas, afin de compenser la perte d’accès au marché unique.",
+        "b": "Les biens peuvent circuler librement entre les deux zones, sans droits de douane ni formalités douanières, à condition de respecter les normes de l’OMC.",
+        "c": "Les échanges bénéficient de l’absence de droits de douane et de quotas, mais les entreprises britanniques doivent respecter certaines normes européennes et effectuer des démarches douanières.",
+        "d": "Le Royaume-Uni bénéficie d’un accès sans entrave au marché intérieur européen, à condition que ses produits respectent uniquement les normes britanniques."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 15,
+        "page_pdf": 4,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-016",
+      "type": "qcm",
+      "enonce": "Concernant l’accord post-Brexit sur la pêche, lequel des énoncés suivants est exact ?",
+      "choix": {
+        "a": "L’Union européenne conserve un accès illimité aux eaux territoriales britanniques jusqu’en 2030, en échange de concessions tarifaires sur d’autres secteurs.",
+        "b": "Les pêcheurs européens ont dû renoncer à 25 % de la valeur de leurs prises dans les eaux britanniques, avec un accord transitoire jusqu’en 2026.",
+        "c": "Le Royaume-Uni a accepté de maintenir l’accès de l’UE à ses eaux territoriales sans limitation de temps, afin de préserver la stabilité du secteur halieutique.",
+        "d": "L’accord prévoit que les eaux britanniques seront entièrement fermées aux pêcheurs de l’UE dès la fin de la période de transition fixée à 2024."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 16,
+        "page_pdf": 4,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-017",
+      "type": "qcm",
+      "enonce": "Combien y a-t-il de députés européens ?",
+      "choix": {
+        "a": "322",
+        "b": "577",
+        "c": "705",
+        "d": "843"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 17,
+        "page_pdf": 4,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-018",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, laquelle décrit correctement l’objectif du règlement RESTORE adopté par l’Union européenne en décembre 2024 ?",
+      "choix": {
+        "a": "Instaurer un mécanisme européen commun d’assurance contre les catastrophes naturelles à destination des particuliers et des entreprises.",
+        "b": "Mettre en place un système centralisé de réponse militaire et civile aux crises humanitaires aux frontières extérieures de l’Union.",
+        "c": "Renforcer la réactivité des États membres face aux catastrophes naturelles en facilitant et en accélérant l’utilisation des fonds européens existants.",
+        "d": "Créer un fonds autonome de 10 milliards d’euros pour reconstruire intégralement les infrastructures détruites dans les régions ultrapériphériques."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 18,
+        "page_pdf": 4,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-019",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif principal des accords dits ”Berlin Plus” entre l’UE et l’OTAN ?",
+      "choix": {
+        "a": "Permettre l’accès de l’UE aux ressources économiques de l’OTAN pour le financement des opérations",
+        "b": "Offrir à l’UE un accès aux capacités et moyens militaires de l’OTAN pour mener des opérations militaires",
+        "c": "Garantir un accès exclusif des membres de l’OTAN aux ressources des opérations humanitaires de l’UE",
+        "d": "Limiter la coopération"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 19,
+        "page_pdf": 5,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-020",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, laquelle est correcte concernant le statut du Groenland vis-à-vis de l’Union européenne ?",
+      "choix": {
+        "a": "Le Groenland fait toujours partie intégrante de l’Union européenne en tant que territoire autonome danois, mais avec un statut dérogatoire.",
+        "b": "Le Groenland a quitté la Communauté économique européenne en 1985, mais reste associé à l’Union en tant que pays et territoire d’outre-mer (PTOM).",
+        "c": "Le Groenland n’a jamais fait partie de la Communauté économique européenne, car il a obtenu son autonomie avant l’adhésion du Danemark en 1973."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 20,
+        "page_pdf": 5,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-021",
+      "type": "qcm",
+      "enonce": "En 2023, combien de citoyens de l’Union européenne vivaient ou travaillaient dans un autre État membre que celui de leur nationalité ?",
+      "choix": {
+        "a": "Environ 5 millions, soit un peu plus de 1 % de la population de l’Union européenne.",
+        "b": "Environ 13,9 millions, soit près de 3 % de la population de l’Union européenne.",
+        "c": "Environ 25 millions, soit environ 6 % de la population de l’Union européenne.",
+        "d": "Environ 40 millions, soit près de 10 % de la population de l’Union européenne."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 21,
+        "page_pdf": 5,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-022",
+      "type": "qcm",
+      "enonce": "Combien de fois la procédure dite de « carton jaune » a-t-elle été déclenchée jusqu’à présent dans l’Union européenne ?",
+      "choix": {
+        "a": "Elle n’a jamais été déclenchée.",
+        "b": "Elle a été déclenchée une seule fois.",
+        "c": "Elle a été déclenchée trois fois.",
+        "d": "Elle a été déclenchée cinq fois."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 22,
+        "page_pdf": 5,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-023",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, laquelle est correcte concernant la directive européenne sur les salaires minimums adoptée en octobre 2022 ?",
+      "choix": {
+        "a": "Elle impose un salaire minimum européen commun à tous les États membres, calculé selon le coût de la vie dans l’Union.",
+        "b": "Elle fixe un plancher salarial obligatoire de 60 % du salaire médian dans chaque pays.",
+        "c": "Elle vise à renforcer la convergence à la hausse des salaires minimums, tout en laissant aux États membres le soin d’en fixer le niveau.",
+        "d": "Elle prévoit l’extension automatique des conventions collectives à l’ensemble des secteurs économiques de l’Union."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 23,
+        "page_pdf": 5,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-024",
+      "type": "qcm",
+      "enonce": "Quel est le fonctionnement du dialogue social européen dans le cadre des politiques sociales de l’Union européenne ?",
+      "choix": {
+        "a": "La Commission européenne consulte une seule fois les partenaires sociaux avant d’adopter une mesure législative, sans possibilité de négociation par ces derniers.",
+        "b": "Les partenaires sociaux peuvent, lors des phases de consultation, décider d’entamer eux-mêmes des négociations, suspendant temporairement l’initiative législative de la Commission.",
+        "c": "Les partenaires sociaux ne peuvent négocier que sur des domaines relevant exclusivement du droit européen, sans possibilité d’initiatives autonomes hors champ législatif.",
+        "d": "La consultation des partenaires sociaux intervient uniquement après l’adoption définitive des mesures européennes, lors de leur mise en œuvre."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 24,
+        "page_pdf": 6,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-025",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, laquelle correspond à un accord du dialogue social européen ayant été mis en œuvre par une directive européenne ?",
+      "choix": {
+        "a": "Accord-cadre sur le congé parental (1995)",
+        "b": "Accord-cadre sur la violence et le harcèlement au travail (2007)",
+        "c": "Accord-cadre sur le télétravail (2002)",
+        "d": "Accord-cadre sur la numérisation au travail (2020)"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 25,
+        "page_pdf": 6,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-026",
+      "type": "qcm",
+      "enonce": "Pour la période 2021-2027, quel est l’ordre de grandeur du budget total du Fonds social européen + (FSE+) au niveau de l’Union européenne, et quelle est l’enveloppe allouée à la France ?",
+      "choix": {
+        "a": "Environ 8 milliards d’euros au total, dont environ 1 milliard pour la France.",
+        "b": "Environ 35 milliards d’euros au total, dont environ 3,5 milliards pour la France.",
+        "c": "Environ 88 milliards d’euros au total, dont environ 6,7 milliards pour la France.",
+        "d": "Environ 150 milliards d’euros au total, dont environ 12 milliards pour la France."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 26,
+        "page_pdf": 6,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-027",
+      "type": "qcm",
+      "enonce": "En France, comment est répartie la gestion de l’enveloppe nationale du Fonds social européen Plus (FSE+) ?",
+      "choix": {
+        "a": "Les Conseils régionaux gèrent environ 65 % des fonds, principalement pour l’emploi et l’inclusion sociale, tandis que l’État gère les 35 % restants dédiés à la formation professionnelle et à l’apprentissage.",
+        "b": "Les Conseils régionaux gèrent environ 35 % des fonds, surtout pour la formation professionnelle, l’apprentissage et l’aide à la création d’entreprise, tandis que l’État gère les 65 % restants, principalement dédiés à l’emploi et à l’inclusion sociale.",
+        "c": "L’État centralise la gestion de 100 % de l’enveloppe nationale du FSE+, y compris pour la formation et l’insertion professionnelle, afin d’assurer une meilleure coordination nationale.",
+        "d": "La gestion du FSE+ est intégralement déléguée aux Directions de l’économie, de l’emploi, du travail et des solidarités (DEETS) dans toutes les régions, métropolitaines et d’outre-mer."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 27,
+        "page_pdf": 6,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-028",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, quelle mission correspond précisément au rôle du Comité économique et social européen (CESE) ?",
+      "choix": {
+        "a": "Émettre des avis obligatoires et contraignants sur toutes les propositions législatives de l’Union européenne.",
+        "b": "Favoriser le dialogue entre les acteurs économiques et sociaux, émettre des avis consultatifs, et organiser des actions pour rapprocher les citoyens européens des institutions.",
+        "c": "Superviser la mise en œuvre des politiques économiques et sociales dans les États membres, notamment par un contrôle direct des administrations nationales.",
+        "d": "Gérer les fonds européens liés à l’emploi et à la cohésion sociale, en collaboration avec les conseils régionaux."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 28,
+        "page_pdf": 7,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-029",
+      "type": "qcm",
+      "enonce": "Quelle est la prérogative faisant partie des attributions du Conseil européen ?",
+      "choix": {
+        "a": "Soumettre au Conseil et au Parlement européen des textes législatifs sur des sujets d’intérêt majeur",
+        "b": "Trancher des conflits entre États dans le cadre d’une procédure d’arbitrage",
+        "c": "Définir la position de l’Union sur les sujets de politique étrangère"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 29,
+        "page_pdf": 7,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-030",
+      "type": "qcm",
+      "enonce": "Quelle est la mission principale de l’Autorité européenne du travail (AET) telle que définie par le règlement européen qui l’a instituée ?",
+      "choix": {
+        "a": "Contrôler directement la conformité des entreprises aux règles sociales dans tous les États membres par des inspections unilatérales sans concertation préalable.",
+        "b": "Fournir aux citoyens et entreprises des informations sur leurs droits et opportunités liées à la mobilité au sein de l’Union européenne, faciliter la coopération entre autorités nationales et proposer des services de médiation en cas de litiges transfrontaliers.",
+        "c": "Imposer des sanctions financières aux États membres ne respectant pas les règles européennes en matière de droit du travail.",
+        "d": "Élaborer la législation sociale européenne en concertation avec le Parlement et le Conseil de l’Union."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 30,
+        "page_pdf": 7,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-031",
+      "type": "qcm",
+      "enonce": "Quelle est la compétence de la Cour de justice de l’Union européenne (CJUE) en ce qui concerne la politique étrangère et de sécurité commune (PESC) ?",
+      "choix": {
+        "a": "La CJUE est compétente pour examiner tous les actes adoptés dans le cadre de la PESC",
+        "b": "La CJUE est compétente pour contrôler le respect de l’article 40 du traité sur l’Union européenne et pour examiner les recours concernant les mesures restrictives adoptées par le Conseil",
+        "c": "La CJUE est compétente pour contrôler l’intégralité des actions menées par l’Union européenne dans le domaine de la PESC",
+        "d": "La CJUE n’a aucune compétence en matière de PESC"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 31,
+        "page_pdf": 7,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-032",
+      "type": "qcm",
+      "enonce": "Comment est nommé le Haut représentant de l’Union pour les affaires étrangères et la politique de sécurité ?",
+      "choix": {
+        "a": "Il est nommé par le Conseil européen à l’unanimité pour une durée de 5 ans",
+        "b": "Il est nommé par le Conseil européen à la majorité qualifiée pour une durée de 5 ans (et est soumis au vote d’approbation du Parlement européen comme les autres commissaires)",
+        "c": "Il est nommé par le Conseil européen à la majorité qualifiée pour une durée de 5 ans (et n’est pas soumis au vote d’approbation du Parlement européen comme les autres commissaires)",
+        "d": "Il est désigné directement par la Commission européenne pour une durée de 3 ans"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 32,
+        "page_pdf": 8,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-033",
+      "type": "qcm",
+      "enonce": "La coopération structurée permanente porte sur :",
+      "choix": {
+        "a": "La constitution d’un service diplomatique européen",
+        "b": "La promotion de projets de renforcement des capacités militaires",
+        "c": "Les relations avec les pays candidats"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 33,
+        "page_pdf": 8,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-034",
+      "type": "qcm",
+      "enonce": "Pour rejoindre la zone euro, quel critère un pays candidat doit-il obligatoirement respecter ?",
+      "choix": {
+        "a": "Avoir un déficit public annuel inférieur à 3 % du PIB et une dette publique inférieure à 60 % du PIB.",
+        "b": "Avoir une inflation strictement égale à celle des trois pays de la zone euro les plus stables.",
+        "c": "Être membre du Mécanisme de Change Européen (MCE II) pendant au moins six mois.",
+        "d": "Maintenir un taux de chômage inférieur à 5 % pendant deux ans consécutifs."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 34,
+        "page_pdf": 8,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-035",
+      "type": "qcm",
+      "enonce": "Quel est le mode de fonctionnement principal de la Banque européenne d’investissement (BEI) en matière de financement des projets ?",
+      "choix": {
+        "a": "Elle collecte des fonds directement auprès des contribuables européens via le budget de l’Union européenne.",
+        "b": "Elle emprunte sur les marchés financiers pour financer jusqu’à 50 % du coût des projets, sans recourir au budget de l’Union européenne.",
+        "c": "Elle accorde des prêts uniquement aux gouvernements des États membres sans intervenir auprès des entreprises.",
+        "d": "Elle finance intégralement les projets d’investissement sans exiger de cofinancement des porteurs de projet."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 35,
+        "page_pdf": 8,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-036",
+      "type": "qcm",
+      "enonce": "La Banque européenne d’investissement (BEI) prête-t-elle à des pays non membres de l’Union européenne ?",
+      "choix": {
+        "a": "Non, elle intervient uniquement dans les États membres de l’UE.",
+        "b": "Oui, notamment dans les pays candidats à l’UE et en Afrique dans le cadre de l’initiative Global Gateway."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 36,
+        "page_pdf": 8,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-037",
+      "type": "qcm",
+      "enonce": "Quel est le statut de l’Union européenne à l’ONU et à l’OMC ?",
+      "choix": {
+        "a": "L’Union européenne est un membre à part entière de l’ONU et de l’OMC",
+        "b": "L’Union européenne a un statut d’observateur permanent à l’ONU et membre à part entière de l’OMC",
+        "c": "L’Union européenne a un statut d’observateur dans les deux organisations",
+        "d": "L’Union européenne est un membre à part entière de l’ONU et a un statut d’observateur permanent à l’OMC"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 37,
+        "page_pdf": 9,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-038",
+      "type": "qcm",
+      "enonce": "Le recours en carence devant la Cour de justice de l’Union européenne s’adresse :",
+      "choix": {
+        "a": "À un État membre qui aurait manqué à ses obligations.",
+        "b": "À un particulier qui aurait refusé d’appliquer le droit de l’Union.",
+        "c": "À une institution européenne qui n’aurait pas engagé une action prescrite par les traités."
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 38,
+        "page_pdf": 9,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-039",
+      "type": "qcm",
+      "enonce": "Quelle est la situation de la Turquie vis-à-vis de l’Union européenne ?",
+      "choix": {
+        "a": "La Turquie a posé sa candidature mais cette dernière a été repoussée par le Conseil européen",
+        "b": "Des négociations d’adhésion sont toujours en cours",
+        "c": "La Turquie n’est plus candidate à l’adhésion à l’Union"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 39,
+        "page_pdf": 9,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qcm-040",
+      "type": "qcm",
+      "enonce": "Le mandat d’arrêt européen a pour objet :",
+      "choix": {
+        "a": "La recherche d’une personne inculpée de faits particulièrement graves sur le territoire de l’Union ou de pays tiers",
+        "b": "L’exercice de poursuites sur le territoire d’un autre État membre en vue de l’arrestation d’une personne",
+        "c": "L’arrestation et la remise par un autre État membre d’une personne recherchée"
+      },
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 40,
+        "page_pdf": 9,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qrc-001",
+      "type": "qrc",
+      "enonce": "Une souveraineté européenne est-elle possible ?",
+      "choix": {},
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 1,
+        "page_pdf": 1
+      }
+    },
+    {
+      "id": "sarah-royon-saeg-3-entrainement-qrc-002",
+      "type": "qrc",
+      "enonce": "L’Union européenne, un poids lourd diplomatique sur la scène internationale ?",
+      "choix": {},
+      "correction": null,
+      "source": {
+        "id": "sarah-royon-saeg-3-entrainement",
+        "numero": 2,
+        "page_pdf": 1
       }
     }
   ]

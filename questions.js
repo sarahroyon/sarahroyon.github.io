@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 
-const { SOURCE_IDS, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { getSourceIds, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
@@ -21,7 +21,7 @@ function element(tag, className, text) {
 }
 
 function sourceTitle(source) {
-  return source.cadre === "Orient" ? "Cadre d’Orient" : "Cadre général";
+  return source.titre || (source.cadre === "Orient" ? "Cadre d’Orient" : "Cadre général");
 }
 
 function formatPoints(points) {
@@ -86,13 +86,16 @@ async function loadData() {
   $("source-form").hidden = true;
   try {
     const data = await readQuestionBank();
-    if (!Array.isArray(data.questions) || !SOURCE_IDS.every(id => data.sources?.[id]
-      && data.baremes?.[data.sources[id].bareme] && getQuestions(data, id).length)) {
-      throw new Error("Format des annales invalide");
+    if (!Array.isArray(data.questions) || !data.sources || !data.baremes) {
+      throw new Error("Format des questions invalide");
+    }
+    const sourceIds = getSourceIds(data);
+    if (!sourceIds.length || !sourceIds.every(id => data.baremes[data.sources[id].bareme])) {
+      throw new Error("Sources des questions invalides");
     }
     base = data;
     $("source-options").replaceChildren();
-    for (const [index, sourceId] of SOURCE_IDS.entries()) {
+    for (const [index, sourceId] of sourceIds.entries()) {
       const source = base.sources[sourceId];
       const questions = getQuestions(base, sourceId);
       const corrected = questions.filter(hasCorrection).length;
@@ -103,9 +106,10 @@ async function loadData() {
       input.value = sourceId;
       input.checked = index === 0;
       input.required = true;
-      label.append(element("span", "source-code", source.code_concours + " · " + source.annee_concours), input,
+      const personal = source.type === "creation";
+      label.append(element("span", "source-code", personal ? "Entraînement personnel" : source.code_concours + " · " + source.annee_concours), input,
         element("span", "source-title", sourceTitle(source)),
-        element("span", "source-details", "Concours externe · " + questions.length + " questions"),
+        element("span", "source-details", (personal ? source.auteur : "Annale · Concours externe") + " · " + questions.length + " questions"),
         element("span", "source-status", corrected ? corrected + " corrigés disponibles sur " + questions.length : "Corrigés à venir · entraînement libre"));
       $("source-options").append(label);
     }
@@ -113,8 +117,8 @@ async function loadData() {
     updateStartButton();
   } catch {
     $("load-error-message").textContent = location.protocol === "file:"
-      ? "Les annales locales n’ont pas pu être chargées. Ouvrez la page depuis le dossier complet du site, avec son sous-dossier data, puis réessayez."
-      : "Les annales n’ont pas pu être chargées. Vérifiez votre connexion, puis réessayez.";
+      ? "Les sujets locaux n’ont pas pu être chargés. Ouvrez la page depuis le dossier complet du site, avec son sous-dossier data, puis réessayez."
+      : "Les sujets n’ont pas pu être chargés. Vérifiez votre connexion, puis réessayez.";
     $("load-error").hidden = false;
   } finally {
     $("loading").hidden = true;
@@ -145,7 +149,7 @@ function makeQuestion(question) {
   for (const [letter, text] of Object.entries(question.choix)) {
     const label = element("label", "choice");
     const input = element("input");
-    input.type = "checkbox";
+    input.type = session.source.mode_reponse_qcm === "une_seule" ? "radio" : "checkbox";
     input.name = question.id;
     input.value = letter;
     input.checked = session.answers[question.id].includes(letter);
@@ -203,14 +207,18 @@ function startQuiz(sourceId) {
   $("question-cards").replaceChildren();
   $("question-index").replaceChildren();
   setIndexExpanded(false);
-  $("quiz-eyebrow").textContent = sourceTitle(source) + " · " + source.code_concours + " " + source.annee_concours + " · Externe";
-  $("answer-instructions").textContent = source.mode_reponse_qcm === "une_ou_plusieurs"
-    ? "Une ou plusieurs réponses sont possibles. Cochez vos choix ; vous pourrez les modifier avant de terminer."
-    : "Cochez vos choix. Le sujet ne précise pas le nombre de réponses possibles ; plusieurs cases peuvent être sélectionnées.";
+  $("quiz-eyebrow").textContent = source.type === "creation"
+    ? sourceTitle(source) + " · Entraînement personnel · " + source.auteur
+    : sourceTitle(source) + " · " + source.code_concours + " " + source.annee_concours + " · Externe";
+  $("answer-instructions").textContent = source.mode_reponse_qcm === "une_seule"
+    ? "Une seule réponse est possible par question. Choisissez votre réponse ; vous pourrez la modifier avant de terminer."
+    : source.mode_reponse_qcm === "une_ou_plusieurs"
+      ? "Une ou plusieurs réponses sont possibles. Cochez vos choix ; vous pourrez les modifier avant de terminer."
+      : "Cochez vos choix. Le sujet ne précise pas le nombre de réponses possibles ; plusieurs cases peuvent être sélectionnées.";
   const corrected = questions.filter(hasCorrection).length;
   $("correction-availability").textContent = corrected
     ? corrected + " questions sur " + questions.length + " disposent d’un corrigé. Le bilan et les points porteront uniquement sur ces questions."
-    : "Les corrigés de cette annale sont en préparation. Vous pouvez vous entraîner et conserver vos choix, sans note pour le moment.";
+    : "Les corrigés de ce sujet ne sont pas encore disponibles. Vous pouvez vous entraîner et conserver vos choix, sans note pour le moment.";
   $("annale-link").href = source.url;
   $("progress").max = questions.length;
   for (const question of questions) {

@@ -1,10 +1,9 @@
 window.QcmCore = (() => {
 "use strict";
 
-const SOURCE_IDS = [
-  "saeo-2026-externe-questions-europeennes",
-  "saeg-2026-externe-questions-europeennes"
-];
+function getSourceIds(base) {
+  return Object.keys(base.sources).filter(sourceId => getQuestions(base, sourceId).length > 0);
+}
 
 function getQuestions(base, sourceId) {
   return base.questions
@@ -61,5 +60,5 @@ function summarize(questions, answers, bareme) {
   };
 }
 
-return { SOURCE_IDS, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize };
+return { getSourceIds, getQuestions, hasCorrection, cleanAnswers, evaluateQuestion, summarize };
 })();

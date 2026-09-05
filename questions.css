@@ -40,7 +40,7 @@ h2 { font-size: 1.1rem; font-weight: 600; }
 #loading, #load-error { margin-top: 36px; }
 .source-fieldset { border: 0; padding: 0; margin: 46px 0 0; min-width: 0; }
 .source-fieldset legend { padding: 0; margin-bottom: 18px; font-size: .9rem; font-weight: 600; }
-.source-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.source-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; }
 .source-option { display: grid; grid-template-columns: 1fr auto; gap: 12px; position: relative; padding: 26px; border: 1px solid var(--border); border-radius: 12px; background: var(--white); cursor: pointer; transition: border-color .15s, background .15s; }
 .source-option:hover { border-color: #91ac9c; }
 .source-option:has(input:checked) { border-color: var(--green); background: #f2f7f1; box-shadow: inset 0 0 0 1px var(--green); }
