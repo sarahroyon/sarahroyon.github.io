@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><title>Vérification des quiz</title>
+<script src="../data/annales/questions-europeennes-2026.js"></script>
+<script src="../data/categories/questions-europeennes.js"></script>
+<script src="../questions-core.js"></script>
+<pre id="checks">RUNNING</pre><iframe id="app" title="Quiz testé" style="width:1100px;height:850px"></iframe>
+<script>
+(async () => {
+  const out = document.getElementById('checks'), frame = document.getElementById('app');
+  const logs = [];
+  const assert = (ok, label) => { if (!ok) throw new Error(label); };
+  const pass = label => { logs.push('PASS ' + label); out.textContent = logs.join('\n'); };
+  const base = { ...QcmAnnales, sources: { ...QcmAnnales.sources, ...QcmCategories.sources }, questions: [...QcmAnnales.questions, ...QcmCategories.questions], categories: QcmCategories.categories };
+  const byId = new Map(base.questions.map(q => [q.id, q]));
+  const prefix = 'sarahroyon-qcm-v1:';
+  let doc, win;
+  const originalSessions = new Map();
+  const tick = () => new Promise(resolve => setTimeout(resolve, 20));
+  async function ready() {
+    for (let i = 0; i < 200; i++) {
+      doc = frame.contentDocument; win = frame.contentWindow;
+      if (doc?.getElementById('source-form') && !doc.getElementById('source-form').hidden) return;
+      if (doc?.getElementById('load-error') && !doc.getElementById('load-error').hidden) throw new Error('Chargement du quiz');
+      await tick();
+    }
+    throw new Error('Délai de chargement dépassé');
+  }
+  const el = id => doc.getElementById(id);
+  function select(value) { const radio = [...doc.querySelectorAll('input[name=source]')].find(input => input.value === value); assert(radio, value); radio.click(); }
+  function count(value, id = 'category-count') { el(id).value = value; el(id).dispatchEvent(new win.Event('input', { bubbles: true })); }
+  const start = () => el('source-form').requestSubmit();
+  const ids = () => [...doc.querySelectorAll('.question-card')].map(card => card.id);
+  const back = () => el('change-source').click();
+  function answer(id, letters) {
+    for (const input of doc.getElementById(id).querySelectorAll('.choices input')) {
+      input.checked = letters.includes(input.value);
+    }
+    doc.getElementById(id).querySelector('.choices input').dispatchEvent(new win.Event('change', { bubbles: true }));
+  }
+  try {
+    assert(base.categories.length === 5 && base.categories.every(c => QcmCore.getCategoryQuestions(base, c.id).length === 75), '5 x 75');
+    const selected = base.categories.flatMap(c => c.question_ids);
+    assert(new Set(selected).size === 375 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length), '375 corrigés complets distincts');
+    assert(QcmCore.getSourceIds(base).length === 6 && QcmCore.drawQuestions(base, 475).length === 475, '6 sujets et 475 QCM');
+    for (const c of base.categories) {
+      assert(new Set(QcmCore.drawQuestions(base, 75, c.id).map(q => q.id)).size === 75, 'Tirage complet ' + c.id);
+      for (const invalid of [0, -1, 1.5, 76, NaN, Infinity]) {
+        let rejected = false;
+        try { QcmCore.drawQuestions(base, invalid, c.id); } catch (e) { rejected = e instanceof RangeError; }
+        assert(rejected, 'Bornes ' + c.id + ' : ' + invalid);
+      }
+    }
+    const tiny = { questions: ['a', 'b', 'c', 'hors-theme'].map(id => ({ id, type: 'qcm' })), categories: [{ id: 'test', question_ids: ['a', 'b', 'c'] }] };
+    const before = JSON.stringify(tiny), outcomes = new Set(), originalRandom = Math.random;
+    try {
+      for (const first of [.1, .5, .9]) for (const second of [.1, .9]) {
+        const values = [first, second]; Math.random = () => values.shift();
+        outcomes.add(QcmCore.drawQuestions(tiny, 2, 'test').map(q => q.id).join(''));
+      }
+    } finally { Math.random = originalRandom; }
+    assert(outcomes.size === 6 && JSON.stringify(tiny) === before, 'Uniformité et absence de mutation');
+    pass('Intégrité des 375 corrigés, tirages uniformes, limites et banque originale');
+    frame.src = '../questions.html'; await ready();
+    for (const key of [...QcmCore.getSourceIds(base), 'aleatoire', ...base.categories.map(c => 'categorie:' + c.id)]) {
+      originalSessions.set(prefix + key, win.localStorage.getItem(prefix + key));
+    }
+    assert(doc.querySelectorAll('#official-source-options input').length === 3 && doc.querySelectorAll('#training-source-options input').length === 3 && doc.querySelectorAll('#category-source-options input').length === 5, 'Cartes des sujets');
+    for (const c of base.categories) {
+      select('categorie:' + c.id);
+      for (const invalid of ['', '0', '76', '1.5']) { count(invalid); assert(!el('category-count').checkValidity(), 'Champ invalide ' + invalid); }
+      count(75); start();
+      assert(ids().length === 75 && ids().every(id => c.question_ids.includes(id)), 'Appartenance ' + c.id);
+      assert(el('quiz-title').textContent === c.titre && !el('regenerate').hidden, 'Titre ' + c.id);
+      assert(doc.querySelector('.question-number').textContent.endsWith('01'), 'Numérotation');
+      for (const id of ids()) {
+        const q = byId.get(id), single = base.sources[q.source.id].mode_reponse_qcm === 'une_seule';
+        assert(doc.getElementById(id).querySelector('.choices input').type === (single ? 'radio' : 'checkbox'), 'Mode de réponse ' + id);
+        answer(id, q.correction.reponses);
+      }
+      el('quiz-form').requestSubmit();
+      assert(doc.querySelectorAll('.feedback.correct').length === 75 && doc.querySelectorAll('.feedback a').length >= 75, 'Affichage des 75 corrigés ' + c.id);
+      assert(el('result-stats').querySelector('dd').textContent === '75', 'Bilan ' + c.id);
+      el('regenerate').click();
+      assert(ids().length === 75 && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Régénération ' + c.id);
+      back(); count(1); start(); assert(ids().length === 1, 'Une question ' + c.id); back();
+      pass('Parcours complet ' + c.id + ' : 1 et 75 questions, corrections, bilan, régénération');
+    }
+    select('categorie:histoire'); count(7); start();
+    const savedIds = ids(); answer(savedIds[0], byId.get(savedIds[0]).correction.reponses); back();
+    select('categorie:institutions'); count(3); start(); back();
+    select('categorie:histoire'); assert(el('category-count').value === '7', 'Nombre indépendant'); start();
+    assert(JSON.stringify(ids()) === JSON.stringify(savedIds) && doc.querySelector('.choices input:checked'), 'Reprise indépendante');
+    frame.contentWindow.location.reload(); await tick(); await ready();
+    select('categorie:histoire'); assert(el('category-count').value === '7', 'Nombre après rechargement'); start();
+    assert(JSON.stringify(ids()) === JSON.stringify(savedIds) && doc.querySelector('.choices input:checked'), 'Reprise après rechargement'); back();
+    const preserved = win.localStorage.getItem(prefix + 'categorie:histoire');
+    select('aleatoire'); count(9, 'random-count'); start(); assert(ids().length === 9, 'Quiz général'); el('regenerate').click(); back();
+    assert(win.localStorage.getItem(prefix + 'categorie:histoire') === preserved, 'Isolation du quiz général');
+    for (const source of QcmCore.getSourceIds(base)) { select(source); start(); assert(ids().length === QcmCore.getQuestions(base, source).length && el('regenerate').hidden, 'Sujet existant ' + source); back(); }
+    pass('Sauvegarde, reprise après rechargement, isolation des thèmes et des six sujets existants');
+    win.localStorage.setItem(prefix + 'categorie:histoire', JSON.stringify({ questionIds: [base.categories[1].question_ids[0]], answers: {} }));
+    frame.contentWindow.location.reload(); await tick(); await ready(); select('categorie:histoire');
+    assert(el('category-count').value === '20', 'Rejet du tirage sauvegardé hors catégorie');
+    count(2); start(); assert(ids().every(id => base.categories[0].question_ids.includes(id)), 'Nouveau tirage valide'); back();
+    frame.style.width = '375px'; await tick();
+    assert(doc.documentElement.scrollWidth <= win.innerWidth, 'Pas de débordement sur mobile (sélection)');
+    select('categorie:politiques'); count(5); start(); await tick();
+    assert(doc.documentElement.scrollWidth <= win.innerWidth, 'Pas de débordement sur mobile (quiz)');
+    pass('Sauvegarde invalide écartée et affichage mobile à 375 px');
+    out.textContent = logs.join('\n') + '\nALL CHECKS PASSED';
+  } catch (error) { out.textContent = logs.join('\n') + '\nFAIL ' + error.stack; }
+  finally {
+    for (const [key, value] of originalSessions) {
+      if (value === null) win.localStorage.removeItem(key);
+      else win.localStorage.setItem(key, value);
+    }
+    frame.remove();
+  }
+})();
+</script></html>

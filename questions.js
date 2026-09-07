@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 
-const { getSourceIds, getQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { getSourceIds, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
@@ -13,7 +13,9 @@ const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrect
 let base;
 let session;
 let observer;
-let randomSaved;
+const drawSaved = new Map();
+const categoryCounts = new Map();
+let selectedCategory;
 const cards = new Map();
 const indexLinks = new Map();
 
@@ -38,6 +40,23 @@ function formatPoints(points) {
   return (points > 0 ? "+" : "") + numberFormat.format(points) + " pt";
 }
 
+function categoryFor(sourceId) {
+  return sourceId.startsWith("categorie:") ? base.categories.find(category => sourceId === "categorie:" + category.id) : undefined;
+}
+
+function isGenerated(sourceId) {
+  return sourceId === randomSourceId || Boolean(categoryFor(sourceId));
+}
+
+function drawPool(sourceId) {
+  const category = categoryFor(sourceId);
+  return category ? getCategoryQuestions(base, category.id) : base.questions.filter(question => question.type === "qcm");
+}
+
+function countInput(sourceId) {
+  return $(categoryFor(sourceId) ? "category-count" : "random-count");
+}
+
 function readStored(sourceId) {
   try {
     return JSON.parse(localStorage.getItem(storagePrefix + sourceId));
@@ -47,23 +66,23 @@ function readStored(sourceId) {
 }
 
 function readSaved(sourceId, questions) {
-  const saved = sourceId === randomSourceId ? randomSaved : readStored(sourceId);
+  const saved = isGenerated(sourceId) ? drawSaved.get(sourceId) : readStored(sourceId);
   return { answers: cleanAnswers(questions, saved?.answers), reviewed: saved?.reviewed === true };
 }
 
-function getSavedRandomQuestions() {
-  const ids = randomSaved?.questionIds;
+function getSavedDraw(sourceId) {
+  const ids = drawSaved.get(sourceId)?.questionIds;
   if (!Array.isArray(ids) || !ids.length || new Set(ids).size !== ids.length) return [];
-  const questionsById = new Map(base.questions.filter(question => question.type === "qcm").map(question => [question.id, question]));
+  const questionsById = new Map(drawPool(sourceId).map(question => [question.id, question]));
   const questions = ids.map(id => questionsById.get(id));
   return questions.every(Boolean) ? questions : [];
 }
 
 function saveSession() {
   const saved = { answers: session.answers, reviewed: session.reviewed };
-  if (session.sourceId === randomSourceId) {
+  if (isGenerated(session.sourceId)) {
     saved.questionIds = session.questions.map(question => question.id);
-    randomSaved = saved;
+    drawSaved.set(session.sourceId, saved);
   }
   try {
     localStorage.setItem(storagePrefix + session.sourceId, JSON.stringify(saved));
@@ -77,11 +96,23 @@ function updateStartButton() {
   const selected = $("source-form").querySelector("input:checked");
   if (!selected) return;
   const random = selected.value === randomSourceId;
+  const category = categoryFor(selected.value);
   $("random-settings").hidden = !random;
   $("random-count").disabled = !random;
-  if (random) {
-    const questions = getSavedRandomQuestions();
-    const resumable = questions.length > 0 && questions.length === $("random-count").valueAsNumber;
+  $("category-settings").hidden = !category;
+  $("category-count").disabled = !category;
+  if (category) {
+    const size = getCategoryQuestions(base, category.id).length;
+    if (selectedCategory !== category.id) {
+      $("category-count").value = categoryCounts.get(category.id) ?? (getSavedDraw(selected.value).length || Math.min(20, size));
+      selectedCategory = category.id;
+    }
+    $("category-count").max = size;
+    $("category-count-help").textContent = category.titre + " : de 1 à " + size + " questions, tirées au hasard sans répétition. Vous pourrez régénérer le quiz.";
+  }
+  if (random || category) {
+    const questions = getSavedDraw(selected.value);
+    const resumable = questions.length > 0 && questions.length === countInput(selected.value).valueAsNumber;
     $("source-form").querySelector("button[type=submit]").textContent = resumable ? "Reprendre le quiz →" : "Générer le quiz →";
   } else {
     const saved = readSaved(selected.value, getQuestions(base, selected.value));
@@ -90,15 +121,15 @@ function updateStartButton() {
   }
 }
 
-function loadLocalData() {
-  if (window.QcmAnnales) return Promise.resolve(window.QcmAnnales);
+function loadLocalData(path, globalName) {
+  if (window[globalName]) return Promise.resolve(window[globalName]);
   return new Promise((resolve, reject) => {
     // Classic scripts can load adjacent files when the HTML is opened directly.
     const script = document.createElement("script");
-    script.src = "./data/annales/questions-europeennes-2026.js";
+    script.src = path + ".js";
     script.onload = () => {
       script.remove();
-      if (window.QcmAnnales) resolve(window.QcmAnnales);
+      if (window[globalName]) resolve(window[globalName]);
       else reject(new Error("Annales locales indisponibles"));
     };
     script.onerror = () => {
@@ -109,9 +140,9 @@ function loadLocalData() {
   });
 }
 
-async function readQuestionBank() {
-  if (location.protocol === "file:") return loadLocalData();
-  const response = await fetch("./data/annales/questions-europeennes-2026.json");
+async function readQuestionBank(path, globalName) {
+  if (location.protocol === "file:") return loadLocalData(path, globalName);
+  const response = await fetch(path + ".json");
   if (!response.ok) throw new Error("Annales indisponibles");
   return response.json();
 }
@@ -121,7 +152,12 @@ async function loadData() {
   $("loading").hidden = false;
   $("source-form").hidden = true;
   try {
-    const data = await readQuestionBank();
+    const [annales, themes] = await Promise.all([
+      readQuestionBank("./data/annales/questions-europeennes-2026", "QcmAnnales"),
+      readQuestionBank("./data/categories/questions-europeennes", "QcmCategories")
+    ]);
+    const data = { ...annales, sources: { ...annales.sources, ...themes.sources },
+      questions: [...annales.questions, ...themes.questions], categories: themes.categories };
     if (!Array.isArray(data.questions) || !data.sources || !data.baremes) {
       throw new Error("Format des questions invalide");
     }
@@ -130,11 +166,21 @@ async function loadData() {
       throw new Error("Sources des questions invalides");
     }
     base = data;
-    randomSaved = readStored(randomSourceId);
+    if (!Array.isArray(base.categories) || base.categories.length !== 5 || new Set(base.questions.map(question => question.id)).size !== base.questions.length
+        || !base.categories.every(category => {
+          const questions = getCategoryQuestions(base, category.id);
+          return questions.length === 75 && category.question_ids.length === 75 && questions.every(hasCorrection);
+        })) throw new Error("Catégories invalides");
+    drawSaved.clear();
+    categoryCounts.clear();
+    selectedCategory = undefined;
+    for (const sourceId of [randomSourceId, ...base.categories.map(category => "categorie:" + category.id)]) {
+      drawSaved.set(sourceId, readStored(sourceId));
+    }
     const poolSize = base.questions.filter(question => question.type === "qcm").length;
     $("random-source").checked = false;
     $("random-count").max = poolSize;
-    $("random-count").value = getSavedRandomQuestions().length || Math.min(20, poolSize);
+    $("random-count").value = getSavedDraw(randomSourceId).length || Math.min(20, poolSize);
     $("random-source-details").textContent = poolSize + " questions disponibles · Nombre de questions au choix";
     $("random-count-help").textContent = "De 1 à " + poolSize + " questions. Vous pourrez régénérer le quiz pour obtenir un nouveau tirage.";
     $("official-source-options").replaceChildren();
@@ -164,6 +210,20 @@ async function loadData() {
     }
     $("official-sources").hidden = !$("official-source-options").children.length;
     $("training-sources").hidden = !$("training-source-options").children.length;
+    $("category-source-options").replaceChildren();
+    for (const [index, category] of base.categories.entries()) {
+      const label = element("label", "source-option");
+      const input = element("input");
+      input.type = "radio";
+      input.name = "source";
+      input.value = "categorie:" + category.id;
+      input.required = true;
+      input.setAttribute("aria-controls", "category-settings");
+      label.append(element("span", "source-code", "Catégorie " + (index + 1)), input,
+        element("span", "source-title", category.titre), element("span", "source-details", category.description),
+        element("span", "source-status", getCategoryQuestions(base, category.id).length + " questions corrigées · Nombre au choix"));
+      $("category-source-options").append(label);
+    }
     $("source-form").hidden = false;
     updateStartButton();
   } catch {
@@ -194,11 +254,15 @@ function makeQuestion(question, number) {
   });
   top.append(element("span", "question-number", "Question " + String(number).padStart(2, "0")), clear);
   card.append(top);
-  if (session.sourceId === randomSourceId) {
+  if (isGenerated(session.sourceId)) {
     const year = sourceYear(source);
     card.append(element("p", "question-context small muted", sourceTitle(source) + (year ? " · " + year : "")
       + " · Question " + question.source.numero + " · "
       + (source.mode_reponse_qcm === "une_seule" ? "Une seule réponse possible." : "Plusieurs choix peuvent être cochés.")));
+    const date = source.date_epreuve || source.date_creation_pdf;
+    const context = source.type === "thematique" ? "Question originale d’entraînement."
+      : date ? "Contexte du sujet : " + new Date(date + "T12:00:00").toLocaleDateString("fr-FR") + ". Répondez à cette date, sauf précision dans l’énoncé." : "";
+    if (context) card.append(element("p", "question-context small muted", context));
   }
   const fieldset = element("fieldset", "question-fieldset");
   const legend = element("legend", "", question.enonce);
@@ -257,17 +321,18 @@ function observeQuestions() {
 }
 
 function startQuiz(sourceId, regenerate = false) {
-  const random = sourceId === randomSourceId;
-  const source = random ? randomSource : base.sources[sourceId];
+  const category = categoryFor(sourceId);
+  const random = isGenerated(sourceId);
+  const source = category ? { type: "categorie", titre: category.titre } : random ? randomSource : base.sources[sourceId];
   const year = sourceYear(source);
   let questions;
   let saved;
   if (random) {
-    if (!$("random-count").reportValidity()) return;
-    const count = $("random-count").valueAsNumber;
-    const previous = getSavedRandomQuestions();
+    if (!countInput(sourceId).reportValidity()) return;
+    const count = countInput(sourceId).valueAsNumber;
+    const previous = getSavedDraw(sourceId);
     const resume = !regenerate && previous.length === count;
-    questions = resume ? previous : drawQuestions(base, count);
+    questions = resume ? previous : drawQuestions(base, count, category?.id);
     saved = resume ? readSaved(sourceId, questions) : { answers: cleanAnswers(questions, null), reviewed: false };
   } else {
     questions = getQuestions(base, sourceId);
@@ -280,7 +345,7 @@ function startQuiz(sourceId, regenerate = false) {
   $("question-cards").replaceChildren();
   $("question-index").replaceChildren();
   setIndexExpanded(false);
-  $("quiz-title").textContent = random ? "Quiz aléatoire" : "Questions européennes";
+  $("quiz-title").textContent = category ? category.titre : random ? "Quiz aléatoire" : "Questions européennes";
   $("regenerate").hidden = !random;
   $("regenerate-help").hidden = !random;
   $("quiz-eyebrow").textContent = random ? questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard")
@@ -355,7 +420,7 @@ function updateProgress() {
     link.classList.toggle("answered", selected.length > 0);
     link.classList.toggle("incorrect", result?.status === "incorrect");
     link.querySelector(".index-answer").textContent = selected.map(letter => letter.toUpperCase()).join("");
-    const number = session.sourceId === randomSourceId ? index + 1 : question.source.numero;
+    const number = isGenerated(session.sourceId) ? index + 1 : question.source.numero;
     const label = "Question " + number + ", " + (selected.length ? "choix " + selected.join(", ").toUpperCase() : "sans réponse")
       + (result ? ", " + statusLabels[result.status].toLowerCase() : "");
     link.setAttribute("aria-label", label);
@@ -411,7 +476,7 @@ function renderResults() {
     ? "Ce bilan porte sur " + summary.graded + " questions notées sur " + session.questions.length + "."
       + (summary.pending ? " Les " + summary.pending + " questions sans corrigé sont exclues du score." : "")
       + (summary.partial ? " Les sélections partielles sont signalées dans les corrections." : "")
-    : session.sourceId === randomSourceId
+    : isGenerated(session.sourceId)
       ? "Vos réponses sont vérifiées avec les corrigés disponibles. Ce quiz mélange des sujets aux barèmes différents : le bilan est présenté sans note chiffrée."
       : "Vos choix sont conservés. Aucune note ne peut être calculée pour cette séance avec les corrigés et le barème disponibles.";
   if (summary.neutralized) {
@@ -457,8 +522,12 @@ function renderReview() {
 
 $("source-form").addEventListener("change", updateStartButton);
 $("random-count").addEventListener("input", updateStartButton);
+$("category-count").addEventListener("input", () => {
+  if (selectedCategory) categoryCounts.set(selectedCategory, $("category-count").value);
+  updateStartButton();
+});
 $("regenerate").addEventListener("click", () => {
-  if (session?.sourceId === randomSourceId) startQuiz(randomSourceId, true);
+  if (session && isGenerated(session.sourceId)) startQuiz(session.sourceId, true);
 });
 $("toggle-index").addEventListener("click", () => {
   setIndexExpanded($("toggle-index").getAttribute("aria-expanded") !== "true");

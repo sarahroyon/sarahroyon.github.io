@@ -1,0 +1,1333 @@
+{
+  "id": "institutions",
+  "titre": "Les institutions de l’Union européenne",
+  "description": "Composition, désignation et missions des institutions et des principaux organes de l’Union.",
+  "question_ids": [
+    "saeo-2026-externe-questions-europeennes-qcm-007",
+    "saeo-2026-externe-questions-europeennes-qcm-015",
+    "saeo-2026-externe-questions-europeennes-qcm-016",
+    "saeo-2026-externe-questions-europeennes-qcm-017",
+    "saeo-2026-externe-questions-europeennes-qcm-018",
+    "saeo-2026-externe-questions-europeennes-qcm-019",
+    "saeo-2026-externe-questions-europeennes-qcm-020",
+    "saeo-2026-externe-questions-europeennes-qcm-038",
+    "saeo-2026-externe-questions-europeennes-qcm-054",
+    "saeo-2026-externe-questions-europeennes-qcm-060",
+    "saeg-2026-externe-questions-europeennes-qcm-006",
+    "saeg-2026-externe-questions-europeennes-qcm-010",
+    "saeg-2026-externe-questions-europeennes-qcm-011",
+    "saeg-2026-externe-questions-europeennes-qcm-020",
+    "saeg-2026-externe-questions-europeennes-qcm-032",
+    "sarah-royon-saeg-3-entrainement-qcm-001",
+    "sarah-royon-saeg-3-entrainement-qcm-011",
+    "sarah-royon-saeg-3-entrainement-qcm-028",
+    "sarah-royon-saeg-3-entrainement-qcm-030",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-004",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-021",
+    "sarah-royon-sciences-po-entrainement-qcm-014",
+    "sarah-royon-sciences-po-entrainement-qcm-017",
+    "sarah-royon-sciences-po-entrainement-qcm-018",
+    "sarah-royon-sciences-po-entrainement-qcm-032",
+    "sarah-royon-sciences-po-entrainement-qcm-038",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-002"
+  ],
+  "date_revision": "2026-09-07",
+  "questions": [
+    {
+      "id": "thematique-institutions-qcm-001",
+      "type": "qcm",
+      "enonce": "Combien d’institutions le cadre institutionnel de l’Union comprend-il selon l’article 13 TUE ?",
+      "choix": {
+        "a": "Cinq",
+        "b": "Sept",
+        "c": "Neuf",
+        "d": "Douze"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 1
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 13 TUE énumère sept institutions, dont la BCE et la Cour des comptes.",
+        "sources": [
+          {
+            "titre": "TUE — Article 13",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M013"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-002",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat des députés européens ?",
+      "choix": {
+        "a": "Cinq ans",
+        "b": "Trois ans",
+        "c": "Quatre ans",
+        "d": "Six ans"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 2
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les membres du Parlement européen sont élus au suffrage universel direct pour cinq ans.",
+        "sources": [
+          {
+            "titre": "TUE — Article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-003",
+      "type": "qcm",
+      "enonce": "Selon l’article 14 TUE, quel plafond s’applique au nombre de sièges d’un État membre au Parlement européen ?",
+      "choix": {
+        "a": "81 sièges",
+        "b": "100 sièges",
+        "c": "120 sièges",
+        "d": "96 sièges"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 3
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le traité fixe un maximum de 96 sièges par État, quelle que soit sa population.",
+        "sources": [
+          {
+            "titre": "TUE — Article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-004",
+      "type": "qcm",
+      "enonce": "Quel principe régit la représentation des citoyens au Parlement européen ?",
+      "choix": {
+        "a": "L’égalité du nombre de sièges entre États",
+        "b": "La proportionnalité stricte sans seuil",
+        "c": "La proportionnalité dégressive",
+        "d": "La pondération selon la contribution budgétaire"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 4
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La proportionnalité dégressive assure une représentation relativement plus importante aux citoyens des petits États.",
+        "sources": [
+          {
+            "titre": "TUE — Article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-005",
+      "type": "qcm",
+      "enonce": "Qui élit le président du Parlement européen ?",
+      "choix": {
+        "a": "Le Conseil européen, à l’unanimité",
+        "b": "Les citoyens, lors d’un scrutin distinct",
+        "c": "Les députés européens, parmi eux",
+        "d": "Les présidents des parlements nationaux"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 5
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Parlement élit son président et son bureau parmi ses membres.",
+        "sources": [
+          {
+            "titre": "TUE — Article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-006",
+      "type": "qcm",
+      "enonce": "Quelle institution propose au Parlement européen un candidat à la présidence de la Commission ?",
+      "choix": {
+        "a": "Le Conseil de l’Europe",
+        "b": "Le Conseil européen",
+        "c": "La Cour de justice",
+        "d": "Le Comité des régions"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 6
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Conseil européen propose un candidat à la majorité qualifiée, en tenant compte des élections européennes.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-007",
+      "type": "qcm",
+      "enonce": "À quelle majorité le Parlement européen élit-il le président de la Commission ?",
+      "choix": {
+        "a": "À la majorité des membres qui le composent",
+        "b": "À la majorité des seuls suffrages exprimés",
+        "c": "Aux deux tiers des États représentés",
+        "d": "À l’unanimité des groupes politiques"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 7
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 17, paragraphe 7, TUE exige la majorité des membres du Parlement.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-008",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat de la Commission européenne ?",
+      "choix": {
+        "a": "Deux ans et demi",
+        "b": "Quatre ans",
+        "c": "Sept ans",
+        "d": "Cinq ans"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 8
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La Commission est nommée pour cinq ans.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-009",
+      "type": "qcm",
+      "enonce": "Comment la Commission est-elle investie en tant que collège ?",
+      "choix": {
+        "a": "Par une nomination de la Cour de justice",
+        "b": "Par un vote de chaque parlement national sur chaque commissaire",
+        "c": "Par une nomination directe de son président sans autre vote",
+        "d": "Par un vote d’approbation du Parlement, suivi d’une nomination par le Conseil européen"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 9
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le collège est soumis à l’approbation du Parlement, puis nommé par le Conseil européen à la majorité qualifiée.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-010",
+      "type": "qcm",
+      "enonce": "Comment la Commission prend-elle ses délibérations selon l’article 250 TFUE ?",
+      "choix": {
+        "a": "À l’unanimité des États membres",
+        "b": "À la majorité pondérée selon la population",
+        "c": "À la majorité de ses membres",
+        "d": "Par décision de son président uniquement"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 10
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 250 TFUE prévoit la majorité des membres de la Commission.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 250",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E250"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-011",
+      "type": "qcm",
+      "enonce": "Un commissaire peut-il solliciter des instructions de son gouvernement national dans l’exercice de ses fonctions ?",
+      "choix": {
+        "a": "Oui, pour tous les dossiers concernant son État",
+        "b": "Non, il exerce ses responsabilités en pleine indépendance",
+        "c": "Oui, avec l’accord de son parlement national",
+        "d": "Oui, lorsqu’il siège au Conseil"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 11
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les commissaires ne sollicitent ni n’acceptent d’instructions d’un gouvernement ou d’un autre organisme.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-012",
+      "type": "qcm",
+      "enonce": "Quelle juridiction peut prononcer la démission d’office d’un commissaire pour faute grave ?",
+      "choix": {
+        "a": "La Cour de justice, saisie par le Conseil ou la Commission",
+        "b": "La Cour européenne des droits de l’homme",
+        "c": "La Cour des comptes, de sa propre initiative",
+        "d": "La Cour pénale internationale"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 12
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 247 TFUE confie cette décision à la Cour de justice, sur requête du Conseil ou de la Commission.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 247",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E247"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-013",
+      "type": "qcm",
+      "enonce": "Quelle est la durée d’un mandat du président du Conseil européen ?",
+      "choix": {
+        "a": "Deux ans et demi, renouvelable une fois",
+        "b": "Six mois, sans renouvellement",
+        "c": "Cinq ans, renouvelable deux fois",
+        "d": "Sept ans, sans renouvellement"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 13
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le président est élu à la majorité qualifiée pour deux ans et demi et peut être renouvelé une fois.",
+        "sources": [
+          {
+            "titre": "TUE — Article 15",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M015"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-014",
+      "type": "qcm",
+      "enonce": "Le président du Conseil européen peut-il exercer un mandat national ?",
+      "choix": {
+        "a": "Oui, uniquement un mandat de chef de gouvernement",
+        "b": "Oui, uniquement un mandat de chef d’État",
+        "c": "Oui, si le Parlement européen l’autorise",
+        "d": "Non"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 14
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 15 TUE interdit au président du Conseil européen d’exercer un mandat national.",
+        "sources": [
+          {
+            "titre": "TUE — Article 15",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M015"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-015",
+      "type": "qcm",
+      "enonce": "Sauf disposition contraire des traités, comment le Conseil européen se prononce-t-il ?",
+      "choix": {
+        "a": "À la majorité simple",
+        "b": "À la majorité des suffrages exprimés au Parlement",
+        "c": "Par consensus",
+        "d": "Par tirage au sort entre les positions nationales"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 15
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le consensus est la règle générale de décision du Conseil européen.",
+        "sources": [
+          {
+            "titre": "TUE — Article 15",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M015"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-016",
+      "type": "qcm",
+      "enonce": "Qui préside la formation « Affaires étrangères » du Conseil de l’Union européenne ?",
+      "choix": {
+        "a": "Le président du Parlement européen",
+        "b": "Le haut représentant de l’Union pour les affaires étrangères et la politique de sécurité",
+        "c": "Le ministre des affaires étrangères de l’État exerçant la présidence semestrielle dans tous les cas",
+        "d": "Le président de la Cour de justice"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 16
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La formation Affaires étrangères est présidée par le haut représentant ; elle fait exception à la présidence tournante.",
+        "sources": [
+          {
+            "titre": "TUE — Article 18",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M018"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-017",
+      "type": "qcm",
+      "enonce": "Quelle formation du Conseil assure la cohérence des travaux de ses différentes formations ?",
+      "choix": {
+        "a": "Le Conseil des gouverneurs de la BCE",
+        "b": "Le Conseil des affaires générales",
+        "c": "L’Eurogroupe",
+        "d": "Le Conseil de sécurité des Nations unies"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 17
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Conseil des affaires générales assure cette cohérence et prépare les réunions du Conseil européen.",
+        "sources": [
+          {
+            "titre": "TUE — Article 16",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-018",
+      "type": "qcm",
+      "enonce": "Que désigne le Coreper I ?",
+      "choix": {
+        "a": "Le comité des représentants permanents adjoints des États membres",
+        "b": "La réunion des chefs d’État ou de gouvernement",
+        "c": "Le collège des commissaires européens",
+        "d": "Le comité des présidents des banques centrales"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 18
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Coreper I réunit les représentants permanents adjoints et prépare notamment les dossiers techniques de plusieurs formations du Conseil.",
+        "sources": [
+          {
+            "titre": "Conseil — Coreper I",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/preparatory-bodies/coreper-i/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-019",
+      "type": "qcm",
+      "enonce": "Qui nomme le secrétaire général du Conseil ?",
+      "choix": {
+        "a": "Le Parlement européen seul",
+        "b": "Le président de la Commission seul",
+        "c": "La Cour de justice",
+        "d": "Le Conseil de l’Union européenne"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 19
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le secrétariat général assiste le Conseil ; son secrétaire général est nommé par le Conseil.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 240",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E240"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-020",
+      "type": "qcm",
+      "enonce": "Quelles juridictions l’article 19 TUE inclut-il dans la Cour de justice de l’Union européenne ?",
+      "choix": {
+        "a": "La Cour de justice et la Cour européenne des droits de l’homme",
+        "b": "Les cours constitutionnelles nationales et la Cour des comptes",
+        "c": "La Cour de justice, le Tribunal et les tribunaux spécialisés",
+        "d": "Le Tribunal et la Cour pénale internationale"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 20
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La CJUE est l’institution juridictionnelle de l’Union. Le traité prévoit ces trois composantes, même si aucun tribunal spécialisé n’est actuellement en activité.",
+        "sources": [
+          {
+            "titre": "TUE — Article 19",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M019"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-021",
+      "type": "qcm",
+      "enonce": "Combien de juges composent la Cour de justice, selon le principe fixé par le TUE ?",
+      "choix": {
+        "a": "Deux juges par État membre",
+        "b": "Un juge pour dix millions d’habitants",
+        "c": "Un juge par État membre",
+        "d": "Sept juges, quelle que soit la composition de l’Union"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 21
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le TUE prévoit un juge par État membre pour la Cour de justice.",
+        "sources": [
+          {
+            "titre": "TUE — Article 19",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M019"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-022",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat des juges et avocats généraux de la Cour de justice ?",
+      "choix": {
+        "a": "Cinq ans, non renouvelables",
+        "b": "Six ans, renouvelables",
+        "c": "Neuf ans, non renouvelables",
+        "d": "Trois ans, renouvelables une fois"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 22
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Ils sont nommés d’un commun accord par les gouvernements pour six ans ; leur mandat est renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 253",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E253"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-023",
+      "type": "qcm",
+      "enonce": "Quelle est la fonction des avocats généraux à la Cour de justice ?",
+      "choix": {
+        "a": "Présenter en toute indépendance des conclusions motivées dans les affaires qui le requièrent",
+        "b": "Défendre systématiquement la Commission",
+        "c": "Représenter l’État qui les a proposés",
+        "d": "Voter les arrêts à la place des juges"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 23
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les avocats généraux assistent la Cour par des conclusions indépendantes et impartiales ; ils ne sont pas les avocats des parties.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 252",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E252"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-024",
+      "type": "qcm",
+      "enonce": "Quel est le rôle du comité prévu à l’article 255 TFUE ?",
+      "choix": {
+        "a": "Nommer les commissaires européens",
+        "b": "Trancher les litiges entre les États membres",
+        "c": "Contrôler les comptes de la BCE",
+        "d": "Donner un avis sur l’aptitude des candidats aux fonctions de juge et d’avocat général"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 24
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Ce comité évalue l’aptitude des candidats avant leur nomination par les gouvernements.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 255",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E255"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-025",
+      "type": "qcm",
+      "enonce": "Qui élit le président de la Cour de justice ?",
+      "choix": {
+        "a": "Les députés européens",
+        "b": "Les ministres de la justice, à la majorité simple",
+        "c": "Le Conseil européen sur proposition de la BCE",
+        "d": "Les juges de la Cour, parmi eux"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 25
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Les juges élisent leur président pour trois ans ; son mandat est renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 253",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E253"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-026",
+      "type": "qcm",
+      "enonce": "Quelle est la mission essentielle de la Cour des comptes européenne ?",
+      "choix": {
+        "a": "Annuler les règlements illégaux",
+        "b": "Fixer les taux directeurs",
+        "c": "Contrôler les comptes de l’Union",
+        "d": "Adopter le budget annuel"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 26
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Cour des comptes assure le contrôle des comptes de l’Union ; elle ne constitue pas une juridiction qui annule les actes.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 285",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E285"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-027",
+      "type": "qcm",
+      "enonce": "Quelle est la composition de la Cour des comptes européenne ?",
+      "choix": {
+        "a": "Un député européen par groupe politique",
+        "b": "Un ressortissant de chaque État membre",
+        "c": "Trois représentants de la Commission",
+        "d": "Les ministres nationaux des finances"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 27
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Cour des comptes comprend un ressortissant de chaque État membre, exerçant ses fonctions en pleine indépendance.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 285",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E285"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-028",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat des membres de la Cour des comptes européenne ?",
+      "choix": {
+        "a": "Six ans, renouvelables",
+        "b": "Deux ans et demi, non renouvelables",
+        "c": "Quatre ans, renouvelables une fois",
+        "d": "Huit ans, non renouvelables"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 28
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les membres sont nommés pour six ans ; leur mandat est renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 286",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E286"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-029",
+      "type": "qcm",
+      "enonce": "Comment les membres de la Cour des comptes sont-ils nommés ?",
+      "choix": {
+        "a": "Par le Conseil, après consultation du Parlement européen",
+        "b": "Par la Commission, après avis de la BCE",
+        "c": "Par élection au suffrage universel",
+        "d": "Par les seuls présidents des cours des comptes nationales"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 29
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Conseil adopte la liste établie conformément aux propositions des États membres, après consultation du Parlement.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 286",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E286"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-030",
+      "type": "qcm",
+      "enonce": "Quelle institution fournit une déclaration d’assurance concernant la fiabilité des comptes de l’Union ?",
+      "choix": {
+        "a": "La Banque européenne d’investissement",
+        "b": "Le Conseil européen",
+        "c": "Le Comité économique et social européen",
+        "d": "La Cour des comptes européenne"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 30
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La Cour des comptes se prononce sur la fiabilité des comptes ainsi que sur la légalité et la régularité des opérations sous-jacentes.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 287",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E287"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-031",
+      "type": "qcm",
+      "enonce": "Quels organismes constituent l’Eurosystème ?",
+      "choix": {
+        "a": "La BCE et les banques centrales de tous les États de l’UE",
+        "b": "Les ministères des finances de la zone euro",
+        "c": "La BCE et les banques centrales nationales des États dont la monnaie est l’euro",
+        "d": "La BCE et toutes les banques commerciales de l’Union"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 31
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’Eurosystème comprend la BCE et les banques centrales des États de la zone euro.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 282",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E282"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-032",
+      "type": "qcm",
+      "enonce": "Quels organismes constituent le Système européen de banques centrales (SEBC) ?",
+      "choix": {
+        "a": "La BCE et les seules banques centrales de la zone euro",
+        "b": "La BCE et les banques centrales nationales de tous les États membres",
+        "c": "Les banques commerciales agréées par la BCE",
+        "d": "La BEI et les banques publiques nationales"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 32
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le SEBC couvre tous les États de l’Union, y compris ceux dont la monnaie n’est pas l’euro.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 282",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E282"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-033",
+      "type": "qcm",
+      "enonce": "Qui siège au conseil des gouverneurs de la BCE ?",
+      "choix": {
+        "a": "Les ministres des finances de tous les États membres",
+        "b": "Les membres du directoire et les gouverneurs des banques centrales des États de la zone euro",
+        "c": "Les présidents de la Commission et du Parlement",
+        "d": "Les gouverneurs des banques centrales des seuls États fondateurs"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 33
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le conseil des gouverneurs réunit le directoire et les gouverneurs des banques centrales nationales de la zone euro.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 283",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E283"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-034",
+      "type": "qcm",
+      "enonce": "Combien de membres compte le directoire de la BCE ?",
+      "choix": {
+        "a": "Six",
+        "b": "Quatre",
+        "c": "Neuf",
+        "d": "Vingt-sept"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 34
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le directoire comprend le président, le vice-président et quatre autres membres.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 283",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E283"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-035",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat d’un membre du directoire de la BCE ?",
+      "choix": {
+        "a": "Cinq ans, renouvelables",
+        "b": "Six ans, renouvelables une fois",
+        "c": "Deux ans et demi, renouvelables",
+        "d": "Huit ans, non renouvelables"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 35
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le mandat des membres du directoire dure huit ans et n’est pas renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 283",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E283"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-036",
+      "type": "qcm",
+      "enonce": "Qui nomme les membres du directoire de la BCE ?",
+      "choix": {
+        "a": "L’Eurogroupe, à la majorité simple",
+        "b": "Le Parlement européen, seul",
+        "c": "Le Conseil européen, à la majorité qualifiée",
+        "d": "La Commission, à l’unanimité"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 36
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Conseil européen les nomme sur recommandation du Conseil, après consultation du Parlement et du conseil des gouverneurs de la BCE.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 283",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E283"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-037",
+      "type": "qcm",
+      "enonce": "Qui sont les membres de la Banque européenne d’investissement ?",
+      "choix": {
+        "a": "Les banques commerciales de la zone euro",
+        "b": "Les députés européens",
+        "c": "Les États membres de l’Union européenne",
+        "d": "Les États du Conseil de l’Europe"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 37
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 308 TFUE dispose que les États membres sont membres de la BEI.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 308",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E308"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-038",
+      "type": "qcm",
+      "enonce": "Quel instrument la BEI utilise-t-elle principalement pour contribuer au financement de projets ?",
+      "choix": {
+        "a": "La création d’un impôt européen sur le revenu",
+        "b": "Les prêts et les garanties",
+        "c": "L’émission de billets en euros",
+        "d": "L’adoption de sanctions pénales"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 38
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La BEI finance des projets d’investissement par des prêts et des garanties, sans poursuivre de but lucratif.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 309",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E309"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-039",
+      "type": "qcm",
+      "enonce": "Pour combien de temps les membres du Comité économique et social européen sont-ils nommés ?",
+      "choix": {
+        "a": "Cinq ans, renouvelables",
+        "b": "Deux ans, non renouvelables",
+        "c": "Sept ans, renouvelables",
+        "d": "Dix ans, non renouvelables"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 39
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 302 TFUE fixe un mandat de cinq ans, renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 302",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E302"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-040",
+      "type": "qcm",
+      "enonce": "Quelle condition les membres du Comité des régions doivent-ils remplir ?",
+      "choix": {
+        "a": "Être membres du Parlement européen",
+        "b": "Être magistrats dans leur État d’origine",
+        "c": "Être nommés commissaires européens",
+        "d": "Détenir un mandat électoral régional ou local, ou être politiquement responsables devant une assemblée élue"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 40
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le traité exige un ancrage dans une collectivité régionale ou locale, par un mandat électif ou une responsabilité politique devant une assemblée élue.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 300",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E300"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-041",
+      "type": "qcm",
+      "enonce": "Un membre du Comité des régions peut-il être simultanément député européen ?",
+      "choix": {
+        "a": "Oui, sans restriction",
+        "b": "Oui, s’il appartient au même groupe politique",
+        "c": "Oui, avec l’accord du président de la Commission",
+        "d": "Non"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 41
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 305 TFUE interdit le cumul avec un mandat de membre du Parlement européen.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 305",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E305"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-042",
+      "type": "qcm",
+      "enonce": "Qui élit le Médiateur européen ?",
+      "choix": {
+        "a": "Le Conseil européen",
+        "b": "La Commission européenne",
+        "c": "Le Parlement européen",
+        "d": "Les médiateurs nationaux"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 42
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Parlement élit le Médiateur après chaque élection européenne, pour la durée de la législature ; son mandat est renouvelable.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 228",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E228"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-043",
+      "type": "qcm",
+      "enonce": "Laquelle de ces activités échappe aux enquêtes du Médiateur européen ?",
+      "choix": {
+        "a": "L’administration du Parlement européen",
+        "b": "L’activité juridictionnelle de la Cour de justice de l’Union européenne",
+        "c": "La gestion administrative de la Commission",
+        "d": "L’administration d’une agence de l’Union"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 43
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le mandat du Médiateur exclut expressément la CJUE dans l’exercice de ses fonctions juridictionnelles.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 228",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E228"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-044",
+      "type": "qcm",
+      "enonce": "À qui les commissaires doivent-ils répondre lorsqu’ils reçoivent des questions parlementaires ?",
+      "choix": {
+        "a": "Au Parlement européen ou à ses membres",
+        "b": "Uniquement au Conseil européen",
+        "c": "Uniquement aux gouvernements nationaux",
+        "d": "Exclusivement à la Cour des comptes"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 44
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 230 TFUE prévoit que la Commission répond oralement ou par écrit aux questions du Parlement ou de ses membres.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 230",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E230"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-045",
+      "type": "qcm",
+      "enonce": "Quelle institution donne décharge à la Commission sur l’exécution du budget ?",
+      "choix": {
+        "a": "Le Parlement européen, sur recommandation du Conseil",
+        "b": "La BCE, sur avis du Conseil européen",
+        "c": "La Cour des comptes, seule",
+        "d": "Le Comité des régions, à l’unanimité"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 45
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Parlement donne décharge à la Commission sur recommandation du Conseil, en examinant notamment les travaux de la Cour des comptes.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 319",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E319"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-046",
+      "type": "qcm",
+      "enonce": "Quel rôle le président de la Commission joue-t-il dans l’organisation de celle-ci ?",
+      "choix": {
+        "a": "Il nomme seul tous les membres sans intervention d’autres institutions",
+        "b": "Il préside de droit le Conseil européen",
+        "c": "Il rend les arrêts en manquement",
+        "d": "Il définit ses orientations et décide de son organisation interne"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 46
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le président fixe les orientations de la Commission et organise ses travaux pour assurer leur cohérence, leur efficacité et leur collégialité.",
+        "sources": [
+          {
+            "titre": "TUE — Article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-047",
+      "type": "qcm",
+      "enonce": "Quel est le nombre minimal de sièges par État membre au Parlement européen selon le traité ?",
+      "choix": {
+        "a": "Trois",
+        "b": "Dix",
+        "c": "Six",
+        "d": "Douze"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 47
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 14 TUE garantit au moins six députés par État membre.",
+        "sources": [
+          {
+            "titre": "TUE — Article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-institutions-qcm-048",
+      "type": "qcm",
+      "enonce": "Quelle institution assure le respect du droit dans l’interprétation et l’application des traités ?",
+      "choix": {
+        "a": "La Cour européenne des droits de l’homme",
+        "b": "La Cour de justice de l’Union européenne",
+        "c": "La Banque centrale européenne",
+        "d": "Le Conseil de l’Europe"
+      },
+      "source": {
+        "id": "thematique-institutions",
+        "numero": 48
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Cette mission est attribuée à la CJUE par l’article 19 TUE.",
+        "sources": [
+          {
+            "titre": "TUE — Article 19",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M019"
+          }
+        ]
+      }
+    }
+  ]
+}

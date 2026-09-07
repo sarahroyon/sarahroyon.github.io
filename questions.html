@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Entraînez-vous aux QCM de questions européennes du concours de secrétaire des affaires étrangères, avec des annales et des sujets d’entraînement.">
+  <meta name="description" content="Entraînez-vous aux QCM de questions européennes : annales, quiz aléatoires et 75 questions corrigées pour chacune des cinq catégories du concours.">
   <title>Questions européennes · Sarah Royon</title>
   <link rel="stylesheet" href="questions.css">
   <script defer src="questions-core.js"></script>
@@ -52,6 +52,17 @@
                 <input id="random-count" name="random-count" type="number" min="1" step="1" required disabled aria-describedby="random-count-help">
                 <p id="random-count-help" class="small muted"></p>
               </div>
+            </section>
+            <section id="category-sources" class="source-group" aria-labelledby="category-sources-title">
+              <h2 id="category-sources-title">Entraînement par catégorie</h2>
+              <p class="category-intro muted">Les cinq catégories du concours, avec 75 questions corrigées chacune. Choisissez un thème et le nombre de questions pour composer votre quiz.</p>
+              <div id="category-source-options" class="source-options category-options"></div>
+              <div id="category-settings" class="random-settings" hidden>
+                <label for="category-count">Nombre de questions</label>
+                <input id="category-count" name="category-count" type="number" min="1" max="75" step="1" required disabled aria-describedby="category-count-help">
+                <p id="category-count-help" class="small muted" aria-live="polite"></p>
+              </div>
+              <p class="category-note small muted">Questions issues des annales et des entraînements, complétées par des questions originales. Les corrigés sont pédagogiques. Pour les questions reprises, répondez dans le contexte de date indiqué.</p>
             </section>
           </div>
         </fieldset>

@@ -1,0 +1,787 @@
+{
+  "id": "politiques",
+  "titre": "Les politiques internes et externes de l’UE",
+  "description": "Politiques prévues par le TFUE et le TUE : marché intérieur, politiques communes et instruments de l’action extérieure.",
+  "question_ids": [
+    "saeo-2026-externe-questions-europeennes-qcm-030",
+    "saeo-2026-externe-questions-europeennes-qcm-031",
+    "saeo-2026-externe-questions-europeennes-qcm-032",
+    "saeo-2026-externe-questions-europeennes-qcm-033",
+    "saeo-2026-externe-questions-europeennes-qcm-034",
+    "saeo-2026-externe-questions-europeennes-qcm-036",
+    "saeo-2026-externe-questions-europeennes-qcm-042",
+    "saeo-2026-externe-questions-europeennes-qcm-043",
+    "saeo-2026-externe-questions-europeennes-qcm-044",
+    "saeo-2026-externe-questions-europeennes-qcm-045",
+    "saeo-2026-externe-questions-europeennes-qcm-048",
+    "saeo-2026-externe-questions-europeennes-qcm-049",
+    "saeo-2026-externe-questions-europeennes-qcm-055",
+    "saeo-2026-externe-questions-europeennes-qcm-056",
+    "saeo-2026-externe-questions-europeennes-qcm-058",
+    "saeg-2026-externe-questions-europeennes-qcm-034",
+    "saeg-2026-externe-questions-europeennes-qcm-036",
+    "saeg-2026-externe-questions-europeennes-qcm-037",
+    "saeg-2026-externe-questions-europeennes-qcm-038",
+    "saeg-2026-externe-questions-europeennes-qcm-048",
+    "saeg-2026-externe-questions-europeennes-qcm-050",
+    "saeg-2026-externe-questions-europeennes-qcm-056",
+    "sarah-royon-saeg-3-entrainement-qcm-003",
+    "sarah-royon-saeg-3-entrainement-qcm-005",
+    "sarah-royon-saeg-3-entrainement-qcm-008",
+    "sarah-royon-saeg-3-entrainement-qcm-010",
+    "sarah-royon-saeg-3-entrainement-qcm-012",
+    "sarah-royon-saeg-3-entrainement-qcm-018",
+    "sarah-royon-saeg-3-entrainement-qcm-024",
+    "sarah-royon-saeg-3-entrainement-qcm-025",
+    "sarah-royon-saeg-3-entrainement-qcm-027",
+    "sarah-royon-saeg-3-entrainement-qcm-033",
+    "sarah-royon-saeg-3-entrainement-qcm-040",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-012",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-018",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-019",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-020",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-025",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-026",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-034",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-037",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-038",
+    "sarah-royon-sciences-po-entrainement-qcm-001",
+    "sarah-royon-sciences-po-entrainement-qcm-004",
+    "sarah-royon-sciences-po-entrainement-qcm-015",
+    "sarah-royon-sciences-po-entrainement-qcm-020",
+    "sarah-royon-sciences-po-entrainement-qcm-035",
+    "meae-sujet-v0-officiel-questions-europeennes-qcm-008"
+  ],
+  "date_revision": "2026-09-07",
+  "questions": [
+    {
+      "id": "thematique-politiques-qcm-001",
+      "type": "qcm",
+      "enonce": "Quelle liberté permet à un travailleur salarié d’exercer son activité dans un autre État membre sans discrimination fondée sur la nationalité ?",
+      "choix": {
+        "a": "La libre circulation des seuls capitaux",
+        "b": "La préférence commerciale nationale",
+        "c": "La liberté d’établissement réservée aux sociétés",
+        "d": "La libre circulation des travailleurs"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 1
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 45 TFUE abolit les discriminations de nationalité en matière d’emploi, de rémunération et de conditions de travail, sous les réserves prévues au traité.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 45",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E045"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-002",
+      "type": "qcm",
+      "enonce": "Un architecte s’installe durablement pour exercer à son compte dans un autre État membre. Quelle liberté est principalement concernée ?",
+      "choix": {
+        "a": "La libre prestation temporaire de services exclusivement",
+        "b": "La libre circulation des marchandises",
+        "c": "La liberté d’établissement",
+        "d": "La politique monétaire"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 2
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’exercice stable d’une activité indépendante dans un autre État membre relève de la liberté d’établissement prévue à l’article 49 TFUE.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 49",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E049"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-003",
+      "type": "qcm",
+      "enonce": "Quelle particularité l’article 63 TFUE prévoit-il pour la libre circulation des capitaux ?",
+      "choix": {
+        "a": "Elle concerne uniquement les paiements en euros",
+        "b": "Elle couvre aussi les mouvements entre États membres et pays tiers, sous réserve des exceptions prévues",
+        "c": "Elle exclut tous les investissements immobiliers",
+        "d": "Elle s’applique uniquement aux capitaux publics"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 3
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’interdiction des restrictions couvre aussi les relations avec les pays tiers, avec les limites et dérogations prévues par les traités.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 63",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E063"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-004",
+      "type": "qcm",
+      "enonce": "Quel comportement l’article 101 TFUE vise-t-il notamment ?",
+      "choix": {
+        "a": "Les ententes entre entreprises susceptibles d’affecter le commerce entre États membres et de restreindre la concurrence",
+        "b": "Toute entreprise détenant une part de marché importante",
+        "c": "Toute subvention versée à un particulier",
+        "d": "Les seuls accords commerciaux entre gouvernements"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 4
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 101 interdit les accords anticoncurrentiels répondant à ces critères ; son paragraphe 3 prévoit des possibilités d’exemption.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 101",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E101"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-005",
+      "type": "qcm",
+      "enonce": "Une position dominante est-elle interdite en elle-même par l’article 102 TFUE ?",
+      "choix": {
+        "a": "Non, c’est son exploitation abusive qui est interdite dans les conditions de cet article",
+        "b": "Oui, quelle que soit la conduite de l’entreprise",
+        "c": "Oui, mais seulement pour une entreprise publique",
+        "d": "Non, même lorsqu’elle donne lieu à un abus affectant le commerce entre États membres"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 5
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le droit de l’Union sanctionne l’abus de position dominante, et non la seule détention d’une telle position.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 102",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E102"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-006",
+      "type": "qcm",
+      "enonce": "Une aide d’État entrant dans le champ de l’article 107 TFUE est-elle nécessairement interdite sans exception ?",
+      "choix": {
+        "a": "Oui, toute aide publique est interdite",
+        "b": "Non, les États peuvent toujours la verser sans contrôle",
+        "c": "Oui, sauf si son bénéficiaire est une banque centrale",
+        "d": "Non, le traité prévoit des aides compatibles ou pouvant être déclarées compatibles"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 6
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 107 fixe une interdiction de principe et plusieurs catégories d’aides compatibles ou pouvant être autorisées.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 107",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E107"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-007",
+      "type": "qcm",
+      "enonce": "Quelle règle s’applique en principe à une aide nouvelle soumise à notification à la Commission ?",
+      "choix": {
+        "a": "Elle doit être versée avant toute notification",
+        "b": "Elle est automatiquement autorisée après un vote du Parlement",
+        "c": "Elle ne peut être mise à exécution avant la décision finale de la Commission",
+        "d": "Elle n’est contrôlée qu’après dix ans"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 7
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 108, paragraphe 3, impose une notification préalable et une obligation de suspension, sous réserve notamment des exemptions applicables.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 108",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E108"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-008",
+      "type": "qcm",
+      "enonce": "Quel objectif figure expressément parmi ceux de la politique agricole commune ?",
+      "choix": {
+        "a": "Supprimer toute intervention sur les marchés agricoles",
+        "b": "Assurer un niveau de vie équitable à la population agricole",
+        "c": "Réserver les échanges agricoles aux seuls États fondateurs",
+        "d": "Uniformiser la propriété de toutes les exploitations"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 8
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 39 TFUE vise notamment les revenus agricoles, la productivité, la stabilité des marchés et la sécurité des approvisionnements.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 39",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E039"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-009",
+      "type": "qcm",
+      "enonce": "Quel objectif poursuit la politique de cohésion selon l’article 174 TFUE ?",
+      "choix": {
+        "a": "Aligner les taux de change des monnaies nationales",
+        "b": "Réduire les écarts de développement entre les régions et le retard des régions les moins favorisées",
+        "c": "Financer exclusivement les capitales nationales",
+        "d": "Remplacer toutes les politiques sociales nationales"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 9
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La cohésion économique, sociale et territoriale vise notamment à réduire les disparités régionales.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 174",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E174"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-010",
+      "type": "qcm",
+      "enonce": "Quelle politique relève d’une compétence exclusive de l’Union pour les États dont la monnaie est l’euro ?",
+      "choix": {
+        "a": "La politique monétaire",
+        "b": "La fixation de tous les salaires",
+        "c": "La politique d’éducation",
+        "d": "L’ensemble de la fiscalité directe"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 10
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 3 TFUE attribue à l’Union une compétence exclusive en matière monétaire pour les États de la zone euro.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 3",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E003"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-011",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif principal du Système européen de banques centrales ?",
+      "choix": {
+        "a": "Financer directement tous les déficits publics",
+        "b": "Fixer un salaire minimum identique dans l’Union",
+        "c": "Équilibrer chaque budget national",
+        "d": "Maintenir la stabilité des prix"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 11
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 127 TFUE donne la priorité à la stabilité des prix, sans exclure le soutien aux politiques économiques générales sous cette réserve.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 127",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E127"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-012",
+      "type": "qcm",
+      "enonce": "Quel financement l’article 123 TFUE interdit-il à la BCE et aux banques centrales nationales ?",
+      "choix": {
+        "a": "Tout achat de titres sur le marché secondaire, quelles qu’en soient les conditions",
+        "b": "Tout prêt aux établissements de crédit",
+        "c": "L’octroi direct de crédits aux autorités publiques et l’achat direct de leurs titres de dette",
+        "d": "Toute émission de billets en euros"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 12
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le traité interdit le financement monétaire direct des pouvoirs publics ; les opérations de marché secondaire relèvent d’un cadre distinct.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 123",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E123"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-013",
+      "type": "qcm",
+      "enonce": "Quel principe figure parmi les fondements de la politique environnementale de l’Union ?",
+      "choix": {
+        "a": "Le principe de gratuité de toute pollution industrielle",
+        "b": "Le principe d’exclusion des actions préventives",
+        "c": "Le principe du pollueur-payeur",
+        "d": "Le principe de préférence obligatoire pour les combustibles fossiles"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 13
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 191 TFUE cite notamment la précaution, l’action préventive, la correction à la source et le pollueur-payeur.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 191",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E191"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-014",
+      "type": "qcm",
+      "enonce": "Quelle prérogative des États membres l’article 194 TFUE préserve-t-il en matière d’énergie, sous la réserve prévue par cet article ?",
+      "choix": {
+        "a": "Le droit de supprimer unilatéralement toute règle du marché intérieur",
+        "b": "Le choix entre différentes sources d’énergie et la structure générale de leur approvisionnement",
+        "c": "Le droit de fixer les taux directeurs de la BCE",
+        "d": "La compétence exclusive pour conclure tous les accords commerciaux de l’Union"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 14
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La politique européenne de l’énergie respecte ce choix national, sans préjudice de l’article 192, paragraphe 2, point c).",
+        "sources": [
+          {
+            "titre": "TFUE — Article 194",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E194"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-015",
+      "type": "qcm",
+      "enonce": "Quelle limite s’applique à l’action de l’Union en matière d’éducation selon l’article 165 TFUE ?",
+      "choix": {
+        "a": "Elle respecte la responsabilité des États pour le contenu de l’enseignement et l’organisation du système éducatif",
+        "b": "Elle interdit toute mobilité étudiante",
+        "c": "Elle impose un programme scolaire unique par règlement",
+        "d": "Elle transfère la nomination des enseignants à la Commission"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 15
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’Union encourage la coopération et soutient l’action nationale, sans harmoniser les législations en matière d’éducation sur cette base.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 165",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E165"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-016",
+      "type": "qcm",
+      "enonce": "Comment le TFUE envisage-t-il l’action de l’Union dans le domaine culturel ?",
+      "choix": {
+        "a": "Elle remplace les langues nationales par une langue unique",
+        "b": "Elle attribue à la Commission le contrôle de tous les musées",
+        "c": "Elle interdit le soutien public à la création artistique",
+        "d": "Elle soutient la coopération en respectant les diversités nationales et régionales"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 16
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 167 vise l’épanouissement des cultures des États membres, en mettant en évidence l’héritage culturel commun.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 167",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E167"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-017",
+      "type": "qcm",
+      "enonce": "Quelle base juridique permet au Parlement et au Conseil d’adopter les règles relatives à la protection des données personnelles ?",
+      "choix": {
+        "a": "L’article 50 TUE",
+        "b": "L’article 123 TFUE",
+        "c": "L’article 42, paragraphe 7, TUE",
+        "d": "L’article 16 TFUE"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 17
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 16 TFUE établit le droit à la protection des données et habilite le législateur de l’Union à adopter les règles correspondantes.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 16",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-018",
+      "type": "qcm",
+      "enonce": "Sur quel principe repose la coopération judiciaire en matière pénale selon l’article 82 TFUE ?",
+      "choix": {
+        "a": "La suppression de toutes les juridictions nationales",
+        "b": "L’extradition décidée par la BCE",
+        "c": "La reconnaissance mutuelle des jugements et décisions judiciaires",
+        "d": "L’uniformité immédiate de tous les codes pénaux"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 18
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La reconnaissance mutuelle constitue le fondement de cette coopération, accompagnée de certaines mesures de rapprochement.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 82",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E082"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-019",
+      "type": "qcm",
+      "enonce": "Quel domaine l’article 153, paragraphe 5, TFUE exclut-il des dispositions de cet article sur la politique sociale ?",
+      "choix": {
+        "a": "La santé et la sécurité des travailleurs",
+        "b": "Les rémunérations, le droit d’association, le droit de grève et le droit de lock-out",
+        "c": "L’information et la consultation des travailleurs",
+        "d": "L’égalité entre hommes et femmes sur le marché du travail"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 19
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Ces exclusions limitent cette base juridique ; elles n’excluent pas toute incidence d’autres règles de l’Union sur ces domaines.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 153",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E153"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-020",
+      "type": "qcm",
+      "enonce": "Quelle égalité de rémunération l’article 157 TFUE impose-t-il ?",
+      "choix": {
+        "a": "L’égalité entre travailleurs masculins et féminins pour un même travail ou un travail de même valeur",
+        "b": "Un salaire identique pour tous les métiers de l’Union",
+        "c": "Un salaire identique dans tous les États membres",
+        "d": "Une rémunération fixée par la BCE"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 20
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le traité impose l’égalité de rémunération entre femmes et hommes pour un même travail ou un travail de même valeur.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 157",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E157"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-021",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif principal de la politique de l’Union dans le domaine de la coopération au développement ?",
+      "choix": {
+        "a": "La réduction et, à terme, l’éradication de la pauvreté",
+        "b": "La création d’une monnaie unique mondiale",
+        "c": "Le financement exclusif des exportations européennes",
+        "d": "L’adhésion automatique de tous les pays bénéficiaires"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 21
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 208 TFUE place la lutte contre la pauvreté au centre de cette politique.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 208",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E208"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-022",
+      "type": "qcm",
+      "enonce": "Quels principes encadrent les actions d’aide humanitaire de l’Union selon l’article 214 TFUE ?",
+      "choix": {
+        "a": "La réciprocité commerciale et la préférence nationale",
+        "b": "L’alignement militaire obligatoire des bénéficiaires",
+        "c": "La limitation aux seuls États candidats",
+        "d": "L’impartialité, la neutralité et la non-discrimination"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 22
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le traité impose le respect du droit international et de ces principes humanitaires.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 214",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E214"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-023",
+      "type": "qcm",
+      "enonce": "Quel domaine relève de la politique commerciale commune selon l’article 207 TFUE ?",
+      "choix": {
+        "a": "La fixation des programmes scolaires",
+        "b": "L’organisation des élections municipales",
+        "c": "Les investissements étrangers directs",
+        "d": "La désignation des juges constitutionnels nationaux"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 23
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La politique commerciale commune couvre notamment les échanges de biens et de services, les aspects commerciaux de la propriété intellectuelle et les investissements directs.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 207",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E207"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-024",
+      "type": "qcm",
+      "enonce": "L’adoption d’actes législatifs est-elle possible dans le cadre de la PESC ?",
+      "choix": {
+        "a": "Oui, selon la procédure législative ordinaire dans tous les cas",
+        "b": "Non, elle est exclue par le TUE",
+        "c": "Oui, par la Commission seule",
+        "d": "Oui, uniquement par le Parlement sans le Conseil"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 24
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 24 TUE prévoit des règles et procédures spécifiques et exclut les actes législatifs en matière de PESC.",
+        "sources": [
+          {
+            "titre": "TUE — Article 24",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M024"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-025",
+      "type": "qcm",
+      "enonce": "Que prévoit la clause d’assistance mutuelle de l’article 42, paragraphe 7, TUE ?",
+      "choix": {
+        "a": "L’intervention automatique de la BCE sur les marchés financiers",
+        "b": "Une aide et une assistance des autres États membres lorsqu’un État subit une agression armée sur son territoire",
+        "c": "L’adhésion obligatoire de tous les États à l’OTAN",
+        "d": "La suppression des neutralités nationales sans réserve"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 25
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La clause prévoit aide et assistance par tous les moyens en leur pouvoir, tout en respectant les spécificités de défense de certains États et les engagements OTAN.",
+        "sources": [
+          {
+            "titre": "TUE — Article 42",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M042"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-026",
+      "type": "qcm",
+      "enonce": "Dans quels cas la clause de solidarité de l’article 222 TFUE peut-elle être mobilisée ?",
+      "choix": {
+        "a": "En cas d’attaque terroriste ou de catastrophe naturelle ou d’origine humaine",
+        "b": "Pour toute baisse du taux de croissance",
+        "c": "Pour nommer un commissaire européen",
+        "d": "Pour réviser la répartition des sièges au Parlement"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 26
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La clause prévoit une action conjointe de l’Union et des États, notamment à la demande des autorités politiques de l’État touché.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 222",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E222"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-politiques-qcm-027",
+      "type": "qcm",
+      "enonce": "Quelle est la fonction de l’article 215 TFUE en matière de mesures restrictives ?",
+      "choix": {
+        "a": "Autoriser la Commission à déclarer la guerre",
+        "b": "Fixer les critères d’adhésion à l’Union",
+        "c": "Créer une procédure pénale uniforme pour toutes les infractions",
+        "d": "Permettre les mesures économiques nécessaires à la mise en œuvre d’une décision PESC"
+      },
+      "source": {
+        "id": "thematique-politiques",
+        "numero": 27
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Après une décision PESC, le Conseil peut adopter les mesures économiques nécessaires, sur proposition conjointe du haut représentant et de la Commission.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 215",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E215"
+          }
+        ]
+      }
+    }
+  ]
+}

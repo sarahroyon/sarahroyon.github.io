@@ -1,0 +1,1597 @@
+{
+  "id": "relations",
+  "titre": "Les relations extérieures de l’Union européenne",
+  "description": "Élargissement, voisinage, pays partenaires, accords internationaux et organisations internationales.",
+  "question_ids": [
+    "saeo-2026-externe-questions-europeennes-qcm-010",
+    "saeo-2026-externe-questions-europeennes-qcm-039",
+    "saeo-2026-externe-questions-europeennes-qcm-046",
+    "saeo-2026-externe-questions-europeennes-qcm-047",
+    "saeg-2026-externe-questions-europeennes-qcm-053",
+    "saeg-2026-externe-questions-europeennes-qcm-057",
+    "sarah-royon-saeg-3-entrainement-qcm-004",
+    "sarah-royon-saeg-3-entrainement-qcm-013",
+    "sarah-royon-saeg-3-entrainement-qcm-015",
+    "sarah-royon-saeg-3-entrainement-qcm-019",
+    "sarah-royon-saeg-3-entrainement-qcm-020",
+    "sarah-royon-saeg-3-entrainement-qcm-036",
+    "sarah-royon-saeg-3-entrainement-qcm-037",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-006",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-032",
+    "sarah-royon-sciences-po-entrainement-qcm-024",
+    "sarah-royon-sciences-po-entrainement-qcm-026"
+  ],
+  "date_revision": "2026-09-07",
+  "questions": [
+    {
+      "id": "thematique-relations-qcm-001",
+      "type": "qcm",
+      "enonce": "À quelle institution un État européen adresse-t-il sa demande d’adhésion à l’Union ?",
+      "choix": {
+        "a": "Au Conseil de l’Union européenne",
+        "b": "À la Banque centrale européenne",
+        "c": "À la Cour européenne des droits de l’homme",
+        "d": "Au seul Parlement de l’État exerçant la présidence du Conseil"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 1
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 49 TUE prévoit que la demande est adressée au Conseil ; les parlements nationaux et le Parlement européen en sont informés.",
+        "sources": [
+          {
+            "titre": "TUE — Article 49",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M049"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-002",
+      "type": "qcm",
+      "enonce": "Quelle majorité le Conseil doit-il réunir pour se prononcer sur une demande d’adhésion selon l’article 49 TUE ?",
+      "choix": {
+        "a": "La majorité simple",
+        "b": "La majorité de 55 % des États uniquement",
+        "c": "Les deux tiers des députés européens",
+        "d": "L’unanimité"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 2
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le Conseil statue à l’unanimité, après consultation de la Commission et approbation du Parlement européen.",
+        "sources": [
+          {
+            "titre": "TUE — Article 49",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M049"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-003",
+      "type": "qcm",
+      "enonce": "Par qui un traité d’adhésion à l’Union doit-il être ratifié ?",
+      "choix": {
+        "a": "Uniquement par l’État candidat",
+        "b": "Uniquement par les États de la zone euro",
+        "c": "Par tous les États contractants, selon leurs règles constitutionnelles",
+        "d": "Par le Conseil de l’Europe"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 3
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’accord d’adhésion doit être ratifié par l’ensemble des États contractants conformément à leurs règles constitutionnelles.",
+        "sources": [
+          {
+            "titre": "TUE — Article 49",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M049"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-004",
+      "type": "qcm",
+      "enonce": "Que désigne l’« acquis de l’Union » dans les négociations d’adhésion ?",
+      "choix": {
+        "a": "Le montant des actifs détenus par la BCE",
+        "b": "L’ensemble des droits et obligations communs découlant du droit et des engagements de l’Union",
+        "c": "Les seuls accords commerciaux avec les pays tiers",
+        "d": "Le programme électoral de la Commission"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 4
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le pays candidat doit se préparer à reprendre et à appliquer l’acquis, qui dépasse les seuls textes législatifs.",
+        "sources": [
+          {
+            "titre": "Commission — Acquis de l’Union",
+            "url": "https://enlargement.ec.europa.eu/enlargement-policy/glossary_en#acquis"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-005",
+      "type": "qcm",
+      "enonce": "Quel est l’objet du « screening » dans les négociations d’adhésion ?",
+      "choix": {
+        "a": "Organiser l’élection de ses premiers députés européens",
+        "b": "Examiner le degré de conformité du pays candidat à l’acquis de l’Union",
+        "c": "Fixer son taux de change définitif",
+        "d": "Lui attribuer automatiquement des fonds agricoles"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 5
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’examen analytique de l’acquis identifie les écarts et les travaux nécessaires dans chaque domaine de négociation.",
+        "sources": [
+          {
+            "titre": "Commission — Examen analytique de l’acquis",
+            "url": "https://enlargement.ec.europa.eu/enlargement-policy/glossary_en#screening-of-the-acquis"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-006",
+      "type": "qcm",
+      "enonce": "L’ouverture de négociations d’adhésion garantit-elle l’entrée du pays dans l’Union à une date prédéfinie ?",
+      "choix": {
+        "a": "Non, la progression dépend des conditions remplies et de l’aboutissement du processus",
+        "b": "Oui, exactement cinq ans après leur ouverture",
+        "c": "Oui, dès la clôture du premier chapitre",
+        "d": "Oui, après la première élection nationale suivante"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 6
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’adhésion repose sur les progrès du candidat et l’accord des parties ; l’ouverture des négociations ne vaut pas promesse d’une date d’entrée.",
+        "sources": [
+          {
+            "titre": "Conseil — Modalités de l’élargissement",
+            "url": "https://www.consilium.europa.eu/fr/policies/how-enlargement-works/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-007",
+      "type": "qcm",
+      "enonce": "Quel événement a marqué les relations de l’UE avec l’Ukraine et la Moldavie le 25 juin 2024 ?",
+      "choix": {
+        "a": "Leur adhésion à l’Union",
+        "b": "Leur entrée dans la zone euro",
+        "c": "La signature de leurs traités d’adhésion",
+        "d": "La tenue des premières conférences intergouvernementales ouvrant leurs négociations d’adhésion"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 7
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Les premières conférences intergouvernementales ont formellement ouvert les négociations ; elles ne constituent pas une adhésion.",
+        "sources": [
+          {
+            "titre": "Conseil — Négociations avec l’Ukraine, 25 juin 2024",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/06/25/eu-opens-accession-negotiations-with-ukraine/"
+          },
+          {
+            "titre": "Conseil — Négociations avec la Moldavie, 25 juin 2024",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/06/25/eu-opens-accession-negotiations-with-moldova/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-008",
+      "type": "qcm",
+      "enonce": "Quels États non membres de l’UE participent à l’Espace économique européen ?",
+      "choix": {
+        "a": "La Suisse, le Royaume-Uni et la Turquie",
+        "b": "La Norvège, la Suisse et le Canada",
+        "c": "L’Islande, le Liechtenstein et la Norvège",
+        "d": "L’Islande, l’Ukraine et la Moldavie"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 8
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Ces trois États de l’AELE participent à l’EEE aux côtés de l’Union et de ses États membres.",
+        "sources": [
+          {
+            "titre": "Parlement européen — EEE, Suisse et Nord",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/169/the-european-economic-area-eea-"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-009",
+      "type": "qcm",
+      "enonce": "Quelle affirmation décrit la situation de la Suisse vis-à-vis de l’AELE et de l’EEE ?",
+      "choix": {
+        "a": "Elle est membre de l’EEE, mais pas de l’AELE",
+        "b": "Elle appartient à l’Union européenne depuis 1995",
+        "c": "Elle est membre de l’AELE, mais pas de l’EEE",
+        "d": "Elle appartient à la zone euro depuis 1999"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 9
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Suisse participe à l’AELE ; ses relations avec l’Union reposent notamment sur des accords bilatéraux.",
+        "sources": [
+          {
+            "titre": "Parlement européen — EEE, Suisse et Nord",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/169/the-european-economic-area-eea-"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-010",
+      "type": "qcm",
+      "enonce": "Quelle est la finalité principale de l’accord sur l’Espace économique européen ?",
+      "choix": {
+        "a": "Créer une alliance militaire avec les États de l’AELE",
+        "b": "Étendre le marché intérieur à des États de l’AELE sans les faire adhérer à l’Union",
+        "c": "Intégrer automatiquement tous ses membres à la zone euro",
+        "d": "Remplacer l’OMC pour le commerce européen"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 10
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’EEE étend les quatre libertés et les règles connexes du marché intérieur aux États de l’AELE qui y participent.",
+        "sources": [
+          {
+            "titre": "Parlement européen — EEE, Suisse et Nord",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/169/the-european-economic-area-eea-"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-011",
+      "type": "qcm",
+      "enonce": "L’accord EEE intègre-t-il ses partenaires de l’AELE à l’union douanière de l’Union ?",
+      "choix": {
+        "a": "Non",
+        "b": "Oui, automatiquement dans tous les secteurs",
+        "c": "Oui, uniquement depuis le traité de Lisbonne",
+        "d": "Oui, dès qu’ils adoptent une monnaie commune"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 11
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’EEE couvre le marché intérieur mais ne constitue pas une union douanière avec ces partenaires.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Portée de l’EEE",
+            "url": "https://www.europarl.europa.eu/enlargement/briefings/32a2_fr.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-012",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif général de la politique européenne de voisinage ?",
+      "choix": {
+        "a": "Garantir une adhésion automatique à tous ses participants",
+        "b": "Créer un parlement unique avec tous les États voisins",
+        "c": "Étendre immédiatement l’euro à toute la Méditerranée",
+        "d": "Développer la stabilité, la sécurité et la prospérité partagées avec les voisins de l’Union"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 12
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La politique de voisinage organise des relations privilégiées et différenciées ; elle ne vaut pas, par elle-même, processus d’adhésion.",
+        "sources": [
+          {
+            "titre": "TUE — Article 8 : relations avec le voisinage",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M008"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-013",
+      "type": "qcm",
+      "enonce": "À quelle année remonte le lancement du Partenariat oriental ?",
+      "choix": {
+        "a": "1993",
+        "b": "2004",
+        "c": "2022",
+        "d": "2009"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 13
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le Partenariat oriental a été lancé en 2009 dans le cadre de la politique européenne de voisinage.",
+        "sources": [
+          {
+            "titre": "Conseil — Partenariat oriental",
+            "url": "https://www.consilium.europa.eu/fr/policies/eastern-partnership/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-014",
+      "type": "qcm",
+      "enonce": "Quel pays figurait parmi les six partenaires orientaux au lancement du dispositif ?",
+      "choix": {
+        "a": "La Serbie",
+        "b": "La Tunisie",
+        "c": "L’Arménie",
+        "d": "La Norvège"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 14
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le partenariat concernait l’Arménie, l’Azerbaïdjan, la Biélorussie, la Géorgie, la Moldavie et l’Ukraine.",
+        "sources": [
+          {
+            "titre": "Conseil — Partenariat oriental",
+            "url": "https://www.consilium.europa.eu/fr/policies/eastern-partnership/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-015",
+      "type": "qcm",
+      "enonce": "Quel pays appartient au voisinage méridional de l’Union ?",
+      "choix": {
+        "a": "La Moldavie",
+        "b": "Le Maroc",
+        "c": "L’Islande",
+        "d": "La Serbie"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 15
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Maroc figure parmi les partenaires du voisinage méridional, aux côtés d’autres pays du sud et de l’est de la Méditerranée.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Les partenaires du Sud",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/173/southern-partners"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-016",
+      "type": "qcm",
+      "enonce": "Quelle initiative lancée en 1995 constitue une étape fondatrice du partenariat euro-méditerranéen ?",
+      "choix": {
+        "a": "Le processus de Barcelone",
+        "b": "Le processus de Bologne",
+        "c": "Le processus de Kimberley",
+        "d": "Le processus de Luxembourg sur l’emploi"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 16
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La conférence de Barcelone de 1995 lance le partenariat euro-méditerranéen, antérieur à l’Union pour la Méditerranée.",
+        "sources": [
+          {
+            "titre": "Union pour la Méditerranée — Histoire",
+            "url": "https://ufmsecretariat.org/fr/qui-sommes-nous/histoire/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-017",
+      "type": "qcm",
+      "enonce": "Où le secrétariat de l’Union pour la Méditerranée est-il établi ?",
+      "choix": {
+        "a": "À Barcelone",
+        "b": "À Genève",
+        "c": "À Strasbourg",
+        "d": "À La Haye"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 17
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le secrétariat de l’Union pour la Méditerranée est établi à Barcelone.",
+        "sources": [
+          {
+            "titre": "Union pour la Méditerranée — Histoire",
+            "url": "https://ufmsecretariat.org/fr/qui-sommes-nous/histoire/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-018",
+      "type": "qcm",
+      "enonce": "Quel pays est le partenaire de l’Union dans l’accord commercial appelé CETA ou AECG ?",
+      "choix": {
+        "a": "La Chine",
+        "b": "L’Australie",
+        "c": "L’Inde",
+        "d": "Le Canada"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 18
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le CETA est l’accord économique et commercial global entre l’Union et le Canada.",
+        "sources": [
+          {
+            "titre": "Commission — Accord UE-Canada",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/canada/eu-canada-agreements_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-019",
+      "type": "qcm",
+      "enonce": "Que s’est-il produit le 21 septembre 2017 pour le CETA ?",
+      "choix": {
+        "a": "L’adhésion du Canada au marché intérieur",
+        "b": "L’entrée du Canada dans l’union douanière européenne",
+        "c": "Le début de son application provisoire pour une grande partie de ses dispositions",
+        "d": "La suppression de toutes les exigences sanitaires européennes"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 19
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Une grande partie de l’accord est appliquée provisoirement depuis cette date ; l’application intégrale dépend des ratifications requises.",
+        "sources": [
+          {
+            "titre": "Commission — Accord UE-Canada",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/canada/eu-canada-agreements_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-020",
+      "type": "qcm",
+      "enonce": "Avec quel pays l’Union a-t-elle mis en vigueur un accord de partenariat économique le 1er février 2019 ?",
+      "choix": {
+        "a": "L’Inde",
+        "b": "Le Japon",
+        "c": "Les États-Unis",
+        "d": "La Russie"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 20
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’accord UE-Japon est entré en vigueur le 1er février 2019 et réduit de nombreux obstacles aux échanges.",
+        "sources": [
+          {
+            "titre": "Commission — Accord UE-Japon",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/japan/eu-japan-agreement_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-021",
+      "type": "qcm",
+      "enonce": "Quel accord commercial de l’Union est entré en vigueur le 1er août 2020 ?",
+      "choix": {
+        "a": "Le CETA avec le Canada",
+        "b": "L’accord de libre-échange avec le Viêt Nam",
+        "c": "L’accord de commerce et de coopération avec le Royaume-Uni",
+        "d": "L’accord de partenariat économique avec le Japon"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 21
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’accord UE-Viêt Nam est entré en vigueur le 1er août 2020.",
+        "sources": [
+          {
+            "titre": "Commission — Accords UE-Viêt Nam",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/viet-nam/eu-viet-nam-agreements_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-022",
+      "type": "qcm",
+      "enonce": "À quelle région les accords de partenariat économique (APE) de l’Union sont-ils notamment destinés ?",
+      "choix": {
+        "a": "Aux partenaires d’Afrique, des Caraïbes et du Pacifique",
+        "b": "Aux seuls États de la zone euro",
+        "c": "Aux membres de l’OTAN exclusivement",
+        "d": "Aux seuls pays de l’AELE"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 22
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les APE sont des accords commerciaux orientés vers le développement conclus avec des partenaires ACP.",
+        "sources": [
+          {
+            "titre": "Commission — Partenariats économiques",
+            "url": "https://policy.trade.ec.europa.eu/development-and-sustainability/economic-partnerships_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-023",
+      "type": "qcm",
+      "enonce": "Quel est l’objet principal du régime « Tout sauf les armes » de l’Union ?",
+      "choix": {
+        "a": "Interdire toutes les importations agricoles",
+        "b": "Créer une alliance militaire avec les pays bénéficiaires",
+        "c": "Appliquer un tarif commun identique à tous les pays industrialisés",
+        "d": "Offrir aux pays les moins avancés un accès sans droits ni contingents, sauf pour les armes et munitions"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 23
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Ce régime de préférences commerciales bénéficie aux pays les moins avancés, sous les conditions prévues par le dispositif.",
+        "sources": [
+          {
+            "titre": "Commission — Système de préférences généralisées",
+            "url": "https://policy.trade.ec.europa.eu/development-and-sustainability/generalised-scheme-preferences_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-024",
+      "type": "qcm",
+      "enonce": "Quelle est la fonction des règles d’origine dans un accord de libre-échange ?",
+      "choix": {
+        "a": "Fixer la nationalité des dirigeants des entreprises",
+        "b": "Déterminer la langue obligatoire des contrats",
+        "c": "Déterminer quels produits peuvent bénéficier des préférences tarifaires de l’accord",
+        "d": "Remplacer tous les contrôles sanitaires"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 24
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les règles d’origine évitent que les préférences soient accordées à des produits ne remplissant pas les critères de rattachement aux partenaires.",
+        "sources": [
+          {
+            "titre": "Commission — Origine préférentielle",
+            "url": "https://taxation-customs.ec.europa.eu/customs-4/international-affairs/origin-goods/preferential-origin/common-provisions_fr"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-025",
+      "type": "qcm",
+      "enonce": "Quel texte organise principalement les modalités de la sortie du Royaume-Uni, notamment les droits des citoyens concernés ?",
+      "choix": {
+        "a": "Le traité de Rome",
+        "b": "L’accord de Schengen",
+        "c": "L’accord de retrait",
+        "d": "L’accord de partenariat UE-Japon"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 25
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’accord de retrait règle notamment les droits des citoyens, le règlement financier et le cadre relatif à l’Irlande et à l’Irlande du Nord.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de retrait du Royaume-Uni",
+            "url": "https://www.consilium.europa.eu/fr/policies/the-eu-uk-withdrawal-agreement/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-026",
+      "type": "qcm",
+      "enonce": "Quel territoire est au cœur du cadre de Windsor convenu en 2023 entre l’UE et le Royaume-Uni ?",
+      "choix": {
+        "a": "Gibraltar uniquement",
+        "b": "L’Irlande du Nord",
+        "c": "L’Écosse uniquement",
+        "d": "Les îles Canaries"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 26
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le cadre de Windsor apporte des solutions pratiques à la mise en œuvre du protocole sur l’Irlande et l’Irlande du Nord.",
+        "sources": [
+          {
+            "titre": "Conseil — Cadre de Windsor, mars 2023",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2023/03/21/new-way-forward-on-the-protocol-on-irelandnorthern-ireland-council-greenlights-main-elements-of-the-windsor-framework/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-027",
+      "type": "qcm",
+      "enonce": "Quand la période de transition prévue par l’accord de retrait du Royaume-Uni s’est-elle achevée ?",
+      "choix": {
+        "a": "Le 31 décembre 2020",
+        "b": "Le 31 janvier 2020",
+        "c": "Le 23 juin 2016",
+        "d": "Le 1er janvier 2025"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 27
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Royaume-Uni a quitté l’Union le 31 janvier 2020 ; la période de transition s’est terminée le 31 décembre 2020.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de retrait du Royaume-Uni",
+            "url": "https://www.consilium.europa.eu/fr/policies/the-eu-uk-withdrawal-agreement/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-028",
+      "type": "qcm",
+      "enonce": "Quel partenariat l’Union et le Royaume-Uni ont-ils conclu lors de leur sommet du 19 mai 2025 ?",
+      "choix": {
+        "a": "Un traité de réadhésion du Royaume-Uni à l’Union",
+        "b": "Une entrée du Royaume-Uni dans l’Eurosystème",
+        "c": "Une fusion de leurs représentations aux Nations unies",
+        "d": "Un partenariat en matière de sécurité et de défense"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 28
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Ce partenariat encadre leur coopération en matière de sécurité et de défense après le Brexit.",
+        "sources": [
+          {
+            "titre": "Conseil — Relations avec le Royaume-Uni",
+            "url": "https://www.consilium.europa.eu/fr/policies/united-kingdom/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-029",
+      "type": "qcm",
+      "enonce": "Quel accord signé le 15 novembre 2023 succède à l’accord de Cotonou dans les relations UE-OEACP ?",
+      "choix": {
+        "a": "L’accord de Windsor",
+        "b": "L’accord de Schengen",
+        "c": "L’accord de Dayton",
+        "d": "L’accord de Samoa"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 29
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’accord de Samoa constitue le nouveau cadre du partenariat avec les membres de l’Organisation des États d’Afrique, des Caraïbes et du Pacifique.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Samoa",
+            "url": "https://www.consilium.europa.eu/fr/policies/samoa-agreement/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-030",
+      "type": "qcm",
+      "enonce": "Que signifie le sigle OEACP ?",
+      "choix": {
+        "a": "Organisation européenne des accords commerciaux préférentiels",
+        "b": "Organisation économique de l’Asie centrale et du Pacifique",
+        "c": "Organisation des États d’Afrique, des Caraïbes et du Pacifique",
+        "d": "Office européen d’aide aux collectivités publiques"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 30
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’OEACP regroupe des États de ces trois régions et constitue un partenaire de l’Union dans l’accord de Samoa.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Samoa",
+            "url": "https://www.consilium.europa.eu/fr/policies/samoa-agreement/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-031",
+      "type": "qcm",
+      "enonce": "Comment l’accord de Samoa tient-il compte des spécificités de ses partenaires ?",
+      "choix": {
+        "a": "Par un protocole réservé aux seuls pays utilisant l’euro",
+        "b": "Par un socle commun et trois protocoles régionaux pour l’Afrique, les Caraïbes et le Pacifique",
+        "c": "Par une adhésion automatique des partenaires à la PAC",
+        "d": "Par la création d’un gouvernement commun à tous les signataires"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 31
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le cadre commun est complété par trois protocoles régionaux adaptés aux priorités de chaque région.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Samoa",
+            "url": "https://www.consilium.europa.eu/fr/policies/samoa-agreement/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-032",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif de la stratégie Global Gateway ?",
+      "choix": {
+        "a": "Soutenir des connexions et infrastructures durables avec les pays partenaires",
+        "b": "Créer un visa unique valable dans le monde entier",
+        "c": "Remplacer l’OMC par une agence de l’Union",
+        "d": "Réserver l’aide européenne aux membres de l’OTAN"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 32
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Global Gateway porte notamment sur le numérique, l’énergie, les transports, la santé, l’éducation et la recherche.",
+        "sources": [
+          {
+            "titre": "Commission — Global Gateway",
+            "url": "https://international-partnerships.ec.europa.eu/policies/global-gateway_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-033",
+      "type": "qcm",
+      "enonce": "Quels acteurs l’approche « Équipe Europe » rassemble-t-elle notamment ?",
+      "choix": {
+        "a": "L’Union, ses États membres et leurs institutions financières et de développement",
+        "b": "Les seules entreprises privées cotées en Europe",
+        "c": "Les seuls membres du Parlement européen",
+        "d": "Les seuls États candidats à l’adhésion"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 33
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Cette approche coordonne les moyens européens et nationaux, notamment pour mobiliser des investissements avec les partenaires.",
+        "sources": [
+          {
+            "titre": "Commission — Global Gateway",
+            "url": "https://international-partnerships.ec.europa.eu/policies/global-gateway_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-034",
+      "type": "qcm",
+      "enonce": "Quelle région la CELAC représente-t-elle dans le dialogue avec l’Union européenne ?",
+      "choix": {
+        "a": "L’Afrique centrale et le Sahel",
+        "b": "L’Asie centrale",
+        "c": "Les Balkans occidentaux",
+        "d": "L’Amérique latine et les Caraïbes"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 34
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La CELAC est la Communauté des États latino-américains et des Caraïbes.",
+        "sources": [
+          {
+            "titre": "Conseil — Relations UE-CELAC",
+            "url": "https://www.consilium.europa.eu/fr/infographics/eu-celac-relations/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-035",
+      "type": "qcm",
+      "enonce": "Avec quelle organisation d’Asie du Sud-Est l’Union a-t-elle élevé ses relations au rang de partenariat stratégique en décembre 2020 ?",
+      "choix": {
+        "a": "L’AELE",
+        "b": "La CELAC",
+        "c": "L’ASEAN",
+        "d": "La CEDEAO"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 35
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’UE et l’Association des nations de l’Asie du Sud-Est ont établi un partenariat stratégique en 2020.",
+        "sources": [
+          {
+            "titre": "Conseil — Réunion UE-ASEAN, 1er décembre 2020",
+            "url": "https://www.consilium.europa.eu/fr/meetings/international-ministerial-meetings/2020/12/01/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-036",
+      "type": "qcm",
+      "enonce": "Comment le Conseil européen qualifie-t-il la Chine dans ses conclusions du 30 juin 2023 ?",
+      "choix": {
+        "a": "Exclusivement alliée militaire",
+        "b": "À la fois partenaire, concurrent et rival systémique",
+        "c": "Exclusivement pays candidat à l’adhésion",
+        "d": "Membre associé de la zone euro"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 36
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les conclusions maintiennent une approche combinant coopération, concurrence et rivalité systémique.",
+        "sources": [
+          {
+            "titre": "Conseil européen — Conclusions sur la Chine, 30 juin 2023",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2023/06/30/european-council-conclusions-on-china-30-june-2023/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-037",
+      "type": "qcm",
+      "enonce": "Dans ses conclusions de juin 2023 sur la Chine, que recherche l’Union en matière économique ?",
+      "choix": {
+        "a": "L’interruption immédiate de tous les échanges",
+        "b": "Une réduction des risques et une diversification, sans découplage général",
+        "c": "L’adoption d’une monnaie commune avec la Chine",
+        "d": "Le transfert de toute compétence commerciale aux États membres"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 37
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Conseil européen affirme la nécessité de réduire les dépendances critiques tout en évitant un découplage général.",
+        "sources": [
+          {
+            "titre": "Conseil européen — Conclusions sur la Chine, 30 juin 2023",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2023/06/30/european-council-conclusions-on-china-30-june-2023/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-038",
+      "type": "qcm",
+      "enonce": "À quel événement les premières sanctions de l’Union liées à la crise ukrainienne en 2014 ont-elles notamment répondu ?",
+      "choix": {
+        "a": "À l’annexion illégale de la Crimée et à la déstabilisation de l’Ukraine",
+        "b": "À l’adhésion de l’Ukraine à l’Union",
+        "c": "À l’entrée de la Russie dans l’OMC",
+        "d": "À la création de l’EEE"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 38
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’Union a adopté des mesures restrictives dès 2014 ; elles ont ensuite été fortement étendues après l’invasion de 2022.",
+        "sources": [
+          {
+            "titre": "Conseil — Sanctions contre la Russie",
+            "url": "https://www.consilium.europa.eu/fr/policies/sanctions-against-russia/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-039",
+      "type": "qcm",
+      "enonce": "Quel est l’objet du régime de sanctions de l’Union pour violations graves des droits de l’homme adopté en décembre 2020 ?",
+      "choix": {
+        "a": "Sanctionner exclusivement les États candidats",
+        "b": "Remplacer les procédures de la Cour pénale internationale",
+        "c": "Interdire toute relation diplomatique avec les pays tiers",
+        "d": "Cibler les responsables de violations graves des droits de l’homme dans le monde"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 39
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Ce régime mondial permet notamment des gels d’avoirs et des interdictions de déplacement ciblés.",
+        "sources": [
+          {
+            "titre": "Conseil — Régime mondial de sanctions en matière de droits de l’homme",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2020/12/07/eu-adopts-a-global-human-rights-sanctions-regime/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-040",
+      "type": "qcm",
+      "enonce": "À quoi sert la facilité pour l’Ukraine établie pour 2024-2027 ?",
+      "choix": {
+        "a": "Financer exclusivement des achats d’armes",
+        "b": "Accorder automatiquement le statut de membre de l’Union",
+        "c": "Soutenir financièrement l’Ukraine, son redressement, sa reconstruction et ses réformes",
+        "d": "Remplacer la monnaie ukrainienne par l’euro"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 40
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La facilité associe soutien budgétaire, investissements et assistance aux réformes, avec une enveloppe maximale de 50 milliards d’euros.",
+        "sources": [
+          {
+            "titre": "Conseil — Facilité pour l’Ukraine",
+            "url": "https://www.consilium.europa.eu/fr/policies/ukraine-facility/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-041",
+      "type": "qcm",
+      "enonce": "Quel était l’objectif des « corridors de solidarité » mis en place par l’Union en 2022 avec l’Ukraine ?",
+      "choix": {
+        "a": "Créer des frontières douanières à l’intérieur de l’Union",
+        "b": "Transférer la capitale ukrainienne dans un État membre",
+        "c": "Faciliter les exportations ukrainiennes et les importations nécessaires par des itinéraires alternatifs",
+        "d": "Supprimer toutes les normes sanitaires sans condition"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 41
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Ces corridors développent notamment des routes ferroviaires, routières et fluviales en réponse aux perturbations dues à la guerre.",
+        "sources": [
+          {
+            "titre": "Commission — Corridors de solidarité UE-Ukraine",
+            "url": "https://commission.europa.eu/topics/eu-solidarity-ukraine/eu-assistance-ukraine/eu-ukraine-solidarity-lanes_fr"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-042",
+      "type": "qcm",
+      "enonce": "Quelle opération militaire de l’Union lancée en 2004 se déroule en Bosnie-Herzégovine ?",
+      "choix": {
+        "a": "EUNAVFOR Atalanta",
+        "b": "EUFOR Althea",
+        "c": "EUNAVFOR Aspides",
+        "d": "EUNAVFOR MED Irini"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 42
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Althea a pris le relais de la SFOR de l’OTAN en décembre 2004, dans le cadre des arrangements Berlin Plus.",
+        "sources": [
+          {
+            "titre": "OTAN — Relations avec l’Union européenne",
+            "url": "https://www.nato.int/fr/what-we-do/partnerships-and-cooperation/relations-with-the-european-union"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-043",
+      "type": "qcm",
+      "enonce": "Quel est l’objectif central de l’opération navale Irini lancée en 2020 ?",
+      "choix": {
+        "a": "Contribuer à faire respecter l’embargo des Nations unies sur les armes à destination de la Libye",
+        "b": "Surveiller la frontière terrestre entre l’Irlande et l’Irlande du Nord",
+        "c": "Administrer le canal de Panama",
+        "d": "Remplacer les garde-côtes de tous les États membres"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 43
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Irini contrôle l’application de l’embargo sur les armes à destination de la Libye, notamment par des moyens maritimes.",
+        "sources": [
+          {
+            "titre": "Conseil — Lancement d’Irini, 31 mars 2020",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2020/03/31/eu-launches-operation-irini-to-enforce-libya-arms-embargo/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-044",
+      "type": "qcm",
+      "enonce": "Pourquoi l’Union a-t-elle lancé l’opération Aspides en février 2024 ?",
+      "choix": {
+        "a": "Pour exercer une mission de police au Kosovo",
+        "b": "Pour surveiller les élections dans les Balkans",
+        "c": "Pour imposer des droits de douane aux navires asiatiques",
+        "d": "Pour protéger la navigation et la liberté de navigation en mer Rouge et dans les eaux environnantes"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 44
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Aspides est une opération de sécurité maritime à vocation défensive face aux attaques contre la navigation commerciale.",
+        "sources": [
+          {
+            "titre": "Conseil — Lancement d’Aspides, 19 février 2024",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/02/19/security-and-freedom-of-navigation-in-the-red-sea-council-launches-new-eu-defensive-operation/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-045",
+      "type": "qcm",
+      "enonce": "Dans quel pays la première opération militaire de l’Union, Concordia, a-t-elle été lancée en 2003 ?",
+      "choix": {
+        "a": "En Ukraine",
+        "b": "En Libye",
+        "c": "En Géorgie",
+        "d": "Dans l’actuelle Macédoine du Nord"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 45
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Concordia a succédé à une opération de l’OTAN dans l’ancienne République yougoslave de Macédoine, aujourd’hui Macédoine du Nord.",
+        "sources": [
+          {
+            "titre": "OTAN et UE — Déclaration conjointe du 3 juin 2003",
+            "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2003/06/03/joint-press-statement"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-046",
+      "type": "qcm",
+      "enonce": "Quel est le domaine principal de la mission EULEX Kosovo lancée en 2008 ?",
+      "choix": {
+        "a": "La conduite de la politique monétaire",
+        "b": "La gestion de l’union douanière avec la Chine",
+        "c": "L’appui à l’état de droit",
+        "d": "La négociation du CETA"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 46
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "EULEX est une mission civile de l’Union consacrée à l’état de droit, notamment dans les domaines policier, judiciaire et douanier.",
+        "sources": [
+          {
+            "titre": "SEAE — EULEX Kosovo",
+            "url": "https://www.eeas.europa.eu/eulex-kosovo/eulex-kosovo-european-union-rule-law-mission-kosovo-civilian-mission_und_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-047",
+      "type": "qcm",
+      "enonce": "Quelle est la nature de la mission d’observation de l’Union en Géorgie (EUMM) déployée en 2008 ?",
+      "choix": {
+        "a": "Une force nucléaire commune",
+        "b": "Une mission civile d’observation non armée",
+        "c": "Une mission de perception des droits de douane",
+        "d": "Une juridiction pénale internationale"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 47
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’EUMM contribue à la stabilisation et à la normalisation après le conflit de 2008 ; ses observateurs civils ne sont pas armés.",
+        "sources": [
+          {
+            "titre": "SEAE — Mission d’observation en Géorgie",
+            "url": "https://www.eeas.europa.eu/eumm-georgia/about-european-union-monitoring-mission-georgia-eumm_en"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-048",
+      "type": "qcm",
+      "enonce": "Qui représente l’Union européenne aux sommets du G7 ?",
+      "choix": {
+        "a": "Les présidents du Conseil européen et de la Commission européenne",
+        "b": "Le président de la BCE seul",
+        "c": "Le président du Parlement européen seul",
+        "d": "Les sept juges les plus anciens de la Cour de justice"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 48
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’Union participe aux travaux du G7 et est représentée par ces deux présidents.",
+        "sources": [
+          {
+            "titre": "Conseil — Sommets internationaux",
+            "url": "https://www.consilium.europa.eu/fr/european-council/international-summits-involving-the-eu/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-049",
+      "type": "qcm",
+      "enonce": "Quelle affirmation décrit la participation de l’Union au G20 ?",
+      "choix": {
+        "a": "L’Union y siège en tant que membre à part entière",
+        "b": "Seuls ses États membres peuvent y siéger, jamais l’Union",
+        "c": "L’Union n’y participe qu’en qualité d’invitée temporaire",
+        "d": "La BCE remplace tous les États européens au G20"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 49
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’Union est membre du G20 et y est représentée au niveau des dirigeants par les présidents du Conseil européen et de la Commission.",
+        "sources": [
+          {
+            "titre": "Conseil — Sommets internationaux",
+            "url": "https://www.consilium.europa.eu/fr/european-council/international-summits-involving-the-eu/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-050",
+      "type": "qcm",
+      "enonce": "Selon l’article 34 TUE, que doivent faire les États membres siégeant au Conseil de sécurité de l’ONU ?",
+      "choix": {
+        "a": "Céder automatiquement leur siège au Parlement européen",
+        "b": "Voter uniquement selon les instructions du secrétaire général de l’ONU",
+        "c": "Suspendre leur participation à la PESC",
+        "d": "Se concerter et tenir les autres États membres ainsi que le haut représentant pleinement informés"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 50
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Ces États défendent les positions et intérêts de l’Union, sans préjudice des responsabilités qui leur incombent au titre de la Charte des Nations unies.",
+        "sources": [
+          {
+            "titre": "TUE — Article 34",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M034"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-051",
+      "type": "qcm",
+      "enonce": "Qui parle en principe au nom de l’Union à l’OMC dans le domaine de la politique commerciale commune ?",
+      "choix": {
+        "a": "Le Médiateur européen",
+        "b": "La Cour des comptes européenne",
+        "c": "La Commission européenne",
+        "d": "Le président de la Cour de justice"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 51
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Commission représente l’Union dans les travaux de l’OMC relevant de la politique commerciale commune.",
+        "sources": [
+          {
+            "titre": "OMC — Organisation de l’OMC et représentation de l’Union",
+            "url": "https://www.wto.org/french/thewto_f/whatis_f/tif_f/utw_chap7_f.pdf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-052",
+      "type": "qcm",
+      "enonce": "Quelle est la fonction du mécanisme de règlement des différends de l’OMC pour l’Union et ses partenaires ?",
+      "choix": {
+        "a": "Juger les crimes de guerre",
+        "b": "Traiter les litiges relatifs au respect des accords commerciaux de l’OMC",
+        "c": "Fixer les taux de change de toutes les monnaies",
+        "d": "Désigner les membres du Parlement européen"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 52
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Ce mécanisme vise à régler les différends entre membres sur l’interprétation et l’application des accords de l’OMC.",
+        "sources": [
+          {
+            "titre": "OMC — Règlement des différends",
+            "url": "https://www.wto.org/french/tratop_f/dispu_f/dispu_f.htm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-053",
+      "type": "qcm",
+      "enonce": "L’Union européenne est-elle elle-même partie à l’accord de Paris sur le climat ?",
+      "choix": {
+        "a": "Non, seuls les États peuvent y être parties",
+        "b": "Oui, aux côtés de ses États membres",
+        "c": "Non, elle n’y dispose que d’un statut d’observateur",
+        "d": "Oui, mais ses États membres ont dû s’en retirer"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 53
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’Union et ses États membres sont parties à l’accord de Paris, qui relève d’une action climatique internationale coordonnée.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Paris sur le climat",
+            "url": "https://www.consilium.europa.eu/fr/policies/paris-agreement-climate/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-054",
+      "type": "qcm",
+      "enonce": "Quel est l’objet de l’accord international dit BBNJ adopté en 2023 ?",
+      "choix": {
+        "a": "La conservation et l’utilisation durable de la biodiversité marine au-delà des juridictions nationales",
+        "b": "La fixation des quotas de pêche dans les seules eaux territoriales françaises",
+        "c": "La création d’une monnaie mondiale",
+        "d": "L’organisation des frontières terrestres de l’Union"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 54
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Cet accord, soutenu par l’Union, concerne la biodiversité marine dans les zones ne relevant pas des juridictions nationales.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord sur la haute mer, 17 juin 2024",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/06/17/high-seas-treaty-council-gives-green-light-for-its-conclusion/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-055",
+      "type": "qcm",
+      "enonce": "Dans quelle ville s’est tenue la première réunion de la Communauté politique européenne, le 6 octobre 2022 ?",
+      "choix": {
+        "a": "À Bruxelles",
+        "b": "À Paris",
+        "c": "À Madrid",
+        "d": "À Prague"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 55
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La première réunion de la CPE a rassemblé à Prague des dirigeants de l’Union et d’autres pays européens.",
+        "sources": [
+          {
+            "titre": "Conseil — Première réunion de la Communauté politique européenne",
+            "url": "https://www.consilium.europa.eu/fr/meetings/international-summit/2022/10/06/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-056",
+      "type": "qcm",
+      "enonce": "Quel est l’objet de la Communauté politique européenne ?",
+      "choix": {
+        "a": "Remplacer les institutions de l’Union",
+        "b": "Imposer l’adoption de l’euro à tous les participants",
+        "c": "Offrir une plateforme de coordination politique aux pays européens, au-delà des seuls membres de l’Union",
+        "d": "Constituer une nouvelle procédure automatique d’adhésion"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 56
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La CPE est un cadre de dialogue et de coopération sur les questions d’intérêt commun, distinct du processus d’adhésion.",
+        "sources": [
+          {
+            "titre": "Conseil — Première réunion de la Communauté politique européenne",
+            "url": "https://www.consilium.europa.eu/fr/meetings/international-summit/2022/10/06/"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-057",
+      "type": "qcm",
+      "enonce": "Quel type de relation commerciale l’accord de 1995 a-t-il établi entre l’Union et la Turquie ?",
+      "choix": {
+        "a": "Une adhésion complète au marché intérieur",
+        "b": "Une union monétaire",
+        "c": "Une union douanière couvrant principalement les produits industriels",
+        "d": "Un accord limité à la pêche"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 57
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’union douanière couvre les produits industriels et certains produits agricoles transformés ; elle ne vaut pas adhésion à l’Union.",
+        "sources": [
+          {
+            "titre": "Commission — Union douanière avec la Turquie",
+            "url": "https://taxation-customs.ec.europa.eu/turkey-customs-unions-and-preferential-arrangements_fr"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-relations-qcm-058",
+      "type": "qcm",
+      "enonce": "Quels pays formaient le Mercosur avec lequel l’Union a annoncé la conclusion politique des négociations commerciales le 6 décembre 2024 ?",
+      "choix": {
+        "a": "Le Chili, le Pérou, la Colombie et le Mexique",
+        "b": "L’Argentine, le Brésil, le Paraguay et l’Uruguay",
+        "c": "Le Canada, les États-Unis et le Mexique",
+        "d": "L’Australie et la Nouvelle-Zélande"
+      },
+      "source": {
+        "id": "thematique-relations",
+        "numero": 58
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’annonce de décembre 2024 concernait ces quatre partenaires ; une conclusion politique n’équivaut pas à une entrée en vigueur de l’accord.",
+        "sources": [
+          {
+            "titre": "Commission — Accord politique UE-Mercosur du 6 décembre 2024",
+            "url": "https://ireland.representation.ec.europa.eu/news-and-events/news/eu-and-mercosur-reach-political-agreement-groundbreaking-partnership-2024-12-06_en"
+          }
+        ]
+      }
+    }
+  ]
+}

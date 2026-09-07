@@ -1,0 +1,1099 @@
+{
+  "id": "fonctionnement",
+  "titre": "Le fonctionnement de l’Union européenne",
+  "description": "Actes juridiques, processus de décision, contrôle juridictionnel et financement de l’Union.",
+  "question_ids": [
+    "saeo-2026-externe-questions-europeennes-qcm-024",
+    "saeo-2026-externe-questions-europeennes-qcm-025",
+    "saeo-2026-externe-questions-europeennes-qcm-026",
+    "saeo-2026-externe-questions-europeennes-qcm-028",
+    "saeo-2026-externe-questions-europeennes-qcm-035",
+    "saeo-2026-externe-questions-europeennes-qcm-059",
+    "saeg-2026-externe-questions-europeennes-qcm-002",
+    "saeg-2026-externe-questions-europeennes-qcm-003",
+    "saeg-2026-externe-questions-europeennes-qcm-007",
+    "saeg-2026-externe-questions-europeennes-qcm-012",
+    "saeg-2026-externe-questions-europeennes-qcm-017",
+    "saeg-2026-externe-questions-europeennes-qcm-022",
+    "saeg-2026-externe-questions-europeennes-qcm-024",
+    "saeg-2026-externe-questions-europeennes-qcm-025",
+    "saeg-2026-externe-questions-europeennes-qcm-026",
+    "sarah-royon-saeg-3-entrainement-qcm-007",
+    "sarah-royon-saeg-3-entrainement-qcm-031",
+    "sarah-royon-saeg-3-entrainement-qcm-038",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-005",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-007",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-010",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-015",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-016",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-022",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-027",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-028",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-030",
+    "sarah-royon-saeg-concours-blanc-2-entrainement-qcm-033",
+    "sarah-royon-sciences-po-entrainement-qcm-008",
+    "sarah-royon-sciences-po-entrainement-qcm-016",
+    "sarah-royon-sciences-po-entrainement-qcm-021",
+    "sarah-royon-sciences-po-entrainement-qcm-023",
+    "sarah-royon-sciences-po-entrainement-qcm-025",
+    "sarah-royon-sciences-po-entrainement-qcm-027",
+    "sarah-royon-sciences-po-entrainement-qcm-031",
+    "sarah-royon-sciences-po-entrainement-qcm-040"
+  ],
+  "date_revision": "2026-09-07",
+  "questions": [
+    {
+      "id": "thematique-fonctionnement-qcm-001",
+      "type": "qcm",
+      "enonce": "Que signifie le principe d’attribution des compétences ?",
+      "choix": {
+        "a": "L’Union détermine seule l’étendue de ses compétences",
+        "b": "Toute compétence nationale est automatiquement partagée",
+        "c": "L’Union agit dans les limites des compétences que les États lui ont attribuées par les traités",
+        "d": "Le Conseil européen peut modifier les compétences par une simple déclaration"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 1
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’Union ne dispose que des compétences attribuées par les traités ; les autres appartiennent aux États membres.",
+        "sources": [
+          {
+            "titre": "TUE — Article 5",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M005"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-002",
+      "type": "qcm",
+      "enonce": "Dans quels domaines le principe de subsidiarité s’applique-t-il ?",
+      "choix": {
+        "a": "Dans les seuls domaines de compétence exclusive",
+        "b": "Dans les domaines qui ne relèvent pas de la compétence exclusive de l’Union",
+        "c": "Uniquement en politique étrangère",
+        "d": "À toute décision judiciaire nationale, sans lien avec le droit de l’Union"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 2
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La subsidiarité encadre l’intervention de l’Union dans les domaines non exclusifs, selon l’efficacité comparative des niveaux national et européen.",
+        "sources": [
+          {
+            "titre": "TUE — Article 5",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M005"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-003",
+      "type": "qcm",
+      "enonce": "Un règlement de l’Union doit-il être transposé par chaque État membre pour devenir applicable ?",
+      "choix": {
+        "a": "Non, il est directement applicable dans tout État membre",
+        "b": "Oui, par une loi dans tous les cas",
+        "c": "Oui, après un référendum national",
+        "d": "Oui, mais seulement dans les États hors zone euro"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 3
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le règlement est obligatoire dans tous ses éléments et directement applicable ; des mesures nationales d’exécution peuvent toutefois être nécessaires.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 288",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E288"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-004",
+      "type": "qcm",
+      "enonce": "Comment une directive lie-t-elle les États membres destinataires ?",
+      "choix": {
+        "a": "Comme une recommandation dépourvue d’effet obligatoire",
+        "b": "En remplaçant automatiquement toutes les lois nationales",
+        "c": "Uniquement après leur adhésion volontaire à chaque disposition",
+        "d": "Quant au résultat à atteindre, en leur laissant le choix de la forme et des moyens"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 4
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La directive impose un résultat aux États destinataires, qui choisissent les moyens de le réaliser dans le délai de transposition.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 288",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E288"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-005",
+      "type": "qcm",
+      "enonce": "Lorsqu’une décision de l’Union désigne des destinataires, qui lie-t-elle ?",
+      "choix": {
+        "a": "Tous les citoyens de tous les États dans tous les cas",
+        "b": "Uniquement la Commission",
+        "c": "Aucun destinataire, car elle n’est jamais obligatoire",
+        "d": "Uniquement ces destinataires"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 5
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La décision est obligatoire dans tous ses éléments ; lorsqu’elle désigne des destinataires, elle ne lie que ceux-ci.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 288",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E288"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-006",
+      "type": "qcm",
+      "enonce": "Quelle est la portée juridique des recommandations et avis visés à l’article 288 TFUE ?",
+      "choix": {
+        "a": "Ils doivent être transposés sous deux ans",
+        "b": "Ils ont toujours la même force qu’un règlement",
+        "c": "Ils ne lient pas leurs destinataires",
+        "d": "Ils abrogent les actes législatifs antérieurs"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 6
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les recommandations et les avis n’ont pas de force obligatoire, même s’ils peuvent éclairer l’interprétation du droit.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 288",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E288"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-007",
+      "type": "qcm",
+      "enonce": "Quel critère permet de qualifier un acte de « législatif » au sens du TFUE ?",
+      "choix": {
+        "a": "Son nombre d’articles",
+        "b": "Son adoption selon une procédure législative",
+        "c": "Sa publication dans toutes les langues officielles",
+        "d": "Son adoption par la Commission seule"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 7
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Un acte adopté selon une procédure législative ordinaire ou spéciale est un acte législatif.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 289",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E289"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-008",
+      "type": "qcm",
+      "enonce": "Que peut permettre un acte délégué adopté sur le fondement de l’article 290 TFUE ?",
+      "choix": {
+        "a": "Compléter ou modifier certains éléments non essentiels d’un acte législatif",
+        "b": "Modifier les éléments essentiels d’un traité",
+        "c": "Fixer librement de nouvelles compétences de l’Union",
+        "d": "Supprimer le contrôle du Parlement et du Conseil sur la délégation"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 8
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Seuls des éléments non essentiels peuvent faire l’objet de la délégation ; les éléments essentiels restent réservés au législateur.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 290",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E290"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-009",
+      "type": "qcm",
+      "enonce": "À qui les actes juridiquement contraignants confèrent-ils en principe les compétences d’exécution lorsque des conditions uniformes sont nécessaires ?",
+      "choix": {
+        "a": "À la Commission",
+        "b": "À la Cour des comptes",
+        "c": "Aux seuls parlements nationaux",
+        "d": "Au Médiateur européen"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 9
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 291 TFUE prévoit en principe la Commission et, dans certains cas spécifiques, le Conseil.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 291",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E291"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-010",
+      "type": "qcm",
+      "enonce": "En procédure législative ordinaire, que se passe-t-il si le Parlement rejette la position du Conseil en deuxième lecture à la majorité de ses membres ?",
+      "choix": {
+        "a": "La Commission adopte automatiquement l’acte",
+        "b": "Le Conseil peut l’imposer à la majorité simple",
+        "c": "Le président du Parlement tranche seul",
+        "d": "L’acte proposé est réputé non adopté"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 10
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le rejet à cette majorité met fin à la procédure sans adoption de l’acte.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 294",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E294"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-011",
+      "type": "qcm",
+      "enonce": "À quel moment le Conseil siège-t-il en public selon l’article 16 TUE ?",
+      "choix": {
+        "a": "Pour toutes ses réunions, sans exception",
+        "b": "Uniquement lorsqu’il traite de politique étrangère",
+        "c": "Lorsqu’il délibère et vote sur un projet d’acte législatif",
+        "d": "Seulement lorsqu’un parlement national le demande"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 11
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le traité impose la publicité des délibérations et votes du Conseil sur les projets d’actes législatifs.",
+        "sources": [
+          {
+            "titre": "TUE — Article 16",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-012",
+      "type": "qcm",
+      "enonce": "Quelle double majorité s’applique en principe au Conseil lorsqu’il statue sur proposition de la Commission ?",
+      "choix": {
+        "a": "50 % des États représentant 50 % de la population",
+        "b": "Au moins 55 % des États, comprenant au moins 15 États et représentant au moins 65 % de la population",
+        "c": "Deux tiers des États, sans critère de population",
+        "d": "75 % de la population, sans critère de nombre d’États"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 12
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La majorité qualifiée ordinaire combine le nombre d’États et la population qu’ils représentent.",
+        "sources": [
+          {
+            "titre": "TUE — Article 16",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-013",
+      "type": "qcm",
+      "enonce": "En règle générale, combien d’États une minorité de blocage au Conseil doit-elle comprendre au minimum ?",
+      "choix": {
+        "a": "Deux",
+        "b": "Quatre",
+        "c": "Trois",
+        "d": "Dix"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 13
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 16 TUE exige au moins quatre membres du Conseil ; à défaut, la majorité qualifiée est réputée acquise.",
+        "sources": [
+          {
+            "titre": "TUE — Article 16",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M016"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-014",
+      "type": "qcm",
+      "enonce": "Lorsque le Conseil statue à l’unanimité, quel est l’effet de l’abstention d’un membre présent ou représenté ?",
+      "choix": {
+        "a": "Elle ne fait pas obstacle à l’adoption",
+        "b": "Elle vaut systématiquement veto",
+        "c": "Elle impose un référendum européen",
+        "d": "Elle transfère la décision à la Commission"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 14
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’article 238, paragraphe 4, TFUE prévoit que les abstentions ne font pas obstacle à l’unanimité.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 238",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E238"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-015",
+      "type": "qcm",
+      "enonce": "Quel délai les parlements nationaux ont-ils en principe pour émettre un avis motivé sur la subsidiarité d’un projet législatif ?",
+      "choix": {
+        "a": "Huit jours après son adoption",
+        "b": "Six mois après son entrée en vigueur",
+        "c": "Un an après sa publication",
+        "d": "Huit semaines après sa transmission dans les langues officielles"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 15
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le protocole n° 2 accorde huit semaines pour adresser un avis motivé aux présidents du Parlement, du Conseil et de la Commission.",
+        "sources": [
+          {
+            "titre": "Protocole n° 2 — Subsidiarité et proportionnalité",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E/PRO/02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-016",
+      "type": "qcm",
+      "enonce": "Combien d’États membres au minimum doivent participer à une coopération renforcée ?",
+      "choix": {
+        "a": "Six",
+        "b": "Douze",
+        "c": "Neuf",
+        "d": "Tous les États de la zone euro"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 16
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 20 TUE fixe le seuil à neuf États et exige notamment que la coopération intervienne dans un domaine non exclusif.",
+        "sources": [
+          {
+            "titre": "TUE — Article 20",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M020"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-017",
+      "type": "qcm",
+      "enonce": "Qui peut introduire un recours en manquement contre un État membre au titre de l’article 258 TFUE ?",
+      "choix": {
+        "a": "Tout citoyen directement devant la Cour",
+        "b": "Le Médiateur européen",
+        "c": "La Commission européenne",
+        "d": "La Cour des comptes européenne"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 17
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Après la phase précontentieuse, la Commission peut saisir la Cour si elle estime qu’un État manque à ses obligations.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 258",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E258"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-018",
+      "type": "qcm",
+      "enonce": "Un État membre peut-il saisir la Cour d’un manquement commis par un autre État membre ?",
+      "choix": {
+        "a": "Non, seule la Commission le peut dans tous les cas",
+        "b": "Oui, après avoir saisi la Commission selon l’article 259 TFUE",
+        "c": "Oui, mais uniquement avec l’accord de l’État mis en cause",
+        "d": "Oui, uniquement après un vote unanime du Parlement"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 18
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 259 organise ce recours interétatique, précédé d’une saisine de la Commission.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 259",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E259"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-019",
+      "type": "qcm",
+      "enonce": "Quelle sanction la Cour peut-elle infliger à un État qui n’exécute pas un premier arrêt en manquement ?",
+      "choix": {
+        "a": "Une somme forfaitaire ou une astreinte",
+        "b": "L’exclusion automatique de l’Union",
+        "c": "La dissolution du parlement national",
+        "d": "La révocation du gouvernement par la Commission"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 19
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Sur saisine de la Commission, l’article 260, paragraphe 2, permet une sanction financière.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 260",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E260"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-020",
+      "type": "qcm",
+      "enonce": "Quel est l’objet du recours en annulation prévu à l’article 263 TFUE ?",
+      "choix": {
+        "a": "Obtenir l’annulation directe d’une loi nationale par la CJUE",
+        "b": "Réviser les traités à la demande d’un citoyen",
+        "c": "Remplacer une élection européenne contestée par un vote du Conseil",
+        "d": "Contrôler la légalité des actes de l’Union visés par cet article"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 20
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le recours vise la légalité d’actes de l’Union produisant des effets juridiques ; la qualité pour agir dépend du requérant.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 263",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E263"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-021",
+      "type": "qcm",
+      "enonce": "Quel est en principe le délai pour former un recours en annulation ?",
+      "choix": {
+        "a": "Huit semaines avant l’adoption de l’acte",
+        "b": "Un an après son entrée en vigueur",
+        "c": "Cinq ans après la première application nationale",
+        "d": "Deux mois à compter, selon le cas, de la publication, de la notification ou de la connaissance de l’acte"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 21
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 263 TFUE fixe un délai de deux mois selon les modalités de publicité ou de connaissance de l’acte.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 263",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E263"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-022",
+      "type": "qcm",
+      "enonce": "Un particulier peut-il adresser lui-même une demande de décision préjudicielle à la CJUE ?",
+      "choix": {
+        "a": "Oui, sans passer par un juge",
+        "b": "Oui, mais uniquement s’il est avocat",
+        "c": "Non, la demande est faite par une juridiction nationale",
+        "d": "Oui, après autorisation du Médiateur européen"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 22
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le renvoi préjudiciel est un dialogue entre juridictions ; une partie peut en solliciter l’usage devant le juge national.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 267",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E267"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-023",
+      "type": "qcm",
+      "enonce": "Quel effet l’article 264 TFUE attache-t-il en principe à un recours en annulation fondé ?",
+      "choix": {
+        "a": "L’acte devient une simple recommandation",
+        "b": "L’acte contesté est déclaré nul et non avenu",
+        "c": "L’État ayant proposé l’acte quitte l’Union",
+        "d": "La Commission est automatiquement censurée"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 23
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Cour annule l’acte ; elle peut, si nécessaire, maintenir certains de ses effets.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 264",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E264"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-024",
+      "type": "qcm",
+      "enonce": "À quelles conditions principales une disposition d’une directive non transposée peut-elle être invoquée contre l’État après l’expiration du délai ?",
+      "choix": {
+        "a": "Si elle est suffisamment précise et inconditionnelle",
+        "b": "Seulement si tous les États ont déjà transposé la directive",
+        "c": "Uniquement si le Parlement national donne son accord",
+        "d": "Même si elle impose une obligation vague dépendant d’un futur choix politique"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 24
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Après l’expiration du délai, une disposition précise et inconditionnelle peut produire un effet direct vertical contre l’État.",
+        "sources": [
+          {
+            "titre": "CJCE — Marshall, 152/84, 26 février 1986",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61984CJ0152"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-025",
+      "type": "qcm",
+      "enonce": "Une directive peut-elle, par elle-même, imposer une obligation à un particulier dans un litige contre un autre particulier ?",
+      "choix": {
+        "a": "Non, elle n’a pas d’effet direct horizontal",
+        "b": "Oui, dès sa proposition par la Commission",
+        "c": "Oui, même avant l’expiration du délai de transposition",
+        "d": "Oui, uniquement lorsque les deux particuliers sont de nationalités différentes"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 25
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Une directive ne crée pas par elle-même d’obligations opposables à un particulier par un autre ; d’autres mécanismes peuvent toutefois protéger les droits en cause.",
+        "sources": [
+          {
+            "titre": "CJCE — Marshall, 152/84, 26 février 1986",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61984CJ0152"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-026",
+      "type": "qcm",
+      "enonce": "Quelle est la durée minimale du cadre financier pluriannuel selon le TFUE ?",
+      "choix": {
+        "a": "Trois ans",
+        "b": "Sept ans",
+        "c": "Dix ans",
+        "d": "Cinq ans"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 26
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 312 impose une durée d’au moins cinq ans ; la pratique des cadres de sept ans ne modifie pas ce minimum.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 312",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E312"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-027",
+      "type": "qcm",
+      "enonce": "Comment le règlement fixant le cadre financier pluriannuel est-il adopté en principe ?",
+      "choix": {
+        "a": "Par la Commission seule",
+        "b": "Par le Parlement seul à la majorité simple",
+        "c": "Par le Conseil à l’unanimité, après approbation du Parlement européen",
+        "d": "Par la BCE sur recommandation de l’Eurogroupe"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 27
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 312 prévoit cette procédure législative spéciale ; une clause permet au Conseil européen d’autoriser le passage à la majorité qualifiée.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 312",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E312"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-028",
+      "type": "qcm",
+      "enonce": "Que permet le régime des douzièmes provisoires en l’absence de budget adopté au début de l’exercice ?",
+      "choix": {
+        "a": "De supprimer tout plafond de dépenses",
+        "b": "D’engager des dépenses mensuelles dans les limites prévues par l’article 315 TFUE",
+        "c": "De reconduire automatiquement un budget pour sept ans",
+        "d": "De transférer la compétence budgétaire à la BCE"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 28
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le traité autorise des dépenses mensuelles plafonnées par chapitre, afin d’assurer la continuité jusqu’à l’adoption du budget.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 315",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E315"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-029",
+      "type": "qcm",
+      "enonce": "Quelle institution exécute le budget de l’Union, en coopération avec les États membres ?",
+      "choix": {
+        "a": "Le Conseil européen",
+        "b": "La Commission",
+        "c": "La Cour de justice",
+        "d": "Le Parlement européen seul"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 29
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Commission exécute le budget sous sa responsabilité, conformément au principe de bonne gestion financière.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 317",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E317"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-030",
+      "type": "qcm",
+      "enonce": "Quelle exigence s’applique à l’entrée en vigueur de la décision sur les ressources propres ?",
+      "choix": {
+        "a": "Son approbation par les États membres selon leurs règles constitutionnelles",
+        "b": "Un arrêt favorable de la Cour européenne des droits de l’homme",
+        "c": "Un référendum identique dans tous les États",
+        "d": "La seule signature du président de la BCE"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 30
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La décision est adoptée par le Conseil à l’unanimité après consultation du Parlement, puis approuvée par les États selon leurs règles constitutionnelles.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 311",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E311"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-031",
+      "type": "qcm",
+      "enonce": "La citoyenneté de l’Union remplace-t-elle la citoyenneté nationale ?",
+      "choix": {
+        "a": "Oui, dès la majorité civile",
+        "b": "Oui, pour les résidents d’un autre État membre",
+        "c": "Uniquement dans les États de la zone euro",
+        "d": "Non, elle s’y ajoute"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 31
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La citoyenneté de l’Union s’ajoute à la citoyenneté nationale sans la remplacer.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 20",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E020"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-032",
+      "type": "qcm",
+      "enonce": "À qui un citoyen de l’Union peut-il adresser une pétition sur une question relevant des domaines d’activité de l’Union et le concernant directement ?",
+      "choix": {
+        "a": "À la BCE exclusivement",
+        "b": "Au Conseil de sécurité de l’ONU",
+        "c": "Au Parlement européen",
+        "d": "Au président du Conseil de l’Europe"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 32
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 227 TFUE reconnaît ce droit, également ouvert aux personnes résidant ou ayant leur siège statutaire dans un État membre.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 227",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E227"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-033",
+      "type": "qcm",
+      "enonce": "Dans quelles circonstances la Charte des droits fondamentaux s’adresse-t-elle aux États membres ?",
+      "choix": {
+        "a": "Pour toute activité nationale sans lien avec le droit de l’Union",
+        "b": "Uniquement pendant leur présidence du Conseil",
+        "c": "Lorsqu’ils mettent en œuvre le droit de l’Union",
+        "d": "Uniquement lors des élections européennes"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 33
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’article 51 de la Charte délimite son champ d’application aux États membres lorsqu’ils mettent en œuvre le droit de l’Union.",
+        "sources": [
+          {
+            "titre": "Charte des droits fondamentaux — Article 51",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016P051"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-034",
+      "type": "qcm",
+      "enonce": "Quel principe impose aux États membres de faciliter l’accomplissement des missions de l’Union ?",
+      "choix": {
+        "a": "Le principe de préférence nationale",
+        "b": "Le principe de coopération loyale",
+        "c": "Le principe d’extraterritorialité générale",
+        "d": "Le principe d’unanimité parlementaire"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 34
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "L’article 4, paragraphe 3, TUE impose une coopération loyale entre l’Union et les États membres.",
+        "sources": [
+          {
+            "titre": "TUE — Article 4",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M004"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-035",
+      "type": "qcm",
+      "enonce": "Quel effet un accord international conclu par l’Union produit-il selon l’article 216 TFUE ?",
+      "choix": {
+        "a": "Il lie les institutions de l’Union et les États membres",
+        "b": "Il lie uniquement le négociateur de la Commission",
+        "c": "Il remplace automatiquement tous les traités européens",
+        "d": "Il ne peut avoir aucun effet dans l’ordre juridique de l’Union"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 35
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les accords conclus par l’Union lient ses institutions et les États membres, dans leur champ d’application.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 216",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E216"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-036",
+      "type": "qcm",
+      "enonce": "Qui peut demander à la Cour un avis sur la compatibilité d’un accord international envisagé avec les traités ?",
+      "choix": {
+        "a": "Tout particulier directement",
+        "b": "La Cour des comptes uniquement",
+        "c": "Le partenaire étranger uniquement",
+        "d": "Un État membre, le Parlement, le Conseil ou la Commission"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 36
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 218, paragraphe 11, TFUE ouvre cette saisine à ces quatre catégories de demandeurs.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 218",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E218"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-037",
+      "type": "qcm",
+      "enonce": "En procédure législative ordinaire, qui signe un acte adopté conjointement ?",
+      "choix": {
+        "a": "Le président de la Commission seul",
+        "b": "Tous les chefs d’État ou de gouvernement",
+        "c": "Le président de la Cour de justice et le Médiateur",
+        "d": "Les présidents du Parlement européen et du Conseil"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 37
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 297 TFUE prévoit la signature par les présidents du Parlement et du Conseil.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 297",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E297"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-038",
+      "type": "qcm",
+      "enonce": "Si un acte publié au Journal officiel ne fixe pas de date d’entrée en vigueur, quelle règle s’applique aux actes visés à l’article 297 TFUE ?",
+      "choix": {
+        "a": "L’entrée en vigueur est immédiate dès le vote",
+        "b": "L’entrée en vigueur intervient au 1er janvier suivant",
+        "c": "L’entrée en vigueur a lieu le vingtième jour suivant la publication",
+        "d": "L’acte reste sans effet jusqu’à une décision nationale"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 38
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "En l’absence de date précisée, ces actes entrent en vigueur le vingtième jour suivant leur publication.",
+        "sources": [
+          {
+            "titre": "TFUE — Article 297",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E297"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thematique-fonctionnement-qcm-039",
+      "type": "qcm",
+      "enonce": "Que reconnaît l’arrêt Francovich de 1991 à propos d’un manquement d’un État au droit de l’Union ?",
+      "choix": {
+        "a": "Le droit de la Commission de dissoudre le parlement national",
+        "b": "Le principe de responsabilité de l’État pour les dommages causés aux particuliers, sous certaines conditions",
+        "c": "L’impossibilité de toute réparation en l’absence de transposition",
+        "d": "L’application automatique de toute directive entre particuliers"
+      },
+      "source": {
+        "id": "thematique-fonctionnement",
+        "numero": 39
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La responsabilité de l’État permet, sous les conditions posées par la jurisprudence, de réparer les préjudices causés par une violation du droit de l’Union.",
+        "sources": [
+          {
+            "titre": "CJCE — Francovich, C-6/90 et C-9/90, 19 novembre 1991",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61990CJ0006"
+          }
+        ]
+      }
+    }
+  ]
+}

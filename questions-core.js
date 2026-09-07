@@ -2,7 +2,7 @@ window.QcmCore = (() => {
 "use strict";
 
 function getSourceIds(base) {
-  return Object.keys(base.sources).filter(sourceId => getQuestions(base, sourceId).length > 0);
+  return Object.keys(base.sources).filter(sourceId => base.sources[sourceId].type !== "thematique" && getQuestions(base, sourceId).length > 0);
 }
 
 function getQuestions(base, sourceId) {
@@ -11,8 +11,17 @@ function getQuestions(base, sourceId) {
     .sort((a, b) => a.source.numero - b.source.numero);
 }
 
-function drawQuestions(base, count) {
-  const questions = base.questions.filter(question => question.type === "qcm");
+function getCategoryQuestions(base, categoryId) {
+  const category = base.categories?.find(item => item.id === categoryId);
+  if (!category) return [];
+  const ids = new Set(category.question_ids);
+  return base.questions.filter(question => question.type === "qcm" && ids.has(question.id));
+}
+
+function drawQuestions(base, count, categoryId) {
+  const questions = categoryId === undefined
+    ? base.questions.filter(question => question.type === "qcm")
+    : getCategoryQuestions(base, categoryId);
   if (!Number.isInteger(count) || count < 1 || count > questions.length) {
     throw new RangeError("Nombre de questions invalide");
   }
@@ -79,5 +88,5 @@ function summarize(questions, answers, bareme) {
   };
 }
 
-return { getSourceIds, getQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
+return { getSourceIds, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
 })();
