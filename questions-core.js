@@ -11,6 +11,19 @@ function getQuestions(base, sourceId) {
     .sort((a, b) => a.source.numero - b.source.numero);
 }
 
+function drawQuestions(base, count) {
+  const questions = base.questions.filter(question => question.type === "qcm");
+  if (!Number.isInteger(count) || count < 1 || count > questions.length) {
+    throw new RangeError("Nombre de questions invalide");
+  }
+  // Partial Fisher–Yates: every remaining question has the same chance at each draw.
+  for (let index = 0; index < count; index++) {
+    const picked = index + Math.floor(Math.random() * (questions.length - index));
+    [questions[index], questions[picked]] = [questions[picked], questions[index]];
+  }
+  return questions.slice(0, count);
+}
+
 function isNeutralized(question) {
   return question.type === "qcm" && question.correction?.neutralisee === true;
 }
@@ -66,5 +79,5 @@ function summarize(questions, answers, bareme) {
   };
 }
 
-return { getSourceIds, getQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
+return { getSourceIds, getQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
 })();

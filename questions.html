@@ -38,6 +38,21 @@
               <h2 id="training-sources-title">Sujets d’entraînement</h2>
               <div id="training-source-options" class="source-options"></div>
             </section>
+            <section class="source-group" aria-labelledby="random-source-title">
+              <h2 id="random-source-title">Sujet aléatoire</h2>
+              <label class="source-option">
+                <span class="source-code">Toute la banque de questions</span>
+                <input id="random-source" type="radio" name="source" value="aleatoire" required aria-controls="random-settings">
+                <span class="source-title">Quiz aléatoire</span>
+                <span class="source-details">Chaque question a la même chance d’être tirée, sans répétition dans le quiz.</span>
+                <span id="random-source-details" class="source-status"></span>
+              </label>
+              <div id="random-settings" class="random-settings" hidden>
+                <label for="random-count">Nombre de questions</label>
+                <input id="random-count" name="random-count" type="number" min="1" step="1" required disabled aria-describedby="random-count-help">
+                <p id="random-count-help" class="small muted"></p>
+              </div>
+            </section>
           </div>
         </fieldset>
         <div class="start-row">
@@ -52,7 +67,10 @@
           <p id="quiz-eyebrow" class="eyebrow"></p>
           <h1 id="quiz-title" tabindex="-1">Questions européennes</h1>
         </div>
-        <button id="change-source" class="text-button" type="button">← Changer de sujet</button>
+        <div class="quiz-actions">
+          <button id="regenerate" class="button secondary" type="button" hidden>Régénérer le quiz</button>
+          <button id="change-source" class="text-button" type="button">← Changer de sujet</button>
+        </div>
       </div>
       <div class="quiz-layout">
         <aside id="sidebar" class="sidebar is-collapsed" aria-label="Navigation et progression">
@@ -73,6 +91,7 @@
           <section id="instructions" class="instructions" aria-label="Consignes">
             <p id="answer-instructions"></p>
             <p id="correction-availability" class="small muted"></p>
+            <p id="regenerate-help" class="small muted" hidden>Régénérer le quiz remplace le tirage et remet les réponses à zéro. Pour changer le nombre de questions, utilisez « Changer de sujet ».</p>
             <a id="annale-link" class="small" target="_blank" rel="noopener noreferrer">Consulter le sujet original <span aria-hidden="true">↗</span></a>
           </section>
           <section id="results" class="results" aria-labelledby="results-title" hidden>

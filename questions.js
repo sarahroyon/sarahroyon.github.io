@@ -1,15 +1,19 @@
 (() => {
 "use strict";
 
-const { getSourceIds, getQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { getSourceIds, getQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
+const randomSourceId = "aleatoire";
+const randomSource = { type: "aleatoire", titre: "Quiz aléatoire" };
+const randomBareme = { bonne_reponse: null, mauvaise_reponse: null, absence_de_reponse: null, selection_partielle: null };
 const numberFormat = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 2 });
 const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrecte", skipped: "Sans réponse", pending: "Corrigé à venir", partial: "Réponse partielle", neutralized: "Question neutralisée" };
 let base;
 let session;
 let observer;
+let randomSaved;
 const cards = new Map();
 const indexLinks = new Map();
 
@@ -34,18 +38,35 @@ function formatPoints(points) {
   return (points > 0 ? "+" : "") + numberFormat.format(points) + " pt";
 }
 
-function readSaved(sourceId, questions) {
+function readStored(sourceId) {
   try {
-    const saved = JSON.parse(localStorage.getItem(storagePrefix + sourceId));
-    return { answers: cleanAnswers(questions, saved?.answers), reviewed: saved?.reviewed === true };
+    return JSON.parse(localStorage.getItem(storagePrefix + sourceId));
   } catch {
-    return { answers: cleanAnswers(questions, null), reviewed: false };
+    return null;
   }
 }
 
+function readSaved(sourceId, questions) {
+  const saved = sourceId === randomSourceId ? randomSaved : readStored(sourceId);
+  return { answers: cleanAnswers(questions, saved?.answers), reviewed: saved?.reviewed === true };
+}
+
+function getSavedRandomQuestions() {
+  const ids = randomSaved?.questionIds;
+  if (!Array.isArray(ids) || !ids.length || new Set(ids).size !== ids.length) return [];
+  const questionsById = new Map(base.questions.filter(question => question.type === "qcm").map(question => [question.id, question]));
+  const questions = ids.map(id => questionsById.get(id));
+  return questions.every(Boolean) ? questions : [];
+}
+
 function saveSession() {
+  const saved = { answers: session.answers, reviewed: session.reviewed };
+  if (session.sourceId === randomSourceId) {
+    saved.questionIds = session.questions.map(question => question.id);
+    randomSaved = saved;
+  }
   try {
-    localStorage.setItem(storagePrefix + session.sourceId, JSON.stringify({ answers: session.answers, reviewed: session.reviewed }));
+    localStorage.setItem(storagePrefix + session.sourceId, JSON.stringify(saved));
     $("save-status").textContent = "Vos choix sont sauvegardés dans ce navigateur.";
   } catch {
     $("save-status").textContent = "La sauvegarde locale est indisponible. Gardez cette page ouverte pour conserver vos choix.";
@@ -55,9 +76,18 @@ function saveSession() {
 function updateStartButton() {
   const selected = $("source-form").querySelector("input:checked");
   if (!selected) return;
-  const saved = readSaved(selected.value, getQuestions(base, selected.value));
-  const started = saved.reviewed || Object.values(saved.answers).some(answers => answers.length);
-  $("source-form").querySelector("button[type=submit]").textContent = started ? "Reprendre le QCM →" : "Commencer le QCM →";
+  const random = selected.value === randomSourceId;
+  $("random-settings").hidden = !random;
+  $("random-count").disabled = !random;
+  if (random) {
+    const questions = getSavedRandomQuestions();
+    const resumable = questions.length > 0 && questions.length === $("random-count").valueAsNumber;
+    $("source-form").querySelector("button[type=submit]").textContent = resumable ? "Reprendre le quiz →" : "Générer le quiz →";
+  } else {
+    const saved = readSaved(selected.value, getQuestions(base, selected.value));
+    const started = saved.reviewed || Object.values(saved.answers).some(answers => answers.length);
+    $("source-form").querySelector("button[type=submit]").textContent = started ? "Reprendre le QCM →" : "Commencer le QCM →";
+  }
 }
 
 function loadLocalData() {
@@ -100,6 +130,13 @@ async function loadData() {
       throw new Error("Sources des questions invalides");
     }
     base = data;
+    randomSaved = readStored(randomSourceId);
+    const poolSize = base.questions.filter(question => question.type === "qcm").length;
+    $("random-source").checked = false;
+    $("random-count").max = poolSize;
+    $("random-count").value = getSavedRandomQuestions().length || Math.min(20, poolSize);
+    $("random-source-details").textContent = poolSize + " questions disponibles · Nombre de questions au choix";
+    $("random-count-help").textContent = "De 1 à " + poolSize + " questions. Vous pourrez régénérer le quiz pour obtenir un nouveau tirage.";
     $("official-source-options").replaceChildren();
     $("training-source-options").replaceChildren();
     for (const [index, sourceId] of sourceIds.entries()) {
@@ -139,14 +176,15 @@ async function loadData() {
   }
 }
 
-function makeQuestion(question) {
+function makeQuestion(question, number) {
+  const source = base.sources[question.source.id];
   const card = element("article", "question-card");
   card.id = question.id;
   card.setAttribute("aria-labelledby", question.id + "-legend");
   const top = element("div", "question-topline");
   const clear = element("button", "clear-answer", "Effacer le choix");
   clear.type = "button";
-  clear.setAttribute("aria-label", "Effacer la réponse à la question " + question.source.numero);
+  clear.setAttribute("aria-label", "Effacer la réponse à la question " + number);
   clear.addEventListener("click", () => {
     if (session.reviewed) return;
     session.answers[question.id] = [];
@@ -154,7 +192,14 @@ function makeQuestion(question) {
     updateProgress();
     saveSession();
   });
-  top.append(element("span", "question-number", "Question " + String(question.source.numero).padStart(2, "0")), clear);
+  top.append(element("span", "question-number", "Question " + String(number).padStart(2, "0")), clear);
+  card.append(top);
+  if (session.sourceId === randomSourceId) {
+    const year = sourceYear(source);
+    card.append(element("p", "question-context small muted", sourceTitle(source) + (year ? " · " + year : "")
+      + " · Question " + question.source.numero + " · "
+      + (source.mode_reponse_qcm === "une_seule" ? "Une seule réponse possible." : "Plusieurs choix peuvent être cochés.")));
+  }
   const fieldset = element("fieldset", "question-fieldset");
   const legend = element("legend", "", question.enonce);
   legend.id = question.id + "-legend";
@@ -163,7 +208,7 @@ function makeQuestion(question) {
   for (const [letter, text] of Object.entries(question.choix)) {
     const label = element("label", "choice");
     const input = element("input");
-    input.type = session.source.mode_reponse_qcm === "une_seule" ? "radio" : "checkbox";
+    input.type = source.mode_reponse_qcm === "une_seule" ? "radio" : "checkbox";
     input.name = question.id;
     input.value = letter;
     input.checked = session.answers[question.id].includes(letter);
@@ -178,7 +223,7 @@ function makeQuestion(question) {
   fieldset.append(legend, choices);
   const feedback = element("div", "feedback");
   feedback.hidden = true;
-  card.append(top, fieldset, feedback);
+  card.append(fieldset, feedback);
   cards.set(question.id, card);
   return card;
 }
@@ -211,23 +256,42 @@ function observeQuestions() {
   for (const card of cards.values()) observer.observe(card);
 }
 
-function startQuiz(sourceId) {
-  const source = base.sources[sourceId];
+function startQuiz(sourceId, regenerate = false) {
+  const random = sourceId === randomSourceId;
+  const source = random ? randomSource : base.sources[sourceId];
   const year = sourceYear(source);
-  const questions = getQuestions(base, sourceId);
-  session = { sourceId, source, questions, bareme: base.baremes[source.bareme], ...readSaved(sourceId, questions) };
+  let questions;
+  let saved;
+  if (random) {
+    if (!$("random-count").reportValidity()) return;
+    const count = $("random-count").valueAsNumber;
+    const previous = getSavedRandomQuestions();
+    const resume = !regenerate && previous.length === count;
+    questions = resume ? previous : drawQuestions(base, count);
+    saved = resume ? readSaved(sourceId, questions) : { answers: cleanAnswers(questions, null), reviewed: false };
+  } else {
+    questions = getQuestions(base, sourceId);
+    saved = readSaved(sourceId, questions);
+  }
+  session = { sourceId, source, questions, bareme: random ? randomBareme : base.baremes[source.bareme], ...saved };
   observer?.disconnect();
   cards.clear();
   indexLinks.clear();
   $("question-cards").replaceChildren();
   $("question-index").replaceChildren();
   setIndexExpanded(false);
-  $("quiz-eyebrow").textContent = source.type === "creation"
+  $("quiz-title").textContent = random ? "Quiz aléatoire" : "Questions européennes";
+  $("regenerate").hidden = !random;
+  $("regenerate-help").hidden = !random;
+  $("quiz-eyebrow").textContent = random ? questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard")
+    : source.type === "creation"
     ? sourceTitle(source) + " · " + source.code_concours + " · Entraînement personnel · " + source.auteur
     : source.type === "sujet_zero"
       ? sourceTitle(source) + " · " + source.code_concours + (year ? " " + year : "") + " · Sujet fictif · Externe"
       : sourceTitle(source) + " · " + source.code_concours + " " + year + " · Externe";
-  $("answer-instructions").textContent = source.mode_reponse_qcm === "une_seule"
+  $("answer-instructions").textContent = random
+    ? "Répondez aux questions dans l’ordre de votre choix. Le mode de réponse est indiqué pour chaque question ; vous pourrez modifier vos choix avant de terminer."
+    : source.mode_reponse_qcm === "une_seule"
     ? "Une seule réponse est possible par question. Choisissez votre réponse ; vous pourrez la modifier avant de terminer."
     : source.mode_reponse_qcm === "une_ou_plusieurs"
       ? "Une ou plusieurs réponses sont possibles. Cochez vos choix ; vous pourrez les modifier avant de terminer."
@@ -240,16 +304,20 @@ function startQuiz(sourceId) {
       + (neutralized ? " " + neutralized + " questions ambiguës ou sans proposition exacte sont neutralisées ; leur corrigé explique pourquoi." : "")
       + (Number.isFinite(session.bareme.bonne_reponse)
         ? ""
-        : " Le sujet ne précise pas de barème : les réponses sont vérifiées sans note chiffrée.")
+        : random ? " Les questions proviennent de sujets aux barèmes différents : les réponses sont vérifiées sans note chiffrée."
+          : " Le sujet ne précise pas de barème : les réponses sont vérifiées sans note chiffrée.")
     : "Les corrigés de ce sujet ne sont pas encore disponibles. Vous pouvez vous entraîner et conserver vos choix, sans note pour le moment.";
-  $("annale-link").href = source.url;
+  $("annale-link").hidden = !source.url;
+  if (source.url) $("annale-link").href = source.url;
+  else $("annale-link").removeAttribute("href");
   $("progress").max = questions.length;
-  for (const question of questions) {
-    $("question-cards").append(makeQuestion(question));
+  for (const [index, question] of questions.entries()) {
+    const number = random ? index + 1 : question.source.numero;
+    $("question-cards").append(makeQuestion(question, number));
     const item = element("li");
     const link = element("a", "index-link");
     link.href = "#" + question.id;
-    link.append(element("span", "", String(question.source.numero)), element("span", "index-answer"));
+    link.append(element("span", "", String(number)), element("span", "index-answer"));
     link.addEventListener("click", event => {
       event.preventDefault();
       if (window.matchMedia("(max-width: 780px)").matches) setIndexExpanded(false);
@@ -280,14 +348,15 @@ function updateProgress() {
   const remaining = total - answered;
   $("end-message").textContent = session.reviewed ? "Vous pouvez reprendre vos réponses depuis le bouton « Modifier mes réponses »."
     : remaining ? remaining + (remaining > 1 ? " questions encore sans réponse." : " question encore sans réponse.") : "Toutes les questions sont renseignées. À vous de terminer !";
-  for (const question of session.questions) {
+  for (const [index, question] of session.questions.entries()) {
     const selected = session.answers[question.id];
     const link = indexLinks.get(question.id);
     const result = session.reviewed ? evaluateQuestion(question, selected, session.bareme) : null;
     link.classList.toggle("answered", selected.length > 0);
     link.classList.toggle("incorrect", result?.status === "incorrect");
     link.querySelector(".index-answer").textContent = selected.map(letter => letter.toUpperCase()).join("");
-    const label = "Question " + question.source.numero + ", " + (selected.length ? "choix " + selected.join(", ").toUpperCase() : "sans réponse")
+    const number = session.sourceId === randomSourceId ? index + 1 : question.source.numero;
+    const label = "Question " + number + ", " + (selected.length ? "choix " + selected.join(", ").toUpperCase() : "sans réponse")
       + (result ? ", " + statusLabels[result.status].toLowerCase() : "");
     link.setAttribute("aria-label", label);
     link.title = label;
@@ -342,7 +411,9 @@ function renderResults() {
     ? "Ce bilan porte sur " + summary.graded + " questions notées sur " + session.questions.length + "."
       + (summary.pending ? " Les " + summary.pending + " questions sans corrigé sont exclues du score." : "")
       + (summary.partial ? " Les sélections partielles sont signalées dans les corrections." : "")
-    : "Vos choix sont conservés. Aucune note ne peut être calculée pour cette séance avec les corrigés et le barème disponibles.";
+    : session.sourceId === randomSourceId
+      ? "Vos réponses sont vérifiées avec les corrigés disponibles. Ce quiz mélange des sujets aux barèmes différents : le bilan est présenté sans note chiffrée."
+      : "Vos choix sont conservés. Aucune note ne peut être calculée pour cette séance avec les corrigés et le barème disponibles.";
   if (summary.neutralized) {
     $("results-description").textContent += " " + summary.neutralized + " questions sont neutralisées et expliquées dans le corrigé ; elles ne comptent ni comme bonnes ni comme mauvaises réponses.";
   }
@@ -385,6 +456,10 @@ function renderReview() {
 }
 
 $("source-form").addEventListener("change", updateStartButton);
+$("random-count").addEventListener("input", updateStartButton);
+$("regenerate").addEventListener("click", () => {
+  if (session?.sourceId === randomSourceId) startQuiz(randomSourceId, true);
+});
 $("toggle-index").addEventListener("click", () => {
   setIndexExpanded($("toggle-index").getAttribute("aria-expanded") !== "true");
 });
