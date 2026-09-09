@@ -1,6 +1,8 @@
 window.QcmCore = (() => {
 "use strict";
 
+const quizBareme = Object.freeze({ bonne_reponse: 1, mauvaise_reponse: 0, absence_de_reponse: 0, selection_partielle: 0 });
+
 function getSourceIds(base) {
   return Object.keys(base.sources).filter(sourceId => base.sources[sourceId].type !== "thematique" && getQuestions(base, sourceId).length > 0);
 }
@@ -55,7 +57,8 @@ function cleanAnswers(questions, answers) {
   return clean;
 }
 
-function evaluateQuestion(question, selected, bareme) {
+function evaluateQuestion(question, selected) {
+  const bareme = quizBareme;
   if (isNeutralized(question)) return { status: "neutralized", points: null };
   if (!hasCorrection(question)) return { status: "pending", points: null };
   if (selected.length === 0) return { status: "skipped", points: bareme.absence_de_reponse };
@@ -65,19 +68,18 @@ function evaluateQuestion(question, selected, bareme) {
     return { status: "correct", points: bareme.bonne_reponse };
   }
   if (!containsWrongAnswer) {
-    // The annales do not specify how to score a strictly partial correct selection.
-    return { status: "partial", points: Number.isFinite(bareme.selection_partielle) ? bareme.selection_partielle : null };
+    return { status: "partial", points: bareme.selection_partielle };
   }
   return { status: "incorrect", points: bareme.mauvaise_reponse };
 }
 
-function summarize(questions, answers, bareme) {
-  const results = questions.map(question => evaluateQuestion(question, answers[question.id] || [], bareme));
+function summarize(questions, answers) {
+  const results = questions.map(question => evaluateQuestion(question, answers[question.id] || []));
   const graded = results.filter(result => result.points !== null);
   return {
     results,
     score: Math.round(graded.reduce((sum, result) => sum + result.points, 0) * 100) / 100,
-    maximum: Math.round(graded.length * bareme.bonne_reponse * 100) / 100,
+    maximum: graded.length * quizBareme.bonne_reponse,
     graded: graded.length,
     correct: results.filter(result => result.status === "correct").length,
     incorrect: results.filter(result => result.status === "incorrect").length,
@@ -88,5 +90,5 @@ function summarize(questions, answers, bareme) {
   };
 }
 
-return { getSourceIds, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
+return { quizBareme, getSourceIds, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
 })();

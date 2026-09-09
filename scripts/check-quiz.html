@@ -16,6 +16,7 @@
   let doc, win;
   const originalSessions = new Map();
   const tick = () => new Promise(resolve => setTimeout(resolve, 20));
+  const wait = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
   async function ready() {
     for (let i = 0; i < 200; i++) {
       doc = frame.contentDocument; win = frame.contentWindow;
@@ -31,6 +32,11 @@
   const start = () => el('source-form').requestSubmit();
   const ids = () => [...doc.querySelectorAll('.question-card')].map(card => card.id);
   const back = () => el('change-source').click();
+  const stored = source => JSON.parse(win.localStorage.getItem(prefix + source));
+  async function reload() {
+    await new Promise(resolve => { frame.addEventListener('load', resolve, { once: true }); win.location.reload(); });
+    await ready();
+  }
   function answer(id, letters) {
     for (const input of doc.getElementById(id).querySelectorAll('.choices input')) {
       input.checked = letters.includes(input.value);
@@ -41,7 +47,20 @@
     assert(base.categories.length === 5 && base.categories.every(c => QcmCore.getCategoryQuestions(base, c.id).length === 75), '5 x 75');
     const selected = base.categories.flatMap(c => c.question_ids);
     assert(new Set(selected).size === 375 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length), '375 corrigés complets distincts');
-    assert(QcmCore.getSourceIds(base).length === 6 && QcmCore.drawQuestions(base, 475).length === 475, '6 sujets et 475 QCM');
+    assert(QcmCore.drawQuestions(base, 475).length === 475, '475 QCM conservés');
+    const sample = { id: 'sample', type: 'qcm', choix: { a: 'A', b: 'B', c: 'C' }, correction: { reponses: ['a', 'b'] } };
+    for (const [letters, status, points] of [[['a', 'b'], 'correct', 1], [['a'], 'partial', 0], [['a', 'c'], 'incorrect', 0], [[], 'skipped', 0]]) {
+      const result = QcmCore.evaluateQuestion(sample, letters);
+      assert(result.status === status && result.points === points, 'Barème : ' + status);
+    }
+    assert(QcmCore.evaluateQuestion({ ...sample, correction: null }, ['a']).points === null, 'Question sans corrigé exclue');
+    assert(QcmCore.evaluateQuestion({ ...sample, correction: { neutralisee: true } }, []).points === null, 'Question neutralisée exclue');
+    const allQuestions = base.questions.filter(q => q.type === 'qcm');
+    const perfect = QcmCore.summarize(allQuestions, Object.fromEntries(allQuestions.map(q => [q.id, q.correction.reponses])));
+    assert(perfect.score === 475 && perfect.maximum === 475, 'Même barème sur toutes les origines');
+    const partial = QcmCore.summarize([sample], { sample: ['a'] });
+    assert(partial.score === 0 && partial.maximum === 1, 'Réponse partielle incluse dans le maximum');
+    pass('Barème commun : réponses exactes, partielles, fausses, absentes et questions exclues');
     for (const c of base.categories) {
       assert(new Set(QcmCore.drawQuestions(base, 75, c.id).map(q => q.id)).size === 75, 'Tirage complet ' + c.id);
       for (const invalid of [0, -1, 1.5, 76, NaN, Infinity]) {
@@ -64,7 +83,12 @@
     for (const key of [...QcmCore.getSourceIds(base), 'aleatoire', ...base.categories.map(c => 'categorie:' + c.id)]) {
       originalSessions.set(prefix + key, win.localStorage.getItem(prefix + key));
     }
-    assert(doc.querySelectorAll('#official-source-options input').length === 3 && doc.querySelectorAll('#training-source-options input').length === 3 && doc.querySelectorAll('#category-source-options input').length === 5, 'Cartes des sujets');
+    assert(doc.querySelectorAll('input[name=source]').length === 6 && doc.querySelectorAll('#category-source-options input').length === 5, 'Cinq catégories et un quiz aléatoire');
+    assert(!el('official-sources') && !el('training-sources'), 'Anciens sujets retirés');
+    assert([...doc.querySelectorAll('.source-group h2')].map(h => h.textContent).join('|') === 'Catégories|Quiz aléatoire', 'Ordre des sections');
+    assert(doc.querySelector('input[name=source]:checked').value === 'categorie:histoire', 'Catégorie sélectionnée par défaut');
+    const copyrightName = doc.querySelector('footer').textContent.split('©')[1].trim();
+    assert(copyrightName && !doc.title.includes(copyrightName) && !doc.querySelector('main').textContent.includes(copyrightName), 'Nom réservé au copyright');
     for (const c of base.categories) {
       select('categorie:' + c.id);
       for (const invalid of ['', '0', '76', '1.5']) { count(invalid); assert(!el('category-count').checkValidity(), 'Champ invalide ' + invalid); }
@@ -80,6 +104,11 @@
       el('quiz-form').requestSubmit();
       assert(doc.querySelectorAll('.feedback.correct').length === 75 && doc.querySelectorAll('.feedback a').length >= 75, 'Affichage des 75 corrigés ' + c.id);
       assert(el('result-stats').querySelector('dd').textContent === '75', 'Bilan ' + c.id);
+      assert(el('results-title').textContent === '75 / 75 points', 'Note chiffrée ' + c.id);
+      const beforeReset = ids();
+      el('reset').click();
+      assert(JSON.stringify(ids()) === JSON.stringify(beforeReset) && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Reset conserve les questions ' + c.id);
+      assert(el('timer').textContent === '00:00' && el('progress').value === 0 && !doc.querySelector('.choices input:disabled'), 'Reset du temps et de la progression ' + c.id);
       el('regenerate').click();
       assert(ids().length === 75 && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Régénération ' + c.id);
       back(); count(1); start(); assert(ids().length === 1, 'Une question ' + c.id); back();
@@ -90,16 +119,75 @@
     select('categorie:institutions'); count(3); start(); back();
     select('categorie:histoire'); assert(el('category-count').value === '7', 'Nombre indépendant'); start();
     assert(JSON.stringify(ids()) === JSON.stringify(savedIds) && doc.querySelector('.choices input:checked'), 'Reprise indépendante');
-    frame.contentWindow.location.reload(); await tick(); await ready();
+    await reload();
     select('categorie:histoire'); assert(el('category-count').value === '7', 'Nombre après rechargement'); start();
     assert(JSON.stringify(ids()) === JSON.stringify(savedIds) && doc.querySelector('.choices input:checked'), 'Reprise après rechargement'); back();
     const preserved = win.localStorage.getItem(prefix + 'categorie:histoire');
     select('aleatoire'); count(9, 'random-count'); start(); assert(ids().length === 9, 'Quiz général'); el('regenerate').click(); back();
     assert(win.localStorage.getItem(prefix + 'categorie:histoire') === preserved, 'Isolation du quiz général');
-    for (const source of QcmCore.getSourceIds(base)) { select(source); start(); assert(ids().length === QcmCore.getQuestions(base, source).length && el('regenerate').hidden, 'Sujet existant ' + source); back(); }
-    pass('Sauvegarde, reprise après rechargement, isolation des thèmes et des six sujets existants');
+    select('aleatoire'); count(475, 'random-count'); start();
+    for (const id of ids()) answer(id, byId.get(id).correction.reponses);
+    el('quiz-form').requestSubmit();
+    assert(el('results-title').textContent === '475 / 475 points', 'Barème du quiz aléatoire complet');
+    const randomIds = ids(); el('reset').click();
+    assert(JSON.stringify(ids()) === JSON.stringify(randomIds) && !doc.querySelector('.choices input:checked') && el('timer').textContent === '00:00', 'Reset du quiz aléatoire');
+    el('quiz-form').requestSubmit();
+    assert(el('results-title').textContent === '0 / 475 points', 'Quiz sans réponse');
+    back();
+    pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 475 questions aléatoires');
+
+    select('categorie:histoire'); count(2); start(); el('reset').click();
+    let now = Date.now();
+    win.Date.now = () => now;
+    // Restart with the controlled clock, then advance time without slowing down the checks.
+    el('reset').click();
+    now += 65000;
+    await wait(1100);
+    assert(el('timer').textContent === '01:05', 'Chronomètre actif');
+    answer(ids()[0], byId.get(ids()[0]).correction.reponses);
+    assert(stored('categorie:histoire').elapsedMs === 65000, 'Temps sauvegardé avec la réponse');
+    await wait(4100);
+    assert(stored('categorie:histoire').elapsedMs === 65000, 'Sauvegarde périodique');
+    const timedIds = ids();
+    back(); now += 120000; start();
+    assert(el('timer').textContent === '01:05', 'Pause sur la sélection');
+    now += 5000; el('quiz-form').requestSubmit();
+    assert(el('timer').textContent === '01:10' && el('results-time').textContent.includes('01:10'), 'Arrêt au bilan');
+    now += 60000; await wait(1100);
+    assert(el('timer').textContent === '01:10', 'Temps figé au bilan');
+    el('edit').click(); now += 3000;
+    let hidden = true;
+    Object.defineProperty(doc, 'hidden', { configurable: true, get: () => hidden });
+    doc.dispatchEvent(new win.Event('visibilitychange'));
+    assert(stored('categorie:histoire').elapsedMs === 73000, 'Pause lorsque l’onglet est masqué');
+    now += 60000; hidden = false;
+    doc.dispatchEvent(new win.Event('visibilitychange'));
+    now += 2000; el('quiz-form').requestSubmit();
+    assert(stored('categorie:histoire').elapsedMs === 75000, 'Reprise sans compter le temps masqué');
+    await reload(); select('categorie:histoire'); start();
+    assert(JSON.stringify(ids()) === JSON.stringify(timedIds) && !el('results').hidden && el('timer').textContent === '01:15', 'Bilan et temps conservés après rechargement');
+    el('edit').click(); now = Date.now(); win.Date.now = () => now;
+    el('reset').click(); now += 3605000; el('quiz-form').requestSubmit();
+    assert(el('timer').textContent === '01:00:05', 'Durée supérieure à une heure');
+    el('regenerate').click();
+    assert(el('timer').textContent === '00:00' && stored('categorie:histoire').elapsedMs === 0 && !doc.querySelector('.choices input:checked'), 'Nouveau tirage remet le temps à zéro');
+    now += 9000; answer(ids()[0], byId.get(ids()[0]).correction.reponses);
+    win.dispatchEvent(new win.Event('pagehide'));
+    assert(stored('categorie:histoire').elapsedMs === 9000, 'Temps enregistré au départ de la page');
+    now += 60000; win.dispatchEvent(new win.Event('pageshow'));
+    now += 1000; el('quiz-form').requestSubmit();
+    assert(stored('categorie:histoire').elapsedMs === 10000, 'Reprise après retour navigateur');
+    el('reset').click(); back(); await reload(); select('categorie:histoire'); start();
+    assert(el('timer').textContent === '00:00' && !doc.querySelector('.choices input:checked') && el('results').hidden, 'Reset persistant');
+    back();
+    const legacyId = base.categories[0].question_ids[0];
+    win.localStorage.setItem(prefix + 'categorie:histoire', JSON.stringify({ questionIds: [legacyId], answers: { [legacyId]: byId.get(legacyId).correction.reponses }, reviewed: true }));
+    await reload(); select('categorie:histoire'); start();
+    assert(el('timer').textContent === '00:00' && el('results-title').textContent === '1 / 1 points', 'Ancienne sauvegarde compatible');
+    back();
+    pass('Chronomètre, pauses, reprise, rechargement, reset persistant et anciennes sauvegardes');
     win.localStorage.setItem(prefix + 'categorie:histoire', JSON.stringify({ questionIds: [base.categories[1].question_ids[0]], answers: {} }));
-    frame.contentWindow.location.reload(); await tick(); await ready(); select('categorie:histoire');
+    await reload(); select('categorie:histoire');
     assert(el('category-count').value === '20', 'Rejet du tirage sauvegardé hors catégorie');
     count(2); start(); assert(ids().every(id => base.categories[0].question_ids.includes(id)), 'Nouveau tirage valide'); back();
     frame.style.width = '375px'; await tick();
@@ -110,6 +198,7 @@
     out.textContent = logs.join('\n') + '\nALL CHECKS PASSED';
   } catch (error) { out.textContent = logs.join('\n') + '\nFAIL ' + error.stack; }
   finally {
+    if (doc?.getElementById('quiz') && !el('quiz').hidden) back();
     for (const [key, value] of originalSessions) {
       if (value === null) win.localStorage.removeItem(key);
       else win.localStorage.setItem(key, value);

@@ -49,7 +49,6 @@ window.QcmAnnales = {
     "sarah-royon-saeg-3-entrainement": {
       "type": "creation",
       "titre": "Entraînement 1",
-      "auteur": "Sarah Royon",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEO / SAEG",
       "cadre": "Orient et général",
@@ -65,7 +64,6 @@ window.QcmAnnales = {
     "sarah-royon-saeg-concours-blanc-2-entrainement": {
       "type": "creation",
       "titre": "Entraînement 2",
-      "auteur": "Sarah Royon",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEO / SAEG",
       "cadre": "Orient et général",
@@ -100,7 +98,6 @@ window.QcmAnnales = {
     "sarah-royon-sciences-po-entrainement": {
       "type": "creation",
       "titre": "Entraînement 3",
-      "auteur": "Sarah Royon",
       "editeur": "Sciences Po",
       "concours": "Secrétaire des affaires étrangères",
       "code_concours": "SAEO / SAEG",

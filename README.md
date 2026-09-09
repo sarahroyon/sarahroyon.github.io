@@ -1,31 +1,40 @@
-# sarahroyon.github.io
+# Questions européennes
 
-Site personnel de Sarah Royon et entraînement aux QCM de questions européennes du concours de secrétaire des affaires étrangères.
+Site de préparation aux QCM de questions européennes du concours de secrétaire des affaires étrangères. La page [questions.html](questions.html) fonctionne en HTML, CSS et JavaScript natifs, sans compte ni serveur applicatif.
 
-La page [questions.html](questions.html), accessible depuis l’accueil, fonctionne entièrement dans le navigateur, en HTML, CSS et JavaScript natifs. Elle charge la [base de questions](data/annales/questions-europeennes-2026.json) et propose six sujets dans deux sections : les annales officielles des cadres d’Orient (SAEO) et général (SAEG), soit 60 QCM chacune, accompagnées du sujet V0 officiel (10 QCM), puis « Entraînement 1 », « Entraînement 2 » et « Entraînement 3 », contenant chacun 40 QCM. Les 12 QRC sont conservées dans la base et ne font pas partie du questionnaire interactif.
+## Choisir un quiz
 
-L’index permet de retrouver chaque question et de voir les choix renseignés. Il reste à gauche sur ordinateur et se replie sur mobile. Les réponses et l’état du bilan sont sauvegardés dans `localStorage`, séparément pour chaque sujet. Ils restent sur l’appareil de l’étudiant ; aucun compte ni serveur applicatif n’est nécessaire. Le bouton « Modifier mes réponses » permet de reprendre un questionnaire terminé.
+La sélection présente uniquement **Catégories**, puis **Quiz aléatoire**. Les cinq catégories proposent chacune de 1 à 75 questions corrigées. Le quiz aléatoire puise dans les 475 QCM de la banque, toutes sources confondues. Le nombre proposé par défaut est 20. Les tirages sont uniformes et sans répétition au sein d’un quiz.
 
-Les sujets sont proposés automatiquement à partir des sources de la base contenant des QCM. Les sources `annale` et `sujet_zero` sont regroupées dans les sujets officiels ; les sources `creation` figurent dans les sujets d’entraînement. Les trois entraînements imposent une seule réponse par question : leurs choix utilisent des boutons radio. Leurs PDF, nommés `entrainement-1.pdf`, `entrainement-2.pdf` et `entrainement-3.pdf`, ne précisent pas de barème QCM : le bilan valide les réponses sans note chiffrée. Les deux QRC de chaque entraînement valent chacune 5 points, conformément aux documents.
+Les anciens sujets officiels et d’entraînement alimentent toujours les questions, mais ne sont plus proposés séparément. Les 12 QRC restent conservées dans les données et sont exclues des quiz. La provenance, le contexte temporel et le mode de réponse de chaque question restent affichés. Voir le [catalogue des 375 questions par catégorie](data/categories/CATALOGUE.md).
 
-Le bilan des sujets existants utilise les corrigés d’entraînement des 250 QCM d’origine. Les 12 questions initialement neutralisées ont été adaptées à la demande de l’autrice pour permettre une réponse unique, puis leurs corrigés ont été mis à jour. Lorsqu’un barème est disponible, le score est présenté sur le maximum des seules questions notées, sans conversion en note de concours sur 20. Les pénalités proviennent du barème de la base ; une sélection strictement partielle reste non notée lorsque son barème n’est pas renseigné. Voir la [documentation des annales](data/annales/README.md).
+## Barème commun
 
-La section « Sujet aléatoire », sous les sujets d’entraînement, permet de choisir de 1 au nombre total de QCM de la banque (475 actuellement). Le quiz est tiré uniformément sans remise dans l’ensemble des QCM, toutes sources confondues, par un mélange partiel de Fisher–Yates. Chaque entrée de la banque a la même probabilité d’être sélectionnée ; les QRC sont exclues. Le nombre proposé par défaut est 20. Le bouton « Régénérer le quiz » effectue un nouveau tirage du même nombre de questions et remet les réponses à zéro ; « Changer de sujet » permet de modifier ce nombre. Le dernier tirage, son ordre, les réponses et l’état du bilan sont sauvegardés séparément des autres sujets. Chaque question conserve son mode de réponse d’origine, avec sa provenance affichée, et la numérotation du quiz va de 1 au nombre choisi. Les corrigés sont affichés sans note chiffrée, les barèmes des sujets d’origine étant différents.
+Tous les quiz utilisent le même barème : **1 point par réponse exacte, 0 pour une réponse incorrecte, partielle ou absente**. Pour les questions à choix multiples, il faut sélectionner toutes les bonnes réponses et aucune autre. Les sélections partielles sont détaillées dans le corrigé et comptées parmi les réponses incorrectes dans le bilan.
 
-La section « Entraînement par catégorie » propose **75 questions corrigées pour chacun des cinq thèmes**, soit 375 questions sélectionnées (150 reprises et 225 nouvelles). Choisir entre 1 et 75 questions génère un tirage uniforme sans répétition dans la catégorie ; il est possible de le régénérer, de le reprendre ou d’en modifier la longueur. La sauvegarde est indépendante pour chaque thème. Les questions reprises conservent leur provenance et leur contexte temporel. Voir le [catalogue des questions et corrigés](data/categories/CATALOGUE.md) et la [documentation de la banque thématique](data/categories/README.md).
+Le score est affiché sur le nombre de questions notées. Seules les éventuelles questions neutralisées ou sans corrigé sont exclues du maximum. Les barèmes historiques conservés dans les données décrivent les documents d’origine ; ils ne servent plus à noter les quiz. Le barème de l’application est défini une seule fois dans `QcmCore.quizBareme` et annoncé avant le quiz ainsi que dans le bilan. Les corrigés sont pédagogiques.
 
-Pour prévisualiser le site, ouvrir directement `index.html` ou `questions.html` dans le navigateur en conservant l’arborescence du dossier. La page fonctionne aussi depuis un serveur HTTP statique ou GitHub Pages. Aucun serveur ni dépendance externe n’est nécessaire pour l’ouverture locale.
+## Chronomètre et reprise
 
-En HTTP(S), la page lit les JSON des annales et des catégories, puis fusionne les questions sans dupliquer les entrées reprises. En ouverture directe (`file://`), elle charge les équivalents JavaScript des catégories et des annales, dont [questions-europeennes-2026.js](data/annales/questions-europeennes-2026.js), car les navigateurs bloquent la lecture du JSON par `fetch` dans ce contexte. Les scripts de la page sont des scripts classiques, également compatibles avec cette ouverture.
+Le chronomètre démarre avec le quiz et compte le temps passé sur sa page. Il se met en pause lorsqu’on change de quiz, masque l’onglet, quitte la page ou affiche le bilan. « Modifier mes réponses » reprend le chronomètre. Le temps total figure dans le bilan ; au-delà d’une heure, l’affichage passe de `mm:ss` à `hh:mm:ss`.
 
-Les JSON restent les sources à modifier. Après une modification des questions ou des corrigés, actualiser son équivalent local avec :
+Le tirage, son ordre, les réponses, l’état du bilan et le temps écoulé sont sauvegardés dans `localStorage`, séparément pour chaque catégorie et pour le quiz aléatoire. Le temps est enregistré toutes les cinq secondes et lors des interactions ou de la mise en pause. Les anciennes sauvegardes restent compatibles ; leur temps initial vaut zéro. Les données restent dans le navigateur de l’utilisateur.
+
+- **Remettre à zéro** efface les réponses, le bilan et le temps, puis redémarre le même quiz en gardant l’ordre des questions.
+- **Nouveau tirage** tire un nouveau quiz de même longueur et remet les réponses, le bilan et le temps à zéro.
+- **Changer de quiz** revient à la sélection pour choisir une catégorie ou modifier le nombre de questions.
+
+## Prévisualisation et maintenance
+
+Ouvrir `index.html` ou `questions.html` dans un navigateur en conservant l’arborescence du dossier, ou servir le site en HTTP, notamment avec GitHub Pages. En HTTP(S), la page lit les fichiers JSON ; en ouverture directe (`file://`), elle charge leurs équivalents JavaScript.
+
+Les JSON restent les sources à modifier. Après modification, synchroniser les fichiers générés :
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts/sync-annales.ps1
+powershell -ExecutionPolicy Bypass -File scripts/sync-categories.ps1
 ```
 
-Ajouter `-Check` à cette commande pour vérifier que les deux fichiers sont synchronisés. Le fichier généré est inclus dans le site : cette commande sert uniquement à la maintenance des données.
+Ajouter `-Check` pour contrôler la synchronisation sans modifier les fichiers. Voir la [documentation des annales](data/annales/README.md) et celle des [catégories](data/categories/README.md).
 
-Après une modification des catégories ou des corrigés repris dans le catalogue, exécuter aussi `powershell -ExecutionPolicy Bypass -File scripts/sync-categories.ps1` (ou `-Check` pour contrôler la synchronisation).
-
-Ouvrir [scripts/check-quiz.html](scripts/check-quiz.html) pour vérifier les tirages, les cinq catégories, les corrigés, la sauvegarde et les parcours existants dans un navigateur. Le contrôle fonctionne en ouverture locale ou depuis un serveur HTTP et restaure les sauvegardes présentes à son lancement.
+Ouvrir [scripts/check-quiz.html](scripts/check-quiz.html) pour vérifier le barème, les tirages, les corrigés, le chronomètre, la remise à zéro, la sauvegarde et l’affichage mobile. Ce contrôle fonctionne en ouverture locale ou en HTTP et restaure les sauvegardes présentes au lancement.

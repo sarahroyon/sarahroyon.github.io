@@ -15,7 +15,7 @@ Les deux annales officielles portent sur l’épreuve écrite d’admissibilité
 
 Le « Sujet zéro officiel » (V0), identifié par `meae-sujet-v0-officiel-questions-europeennes` et de type `sujet_zero`, est un sujet fictif du ministère commun aux concours externes des cadres d’Orient et général. Il présente la deuxième épreuve d’admissibilité (2 heures, coefficient 3), sans date d’épreuve ni session de concours. Le zéro est écrit en toutes lettres dans l’interface pour éviter la confusion avec la lettre O.
 
-Le sujet « Entraînement 3 », identifié par `sarah-royon-sciences-po-entrainement`, est classé comme `creation` dans la section des sujets d’entraînement. Le fichier fourni l’attribue à Sarah Royon ; sa couverture porte la mention Sciences Po, « Galop du samedi 5 avril 2025 », « Questions européennes — MEAE SCO, SCG » et une durée de deux heures. La date du galop est conservée dans `date_epreuve`, sans lui attribuer d’année de session ni de coefficient. Les codes `SCO / SCG` restent ceux de la couverture ; à la demande de l’autrice, la banque présente les trois entraînements avec `code_concours: "SAEO / SAEG"` et `cadre: "Orient et général"`, comme le sujet zéro.
+Le sujet « Entraînement 3 », identifié par `sarah-royon-sciences-po-entrainement`, est classé comme `creation` dans la banque de questions. Sa couverture porte la mention Sciences Po, « Galop du samedi 5 avril 2025 », « Questions européennes — MEAE SCO, SCG » et une durée de deux heures. La date du galop est conservée dans `date_epreuve`, sans lui attribuer d’année de session ni de coefficient. Les codes `SCO / SCG` restent ceux de la couverture ; à la demande de l’autrice, la banque présente les trois entraînements avec `code_concours: "SAEO / SAEG"` et `cadre: "Orient et général"`, comme le sujet zéro.
 
 Les titres affichés sont « Entraînement 1 », « Entraînement 2 » et « Entraînement 3 », dans l’ordre d’ajout à la banque. Ils correspondent respectivement aux anciens « Sujet 3 », « Concours blanc 2 » et « Sciences Po ». Leurs PDF sont nommés `entrainement-1.pdf`, `entrainement-2.pdf` et `entrainement-3.pdf`. Les identifiants des sources et des questions sont conservés pour préserver les séances sauvegardées ; le contenu des PDF et leurs empreintes SHA-256 ne changent pas.
 
@@ -97,13 +97,12 @@ Le sujet V0 conserve son éditeur institutionnel, son lien local et son empreint
 
 ## Ajouter des questions personnelles
 
-Ajouter une source avec un identifiant inédit. Par exemple, pour un lot créé par Sarah Royon utilisant le même barème d’entraînement :
+Ajouter une source avec un identifiant inédit. Par exemple, pour un lot de questions originales utilisant le même barème historique :
 
 ```json
 {
   "type": "creation",
   "titre": "Questions européennes — questions personnelles",
-  "auteur": "Sarah Royon",
   "bareme": "questions-europeennes-2026",
   "mode_reponse_qcm": "une_ou_plusieurs"
 }
@@ -136,7 +135,7 @@ Les 42 questions de l’entraînement 2 et les 12 questions du sujet V0 ont ét�
 | Entraînement 3 | 21 | b | Date du 5 avril 2025 explicite ; proposition b actualisée après la clôture de la procédure polonaise. |
 | Entraînement 3 | 35 | b | Article 36 TFUE précisé ; remplacement de la propriété intellectuelle par un objectif protectionniste. |
 
-Les QCM des entraînements 2 et 3 ainsi que du sujet V0 sont vérifiés automatiquement ; le bilan affiche les bonnes et mauvaises réponses sans note chiffrée, leurs PDF ne précisant pas de barème pour le QCM.
+Les QCM des entraînements 2 et 3 ainsi que du sujet V0 sont vérifiés automatiquement. Leurs PDF ne précisent pas de barème pour le QCM ; l’application utilise désormais son barème commun pour toutes les questions.
 
 Une correction QCM renseignée doit contenir :
 
@@ -150,7 +149,9 @@ Si un futur QCM doit être neutralisé, sa correction conserve ces trois champs,
 
 Ne remplacer `null` par un objet qu’après vérification de son contenu. Un QCM peut faire l’objet d’une validation automatique seulement s’il possède des lettres correctes et n’est pas neutralisé. Pour les questions d’actualité, la vérification doit tenir compte de la date de l’épreuve ou préciser le contexte retenu lorsque celle-ci manque.
 
-## Barème
+## Barèmes des documents d’origine
+
+Ces métadonnées conservent les règles des documents sources. Les quiz par catégorie et aléatoires utilisent tous le barème de l’application : 1 point par réponse exacte, 0 pour une réponse incorrecte, partielle ou absente.
 
 Les valeurs sont exprimées en points :
 

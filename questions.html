@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Entraînez-vous aux QCM de questions européennes : annales, quiz aléatoires et 75 questions corrigées pour chacune des cinq catégories du concours.">
-  <title>Questions européennes · Sarah Royon</title>
+  <meta name="description" content="Révisez les questions européennes avec cinq catégories et des quiz aléatoires corrigés, un barème commun et un chronomètre.">
+  <title>Questions européennes · Quiz</title>
   <link rel="stylesheet" href="questions.css">
   <script defer src="questions-core.js"></script>
   <script defer src="questions.js"></script>
@@ -12,7 +12,7 @@
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header">
-    <a class="site-name" href="index.html">Sarah Royon</a>
+    <a class="site-name" href="index.html">Questions européennes</a>
     <span class="header-caption">Concours de secrétaire des affaires étrangères</span>
   </header>
 
@@ -20,7 +20,7 @@
     <section id="setup" class="setup" aria-labelledby="setup-title">
       <h1 id="setup-title" tabindex="-1">Questions européennes</h1>
 
-      <p id="loading" role="status">Chargement des sujets…</p>
+      <p id="loading" role="status">Chargement des questions…</p>
       <div id="load-error" class="notice" role="alert" hidden>
         <p id="load-error-message">Les sujets n’ont pas pu être chargés. Réessayez dans un instant.</p>
         <button id="retry" class="button secondary" type="button">Réessayer</button>
@@ -28,18 +28,21 @@
       <noscript><p class="notice">Activez JavaScript pour accéder aux questionnaires.</p></noscript>
 
       <form id="source-form" hidden>
-        <fieldset class="source-fieldset" aria-label="Sujets disponibles">
+        <fieldset class="source-fieldset" aria-label="Quiz disponibles">
           <div id="source-options" class="source-groups">
-            <section id="official-sources" class="source-group" aria-labelledby="official-sources-title">
-              <h2 id="official-sources-title">Sujets officiels</h2>
-              <div id="official-source-options" class="source-options"></div>
-            </section>
-            <section id="training-sources" class="source-group" aria-labelledby="training-sources-title">
-              <h2 id="training-sources-title">Sujets d’entraînement</h2>
-              <div id="training-source-options" class="source-options"></div>
+            <section id="category-sources" class="source-group" aria-labelledby="category-sources-title">
+              <h2 id="category-sources-title">Catégories</h2>
+              <p class="category-intro muted">Les cinq catégories du concours, avec 75 questions corrigées chacune. Choisissez un thème et le nombre de questions pour composer votre quiz.</p>
+              <div id="category-source-options" class="source-options category-options"></div>
+              <div id="category-settings" class="random-settings" hidden>
+                <label for="category-count">Nombre de questions</label>
+                <input id="category-count" name="category-count" type="number" min="1" max="75" step="1" required disabled aria-describedby="category-count-help">
+                <p id="category-count-help" class="small muted" aria-live="polite"></p>
+              </div>
+              <p class="category-note small muted">Questions issues des annales et des entraînements, complétées par des questions originales. Les corrigés sont pédagogiques. Pour les questions reprises, répondez dans le contexte de date indiqué.</p>
             </section>
             <section class="source-group" aria-labelledby="random-source-title">
-              <h2 id="random-source-title">Sujet aléatoire</h2>
+              <h2 id="random-source-title">Quiz aléatoire</h2>
               <label class="source-option">
                 <span class="source-code">Toute la banque de questions</span>
                 <input id="random-source" type="radio" name="source" value="aleatoire" required aria-controls="random-settings">
@@ -53,19 +56,9 @@
                 <p id="random-count-help" class="small muted"></p>
               </div>
             </section>
-            <section id="category-sources" class="source-group" aria-labelledby="category-sources-title">
-              <h2 id="category-sources-title">Entraînement par catégorie</h2>
-              <p class="category-intro muted">Les cinq catégories du concours, avec 75 questions corrigées chacune. Choisissez un thème et le nombre de questions pour composer votre quiz.</p>
-              <div id="category-source-options" class="source-options category-options"></div>
-              <div id="category-settings" class="random-settings" hidden>
-                <label for="category-count">Nombre de questions</label>
-                <input id="category-count" name="category-count" type="number" min="1" max="75" step="1" required disabled aria-describedby="category-count-help">
-                <p id="category-count-help" class="small muted" aria-live="polite"></p>
-              </div>
-              <p class="category-note small muted">Questions issues des annales et des entraînements, complétées par des questions originales. Les corrigés sont pédagogiques. Pour les questions reprises, répondez dans le contexte de date indiqué.</p>
-            </section>
           </div>
         </fieldset>
+        <p id="setup-scoring" class="scoring-note small muted"></p>
         <div class="start-row">
           <button class="button primary" type="submit">Commencer le QCM <span aria-hidden="true">→</span></button>
         </div>
@@ -79,12 +72,17 @@
           <h1 id="quiz-title" tabindex="-1">Questions européennes</h1>
         </div>
         <div class="quiz-actions">
-          <button id="regenerate" class="button secondary" type="button" hidden>Régénérer le quiz</button>
-          <button id="change-source" class="text-button" type="button">← Changer de sujet</button>
+          <button id="reset" class="button secondary" type="button" aria-describedby="reset-help">Remettre à zéro</button>
+          <button id="regenerate" class="button secondary" type="button">Nouveau tirage</button>
+          <button id="change-source" class="text-button" type="button">← Changer de quiz</button>
         </div>
       </div>
       <div class="quiz-layout">
         <aside id="sidebar" class="sidebar is-collapsed" aria-label="Navigation et progression">
+          <div class="quiz-timer">
+            <span id="timer-label" class="small muted">Temps écoulé</span>
+            <span id="timer" role="timer" aria-labelledby="timer-label" aria-live="off">00:00</span>
+          </div>
           <div class="sidebar-heading"><h2>Votre parcours</h2><span id="progress-fraction"></span></div>
           <progress id="progress" value="0" max="60" aria-label="Questions renseignées"></progress>
           <p id="progress-text" class="small muted" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -101,14 +99,16 @@
         <div class="question-column">
           <section id="instructions" class="instructions" aria-label="Consignes">
             <p id="answer-instructions"></p>
+            <p id="scoring-instructions" class="small"></p>
             <p id="correction-availability" class="small muted"></p>
-            <p id="regenerate-help" class="small muted" hidden>Régénérer le quiz remplace le tirage et remet les réponses à zéro. Pour changer le nombre de questions, utilisez « Changer de sujet ».</p>
-            <a id="annale-link" class="small" target="_blank" rel="noopener noreferrer">Consulter le sujet original <span aria-hidden="true">↗</span></a>
+            <p class="small muted">Le chronomètre se met en pause lorsque vous quittez cette page ou affichez le bilan.</p>
+            <p id="reset-help" class="small muted">« Remettre à zéro » efface les réponses et le temps en gardant les mêmes questions. « Nouveau tirage » recommence avec un autre tirage.</p>
           </section>
           <section id="results" class="results" aria-labelledby="results-title" hidden>
             <p class="eyebrow">Votre bilan</p>
             <h2 id="results-title" tabindex="-1"></h2>
             <p id="results-description"></p>
+            <p id="results-time"></p>
             <dl id="result-stats" class="result-stats"></dl>
             <p id="score-explanation" class="small muted"></p>
           </section>
