@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Révisez les questions européennes avec cinq catégories et des quiz aléatoires corrigés, un barème commun et un chronomètre.">
+  <meta name="description" content="Révisez les questions européennes avec les annales SAEG, SAEO et V0, cinq catégories et des quiz aléatoires, un barème commun et un chronomètre.">
   <title>Questions européennes · Quiz</title>
   <link rel="stylesheet" href="questions.css">
   <script defer src="questions-core.js"></script>
@@ -30,6 +30,10 @@
       <form id="source-form" hidden>
         <fieldset class="source-fieldset" aria-label="Quiz disponibles">
           <div id="source-options" class="source-groups">
+            <section id="official-sources" class="source-group" aria-labelledby="official-sources-title">
+              <h2 id="official-sources-title">Annales</h2>
+              <div id="official-source-options" class="source-options"></div>
+            </section>
             <section id="category-sources" class="source-group" aria-labelledby="category-sources-title">
               <h2 id="category-sources-title">Catégories</h2>
               <p class="category-intro muted">Les cinq catégories du concours, avec 75 questions corrigées chacune. Choisissez un thème et le nombre de questions pour composer votre quiz.</p>
@@ -102,7 +106,9 @@
             <p id="scoring-instructions" class="small"></p>
             <p id="correction-availability" class="small muted"></p>
             <p class="small muted">Le chronomètre se met en pause lorsque vous quittez cette page ou affichez le bilan.</p>
-            <p id="reset-help" class="small muted">« Remettre à zéro » efface les réponses et le temps en gardant les mêmes questions. « Nouveau tirage » recommence avec un autre tirage.</p>
+            <p id="reset-help" class="small muted">« Remettre à zéro » efface les réponses et le temps en gardant les mêmes questions.</p>
+            <p id="regenerate-help" class="small muted" hidden>« Nouveau tirage » recommence avec un autre tirage.</p>
+            <a id="annale-link" class="small" target="_blank" rel="noopener noreferrer" hidden>Consulter le sujet original <span aria-hidden="true">↗</span></a>
           </section>
           <section id="results" class="results" aria-labelledby="results-title" hidden>
             <p class="eyebrow">Votre bilan</p>

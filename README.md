@@ -4,9 +4,9 @@ Site de préparation aux QCM de questions européennes du concours de secrétair
 
 ## Choisir un quiz
 
-La sélection présente uniquement **Catégories**, puis **Quiz aléatoire**. Les cinq catégories proposent chacune de 1 à 75 questions corrigées. Le quiz aléatoire puise dans les 475 QCM de la banque, toutes sources confondues. Le nombre proposé par défaut est 20. Les tirages sont uniformes et sans répétition au sein d’un quiz.
+La sélection présente trois sections, dans cet ordre : **Annales**, **Catégories**, puis **Quiz aléatoire**. Les annales proposent **SAEG** (60 QCM), **SAEO** (60 QCM) et **V0 — Sujet zéro officiel** (10 QCM), dans l’ordre de chaque sujet, avec un lien vers le document original. Les cinq catégories proposent chacune de 1 à 75 questions corrigées. Le quiz aléatoire puise dans les 475 QCM de la banque, toutes sources confondues. Le nombre proposé par défaut pour les tirages est 20. Les tirages sont uniformes et sans répétition au sein d’un quiz.
 
-Les anciens sujets officiels et d’entraînement alimentent toujours les questions, mais ne sont plus proposés séparément. Les 12 QRC restent conservées dans les données et sont exclues des quiz. La provenance, le contexte temporel et le mode de réponse de chaque question restent affichés. Voir le [catalogue des 375 questions par catégorie](data/categories/CATALOGUE.md).
+Les anciens sujets d’entraînement alimentent toujours les questions, mais ne sont plus proposés séparément. Les 12 QRC restent conservées dans les données et sont exclues des quiz. La provenance, le contexte temporel et le mode de réponse de chaque question restent affichés. Voir le [catalogue des 375 questions par catégorie](data/categories/CATALOGUE.md).
 
 ## Barème commun
 
@@ -18,10 +18,10 @@ Le maximum vaut 0,20 point par question notée : par exemple, 60 questions noté
 
 Le chronomètre démarre avec le quiz et compte le temps passé sur sa page. Il se met en pause lorsqu’on change de quiz, masque l’onglet, quitte la page ou affiche le bilan. « Modifier mes réponses » reprend le chronomètre. Le temps total figure dans le bilan ; au-delà d’une heure, l’affichage passe de `mm:ss` à `hh:mm:ss`.
 
-Le tirage, son ordre, les réponses, l’état du bilan et le temps écoulé sont sauvegardés dans `localStorage`, séparément pour chaque catégorie et pour le quiz aléatoire. Le temps est enregistré toutes les cinq secondes et lors des interactions ou de la mise en pause. Les anciennes sauvegardes restent compatibles ; leur temps initial vaut zéro. Les données restent dans le navigateur de l’utilisateur.
+Le tirage, son ordre, les réponses, l’état du bilan et le temps écoulé sont sauvegardés dans `localStorage`, séparément pour chaque annale, chaque catégorie et le quiz aléatoire. Le temps est enregistré toutes les cinq secondes et lors des interactions ou de la mise en pause. Les anciennes sauvegardes restent compatibles ; leur temps initial vaut zéro. Les données restent dans le navigateur de l’utilisateur.
 
 - **Remettre à zéro** efface les réponses, le bilan et le temps, puis redémarre le même quiz en gardant l’ordre des questions.
-- **Nouveau tirage** tire un nouveau quiz de même longueur et remet les réponses, le bilan et le temps à zéro.
+- **Nouveau tirage**, disponible pour les catégories et le quiz aléatoire, tire un nouveau quiz de même longueur et remet les réponses, le bilan et le temps à zéro. Les annales gardent toujours les questions dans l’ordre du sujet original.
 - **Changer de quiz** revient à la sélection pour choisir une catégorie ou modifier le nombre de questions.
 
 ## Prévisualisation et maintenance

@@ -93,18 +93,51 @@
     for (const key of [...QcmCore.getSourceIds(base), 'aleatoire', ...base.categories.map(c => 'categorie:' + c.id)]) {
       originalSessions.set(prefix + key, win.localStorage.getItem(prefix + key));
     }
-    assert(doc.querySelectorAll('input[name=source]').length === 6 && doc.querySelectorAll('#category-source-options input').length === 5, 'Cinq catégories et un quiz aléatoire');
-    assert(!el('official-sources') && !el('training-sources'), 'Anciens sujets retirés');
-    assert([...doc.querySelectorAll('.source-group h2')].map(h => h.textContent).join('|') === 'Catégories|Quiz aléatoire', 'Ordre des sections');
-    assert(doc.querySelector('input[name=source]:checked').value === 'categorie:histoire', 'Catégorie sélectionnée par défaut');
+    const officialIds = ['saeg-2026-externe-questions-europeennes', 'saeo-2026-externe-questions-europeennes', 'meae-sujet-v0-officiel-questions-europeennes'];
+    assert(doc.querySelectorAll('input[name=source]').length === 9 && doc.querySelectorAll('#category-source-options input').length === 5, 'Trois annales, cinq catégories et un quiz aléatoire');
+    assert(!el('training-sources'), 'Section des entraînements retirée');
+    assert([...doc.querySelectorAll('.source-group h2')].map(h => h.textContent).join('|') === 'Annales|Catégories|Quiz aléatoire', 'Ordre des sections');
+    assert(JSON.stringify([...doc.querySelectorAll('#official-source-options input')].map(input => input.value)) === JSON.stringify(officialIds), 'Ordre SAEG, SAEO, V0');
+    assert(doc.querySelector('input[name=source]:checked').value === officialIds[0], 'SAEG sélectionné par défaut');
     const copyrightName = doc.querySelector('footer').textContent.split('©')[1].trim();
     assert(copyrightName && !doc.title.includes(copyrightName) && !doc.querySelector('main').textContent.includes(copyrightName), 'Nom réservé au copyright');
+    for (const [index, sourceId] of officialIds.entries()) {
+      select(sourceId);
+      assert(el('category-settings').hidden && el('random-settings').hidden && el('category-count').disabled && el('random-count').disabled, 'Aucun tirage à configurer pour les annales');
+      count('', 'category-count'); count('', 'random-count'); start();
+      const expectedIds = QcmCore.getQuestions(base, sourceId).map(q => q.id);
+      assert(expectedIds.length === (index === 2 ? 10 : 60) && JSON.stringify(ids()) === JSON.stringify(expectedIds), 'Questions et ordre de l’annale ' + sourceId);
+      assert(el('quiz-title').textContent.startsWith(['SAEG', 'SAEO', 'V0'][index]) && el('regenerate').hidden && el('regenerate-help').hidden, 'Titre et commandes de l’annale');
+      assert(!el('annale-link').hidden && el('annale-link').getAttribute('href') === base.sources[sourceId].url, 'Lien du sujet original');
+      let officialNow = Date.now(); win.Date.now = () => officialNow;
+      el('reset').click(); officialNow += 61000;
+      for (const id of ids()) answer(id, byId.get(id).correction.reponses);
+      el('quiz-form').requestSubmit();
+      assert(el('results-title').textContent === (index === 2 ? '2 / 2 points' : '12 / 12 points') && el('timer').textContent === '01:01', 'Barème et chronomètre de l’annale');
+      back();
+      assert(el('source-form').querySelector('button[type=submit]').textContent.includes('Reprendre'), 'Reprise proposée pour l’annale');
+      await reload(); select(sourceId); start();
+      assert(!el('results').hidden && el('timer').textContent === '01:01' && doc.querySelectorAll('.choices input:checked').length >= expectedIds.length, 'Annale sauvegardée après rechargement');
+      el('reset').click();
+      assert(JSON.stringify(ids()) === JSON.stringify(expectedIds) && el('results').hidden && el('timer').textContent === '00:00' && !doc.querySelector('.choices input:checked'), 'Reset de l’annale');
+      answer(ids()[0], byId.get(ids()[0]).correction.reponses); back();
+      pass('Annale ' + ['SAEG', 'SAEO', 'V0'][index] + ' : questions dans l’ordre, correction, barème, chrono, reprise et reset');
+    }
+    const officialSessions = officialIds.map(sourceId => win.localStorage.getItem(prefix + sourceId));
+    const legacyOfficialId = QcmCore.getQuestions(base, officialIds[0])[0].id;
+    win.localStorage.setItem(prefix + officialIds[0], JSON.stringify({ answers: { [legacyOfficialId]: byId.get(legacyOfficialId).correction.reponses }, reviewed: false }));
+    await reload(); select(officialIds[0]); start();
+    assert(ids().length === 60 && el('timer').textContent === '00:00' && doc.querySelector('.choices input:checked'), 'Ancienne sauvegarde d’annale sans tirage ni chronomètre');
+    back();
+    win.localStorage.setItem(prefix + officialIds[0], officialSessions[0]);
+    await reload();
     for (const c of base.categories) {
       select('categorie:' + c.id);
       for (const invalid of ['', '0', '76', '1.5']) { count(invalid); assert(!el('category-count').checkValidity(), 'Champ invalide ' + invalid); }
       count(75); start();
       assert(ids().length === 75 && ids().every(id => c.question_ids.includes(id)), 'Appartenance ' + c.id);
       assert(el('quiz-title').textContent === c.titre && !el('regenerate').hidden, 'Titre ' + c.id);
+      assert(el('annale-link').hidden && !el('regenerate-help').hidden, 'Commandes du tirage par catégorie');
       assert(doc.querySelector('.question-number').textContent.endsWith('01'), 'Numérotation');
       for (const id of ids()) {
         const q = byId.get(id), single = base.sources[q.source.id].mode_reponse_qcm === 'une_seule';
@@ -156,6 +189,7 @@
     assert(el('results-title').textContent === '-23,8 / 95 points', 'Pénalité de réponse incorrecte affichée');
     back();
     pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 475 questions aléatoires');
+    assert(officialIds.every((sourceId, index) => win.localStorage.getItem(prefix + sourceId) === officialSessions[index]), 'Sauvegardes des annales indépendantes des catégories et du quiz aléatoire');
 
     select('categorie:histoire'); count(2); start(); el('reset').click();
     let now = Date.now();
@@ -215,6 +249,8 @@
     assert(doc.documentElement.scrollWidth <= win.innerWidth, 'Pas de débordement sur mobile (sélection)');
     select('categorie:politiques'); count(5); start(); await tick();
     assert(doc.documentElement.scrollWidth <= win.innerWidth, 'Pas de débordement sur mobile (quiz)');
+    back(); select(officialIds[0]); start(); await tick();
+    assert(doc.documentElement.scrollWidth <= win.innerWidth && !el('reset').hidden && el('regenerate').hidden, 'Annale et reset sur mobile');
     pass('Sauvegarde invalide écartée et affichage mobile à 375 px');
     out.textContent = logs.join('\n') + '\nALL CHECKS PASSED';
   } catch (error) { out.textContent = logs.join('\n') + '\nFAIL ' + error.stack; }

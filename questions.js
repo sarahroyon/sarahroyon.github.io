@@ -1,11 +1,12 @@
 (() => {
 "use strict";
 
-const { quizBareme, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { quizBareme, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
 const randomSourceId = "aleatoire";
+const officialSourceIds = ["saeg-2026-externe-questions-europeennes", "saeo-2026-externe-questions-europeennes", "meae-sujet-v0-officiel-questions-europeennes"];
 const numberFormat = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 2 });
 const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrecte", skipped: "Sans réponse", pending: "Corrigé à venir", partial: "Réponse partielle", neutralized: "Question neutralisée" };
 let base;
@@ -84,6 +85,14 @@ function categoryFor(sourceId) {
   return sourceId.startsWith("categorie:") ? base.categories.find(category => sourceId === "categorie:" + category.id) : undefined;
 }
 
+function officialSourceFor(sourceId) {
+  return officialSourceIds.includes(sourceId) ? base.sources[sourceId] : undefined;
+}
+
+function officialCode(source) {
+  return source.type === "sujet_zero" ? "V0" : source.code_concours;
+}
+
 function drawPool(sourceId) {
   const category = categoryFor(sourceId);
   return category ? getCategoryQuestions(base, category.id) : base.questions.filter(question => question.type === "qcm");
@@ -145,6 +154,12 @@ function updateStartButton() {
     $("category-count").max = size;
     $("category-count-help").textContent = category.titre + " : de 1 à " + size + " questions, tirées au hasard sans répétition. Vous pourrez régénérer le quiz.";
   }
+  if (officialSourceFor(selected.value)) {
+    const saved = readSaved(selected.value, getQuestions(base, selected.value));
+    const started = saved.reviewed || saved.elapsedMs > 0 || Object.values(saved.answers).some(answers => answers.length);
+    $("source-form").querySelector("button[type=submit]").textContent = started ? "Reprendre le QCM →" : "Commencer le QCM →";
+    return;
+  }
   const questions = getSavedDraw(selected.value);
   const resumable = questions.length > 0 && questions.length === countInput(selected.value).valueAsNumber;
   $("source-form").querySelector("button[type=submit]").textContent = resumable ? "Reprendre le quiz →" : "Générer le quiz →";
@@ -194,6 +209,9 @@ async function loadData() {
       throw new Error("Sources des questions invalides");
     }
     base = data;
+    if (!officialSourceIds.every(sourceId => officialSourceFor(sourceId) && getQuestions(base, sourceId).length)) {
+      throw new Error("Annales officielles indisponibles");
+    }
     if (!Array.isArray(base.categories) || base.categories.length !== 5 || new Set(base.questions.map(question => question.id)).size !== base.questions.length
         || !base.categories.every(category => {
           const questions = getCategoryQuestions(base, category.id);
@@ -202,7 +220,7 @@ async function loadData() {
     drawSaved.clear();
     categoryCounts.clear();
     selectedCategory = undefined;
-    for (const sourceId of [randomSourceId, ...base.categories.map(category => "categorie:" + category.id)]) {
+    for (const sourceId of [...officialSourceIds, randomSourceId, ...base.categories.map(category => "categorie:" + category.id)]) {
       drawSaved.set(sourceId, readStored(sourceId));
     }
     const poolSize = base.questions.filter(question => question.type === "qcm").length;
@@ -211,6 +229,24 @@ async function loadData() {
     $("random-count").value = getSavedDraw(randomSourceId).length || Math.min(20, poolSize);
     $("random-source-details").textContent = poolSize + " questions disponibles · Nombre de questions au choix";
     $("random-count-help").textContent = "De 1 à " + poolSize + " questions. Vous pourrez régénérer le quiz pour obtenir un nouveau tirage.";
+    $("official-source-options").replaceChildren();
+    for (const [index, sourceId] of officialSourceIds.entries()) {
+      const source = officialSourceFor(sourceId);
+      const questions = getQuestions(base, sourceId);
+      const label = element("label", "source-option");
+      const input = element("input");
+      input.type = "radio";
+      input.name = "source";
+      input.value = sourceId;
+      input.checked = index === 0;
+      input.required = true;
+      const year = sourceYear(source);
+      label.append(element("span", "source-code", officialCode(source) + (year ? " · " + year : "")), input,
+        element("span", "source-title", sourceTitle(source)),
+        element("span", "source-details", (source.type === "sujet_zero" ? "Sujet fictif officiel" : "Annale officielle") + " · Concours externe"),
+        element("span", "source-status", questions.length + " QCM · " + questions.filter(hasCorrection).length + " corrigés disponibles"));
+      $("official-source-options").append(label);
+    }
     $("category-source-options").replaceChildren();
     for (const [index, category] of base.categories.entries()) {
       const label = element("label", "source-option");
@@ -218,7 +254,6 @@ async function loadData() {
       input.type = "radio";
       input.name = "source";
       input.value = "categorie:" + category.id;
-      input.checked = index === 0;
       input.required = true;
       input.setAttribute("aria-controls", "category-settings");
       label.append(element("span", "source-code", "Catégorie " + (index + 1)), input,
@@ -324,14 +359,22 @@ function observeQuestions() {
 
 function startQuiz(sourceId, regenerate = false) {
   const category = categoryFor(sourceId);
-  if (!category && sourceId !== randomSourceId) return;
-  if (!countInput(sourceId).reportValidity()) return;
+  const official = officialSourceFor(sourceId);
+  if (!official && !category && sourceId !== randomSourceId) return;
+  if (!official && !countInput(sourceId).reportValidity()) return;
   pauseTimer();
-  const count = countInput(sourceId).valueAsNumber;
-  const previous = getSavedDraw(sourceId);
-  const resume = !regenerate && previous.length === count;
-  const questions = resume ? previous : drawQuestions(base, count, category?.id);
-  const saved = resume ? readSaved(sourceId, questions) : { answers: cleanAnswers(questions, null), reviewed: false, elapsedMs: 0 };
+  let questions;
+  let saved;
+  if (official) {
+    questions = getQuestions(base, sourceId);
+    saved = readSaved(sourceId, questions);
+  } else {
+    const count = countInput(sourceId).valueAsNumber;
+    const previous = getSavedDraw(sourceId);
+    const resume = !regenerate && previous.length === count;
+    questions = resume ? previous : drawQuestions(base, count, category?.id);
+    saved = resume ? readSaved(sourceId, questions) : { answers: cleanAnswers(questions, null), reviewed: false, elapsedMs: 0 };
+  }
   session = { sourceId, questions, ...saved, startedAt: null };
   observer?.disconnect();
   cards.clear();
@@ -339,8 +382,14 @@ function startQuiz(sourceId, regenerate = false) {
   $("question-cards").replaceChildren();
   $("question-index").replaceChildren();
   setIndexExpanded(false);
-  $("quiz-title").textContent = category ? category.titre : "Quiz aléatoire";
-  $("quiz-eyebrow").textContent = questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard");
+  $("quiz-title").textContent = official ? officialCode(official) + " · " + sourceTitle(official) : category ? category.titre : "Quiz aléatoire";
+  $("quiz-eyebrow").textContent = official ? questions.length + " questions · Ordre du sujet original"
+    : questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard");
+  $("regenerate").hidden = Boolean(official);
+  $("regenerate-help").hidden = Boolean(official);
+  $("annale-link").hidden = !official?.url;
+  if (official?.url) $("annale-link").href = official.url;
+  else $("annale-link").removeAttribute("href");
   $("answer-instructions").textContent = "Répondez aux questions dans l’ordre de votre choix. Le mode de réponse est indiqué pour chaque question ; vous pourrez modifier vos choix avant de terminer.";
   $("scoring-instructions").textContent = scoringText();
   const corrected = questions.filter(hasCorrection).length;
