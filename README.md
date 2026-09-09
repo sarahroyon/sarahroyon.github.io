@@ -10,9 +10,9 @@ Les anciens sujets officiels et d’entraînement alimentent toujours les questi
 
 ## Barème commun
 
-Tous les quiz utilisent le même barème : **1 point par réponse exacte, 0 pour une réponse incorrecte, partielle ou absente**. Pour les questions à choix multiples, il faut sélectionner toutes les bonnes réponses et aucune autre. Les sélections partielles sont détaillées dans le corrigé et comptées parmi les réponses incorrectes dans le bilan.
+Tous les quiz utilisent le barème des véritables annales **SAEO et SAEG 2026** : **+0,20 point par réponse exacte, −0,10 par réponse incorrecte et −0,05 sans réponse**. Pour les questions à choix multiples, il faut sélectionner toutes les bonnes réponses et aucune autre. Une sélection comportant un choix faux est incorrecte. Une sélection incomplète ne comportant que des choix corrects reste non notée, car les annales ne précisent pas ce cas ; elle est signalée séparément dans le bilan et le corrigé.
 
-Le score est affiché sur le nombre de questions notées. Seules les éventuelles questions neutralisées ou sans corrigé sont exclues du maximum. Les barèmes historiques conservés dans les données décrivent les documents d’origine ; ils ne servent plus à noter les quiz. Le barème de l’application est défini une seule fois dans `QcmCore.quizBareme` et annoncé avant le quiz ainsi que dans le bilan. Les corrigés sont pédagogiques.
+Le maximum vaut 0,20 point par question notée : par exemple, 60 questions notées donnent un score sur 12 points, et 20 sur 4 points. Les réponses partielles, les questions neutralisées et les questions sans corrigé sont exclues du score et de son maximum. Les scores négatifs sont conservés, sans conversion en note sur 20. Le barème commun est défini dans `QcmCore.quizBareme` et contrôlé par les tests contre les valeurs des annales dans les données. Il est annoncé avant le quiz ainsi que dans le bilan. Les autres barèmes historiques restent des métadonnées des documents d’origine. Les corrigés sont pédagogiques.
 
 ## Chronomètre et reprise
 

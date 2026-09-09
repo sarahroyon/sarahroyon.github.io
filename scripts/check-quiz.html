@@ -49,7 +49,7 @@
     assert(new Set(selected).size === 375 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length), '375 corrigés complets distincts');
     assert(QcmCore.drawQuestions(base, 475).length === 475, '475 QCM conservés');
     const sample = { id: 'sample', type: 'qcm', choix: { a: 'A', b: 'B', c: 'C' }, correction: { reponses: ['a', 'b'] } };
-    for (const [letters, status, points] of [[['a', 'b'], 'correct', 1], [['a'], 'partial', 0], [['a', 'c'], 'incorrect', 0], [[], 'skipped', 0]]) {
+    for (const [letters, status, points] of [[['a', 'b'], 'correct', 0.2], [['a'], 'partial', null], [['a', 'c'], 'incorrect', -0.1], [[], 'skipped', -0.05]]) {
       const result = QcmCore.evaluateQuestion(sample, letters);
       assert(result.status === status && result.points === points, 'Barème : ' + status);
     }
@@ -57,9 +57,19 @@
     assert(QcmCore.evaluateQuestion({ ...sample, correction: { neutralisee: true } }, []).points === null, 'Question neutralisée exclue');
     const allQuestions = base.questions.filter(q => q.type === 'qcm');
     const perfect = QcmCore.summarize(allQuestions, Object.fromEntries(allQuestions.map(q => [q.id, q.correction.reponses])));
-    assert(perfect.score === 475 && perfect.maximum === 475, 'Même barème sur toutes les origines');
+    assert(perfect.score === 95 && perfect.maximum === 95, 'Même barème sur toutes les origines');
+    for (const source of Object.values(base.sources).filter(s => s.type === 'annale')) {
+      for (const key of Object.keys(QcmCore.quizBareme)) {
+        assert(QcmCore.quizBareme[key] === base.baremes[source.bareme][key], 'Barème conforme aux annales : ' + key);
+      }
+    }
     const partial = QcmCore.summarize([sample], { sample: ['a'] });
-    assert(partial.score === 0 && partial.maximum === 1, 'Réponse partielle incluse dans le maximum');
+    assert(partial.score === 0 && partial.maximum === 0 && partial.graded === 0, 'Réponse partielle exclue du score et du maximum');
+    const mixedQuestions = [0, 1, 2].map(i => ({ ...sample, id: 'mixed-' + i }));
+    const mixed = QcmCore.summarize(mixedQuestions, { 'mixed-0': ['a', 'b'], 'mixed-1': ['c'] });
+    assert(mixed.score === 0.05 && mixed.maximum === 0.6, 'Arrondi du score et du maximum');
+    const blank = QcmCore.summarize(allQuestions, {});
+    assert(blank.score === -23.75 && blank.maximum === 95, 'Pénalité des absences et score négatif');
     pass('Barème commun : réponses exactes, partielles, fausses, absentes et questions exclues');
     for (const c of base.categories) {
       assert(new Set(QcmCore.drawQuestions(base, 75, c.id).map(q => q.id)).size === 75, 'Tirage complet ' + c.id);
@@ -104,7 +114,7 @@
       el('quiz-form').requestSubmit();
       assert(doc.querySelectorAll('.feedback.correct').length === 75 && doc.querySelectorAll('.feedback a').length >= 75, 'Affichage des 75 corrigés ' + c.id);
       assert(el('result-stats').querySelector('dd').textContent === '75', 'Bilan ' + c.id);
-      assert(el('results-title').textContent === '75 / 75 points', 'Note chiffrée ' + c.id);
+      assert(el('results-title').textContent === '15 / 15 points', 'Note chiffrée ' + c.id);
       const beforeReset = ids();
       el('reset').click();
       assert(JSON.stringify(ids()) === JSON.stringify(beforeReset) && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Reset conserve les questions ' + c.id);
@@ -128,11 +138,22 @@
     select('aleatoire'); count(475, 'random-count'); start();
     for (const id of ids()) answer(id, byId.get(id).correction.reponses);
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '475 / 475 points', 'Barème du quiz aléatoire complet');
+    assert(el('results-title').textContent === '95 / 95 points', 'Barème du quiz aléatoire complet');
     const randomIds = ids(); el('reset').click();
     assert(JSON.stringify(ids()) === JSON.stringify(randomIds) && !doc.querySelector('.choices input:checked') && el('timer').textContent === '00:00', 'Reset du quiz aléatoire');
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '0 / 475 points', 'Quiz sans réponse');
+    assert(el('results-title').textContent === '-23,75 / 95 points', 'Quiz sans réponse');
+    el('edit').click();
+    const multiple = allQuestions.find(q => q.correction.reponses.length > 1);
+    assert(multiple, 'Question à plusieurs bonnes réponses disponible');
+    answer(multiple.id, [multiple.correction.reponses[0]]);
+    el('quiz-form').requestSubmit();
+    assert(el('results-title').textContent === '-23,7 / 94,8 points', 'Réponse partielle exclue du score affiché');
+    assert(doc.getElementById(multiple.id).querySelector('.feedback').textContent.includes('Non notée') && el('result-stats').textContent.includes('Réponses partielles non notées'), 'Réponse partielle signalée séparément');
+    el('edit').click();
+    answer(multiple.id, [Object.keys(multiple.choix).find(letter => !multiple.correction.reponses.includes(letter))]);
+    el('quiz-form').requestSubmit();
+    assert(el('results-title').textContent === '-23,8 / 95 points', 'Pénalité de réponse incorrecte affichée');
     back();
     pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 475 questions aléatoires');
 
@@ -183,7 +204,7 @@
     const legacyId = base.categories[0].question_ids[0];
     win.localStorage.setItem(prefix + 'categorie:histoire', JSON.stringify({ questionIds: [legacyId], answers: { [legacyId]: byId.get(legacyId).correction.reponses }, reviewed: true }));
     await reload(); select('categorie:histoire'); start();
-    assert(el('timer').textContent === '00:00' && el('results-title').textContent === '1 / 1 points', 'Ancienne sauvegarde compatible');
+    assert(el('timer').textContent === '00:00' && el('results-title').textContent === '0,2 / 0,2 points', 'Ancienne sauvegarde compatible');
     back();
     pass('Chronomètre, pauses, reprise, rechargement, reset persistant et anciennes sauvegardes');
     win.localStorage.setItem(prefix + 'categorie:histoire', JSON.stringify({ questionIds: [base.categories[1].question_ids[0]], answers: {} }));

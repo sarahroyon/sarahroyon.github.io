@@ -151,7 +151,7 @@ Ne remplacer `null` par un objet qu’après vérification de son contenu. Un QC
 
 ## Barèmes des documents d’origine
 
-Ces métadonnées conservent les règles des documents sources. Les quiz par catégorie et aléatoires utilisent tous le barème de l’application : 1 point par réponse exacte, 0 pour une réponse incorrecte, partielle ou absente.
+Ces métadonnées conservent les règles des documents sources. Les quiz par catégorie et aléatoires utilisent tous le barème des annales SAEO et SAEG 2026 : +0,20 point par réponse exacte, −0,10 par réponse incorrecte et −0,05 sans réponse. Les sélections partiellement correctes restent non notées, comme expliqué ci-dessous.
 
 Les valeurs sont exprimées en points :
 
@@ -167,11 +167,11 @@ Les valeurs sont exprimées en points :
 }
 ```
 
-`selection_partielle: null` indique que les sujets ne détaillent pas le calcul lorsqu’une sélection de plusieurs réponses n’est que partiellement correcte. Ce cas doit être précisé avant l’implémentation de la notation automatique ; `null` ne vaut pas zéro.
+`selection_partielle: null` indique que les sujets ne détaillent pas le calcul lorsqu’une sélection de plusieurs réponses n’est que partiellement correcte. Une sélection incomplète ne contenant que des bonnes réponses est donc exclue du score et de son maximum, et signalée séparément dans le bilan ; `null` ne vaut pas zéro. Si la sélection comporte un choix faux, la réponse est incorrecte et vaut −0,10 point.
 
 Les totaux 12 et 8 correspondent à l’épreuve complète d’origine. Le nombre N de questions, les réponses de l’étudiant et son score appartiendront à la séance d’entraînement, pas à la banque de questions.
 
-Les barèmes `sarah-royon-saeg-3-entrainement`, `sarah-royon-saeg-concours-blanc-2-entrainement` et `sarah-royon-sciences-po-entrainement` reprennent uniquement les points donnés dans chaque PDF d’entraînement : 5 points par QRC, soit 10 points au total. Les documents ne précisent pas le barème du QCM : `bonne_reponse`, `mauvaise_reponse`, `absence_de_reponse` et `qcm_total_points` restent à `null`. Le barème des annales officielles n’est pas appliqué à ces sujets.
+Les barèmes `sarah-royon-saeg-3-entrainement`, `sarah-royon-saeg-concours-blanc-2-entrainement` et `sarah-royon-sciences-po-entrainement` reprennent uniquement les points donnés dans chaque PDF d’entraînement : 5 points par QRC, soit 10 points au total. Les documents ne précisent pas le barème du QCM : `bonne_reponse`, `mauvaise_reponse`, `absence_de_reponse` et `qcm_total_points` restent à `null` dans les métadonnées. Leurs questions sont néanmoins notées avec le barème commun des annales lorsqu’elles sont utilisées dans les quiz par catégorie ou aléatoires.
 
 Le barème `meae-sujet-v0-officiel-questions-europeennes` conserve tous ses champs à `null` : le sujet V0 ne précise aucun nombre de points, pour les QCM comme pour les QRC.
 

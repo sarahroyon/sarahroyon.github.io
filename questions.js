@@ -40,9 +40,9 @@ function formatPoints(points) {
 }
 
 function scoringText() {
-  return "Barème commun : " + formatPoints(quizBareme.bonne_reponse) + " par réponse exacte, "
-    + formatPoints(quizBareme.mauvaise_reponse) + " par réponse incorrecte ou partielle, "
-    + formatPoints(quizBareme.absence_de_reponse) + " sans réponse. Pour les choix multiples, il faut cocher toutes les bonnes réponses et aucune autre.";
+  return "Barème des annales SAEO / SAEG 2026, commun à tous les quiz : " + formatPoints(quizBareme.bonne_reponse) + " par réponse exacte, "
+    + formatPoints(quizBareme.mauvaise_reponse) + " par réponse incorrecte, "
+    + formatPoints(quizBareme.absence_de_reponse) + " sans réponse. Les sélections partiellement correctes sont exclues du score : les annales ne précisent pas leur notation.";
 }
 
 function elapsedTime() {
@@ -395,7 +395,7 @@ function updateProgress() {
     const link = indexLinks.get(question.id);
     const result = session.reviewed ? evaluateQuestion(question, selected) : null;
     link.classList.toggle("answered", selected.length > 0);
-    link.classList.toggle("incorrect", result?.status === "incorrect" || result?.status === "partial");
+    link.classList.toggle("incorrect", result?.status === "incorrect");
     link.querySelector(".index-answer").textContent = selected.map(letter => letter.toUpperCase()).join("");
     const number = index + 1;
     const label = "Question " + number + ", " + (selected.length ? "choix " + selected.join(", ").toUpperCase() : "sans réponse")
@@ -425,7 +425,7 @@ function renderFeedback(question, result) {
     feedback.append(element("p", "", (correction.reponses.length > 1 ? "Réponses attendues : " : "Réponse attendue : ") + correction.reponses.map(letter => letter.toUpperCase()).join(", ") + "."));
   }
   if (result.status === "partial") {
-    feedback.append(element("p", "", "Votre sélection est incomplète : elle est comptée comme une réponse incorrecte. Il faut sélectionner toutes les bonnes réponses et aucune autre."));
+    feedback.append(element("p", "", "Votre sélection ne contient que de bonnes réponses, mais elle est incomplète. Les annales ne précisent pas la notation de ce cas : cette question est exclue du score et de son maximum."));
   }
   if (correction.explication) feedback.append(element("p", "", correction.explication));
   if (correction.sources?.length) {
@@ -452,8 +452,8 @@ function renderResults() {
   $("results-description").textContent = summary.graded
     ? "Ce bilan porte sur " + summary.graded + " questions notées sur " + session.questions.length + "."
       + (summary.pending ? " Les " + summary.pending + " questions sans corrigé sont exclues du score." : "")
-      + (summary.partial ? " Les sélections partielles sont signalées dans les corrections." : "")
-    : "Aucune question ne peut être notée avec les corrigés disponibles.";
+    : "Aucune question ne peut être notée avec les corrigés et le barème disponibles.";
+  if (summary.partial) $("results-description").textContent += " Les " + summary.partial + " sélections partiellement correctes sont signalées dans les corrections et exclues du score et de son maximum.";
   $("results-time").textContent = "Temps passé : " + formatTime(elapsedTime()) + ".";
   if (summary.neutralized) {
     $("results-description").textContent += " " + summary.neutralized + " questions sont neutralisées et expliquées dans le corrigé ; elles ne comptent ni comme bonnes ni comme mauvaises réponses.";
@@ -461,7 +461,8 @@ function renderResults() {
   const stats = $("result-stats");
   stats.replaceChildren();
   stats.hidden = session.questions.length === summary.pending;
-  const counts = [["Bonnes réponses", summary.correct], ["Réponses incorrectes", summary.incorrect + summary.partial], ["Sans réponse", summary.skipped]];
+  const counts = [["Bonnes réponses", summary.correct], ["Réponses incorrectes", summary.incorrect], ["Sans réponse", summary.skipped]];
+  if (summary.partial) counts.push(["Réponses partielles non notées", summary.partial]);
   if (summary.neutralized) counts.push(["Questions neutralisées", summary.neutralized]);
   for (const [label, value] of counts) {
     const group = element("div");

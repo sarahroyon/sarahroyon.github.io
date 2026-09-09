@@ -1,7 +1,8 @@
 window.QcmCore = (() => {
 "use strict";
 
-const quizBareme = Object.freeze({ bonne_reponse: 1, mauvaise_reponse: 0, absence_de_reponse: 0, selection_partielle: 0 });
+// QCM des annales SAEO/SAEG 2026 : les sélections partielles ne sont pas précisées.
+const quizBareme = Object.freeze({ bonne_reponse: 0.2, mauvaise_reponse: -0.1, absence_de_reponse: -0.05, selection_partielle: null });
 
 function getSourceIds(base) {
   return Object.keys(base.sources).filter(sourceId => base.sources[sourceId].type !== "thematique" && getQuestions(base, sourceId).length > 0);
@@ -79,7 +80,7 @@ function summarize(questions, answers) {
   return {
     results,
     score: Math.round(graded.reduce((sum, result) => sum + result.points, 0) * 100) / 100,
-    maximum: graded.length * quizBareme.bonne_reponse,
+    maximum: Math.round(graded.length * quizBareme.bonne_reponse * 100) / 100,
     graded: graded.length,
     correct: results.filter(result => result.status === "correct").length,
     incorrect: results.filter(result => result.status === "incorrect").length,
