@@ -4,9 +4,9 @@ Site de préparation aux QCM de questions européennes du concours de secrétair
 
 ## Choisir un quiz
 
-La sélection présente trois sections, dans cet ordre : **Annales**, **Catégories**, puis **Quiz aléatoire**. Les annales proposent **SAEG** (60 QCM), **SAEO** (60 QCM) et **V0 — Sujet zéro officiel** (10 QCM), dans l’ordre de chaque sujet, avec un lien vers le document original. Les cinq catégories proposent chacune de 1 à 75 questions corrigées. Le quiz aléatoire puise dans les 475 QCM de la banque, toutes sources confondues. Le nombre proposé par défaut pour les tirages est 20. Les tirages sont uniformes et sans répétition au sein d’un quiz.
+La sélection présente trois sections, dans cet ordre : **Annales**, **Catégories**, puis **Quiz aléatoire**. Les annales proposent **SAEG** (60 QCM), **SAEO** (60 QCM) et **V0 — Sujet zéro officiel** (10 QCM), dans l’ordre de chaque sujet, avec un lien vers le document original. Les cinq catégories proposent 75, 75, 73, 72 et 75 questions corrigées respectivement. Le quiz aléatoire puise dans 465 QCM, toutes sources confondues. Les dix questions à plusieurs bonnes réponses sont réservées aux annales ; elles sont exclues des catégories et du tirage aléatoire. Le nombre proposé par défaut pour les tirages est 20. Les tirages sont uniformes et sans répétition au sein d’un quiz.
 
-Les anciens sujets d’entraînement alimentent toujours les questions, mais ne sont plus proposés séparément. Les 12 QRC restent conservées dans les données et sont exclues des quiz. La provenance, le contexte temporel et le mode de réponse de chaque question restent affichés. Voir le [catalogue des 375 questions par catégorie](data/categories/CATALOGUE.md).
+Les anciens sujets d’entraînement alimentent toujours les questions, mais ne sont plus proposés séparément. Les 12 QRC restent conservées dans les données et sont exclues des quiz. La provenance, le contexte temporel et le mode de réponse de chaque question restent affichés. Voir le [catalogue des 370 questions par catégorie](data/categories/CATALOGUE.md).
 
 ## Barème commun
 
@@ -23,6 +23,16 @@ Le tirage, son ordre, les réponses, l’état du bilan et le temps écoulé son
 - **Remettre à zéro** efface les réponses, le bilan et le temps, puis redémarre le même quiz en gardant l’ordre des questions.
 - **Nouveau tirage**, disponible pour les catégories et le quiz aléatoire, tire un nouveau quiz de même longueur et remet les réponses, le bilan et le temps à zéro. Les annales gardent toujours les questions dans l’ordre du sujet original.
 - **Changer de quiz** revient à la sélection pour choisir une catégorie ou modifier le nombre de questions.
+
+## Contributions et demandes de retrait
+
+Les contributions au site sont également bienvenues sur [GitHub](https://github.com/sarahroyon/sarahroyon.github.io) : vous pouvez proposer des corrections ou des améliorations par une pull request. Chaque proposition est examinée avant son intégration.
+
+Le bouton **Contribuer aux quiz** ouvre [contributions.html](contributions.html). Chaque demande contient une identité et soit **au moins cinq questions corrigées**, soit **une demande motivée de retrait** d’une question précise. Un lien sur chaque QCM préremplit la question concernée. Le formulaire prépare un message à copier ou à télécharger, que le visiteur envoie à l’adresse dédiée depuis sa messagerie. Les demandes sont examinées manuellement et ne modifient jamais automatiquement les quiz.
+
+L’identité peut être un nom ou un pseudonyme. Le crédit des questions retenues est publié après validation séparée de ce nom. Une adresse e-mail facultative et privée permet d’envoyer manuellement une confirmation après intégration ; aucune notification automatique n’est envoyée.
+
+L’adresse dédiée est à renseigner dans [contributions-config.js](contributions-config.js). Le [guide de configuration et de modération](data/contributions/README.md) explique la réception par e-mail, la validation des crédits et l’intégration manuelle des questions. Aucun service de base de données n’est nécessaire. Le site ne peut pas confirmer l’envoi ou la réception d’un e-mail.
 
 ## Prévisualisation et maintenance
 

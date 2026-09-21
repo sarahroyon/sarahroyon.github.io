@@ -1,4 +1,4 @@
-# Catalogue des 375 questions par catégorie
+# Catalogue des 370 questions par catégorie
 
 Fichier généré par `scripts/sync-categories.ps1`. Les corrigés sont pédagogiques, non officiels. Les questions reprises conservent le contexte temporel de leur sujet. Les lettres renvoient aux choix des fichiers JSON et de la page de quiz.
 
@@ -2256,7 +2256,7 @@ Provenance : Question originale d’entraînement.
 
 ## Le fonctionnement de l’Union européenne
 
-75 questions : 36 reprises et 39 nouvelles.
+73 questions : 34 reprises et 39 nouvelles.
 
 ### saeo-2026-externe-questions-europeennes-qcm-024
 
@@ -2317,21 +2317,6 @@ Provenance : SAEO 2026, question 28 ; contexte du sujet : 2025-11-25.
 **Réponse : B.** La ressource fondée sur le revenu national brut (RNB) des États membres constitue la principale recette du budget de l’Union. Elle complète les autres ressources propres pour équilibrer les recettes et les dépenses.
 
 [Commission européenne — Ressource propre fondée sur le revenu national brut](https://commission.europa.eu/strategy-and-policy/eu-budget/long-term-eu-budget/2021-2027/revenue/own-resources/gross-national-income_en)
-
-### saeo-2026-externe-questions-europeennes-qcm-035
-
-Cochez les compétences exclusives de l’Union qui se trouvent dans la liste suivante :
-
-Provenance : SAEO 2026, question 35 ; contexte du sujet : 2025-11-25.
-
-- A. marché intérieur
-- B. industrie
-- C. politique monétaire (pour les États membres dont la monnaie est l’euro)
-- D. politique commerciale commune
-
-**Réponse : C, D.** L’article 3 du TFUE classe parmi les compétences exclusives la politique monétaire pour les États dont la monnaie est l’euro et la politique commerciale commune. Le marché intérieur est une compétence partagée ; l’industrie relève d’une compétence d’appui, de coordination ou de complément.
-
-[EUR-Lex — Traité sur le fonctionnement de l’Union européenne, article 3](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E003) · [EUR-Lex — Traité sur le fonctionnement de l’Union européenne, article 4](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E004) · [EUR-Lex — Traité sur le fonctionnement de l’Union européenne, article 6](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E006)
 
 ### saeo-2026-externe-questions-europeennes-qcm-059
 
@@ -2467,21 +2452,6 @@ Provenance : SAEG 2026, question 25 ; contexte du sujet : 2025-11-25.
 **Réponse : A.** La jeunesse relève des compétences d’appui, de coordination ou de complément de l’action des États membres. L’environnement, l’agriculture et l’énergie figurent parmi les compétences partagées ; seule la conservation des ressources biologiques de la mer dans la politique de la pêche est exclusive.
 
 [EUR-Lex — Traité sur le fonctionnement de l’Union européenne, article 6](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E006) · [EUR-Lex — Traité sur le fonctionnement de l’Union européenne, article 4](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E004)
-
-### saeg-2026-externe-questions-europeennes-qcm-026
-
-L’Union européenne est :
-
-Provenance : SAEG 2026, question 26 ; contexte du sujet : 2025-11-25.
-
-- A. un État
-- B. une fédération
-- C. une organisation internationale
-- D. une communauté d’États partageant des valeurs communes
-
-**Réponse : C, D.** L’Union est une organisation internationale d’intégration dotée de la personnalité juridique et d’un ordre juridique propre. Elle réunit aussi des États engagés à respecter des valeurs communes : c et d sont compatibles. Elle ne constitue pas, juridiquement, un État ni une fédération étatique.
-
-[EUR-Lex — Traité sur l’Union européenne, article 1](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M001) · [EUR-Lex — Traité sur l’Union européenne, article 2](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M002) · [EUR-Lex — Traité sur l’Union européenne, article 47](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M047)
 
 ### sarah-royon-saeg-3-entrainement-qcm-007
 
@@ -3379,7 +3349,7 @@ Provenance : Question originale d’entraînement.
 
 ## Les politiques internes et externes de l’UE
 
-75 questions : 48 reprises et 27 nouvelles.
+72 questions : 45 reprises et 27 nouvelles.
 
 ### saeo-2026-externe-questions-europeennes-qcm-030
 
@@ -3456,21 +3426,6 @@ Provenance : SAEO 2026, question 34 ; contexte du sujet : 2025-11-25.
 
 [France Diplomatie — Débat sur le prélèvement européen, projet de loi de finances pour 2026](https://www.diplomatie.gouv.fr/fr/presse-et-ressources/decouvrir-et-informer/actualites/discussions-sur-le-projet-de-loi-de-finances-pour-2026-premiere-partie-article-45-et-debat-sur-le)
 
-### saeo-2026-externe-questions-europeennes-qcm-036
-
-Quels sont les États membres de l’Union européenne n’appartenant pas à l’espace Schengen ?
-
-Provenance : SAEO 2026, question 36 ; contexte du sujet : 2025-11-25.
-
-- A. Danemark
-- B. Irlande
-- C. Chypre
-- D. Luxembourg
-
-**Réponse : B, C.** À la date de l’épreuve du 25 novembre 2025, l’Irlande et Chypre ne font pas partie de l’espace Schengen sans contrôles aux frontières intérieures. Le Danemark et le Luxembourg en font partie. L’Irlande bénéficie d’un régime particulier et participe à certains volets de la coopération policière.
-
-[Conseil de l’Union européenne — L’espace Schengen](https://www.consilium.europa.eu/fr/policies/schengen-area/)
-
 ### saeo-2026-externe-questions-europeennes-qcm-042
 
 Les sanctions adoptées par l’Union européenne :
@@ -3515,21 +3470,6 @@ Provenance : SAEO 2026, question 44 ; contexte du sujet : 2025-11-25.
 **Réponse : B.** La FEP permet notamment de financer collectivement la fourniture d’équipements militaires, y compris létaux, à des partenaires. Cette possibilité a été mobilisée pour l’Ukraine en 2022. Les opérations militaires européennes existaient déjà avant sa création.
 
 [Conseil de l’Union européenne — Création de la facilité européenne pour la paix, 22 mars 2021](https://www.consilium.europa.eu/fr/press/press-releases/2021/03/22/eu-sets-up-the-european-peace-facility/)
-
-### saeo-2026-externe-questions-europeennes-qcm-045
-
-Comment la FEP est-elle financée ?
-
-Provenance : SAEO 2026, question 45 ; contexte du sujet : 2025-11-25.
-
-- A. Via le budget de l’Union européenne
-- B. Via les contributions d’États tiers
-- C. Via les contributions des États membres
-- D. Via un impôt européen
-
-**Réponse : B, C.** La FEP est principalement financée hors budget de l’Union par les contributions des États membres, calculées suivant leur RNB : c décrit son financement obligatoire. Elle peut également recevoir des contributions volontaires d’États tiers ; la Norvège en a notamment versé. Puisque plusieurs réponses sont autorisées et que b ne dit pas « exclusivement », b est également exacte.
-
-[Conseil de l’Union européenne — Facilité européenne pour la paix](https://www.consilium.europa.eu/fr/policies/european-peace-facility/) · [EUR-Lex — Décision PESC 2021/509 établissant la FEP, articles 26 et 30](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32021D0509)
 
 ### saeo-2026-externe-questions-europeennes-qcm-048
 
@@ -3620,21 +3560,6 @@ Provenance : SAEG 2026, question 34 ; contexte du sujet : 2025-11-25.
 **Réponse : B.** La politique de sécurité et de défense commune permet à l’Union de conduire des missions civiles et militaires à l’extérieur de l’Union pour maintenir la paix, prévenir les conflits et renforcer la sécurité internationale.
 
 [EUR-Lex — Traité sur l’Union européenne, article 42](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M042) · [EUR-Lex — Traité sur l’Union européenne, article 43](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M043)
-
-### saeg-2026-externe-questions-europeennes-qcm-036
-
-Quelle est la procédure de vote pour orientations de la PSDC ?
-
-Provenance : SAEG 2026, question 36 ; contexte du sujet : 2025-11-25.
-
-- A. Vote à la majorité qualifiée
-- B. Vote à la majorité simple
-- C. Vote à l’unanimité
-- D. Chaque État membre a un droit de veto individuel
-
-**Réponse : C, D.** Les décisions relatives à la PSDC sont prises à l’unanimité : c est la règle de vote et d en décrit la conséquence lorsqu’un État vote contre. Une abstention ne bloque toutefois pas nécessairement la décision ; le TUE permet notamment l’abstention constructive dans les conditions prévues à l’article 31.
-
-[EUR-Lex — Traité sur l’Union européenne, article 42](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M042) · [EUR-Lex — Traité sur l’Union européenne, article 31](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M031)
 
 ### saeg-2026-externe-questions-europeennes-qcm-037
 

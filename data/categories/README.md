@@ -1,21 +1,23 @@
 # Entraînements par catégorie
 
-La banque thématique contient **375 QCM corrigés**, soit 75 pour chacune des cinq rubriques du programme. Le [catalogue complet](CATALOGUE.md) réunit les énoncés, choix, réponses, explications et références, avec la provenance des questions reprises.
+La banque thématique contient **370 QCM corrigés**, répartis entre les cinq rubriques du programme. Le [catalogue complet](CATALOGUE.md) réunit les énoncés, choix, réponses, explications et références, avec la provenance des questions reprises.
 
 | Catégorie | Questions reprises | Questions nouvelles | Total |
 | --- | ---: | ---: | ---: |
 | [Histoire de la construction européenne](histoire.json) | 22 | 53 | 75 |
 | [Institutions de l’Union européenne](institutions.json) | 27 | 48 | 75 |
-| [Fonctionnement de l’Union européenne](fonctionnement.json) | 36 | 39 | 75 |
-| [Politiques internes et externes prévues par le TFUE et le TUE](politiques.json) | 48 | 27 | 75 |
+| [Fonctionnement de l’Union européenne](fonctionnement.json) | 34 | 39 | 73 |
+| [Politiques internes et externes prévues par le TFUE et le TUE](politiques.json) | 45 | 27 | 72 |
 | [Relations extérieures de l’Union européenne](relations.json) | 17 | 58 | 75 |
-| **Total** | **150** | **225** | **375** |
+| **Total** | **145** | **225** | **370** |
 
 ## Choix pédagogiques
 
 Les questions reprises proviennent des annales SAEO et SAEG 2026, du sujet zéro officiel et des trois entraînements déjà présents sur le site. Elles sont référencées par leur identifiant existant et ne sont pas dupliquées dans la banque générale. Une question ne figure que dans une catégorie. Les formulations ambiguës ou tributaires d’une précision absente de l’énoncé ont été écartées de cette sélection.
 
 Les nouvelles questions abordent les repères historiques, les compétences et la composition des institutions, les procédures de décision et de contrôle, les politiques communes et les partenariats extérieurs. Elles proposent quatre choix et une seule bonne réponse. Les corrigés donnent une explication et un lien vers un traité, une décision de justice ou une publication institutionnelle. Ce sont des corrigés pédagogiques, pas des corrigés officiels du jury.
+
+Les questions à plusieurs bonnes réponses sont réservées aux quiz d’annales pour éviter les réponses partielles non notées dans les tirages. Cinq références ont été retirées des catégories (deux dans « Fonctionnement », trois dans « Politiques »). Les dix questions concernées dans la banque générale restent intactes dans leurs annales et sont exclues du tirage aléatoire.
 
 La distinction entre les deux dernières catégories suit le sujet principal de la question : les bases juridiques et instruments de l’action extérieure relèvent des **politiques** ; les relations avec des partenaires, accords, organisations et missions concrètes relèvent des **relations extérieures**. Certains thèmes sont transversaux.
 
@@ -34,4 +36,6 @@ powershell -ExecutionPolicy Bypass -File scripts/sync-categories.ps1 -Check
 
 Le script contrôle les comptes, l’unicité des identifiants, les appartenances, les réponses attendues et la présence d’explications et de références HTTPS. Il génère `questions-europeennes.json` pour HTTP(S), `questions-europeennes.js` pour l’ouverture locale et `CATALOGUE.md`. Ces trois fichiers générés doivent être inclus dans le site. Les contrôles de structure ne remplacent pas la vérification pédagogique des réponses ou la lecture des références.
 
-Chaque catégorie permet un tirage uniforme sans remise de 1 à 75 questions. Le dernier tirage et les réponses sont conservés séparément par catégorie. Un nouveau tirage peut contenir des questions déjà rencontrées lors d’un quiz précédent. Les 225 questions nouvelles sont également disponibles dans le quiz aléatoire général, qui compte désormais 475 QCM.
+Chaque catégorie permet un tirage uniforme sans remise, de 1 question à l’effectif indiqué dans le tableau. Le dernier tirage et les réponses sont conservés séparément par catégorie. Une ancienne séance contenant une question désormais exclue est remplacée par un nouveau tirage. Un nouveau tirage peut contenir des questions déjà rencontrées lors d’un quiz précédent. Les 225 questions nouvelles sont également disponibles dans le quiz aléatoire général, qui compte désormais 465 QCM.
+
+Pour une contribution acceptée, le champ facultatif `contribution: { "nom": "Nom public validé", "validee": true }` porte uniquement le crédit approuvé. Il est affiché sur la question et dans le catalogue. La procédure de validation et de notification est décrite dans le [guide des contributions](../contributions/README.md). Ne jamais ajouter une adresse e-mail ou une demande privée aux JSON publics.

@@ -1,7 +1,7 @@
 (() => {
 "use strict";
 
-const { quizBareme, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
+const { quizBareme, getQuestions, getCategoryQuestions, getPracticeQuestions, drawQuestions, hasCorrection, isNeutralized, contributorName, cleanAnswers, evaluateQuestion, summarize } = window.QcmCore;
 
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
@@ -43,7 +43,7 @@ function formatPoints(points) {
 function scoringText() {
   return "Barème des annales SAEO / SAEG 2026, commun à tous les quiz : " + formatPoints(quizBareme.bonne_reponse) + " par réponse exacte, "
     + formatPoints(quizBareme.mauvaise_reponse) + " par réponse incorrecte, "
-    + formatPoints(quizBareme.absence_de_reponse) + " sans réponse. Les sélections partiellement correctes sont exclues du score : les annales ne précisent pas leur notation.";
+    + formatPoints(quizBareme.absence_de_reponse) + " sans réponse.";
 }
 
 function elapsedTime() {
@@ -95,7 +95,7 @@ function officialCode(source) {
 
 function drawPool(sourceId) {
   const category = categoryFor(sourceId);
-  return category ? getCategoryQuestions(base, category.id) : base.questions.filter(question => question.type === "qcm");
+  return category ? getCategoryQuestions(base, category.id) : getPracticeQuestions(base);
 }
 
 function countInput(sourceId) {
@@ -215,7 +215,7 @@ async function loadData() {
     if (!Array.isArray(base.categories) || base.categories.length !== 5 || new Set(base.questions.map(question => question.id)).size !== base.questions.length
         || !base.categories.every(category => {
           const questions = getCategoryQuestions(base, category.id);
-          return questions.length === 75 && category.question_ids.length === 75 && questions.every(hasCorrection);
+          return questions.length > 0 && questions.length === category.question_ids.length && questions.every(hasCorrection);
         })) throw new Error("Catégories invalides");
     drawSaved.clear();
     categoryCounts.clear();
@@ -223,7 +223,7 @@ async function loadData() {
     for (const sourceId of [...officialSourceIds, randomSourceId, ...base.categories.map(category => "categorie:" + category.id)]) {
       drawSaved.set(sourceId, readStored(sourceId));
     }
-    const poolSize = base.questions.filter(question => question.type === "qcm").length;
+    const poolSize = getPracticeQuestions(base).length;
     $("random-source").checked = false;
     $("random-count").max = poolSize;
     $("random-count").value = getSavedDraw(randomSourceId).length || Math.min(20, poolSize);
@@ -291,6 +291,8 @@ function makeQuestion(question, number) {
   });
   top.append(element("span", "question-number", "Question " + String(number).padStart(2, "0")), clear);
   card.append(top);
+  const contributor = contributorName(question);
+  if (contributor) card.append(element("p", "question-context question-credit small muted", "Question proposée par " + contributor));
   {
     const year = sourceYear(source);
     card.append(element("p", "question-context small muted", sourceTitle(source) + (year ? " · " + year : "")
@@ -325,6 +327,10 @@ function makeQuestion(question, number) {
   const feedback = element("div", "feedback");
   feedback.hidden = true;
   card.append(fieldset, feedback);
+  const removal = element("a", "text-button removal-link", "Demander le retrait de cette question");
+  removal.href = "contributions.html?type=retrait&question=" + encodeURIComponent(question.id);
+  removal.setAttribute("aria-label", "Demander le retrait de la question " + number);
+  card.append(removal);
   cards.set(question.id, card);
   return card;
 }
@@ -386,7 +392,6 @@ function startQuiz(sourceId, regenerate = false) {
   $("quiz-eyebrow").textContent = official ? questions.length + " questions · Ordre du sujet original"
     : questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard");
   $("regenerate").hidden = Boolean(official);
-  $("regenerate-help").hidden = Boolean(official);
   $("annale-link").hidden = !official?.url;
   if (official?.url) $("annale-link").href = official.url;
   else $("annale-link").removeAttribute("href");

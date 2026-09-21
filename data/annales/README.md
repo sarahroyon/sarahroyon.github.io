@@ -97,6 +97,8 @@ Le sujet V0 conserve son éditeur institutionnel, son lien local et son empreint
 
 ## Ajouter des questions personnelles
 
+La page publique [Contribuer aux quiz](../../contributions.html) prépare les propositions et demandes de retrait à envoyer par e-mail à l’adresse dédiée. Elles attendent un examen manuel et ne modifient pas cette banque. Voir le [guide des contributions et demandes de retrait](../contributions/README.md) pour configurer l’adresse de réception et examiner les demandes.
+
 Ajouter une source avec un identifiant inédit. Par exemple, pour un lot de questions originales utilisant le même barème historique :
 
 ```json

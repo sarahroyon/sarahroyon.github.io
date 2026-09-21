@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proposez des questions européennes ou demandez le retrait motivé d’une question. Chaque demande est examinée avant toute modification des quiz.">
+  <title>Contribuer · Questions européennes</title>
+  <link rel="stylesheet" href="questions.css">
+  <link rel="stylesheet" href="contributions.css">
+  <script defer src="contributions-config.js"></script>
+  <script defer src="data/annales/questions-europeennes-2026.js"></script>
+  <script defer src="data/categories/questions-europeennes.js"></script>
+  <script defer src="contributions.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <header class="site-header">
+    <a class="site-name" href="index.html">Questions européennes</a>
+    <a class="small" href="questions.html">Retour aux quiz</a>
+  </header>
+  <main id="main" class="contribution-page">
+    <p class="eyebrow">Participer à la banque de questions</p>
+    <h1>Contribuer aux quiz</h1>
+    <p class="intro">Proposez de nouvelles questions ou demandez le retrait d’une question existante par e-mail. Chaque demande sera examinée avant toute décision.</p>
+    <p class="intro">Si vous utilisez GitHub, vous pouvez aussi contribuer au site en proposant des corrections ou des améliorations sur le <a href="https://github.com/sarahroyon/sarahroyon.github.io" target="_blank" rel="noopener noreferrer">dépôt GitHub</a>.</p>
+    <p class="review-notice notice">L’envoi d’une demande ne modifie jamais automatiquement les quiz. Les questions retenues seront accompagnées d’un crédit, après validation du nom ou du pseudonyme proposé. Votre adresse e-mail et votre demande restent privées.</p>
+    <p id="contact-details" class="small muted" hidden>Adresse dédiée : <a id="contact-address"></a>. Les propositions doivent contenir au moins cinq questions ; les demandes de retrait doivent être motivées.</p>
+    <p id="service-status" class="notice" role="status" hidden></p>
+    <noscript><p class="notice">Activez JavaScript pour préparer votre demande par e-mail.</p></noscript>
+
+    <form id="contribution-form" hidden>
+      <fieldset class="form-section">
+        <legend>1. Votre identité</legend>
+        <label for="contributor-name">Nom ou pseudonyme <span class="muted">(obligatoire)</span></label>
+        <input id="contributor-name" autocomplete="name" required minlength="3" maxlength="120" aria-describedby="identity-help">
+        <p id="identity-help" class="small muted">Merci d’indiquer votre véritable identité ou, si vous préférez, un pseudonyme. Les pseudonymes à caractère sexuel, insultant, discriminatoire, diffamatoire, manifestement fantaisiste ou utilisés à des fins de provocation ne seront pas retenus.</p>
+        <p class="small muted">Ce nom ou pseudonyme est proposé pour le crédit de vos questions. Il sera vérifié avant toute publication.</p>
+        <label for="contributor-email">Adresse e-mail <span class="muted">(facultative)</span></label>
+        <input id="contributor-email" type="email" autocomplete="email" maxlength="254" aria-describedby="email-help">
+        <p id="email-help" class="small muted">Pour préciser l’adresse à laquelle vous souhaitez recevoir une confirmation si vos suggestions sont intégrées. À défaut, la réponse sera envoyée à l’adresse utilisée pour votre e-mail. Cette adresse ne sera jamais publiée.</p>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>2. Votre demande</legend>
+        <div class="request-types">
+          <label class="request-type"><input type="radio" name="request-kind" value="ajout" checked> <span>Proposer des questions<small>Au moins 5 QCM par envoi</small></span></label>
+          <label class="request-type"><input type="radio" name="request-kind" value="retrait"> <span>Demander un retrait<small>Une question et une justification</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset id="addition-fields" class="form-section">
+        <legend>3. Vos questions</legend>
+        <p class="muted">Proposez entre 5 et 20 questions distinctes par envoi. Pour chaque QCM, renseignez quatre choix, sélectionnez l’unique bonne réponse, puis indiquez une explication et une référence permettant de vérifier le corrigé. Tous les champs sont obligatoires.</p>
+        <div id="proposed-questions"></div>
+        <div class="form-actions">
+          <button id="add-question" class="button secondary" type="button">Ajouter une question</button>
+          <p id="question-count" class="small muted" role="status"></p>
+        </div>
+      </fieldset>
+
+      <fieldset id="removal-fields" class="form-section" hidden disabled>
+        <legend>3. La question à retirer</legend>
+        <label for="question-search">Rechercher dans la banque <span class="muted">(facultatif)</span></label>
+        <input id="question-search" type="search" placeholder="Mots de l’énoncé, sujet ou identifiant" aria-controls="existing-question">
+        <label for="existing-question">Question concernée</label>
+        <select id="existing-question" required aria-describedby="question-search-status"><option value="">Choisir une question</option></select>
+        <p id="question-search-status" class="small muted" role="status"></p>
+        <div id="selected-question" class="notice" hidden></div>
+        <label for="removal-reason">Pourquoi demandez-vous son retrait ?</label>
+        <textarea id="removal-reason" rows="6" required minlength="30" maxlength="5000" aria-describedby="reason-help"></textarea>
+        <p id="reason-help" class="small muted">Expliquez précisément le problème (erreur, ambiguïté, information dépassée…) et ajoutez vos références si possible. Au moins 30 caractères.</p>
+      </fieldset>
+
+      <label class="acknowledgement"><input id="acknowledgement" type="checkbox" required> <span>J’ai lu les conditions ci-dessus et comprends que ma demande et le nom ou pseudonyme proposé seront examinés avant toute publication.</span></label>
+      <p id="form-error" class="form-error notice" role="alert" tabindex="-1" hidden></p>
+      <div class="form-actions">
+        <button id="prepare-request" class="button primary" type="submit">Préparer mon e-mail</button>
+        <button id="download-request" class="button secondary" type="button">Télécharger le message</button>
+      </div>
+      <p class="small muted download-help">Aucun envoi automatique : vous devrez envoyer votre demande depuis votre messagerie. Vous pouvez aussi télécharger le message et le joindre à votre e-mail.</p>
+    </form>
+
+    <section id="email-draft" class="notice" aria-labelledby="draft-title" hidden>
+      <h2 id="draft-title" tabindex="-1">Votre message est prêt à copier</h2>
+      <p>Copiez le message ci-dessous, ouvrez votre messagerie puis collez-le et envoyez-le. Si vous utilisez un webmail, vous pouvez aussi y créer un nouveau message vous-même.</p>
+      <p id="recipient-row" hidden>À : <span id="recipient-address"></span></p>
+      <p>Objet : <span id="email-subject"></span></p>
+      <label for="email-message">Message complet</label>
+      <textarea id="email-message" rows="12" readonly></textarea>
+      <div class="form-actions">
+        <button id="copy-message" class="button primary" type="button">Copier le message</button>
+        <a id="open-mail" class="button secondary" hidden>Ouvrir ma messagerie</a>
+      </div>
+      <p id="copy-status" class="small" role="status"></p>
+      <p class="small muted">Préparer, copier ou télécharger ce message ne l’envoie pas. Le site ne peut pas confirmer la réception de votre e-mail.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><span>2026 © Sarah Royon</span><a href="questions.html">Questions européennes</a></footer>
+
+  <template id="question-template">
+    <fieldset class="proposal">
+      <legend></legend>
+      <label data-for="enonce">Énoncé</label>
+      <textarea data-field="enonce" rows="3" required minlength="10" maxlength="2000"></textarea>
+      <fieldset class="proposal-choices">
+        <legend>Quatre choix · Sélectionnez l’unique bonne réponse</legend>
+        <div class="proposal-choice"><label><input type="radio" data-answer="a"> A juste</label><input data-field="a" aria-label="Texte du choix A" required maxlength="500"></div>
+        <div class="proposal-choice"><label><input type="radio" data-answer="b"> B juste</label><input data-field="b" aria-label="Texte du choix B" required maxlength="500"></div>
+        <div class="proposal-choice"><label><input type="radio" data-answer="c"> C juste</label><input data-field="c" aria-label="Texte du choix C" required maxlength="500"></div>
+        <div class="proposal-choice"><label><input type="radio" data-answer="d"> D juste</label><input data-field="d" aria-label="Texte du choix D" required maxlength="500"></div>
+      </fieldset>
+      <label data-for="explication">Explication du corrigé</label>
+      <textarea data-field="explication" rows="3" required minlength="20" maxlength="3000"></textarea>
+      <label data-for="reference">Référence du corrigé (lien, ouvrage ou document précis)</label>
+      <textarea data-field="reference" rows="2" required minlength="5" maxlength="2000"></textarea>
+      <button class="text-button remove-question" type="button">Retirer cette proposition</button>
+    </fieldset>
+  </template>
+</body>
+</html>

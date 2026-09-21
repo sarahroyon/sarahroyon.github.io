@@ -18,12 +18,17 @@ function getCategoryQuestions(base, categoryId) {
   const category = base.categories?.find(item => item.id === categoryId);
   if (!category) return [];
   const ids = new Set(category.question_ids);
-  return base.questions.filter(question => question.type === "qcm" && ids.has(question.id));
+  return getPracticeQuestions(base).filter(question => ids.has(question.id));
+}
+
+function getPracticeQuestions(base) {
+  // Questions with multiple correct choices remain available only in their original annales.
+  return base.questions.filter(question => question.type === "qcm" && (question.correction?.reponses?.length || 0) <= 1);
 }
 
 function drawQuestions(base, count, categoryId) {
   const questions = categoryId === undefined
-    ? base.questions.filter(question => question.type === "qcm")
+    ? getPracticeQuestions(base)
     : getCategoryQuestions(base, categoryId);
   if (!Number.isInteger(count) || count < 1 || count > questions.length) {
     throw new RangeError("Nombre de questions invalide");
@@ -45,6 +50,13 @@ function hasCorrection(question) {
   return !isNeutralized(question) && Array.isArray(correction?.reponses) && correction.reponses.length > 0
     && correction.reponses.every(letter => Object.hasOwn(question.choix, letter))
     && new Set(correction.reponses).size === correction.reponses.length;
+}
+
+function contributorName(question) {
+  const credit = question.contribution;
+  // Only an explicitly reviewed public credit from the published question data may be displayed.
+  return credit?.validee === true && typeof credit.nom === "string" && credit.nom.trim().length >= 3 && credit.nom.trim().length <= 120
+    ? credit.nom.trim() : "";
 }
 
 function cleanAnswers(questions, answers) {
@@ -91,5 +103,5 @@ function summarize(questions, answers) {
   };
 }
 
-return { quizBareme, getSourceIds, getQuestions, getCategoryQuestions, drawQuestions, hasCorrection, isNeutralized, cleanAnswers, evaluateQuestion, summarize };
+return { quizBareme, getSourceIds, getQuestions, getCategoryQuestions, getPracticeQuestions, drawQuestions, hasCorrection, isNeutralized, contributorName, cleanAnswers, evaluateQuestion, summarize };
 })();

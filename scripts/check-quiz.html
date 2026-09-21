@@ -44,10 +44,12 @@
     doc.getElementById(id).querySelector('.choices input').dispatchEvent(new win.Event('change', { bubbles: true }));
   }
   try {
-    assert(base.categories.length === 5 && base.categories.every(c => QcmCore.getCategoryQuestions(base, c.id).length === 75), '5 x 75');
+    assert(base.categories.length === 5 && base.categories.every((c, i) => QcmCore.getCategoryQuestions(base, c.id).length === [75, 75, 73, 72, 75][i]), 'Effectifs des cinq catégories');
     const selected = base.categories.flatMap(c => c.question_ids);
-    assert(new Set(selected).size === 375 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length), '375 corrigés complets distincts');
-    assert(QcmCore.drawQuestions(base, 475).length === 475, '475 QCM conservés');
+    assert(new Set(selected).size === 370 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length && byId.get(id).correction.reponses.length === 1), '370 corrigés complets distincts à une bonne réponse');
+    assert(QcmCore.drawQuestions(base, 465).length === 465 && QcmCore.getPracticeQuestions(base).every(q => q.correction.reponses.length === 1), '465 QCM sans réponse partielle dans le tirage');
+    assert(!QcmCore.contributorName({}) && !QcmCore.contributorName({ contribution: { nom: 'Pseudonyme proposé', validee: false } }), 'Aucun crédit non validé');
+    assert(QcmCore.contributorName({ contribution: { nom: 'Camille M.', validee: true } }) === 'Camille M.', 'Crédit validé disponible');
     const sample = { id: 'sample', type: 'qcm', choix: { a: 'A', b: 'B', c: 'C' }, correction: { reponses: ['a', 'b'] } };
     for (const [letters, status, points] of [[['a', 'b'], 'correct', 0.2], [['a'], 'partial', null], [['a', 'c'], 'incorrect', -0.1], [[], 'skipped', -0.05]]) {
       const result = QcmCore.evaluateQuestion(sample, letters);
@@ -72,8 +74,8 @@
     assert(blank.score === -23.75 && blank.maximum === 95, 'Pénalité des absences et score négatif');
     pass('Barème commun : réponses exactes, partielles, fausses, absentes et questions exclues');
     for (const c of base.categories) {
-      assert(new Set(QcmCore.drawQuestions(base, 75, c.id).map(q => q.id)).size === 75, 'Tirage complet ' + c.id);
-      for (const invalid of [0, -1, 1.5, 76, NaN, Infinity]) {
+      assert(new Set(QcmCore.drawQuestions(base, c.question_ids.length, c.id).map(q => q.id)).size === c.question_ids.length, 'Tirage complet ' + c.id);
+      for (const invalid of [0, -1, 1.5, c.question_ids.length + 1, NaN, Infinity]) {
         let rejected = false;
         try { QcmCore.drawQuestions(base, invalid, c.id); } catch (e) { rejected = e instanceof RangeError; }
         assert(rejected, 'Bornes ' + c.id + ' : ' + invalid);
@@ -88,7 +90,7 @@
       }
     } finally { Math.random = originalRandom; }
     assert(outcomes.size === 6 && JSON.stringify(tiny) === before, 'Uniformité et absence de mutation');
-    pass('Intégrité des 375 corrigés, tirages uniformes, limites et banque originale');
+    pass('Intégrité des 370 corrigés, tirages uniformes, limites et crédits modérés');
     frame.src = '../questions.html'; await ready();
     for (const key of [...QcmCore.getSourceIds(base), 'aleatoire', ...base.categories.map(c => 'categorie:' + c.id)]) {
       originalSessions.set(prefix + key, win.localStorage.getItem(prefix + key));
@@ -107,7 +109,7 @@
       count('', 'category-count'); count('', 'random-count'); start();
       const expectedIds = QcmCore.getQuestions(base, sourceId).map(q => q.id);
       assert(expectedIds.length === (index === 2 ? 10 : 60) && JSON.stringify(ids()) === JSON.stringify(expectedIds), 'Questions et ordre de l’annale ' + sourceId);
-      assert(el('quiz-title').textContent.startsWith(['SAEG', 'SAEO', 'V0'][index]) && el('regenerate').hidden && el('regenerate-help').hidden, 'Titre et commandes de l’annale');
+      assert(el('quiz-title').textContent.startsWith(['SAEG', 'SAEO', 'V0'][index]) && el('regenerate').hidden && !el('regenerate-help') && !el('reset-help'), 'Titre et commandes de l’annale, textes retirés');
       assert(!el('annale-link').hidden && el('annale-link').getAttribute('href') === base.sources[sourceId].url, 'Lien du sujet original');
       let officialNow = Date.now(); win.Date.now = () => officialNow;
       el('reset').click(); officialNow += 61000;
@@ -120,6 +122,12 @@
       assert(!el('results').hidden && el('timer').textContent === '01:01' && doc.querySelectorAll('.choices input:checked').length >= expectedIds.length, 'Annale sauvegardée après rechargement');
       el('reset').click();
       assert(JSON.stringify(ids()) === JSON.stringify(expectedIds) && el('results').hidden && el('timer').textContent === '00:00' && !doc.querySelector('.choices input:checked'), 'Reset de l’annale');
+      const multiple = QcmCore.getQuestions(base, sourceId).find(q => q.correction.reponses.length > 1);
+      if (multiple) {
+        answer(multiple.id, [multiple.correction.reponses[0]]); el('quiz-form').requestSubmit();
+        assert(el('results-title').textContent === '-2,95 / 11,8 points' && el('result-stats').textContent.includes('Réponses partielles non notées'), 'Réponses partielles conservées dans les annales');
+        el('reset').click();
+      }
       answer(ids()[0], byId.get(ids()[0]).correction.reponses); back();
       pass('Annale ' + ['SAEG', 'SAEO', 'V0'][index] + ' : questions dans l’ordre, correction, barème, chrono, reprise et reset');
     }
@@ -132,12 +140,13 @@
     win.localStorage.setItem(prefix + officialIds[0], officialSessions[0]);
     await reload();
     for (const c of base.categories) {
+      const size = c.question_ids.length;
       select('categorie:' + c.id);
-      for (const invalid of ['', '0', '76', '1.5']) { count(invalid); assert(!el('category-count').checkValidity(), 'Champ invalide ' + invalid); }
-      count(75); start();
-      assert(ids().length === 75 && ids().every(id => c.question_ids.includes(id)), 'Appartenance ' + c.id);
+      for (const invalid of ['', '0', String(size + 1), '1.5']) { count(invalid); assert(!el('category-count').checkValidity(), 'Champ invalide ' + invalid); }
+      count(size); start();
+      assert(ids().length === size && ids().every(id => c.question_ids.includes(id)), 'Appartenance ' + c.id);
       assert(el('quiz-title').textContent === c.titre && !el('regenerate').hidden, 'Titre ' + c.id);
-      assert(el('annale-link').hidden && !el('regenerate-help').hidden, 'Commandes du tirage par catégorie');
+      assert(el('annale-link').hidden && !el('regenerate-help'), 'Commandes du tirage par catégorie');
       assert(doc.querySelector('.question-number').textContent.endsWith('01'), 'Numérotation');
       for (const id of ids()) {
         const q = byId.get(id), single = base.sources[q.source.id].mode_reponse_qcm === 'une_seule';
@@ -145,17 +154,18 @@
         answer(id, q.correction.reponses);
       }
       el('quiz-form').requestSubmit();
-      assert(doc.querySelectorAll('.feedback.correct').length === 75 && doc.querySelectorAll('.feedback a').length >= 75, 'Affichage des 75 corrigés ' + c.id);
-      assert(el('result-stats').querySelector('dd').textContent === '75', 'Bilan ' + c.id);
-      assert(el('results-title').textContent === '15 / 15 points', 'Note chiffrée ' + c.id);
+      assert(doc.querySelectorAll('.feedback.correct').length === size && doc.querySelectorAll('.feedback a').length >= size, 'Affichage des corrigés ' + c.id);
+      assert(el('result-stats').querySelector('dd').textContent === String(size), 'Bilan ' + c.id);
+      const maximum = new Intl.NumberFormat('fr-FR').format(size * 0.2);
+      assert(el('results-title').textContent === maximum + ' / ' + maximum + ' points', 'Note chiffrée ' + c.id);
       const beforeReset = ids();
       el('reset').click();
       assert(JSON.stringify(ids()) === JSON.stringify(beforeReset) && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Reset conserve les questions ' + c.id);
       assert(el('timer').textContent === '00:00' && el('progress').value === 0 && !doc.querySelector('.choices input:disabled'), 'Reset du temps et de la progression ' + c.id);
       el('regenerate').click();
-      assert(ids().length === 75 && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Régénération ' + c.id);
+      assert(ids().length === size && el('results').hidden && !doc.querySelector('.choices input:checked'), 'Régénération ' + c.id);
       back(); count(1); start(); assert(ids().length === 1, 'Une question ' + c.id); back();
-      pass('Parcours complet ' + c.id + ' : 1 et 75 questions, corrections, bilan, régénération');
+      pass('Parcours complet ' + c.id + ' : 1 et ' + size + ' questions, corrections, bilan, régénération');
     }
     select('categorie:histoire'); count(7); start();
     const savedIds = ids(); answer(savedIds[0], byId.get(savedIds[0]).correction.reponses); back();
@@ -168,27 +178,22 @@
     const preserved = win.localStorage.getItem(prefix + 'categorie:histoire');
     select('aleatoire'); count(9, 'random-count'); start(); assert(ids().length === 9, 'Quiz général'); el('regenerate').click(); back();
     assert(win.localStorage.getItem(prefix + 'categorie:histoire') === preserved, 'Isolation du quiz général');
-    select('aleatoire'); count(475, 'random-count'); start();
+    select('aleatoire'); count(465, 'random-count'); start();
     for (const id of ids()) answer(id, byId.get(id).correction.reponses);
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '95 / 95 points', 'Barème du quiz aléatoire complet');
+    assert(el('results-title').textContent === '93 / 93 points', 'Barème du quiz aléatoire complet');
     const randomIds = ids(); el('reset').click();
     assert(JSON.stringify(ids()) === JSON.stringify(randomIds) && !doc.querySelector('.choices input:checked') && el('timer').textContent === '00:00', 'Reset du quiz aléatoire');
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '-23,75 / 95 points', 'Quiz sans réponse');
+    assert(el('results-title').textContent === '-23,25 / 93 points', 'Quiz sans réponse');
+    assert(ids().every(id => byId.get(id).correction.reponses.length === 1) && !el('result-stats').textContent.includes('Réponses partielles'), 'Questions à réponses partielles absentes du quiz aléatoire');
     el('edit').click();
-    const multiple = allQuestions.find(q => q.correction.reponses.length > 1);
-    assert(multiple, 'Question à plusieurs bonnes réponses disponible');
-    answer(multiple.id, [multiple.correction.reponses[0]]);
+    const single = byId.get(ids()[0]);
+    answer(single.id, [Object.keys(single.choix).find(letter => !single.correction.reponses.includes(letter))]);
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '-23,7 / 94,8 points', 'Réponse partielle exclue du score affiché');
-    assert(doc.getElementById(multiple.id).querySelector('.feedback').textContent.includes('Non notée') && el('result-stats').textContent.includes('Réponses partielles non notées'), 'Réponse partielle signalée séparément');
-    el('edit').click();
-    answer(multiple.id, [Object.keys(multiple.choix).find(letter => !multiple.correction.reponses.includes(letter))]);
-    el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '-23,8 / 95 points', 'Pénalité de réponse incorrecte affichée');
+    assert(el('results-title').textContent === '-23,3 / 93 points', 'Pénalité de réponse incorrecte affichée');
     back();
-    pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 475 questions aléatoires');
+    pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 465 questions aléatoires');
     assert(officialIds.every((sourceId, index) => win.localStorage.getItem(prefix + sourceId) === officialSessions[index]), 'Sauvegardes des annales indépendantes des catégories et du quiz aléatoire');
 
     select('categorie:histoire'); count(2); start(); el('reset').click();
@@ -251,7 +256,36 @@
     assert(doc.documentElement.scrollWidth <= win.innerWidth, 'Pas de débordement sur mobile (quiz)');
     back(); select(officialIds[0]); start(); await tick();
     assert(doc.documentElement.scrollWidth <= win.innerWidth && !el('reset').hidden && el('regenerate').hidden, 'Annale et reset sur mobile');
-    pass('Sauvegarde invalide écartée et affichage mobile à 375 px');
+    back();
+    for (const sourceId of ['aleatoire', 'categorie:fonctionnement']) {
+      const excluded = 'saeo-2026-externe-questions-europeennes-qcm-035';
+      win.localStorage.setItem(prefix + sourceId, JSON.stringify({ questionIds: [excluded], answers: {}, reviewed: true }));
+      await reload(); select(sourceId); start();
+      assert(ids().length === 20 && ids().every(id => byId.get(id).correction.reponses.length === 1), 'Ancienne séance avec question exclue remplacée : ' + sourceId);
+      back();
+    }
+    pass('Sauvegardes avec questions exclues écartées et affichage mobile à 375 px');
+    if (location.protocol !== 'file:') {
+      const originalFetch = win.fetch;
+      const creditId = QcmCategories.questions[0].id, unapprovedId = QcmCategories.questions[1].id;
+      const approvedName = '<img src=x onerror=alert(1)> Camille';
+      win.fetch = async (...args) => {
+        const response = await originalFetch(...args);
+        if (!String(args[0]).includes('data/categories/')) return response;
+        const data = await response.json();
+        data.questions.find(q => q.id === creditId).contribution = { nom: approvedName, validee: true };
+        data.questions.find(q => q.id === unapprovedId).contribution = { nom: 'Crédit non examiné', validee: false };
+        return { ok: true, json: async () => data };
+      };
+      el('retry').click(); await ready();
+      select('categorie:histoire'); count(base.categories[0].question_ids.length); start();
+      const credit = doc.getElementById(creditId).querySelector('.question-credit');
+      assert(credit?.textContent === 'Question proposée par ' + approvedName && !credit.querySelector('img'), 'Crédit validé affiché comme texte sans exécution HTML');
+      assert(!doc.getElementById(unapprovedId).querySelector('.question-credit'), 'Nom non validé jamais affiché');
+      win.fetch = originalFetch;
+      back();
+      pass('Affichage du crédit modéré et protection contre le HTML dans les noms');
+    }
     out.textContent = logs.join('\n') + '\nALL CHECKS PASSED';
   } catch (error) { out.textContent = logs.join('\n') + '\nFAIL ' + error.stack; }
   finally {

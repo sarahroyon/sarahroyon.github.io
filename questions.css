@@ -81,6 +81,7 @@ h2 { font-size: 1.1rem; font-weight: 600; }
 .quiz-heading .eyebrow { margin-bottom: 10px; }
 .quiz-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 20px; }
 .question-context { margin-bottom: 16px; }
+.question-credit { overflow-wrap: anywhere; }
 .quiz-layout { display: grid; grid-template-columns: 236px minmax(0, 1fr); gap: 32px; align-items: start; }
 .sidebar { position: sticky; top: 24px; max-height: calc(100dvh - 48px); overflow-y: auto; scrollbar-width: thin; border: 1px solid var(--border); border-radius: 10px; padding: 19px; background: var(--white); }
 .sidebar-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
@@ -105,6 +106,7 @@ progress::-moz-progress-bar { background: var(--green); }
 .finish-button { width: 100%; margin-top: 22px; padding-inline: 8px; font-size: .8rem; }
 .save-status { margin-top: 10px; font-size: .7rem; }
 .question-column { min-width: 0; }
+.removal-link { display: inline-block; margin-top: 16px; }
 .instructions { padding: 0 4px 26px; }
 .instructions > * + * { margin-top: 7px; }
 .instructions > a { display: inline-block; }

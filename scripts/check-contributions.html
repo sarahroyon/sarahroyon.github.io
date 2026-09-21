@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Vérification des contributions par e-mail</title>
+<pre id="checks">RUNNING</pre>
+<iframe id="app" title="Formulaire testé" style="width:390px;height:850px;border:0"></iframe>
+<script>
+(async () => {
+  const out = document.getElementById("checks"), frame = document.getElementById("app"), logs = [];
+  const assert = (ok, message) => { if (!ok) throw new Error(message); };
+  const pass = message => { logs.push("PASS " + message); out.textContent = logs.join("\n"); };
+  const tick = () => new Promise(resolve => setTimeout(resolve, 30));
+  const markup = await (await fetch("../contributions.html")).text();
+  const script = await (await fetch("../contributions.js")).text();
+  let doc, win;
+  const el = id => doc.getElementById(id);
+  async function load(address = "qcm+test@example.fr", query = "", bank = true) {
+    const mock = `window.ContributionsConfig = ${JSON.stringify({ recipientEmail: address })};
+      window.__networkRequests = []; window.__copied = ''; window.__clipboardFails = false; window.__downloads = [];
+      window.fetch = async (...args) => { window.__networkRequests.push(args); throw new Error('Unexpected network call'); };
+      Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: async text => {
+        if (window.__clipboardFails) throw new Error('Clipboard unavailable'); window.__copied = text;
+      } } });
+      const originalCreate = URL.createObjectURL;
+      URL.createObjectURL = blob => { window.__downloadBlob = blob; return originalCreate(blob); };
+      HTMLAnchorElement.prototype.click = function() { window.__downloads.push({ href: this.href, download: this.download }); };`;
+    let html = markup.replace('<head>', '<head><base href="' + new URL("../", location.href).href + '">')
+      .replace('<script defer src="contributions-config.js"><' + '/script>', '<script>' + mock + '<' + '/script>');
+    if (!bank) html = html.replace(/<script defer src="data\/[^\"]+"><\/script>/g, "");
+    html = html.replace('<script defer src="contributions.js"><' + '/script>', '')
+      .replace('</body>', '<script>document.addEventListener("DOMContentLoaded", () => {\n' + script.replace('new URLSearchParams(location.search)', 'new URLSearchParams(' + JSON.stringify(query) + ')') + '\n});<' + '/script></body>');
+    await new Promise(resolve => { frame.onload = resolve; frame.srcdoc = html; });
+    doc = frame.contentDocument; win = frame.contentWindow;
+    for (let i = 0; i < 250; i++) { if (el("contribution-form")?.hidden === false) return; await tick(); }
+    throw new Error("Chargement du formulaire");
+  }
+  function input(control, value) { control.value = value; control.dispatchEvent(new win.Event("input", { bubbles: true })); }
+  function identity() { input(el("contributor-name"), "Camille Martin"); el("acknowledgement").checked = true; }
+  function fillQuestions() {
+    identity();
+    [...doc.querySelectorAll(".proposal")].forEach((card, i) => {
+      const set = (name, value) => input(card.querySelector('[data-field="' + name + '"]'), value);
+      set("enonce", "Quel est le choix attendu pour la question numéro " + (i + 1) + " ?");
+      for (const letter of ["a", "b", "c", "d"]) set(letter, "Proposition " + letter);
+      card.querySelector('[data-answer="b"]').checked = true;
+      set("explication", "Cette explication détaillée justifie la réponse de cette question.");
+      set("reference", "https://europa.eu/ — référence de vérification");
+    });
+  }
+  async function prepare() { el("contribution-form").requestSubmit(); await tick(); }
+  const invalid = () => assert(el("email-draft").hidden, "Aucun message préparé avec une demande invalide");
+  try {
+    await load("");
+    assert(!el("service-status").hidden && doc.querySelectorAll(".proposal").length === 5, "Adresse manquante signalée et cinq questions initiales");
+    assert([...doc.querySelectorAll(".remove-question")].every(button => button.disabled), "Minimum de cinq conservé");
+    fillQuestions(); await prepare();
+    assert(!el("email-draft").hidden && el("open-mail").hidden && !el("open-mail").hasAttribute("href"), "Préparation possible sans inventer de destinataire");
+    assert(doc.documentElement.scrollWidth <= 390, "Pas de débordement horizontal sur mobile");
+    pass("Adresse manquante, cinq questions initiales et affichage mobile");
+
+    await load(); fillQuestions();
+    assert(!el("contact-details").hidden && el("contact-address").textContent === "qcm+test@example.fr", "Adresse dédiée affichée dès l’ouverture");
+    input(el("contributor-email"), "adresse-invalide"); await prepare(); invalid();
+    input(el("contributor-email"), "camille@example.fr");
+    doc.querySelector("[data-answer=b]").checked = false; await prepare(); invalid();
+    doc.querySelector("[data-answer=b]").checked = true;
+    input(el("contributor-name"), "    "); await prepare(); invalid(); identity();
+    const cards = [...doc.querySelectorAll(".proposal")];
+    input(cards[1].querySelector("[data-field=enonce]"), cards[0].querySelector("[data-field=enonce]").value);
+    await prepare(); invalid(); fillQuestions();
+    input(cards[0].querySelector("[data-field=d]"), "Proposition a"); await prepare(); invalid(); fillQuestions();
+    el("acknowledgement").checked = false; await prepare(); invalid(); el("acknowledgement").checked = true;
+    cards[4].remove(); await prepare(); invalid(); el("add-question").click(); fillQuestions();
+    pass("Identité, e-mail, réponse unique, nombre minimal, doublons et confirmation contrôlés");
+
+    await prepare();
+    const message = el("email-message").value;
+    assert(message.includes("QUESTION 5") && message.includes("Bonne réponse : B") && message.includes("camille@example.fr") && message.includes("Référence : https://europa.eu/"), "Message complet avec accents, corrigés et référence");
+    const mailto = new URL(el("open-mail").href);
+    assert(mailto.protocol === "mailto:" && decodeURIComponent(mailto.pathname) === "qcm+test@example.fr", "Destinataire exact et encodage du signe plus");
+    assert(mailto.searchParams.get("subject").includes("5 questions") && [...mailto.searchParams.keys()].join() === "subject", "Objet renseigné sans données personnelles dans les paramètres");
+    assert(!el("contribution-form").hidden && !doc.getElementById("submission-success") && !doc.getElementById("submission-reference"), "Aucune fausse confirmation d’envoi");
+    el("copy-message").click(); await tick();
+    assert(win.__copied === message && el("copy-status").textContent.includes("Message copié"), "Copie intégrale du message");
+    win.__clipboardFails = true; el("copy-message").click(); await tick();
+    assert(el("email-message").selectionStart === 0 && el("email-message").selectionEnd === message.length && el("copy-status").textContent.includes("Ctrl + C"), "Copie manuelle proposée si le presse-papiers est indisponible");
+    el("download-request").click();
+    assert(win.__downloads[0].download === "demande-quiz-ajout.txt" && (await win.__downloadBlob.text()).trim() === message.trim(), "Téléchargement lisible et complet");
+    input(el("contributor-name"), "Camille corrigée");
+    assert(el("email-draft").hidden && !el("email-message").value && !el("open-mail").hasAttribute("href"), "Modification invalide l’ancien message");
+    await prepare(); assert(el("email-message").value.includes("Camille corrigée"), "Nouvelle préparation actualisée");
+    assert(win.__networkRequests.length === 0, "Aucune transmission réseau");
+    pass("Message complet, copie avec secours, téléchargement, mise à jour et absence d’envoi automatique");
+
+    await load("qcm@example.fr", "?type=retrait&question=saeo-2026-externe-questions-europeennes-qcm-001");
+    identity();
+    assert(el("addition-fields").disabled && !el("removal-fields").disabled && el("existing-question").value.endsWith("qcm-001"), "Retrait prérempli");
+    input(el("removal-reason"), "Trop court"); await prepare(); invalid();
+    input(el("question-search"), "aucune correspondance xyzzzz");
+    assert(el("existing-question").value.endsWith("qcm-001"), "Recherche conserve la cible sélectionnée");
+    input(el("removal-reason"), "Cette question comporte une ambiguïté précise que je souhaite soumettre à votre examen.");
+    await prepare();
+    const removal = el("email-message").value;
+    assert(removal.includes("saeo-2026-externe-questions-europeennes-qcm-001") && removal.includes("Source :") && removal.includes("MOTIF DE LA DEMANDE DE RETRAIT") && !removal.includes("QUESTION 1\n") && !removal.includes("Adresse pour votre réponse"), "Retrait complet et e-mail facultatif");
+    assert(doc.documentElement.scrollWidth <= 390 && win.__networkRequests.length === 0, "Retrait sur mobile sans transmission");
+    doc.querySelector('input[value="ajout"]').click(); assert(el("email-draft").hidden, "Changement de type invalide le message");
+    pass("Retrait prérempli, motif obligatoire, source et choix conservés");
+
+    await load("qcm@example.fr", "?type=retrait&question=inconnue");
+    assert(el("existing-question").value === "" && !el("form-error").hidden, "Identifiant inconnu signalé");
+    await load("qcm@example.fr", "?type=retrait", false);
+    assert(el("prepare-request").disabled, "Retrait bloqué si banque indisponible");
+    doc.querySelector('input[value="ajout"]').click(); assert(!el("prepare-request").disabled, "Propositions possibles sans banque");
+    for (let i = 0; i < 25; i++) el("add-question").click();
+    assert(doc.querySelectorAll(".proposal").length === 20 && el("add-question").disabled, "Maximum de vingt questions");
+    fillQuestions();
+    for (const field of doc.querySelectorAll('[data-field="explication"]')) input(field, "Explication détaillée. ".repeat(100));
+    const lastReference = [...doc.querySelectorAll('[data-field="reference"]')].at(-1);
+    input(lastReference, "Dernière référence de la vingtième question — fin du lot");
+    await prepare();
+    assert(el("email-message").value.length > 40000 && el("email-message").value.includes(lastReference.value) && el("open-mail").href.length < 300, "Contribution longue intégrale et lien de messagerie court");
+    el("download-request").click(); assert((await win.__downloadBlob.text()).includes(lastReference.value), "Fin du long message conservée dans le téléchargement");
+    assert(win.__networkRequests.length === 0, "Aucun envoi réseau pour les longs messages");
+    pass("Questions indisponibles, limites et contributions longues sans troncature");
+
+    await load("qcm@example.fr?bcc=intrus"); fillQuestions(); await prepare();
+    assert(el("open-mail").hidden && !el("open-mail").hasAttribute("href"), "Adresse de configuration invalide refusée");
+    pass("Configuration du destinataire validée");
+    out.textContent = logs.join("\n") + "\nALL CHECKS PASSED";
+  } catch (error) { out.textContent = logs.join("\n") + "\nFAIL " + error.stack; }
+})().catch(error => { document.getElementById("checks").textContent = "FAIL " + error.message + "\nServez le dépôt en HTTP local pour exécuter ces contrôles."; });
+</script>
+</html>
