@@ -28,7 +28,7 @@ Le tirage, son ordre, les réponses, l’état du bilan et le temps écoulé son
 
 Les contributions au site sont également bienvenues sur [GitHub](https://github.com/sarahroyon/sarahroyon.github.io) : vous pouvez proposer des corrections ou des améliorations par une pull request. Chaque proposition est examinée avant son intégration.
 
-Le bouton **Contribuer aux quiz** ouvre [contributions.html](contributions.html). Chaque demande contient une identité et soit **au moins cinq questions corrigées**, soit **une demande motivée de retrait** d’une question précise. Un lien sur chaque QCM préremplit la question concernée. Le formulaire prépare un message à copier ou à télécharger, que le visiteur envoie à l’adresse dédiée depuis sa messagerie. Les demandes sont examinées manuellement et ne modifient jamais automatiquement les quiz.
+Le bouton **Contribuer aux quiz** ouvre [contributions.html](contributions.html). Chaque demande contient une identité et soit **au moins cinq questions corrigées**, soit **une demande motivée de retrait** d’une question précise. Un lien affiché uniquement lors de la correction de chaque QCM préremplit la question concernée. Le formulaire prépare un message à copier ou à télécharger, que le visiteur envoie à l’adresse dédiée depuis sa messagerie. Les demandes sont examinées manuellement et ne modifient jamais automatiquement les quiz.
 
 L’identité peut être un nom ou un pseudonyme. Le crédit des questions retenues est publié après validation séparée de ce nom. Une adresse e-mail facultative et privée permet d’envoyer manuellement une confirmation après intégration ; aucune notification automatique n’est envoyée.
 

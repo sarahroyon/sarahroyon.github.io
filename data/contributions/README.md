@@ -19,7 +19,7 @@ Tant que cette valeur est vide ou invalide, la page indique que l’adresse sera
 ## Parcours du visiteur
 
 - **Proposer des questions** : entre 5 et 20 QCM distincts, avec quatre choix, une seule bonne réponse, une explication et une référence par question.
-- **Demander un retrait** : sélectionner une question de la banque et rédiger un motif d’au moins 30 caractères. Le lien sur chaque QCM préremplit la question concernée.
+- **Demander un retrait** : sélectionner une question de la banque et rédiger un motif d’au moins 30 caractères. Le lien affiché uniquement lors de la correction de chaque QCM préremplit la question concernée.
 
 Le nom ou le pseudonyme est obligatoire. Une adresse de réponse peut être précisée ; à défaut, vous pourrez répondre à l’adresse d’envoi du message.
 

@@ -328,6 +328,7 @@ function makeQuestion(question, number) {
   feedback.hidden = true;
   card.append(fieldset, feedback);
   const removal = element("a", "text-button removal-link", "Demander le retrait de cette question");
+  removal.hidden = true;
   removal.href = "contributions.html?type=retrait&question=" + encodeURIComponent(question.id);
   removal.setAttribute("aria-label", "Demander le retrait de la question " + number);
   card.append(removal);
@@ -542,6 +543,7 @@ function renderReview() {
     });
     const feedback = card.querySelector(".feedback");
     feedback.hidden = !session.reviewed;
+    card.querySelector(".removal-link").hidden = !session.reviewed;
     if (session.reviewed) renderFeedback(question, result);
     else feedback.replaceChildren();
   }
