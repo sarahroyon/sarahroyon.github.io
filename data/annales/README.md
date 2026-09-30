@@ -1,9 +1,11 @@
 # Questions européennes — annales et sujets d’entraînement
 
-La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **262 questions** : 250 QCM avec leurs 959 choix, et 12 questions à réponse courte (QRC). Son nom de fichier historique est conservé ; la nature de chaque sujet est donnée par `sources[id].type`.
+La base [questions-europeennes-2026.json](questions-europeennes-2026.json) contient **382 questions** : 370 QCM avec leurs 1 439 choix, et 12 questions à réponse courte (QRC). Son nom de fichier historique est conservé ; la nature de chaque sujet est donnée par `sources[id].type`.
 
-| Sujet | QCM | QRC | Date de l’épreuve | Document |
+| Sujet | QCM importés | QRC importées | Date de l’épreuve | Document |
 | --- | ---: | ---: | --- | --- |
+| SAEG, session 2027 | 60 | 0 | 24 septembre 2026 | [PDF fourni](saeg-2027-questions-europeennes-qcm-qrc-externe.pdf) |
+| SAEO, session 2027 | 60 | 0 | 24 septembre 2026 | [PDF fourni](saeo-2027-questions-europeennes-externe.pdf) |
 | Secrétaire des affaires étrangères, cadre d’Orient (SAEO), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeo_2026-questions_europeennes_externe.pdf) |
 | Secrétaire des affaires étrangères, cadre général (SAEG), session 2026 | 60 | 2 | 25 novembre 2025 | [PDF du ministère](https://www.diplomatie.gouv.fr/files/files/le-ministere/rapports-plans-et-publications/annales-et-meilleures-copies/saeg_2026-questions_europeennes_qcm-qrc_externe.pdf) |
 | Entraînement 1 | 40 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/entrainement-1.pdf) |
@@ -11,7 +13,7 @@ La base [questions-europeennes-2026.json](questions-europeennes-2026.json) conti
 | Sujet zéro officiel — SAEO et SAEG | 10 | 2 | Non indiquée | [PDF fourni](../qcm_qe_saeg/sujet%20v0%20officiel.pdf) |
 | Entraînement 3 | 40 | 2 | 5 avril 2025 | [PDF fourni](../qcm_qe_saeg/entrainement-3.pdf) |
 
-Les deux annales officielles portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3). Les sujets personnels « Entraînement 1 » et « Entraînement 2 », identifiés par `sarah-royon-saeg-3-entrainement` et `sarah-royon-saeg-concours-blanc-2-entrainement`, ne sont rattachés à aucune session de concours.
+Les quatre annales officielles portent sur l’épreuve écrite d’admissibilité n° 2, « Questions européennes » (2 heures, coefficient 3). Les sujets personnels « Entraînement 1 » et « Entraînement 2 », identifiés par `sarah-royon-saeg-3-entrainement` et `sarah-royon-saeg-concours-blanc-2-entrainement`, ne sont rattachés à aucune session de concours.
 
 Le « Sujet zéro officiel » (V0), identifié par `meae-sujet-v0-officiel-questions-europeennes` et de type `sujet_zero`, est un sujet fictif du ministère commun aux concours externes des cadres d’Orient et général. Il présente la deuxième épreuve d’admissibilité (2 heures, coefficient 3), sans date d’épreuve ni session de concours. Le zéro est écrit en toutes lettres dans l’interface pour éviter la confusion avec la lettre O.
 
@@ -26,7 +28,7 @@ Le fichier est en UTF-8 sans BOM, avec une indentation de deux espaces. Il conti
 | Bloc | Rôle |
 | --- | --- |
 | `sources` | Dictionnaire des annales ou autres origines, indexé par leur identifiant. Chaque source contient ses métadonnées et la référence à son barème. |
-| `baremes` | Dictionnaire des règles de notation, indexé par identifiant. Les deux annales utilisent `questions-europeennes-2026`. |
+| `baremes` | Dictionnaire des règles de notation, indexé par identifiant. Les annales 2026 utilisent `questions-europeennes-2026` ; chaque annale 2027 référence son propre barème documentaire. |
 | `questions` | Tableau des questions, de leurs choix et de leur localisation dans une source. |
 
 Le français est la langue de cette base. Les nombres de questions et de choix se calculent à partir du tableau ; ils ne sont pas dupliqués dans le JSON.
@@ -77,7 +79,7 @@ Exemple réel :
 - `source.id` référence une entrée de `sources`. Les autres champs indiquent le numéro dans la partie QCM ou QRC et les pages.
 - `note` est une chaîne facultative qui signale une particularité de transcription ou une adaptation explicite par rapport au PDF d’origine.
 
-Les QCM sont numérotés de 1 à 60 dans chaque annale, de 1 à 40 dans chacun des trois sujets d’entraînement et de 1 à 10 dans le sujet V0. Les QRC sont numérotées 1 et 2 dans chaque document. Les occurrences proches entre sujets restent distinctes.
+Les QCM sont numérotés de 1 à 60 dans chaque annale, de 1 à 40 dans chacun des trois sujets d’entraînement et de 1 à 10 dans le sujet V0. Les QRC historiques sont numérotées 1 et 2 dans leur document ; celles des sujets 2027 ne sont pas importées. Les occurrences proches entre sujets restent distinctes.
 
 ## Sources et dates
 
@@ -85,9 +87,9 @@ Une source de type `annale` contient le concours, son code, le cadre, la voie, l
 
 `annee_concours: 2026` désigne la session ; `date_epreuve: "2025-11-25"` désigne le jour de composition. Les questions d’actualité doivent être replacées dans ce contexte.
 
-`page_pdf` compte toutes les pages à partir de 1, couvertures comprises. `page_imprimee` reprend le numéro visible. Pour SAEO, la page PDF 3 correspond à la page imprimée 1 ; pour SAEG, elle porte le numéro imprimé 3. Le lien vers une page se construit à partir de l’URL de la source et de `#page=N`.
+`page_pdf` compte toutes les pages à partir de 1, couvertures comprises. `page_imprimee` reprend le numéro visible. Pour SAEO 2026 et les deux sujets 2027, la page PDF 3 correspond à la page imprimée 1 ; pour SAEG 2026, elle porte le numéro imprimé 3. Le lien vers une page se construit à partir de l’URL de la source et de `#page=N`.
 
-Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour l’annale SAEO, conformément à sa consigne, `non_precise` pour l’annale SAEG et le sujet V0, et `une_seule` pour les trois sujets d’entraînement. Aucune consigne de réponse unique n’est déduite pour l’annale SAEG ou le sujet V0. Les QRC attendent du texte libre ; elles sont conservées dans la base et accessibles dans les PDF, mais ne sont pas affichées dans l’interface QCM.
+Pour les QCM, `mode_reponse_qcm` vaut `une_ou_plusieurs` pour l’annale SAEO 2026 et les deux annales 2027, conformément à leurs consignes, `non_precise` pour l’annale SAEG 2026 et le sujet V0, et `une_seule` pour les trois sujets d’entraînement. Aucune consigne de réponse unique n’est déduite pour l’annale SAEG 2026 ou le sujet V0. Les QRC attendent du texte libre ; elles sont conservées dans la base et accessibles dans les PDF, mais ne sont pas affichées dans l’interface QCM.
 
 Chaque sujet d’entraînement conserve son auteur, un titre court, le lien au PDF local (relatif à la racine du site), son empreinte SHA-256 et sa consigne. `date_creation_pdf` provient uniquement des métadonnées du PDF : `2025-06-26` pour l’entraînement 1 et `2025-05-08` pour l’entraînement 2. Ce n’est ni une date d’épreuve ni une année de concours. La première page de ces deux sujets ne porte pas de numéro imprimé : `page_imprimee` y est omis. Leurs autres pages portent les mêmes numéros imprimés et PDF, jusqu’à 9 pour l’entraînement 1 et 10 pour l’entraînement 2.
 
@@ -114,7 +116,7 @@ Chaque nouvelle question doit avoir un identifiant unique et référencer cette 
 
 ## Corrections
 
-**Les PDF ne fournissent aucun corrigé du jury.** Les 262 questions disposent d’un corrigé établi pour cet outil : 250 QCM avec une réponse vérifiable et 12 QRC avec des éléments de réponse. Aucune question n’est actuellement neutralisée. Chaque correction comporte ses références institutionnelles. Il s’agit de corrections établies pour l’entraînement, pas d’un corrigé officiel du concours.
+**Les PDF ne fournissent aucun corrigé du jury.** Les 382 questions disposent d’un corrigé établi pour cet outil : 364 QCM notés, six QCM neutralisés avec explication et 12 QRC historiques avec des éléments de réponse. Chaque correction comporte ses références institutionnelles. Il s’agit de corrections établies pour l’entraînement, pas d’un corrigé officiel du concours.
 
 Les 42 questions de l’entraînement 3 ont été corrigées le 6 septembre 2026 dans le contexte du galop du 5 avril 2025 : elles disposent désormais de 40 corrigés QCM et de 2 QRC avec des éléments de réponse et un plan possible. Les explications précisent notamment les seuils du carton jaune, les missions du Médiateur, les 24 États participant au Parquet européen, la clôture de la procédure de l’article 7 concernant la Pologne et les dérogations à la libre circulation des marchandises. Les autres précisions portent notamment sur le périmètre du CETA, les prix de 2018 de l’enveloppe NDICI et le champ d’application de la Charte. Les deux QRC s’appuient sur des éléments disponibles au 5 avril 2025, y compris les annonces douanières américaines du 2 avril. Les cinq QCM initialement neutralisés ont été adaptés comme indiqué ci-dessous.
 
@@ -199,7 +201,7 @@ const lienPage = question.source.page_pdf === undefined
   : source.url + "#page=" + question.source.page_pdf;
 ```
 
-Actuellement, `qcmCorriges` contient 250 questions, toutes vérifiables automatiquement avec `QcmCore.hasCorrection(question)`. Aucun corrigé ne reste à `null`. Les 12 QRC et leurs éléments de réponse sont conservés dans la banque ; l’interface d’entraînement reste consacrée aux QCM.
+Actuellement, `qcmCorriges` contient 370 questions : 364 vérifiables automatiquement avec `QcmCore.hasCorrection(question)` et six neutralisées avec une explication. Aucun corrigé ne reste à `null`. Les 12 QRC historiques et leurs éléments de réponse sont conservés dans la banque ; l’interface d’entraînement reste consacrée aux QCM.
 
 ## Transcription et migration
 
@@ -219,3 +221,22 @@ Import du « Sujet V0 officiel » : transcription et contrôle visuel des trois 
 
 Import de « Entraînement 3 » (PDF d’origine : « Sciences Po ») le 6 septembre 2026 : reconnaissance de texte et contrôle visuel des dix pages du PDF. Les 40 QCM, leurs 146 propositions et les 2 QRC sont conservés, avec leurs numéros et pages d’origine. Les cases sans lettre sont indexées a à d dans leur ordre d’apparition ; quatorze QCM ont trois choix et les vingt-six autres en ont quatre. Les retours à la ligne, césures, espaces, apostrophes et guillemets sont normalisés. Les chiffres et formulations ne sont pas actualisés. La répétition « peut (...) peut » de la question 7 est conservée et signalée dans `note`. Les 220 questions et les cinq sources déjà présentes sont conservées à l’identique lors de cet import.
 
+
+## Import des sessions 2027
+
+Les sujets SAEG et SAEO de la session 2027 ont été composés le **24 septembre 2026**. Import du 30 septembre 2026 : reconnaissance de texte et contrôle visuel des pages, conservation de l’ordre, des formulations et des 480 choix des 120 QCM. Chaque corrigé pédagogique comporte une explication et des références institutionnelles, dans le contexte de l’épreuve. Les QRC des deux sujets ne sont pas importées ; elles restent accessibles uniquement dans les PDF d’origine. Les 262 entrées antérieures sont conservées à l’identique.
+
+Six questions sont neutralisées pour l’entraînement, sans attribuer cette décision au jury :
+
+| Sujet | QCM | Motif |
+| --- | ---: | --- |
+| SAEG 2027 | 3 | Aucune proposition ne donne l’origine du vote à la majorité qualifiée. |
+| SAEG 2027 | 6 | La représentation au Parlement est dégressivement proportionnelle. |
+| SAEG 2027 | 14 | Aucun choix ne correspond au trio officiel couvrant l’année 2027. |
+| SAEG 2027 | 55 | Ambiguïté entre sanctions contre un pays et sanctions ciblant des personnes. |
+| SAEO 2027 | 12 | Confusion entre actes réglementaires et actes d’exécution. |
+| SAEO 2027 | 45 | Confusion entre statut d’observateur et qualité de membre de l’ONU. |
+
+Ces questions restent consultables avec leur explication dans les annales et sont exclues de la note et des tirages aléatoires. Les 87 nouveaux QCM notés à réponse unique rejoignent le quiz aléatoire ; les catégories existantes restent inchangées.
+
+Les deux barèmes documentaires 2027 prévoient +0,20 point par réponse exacte, −0,10 par réponse incorrecte, −0,05 sans réponse et un minimum de zéro. SAEG prévoit aussi −0,10 pour une réponse incomplète ; SAEO ne précise pas ce cas. Le site conserve son **barème commun 2026**, avec scores négatifs possibles et sélections partielles sans choix faux non notées, et signale ces différences dans les questionnaires 2027.

@@ -112,6 +112,56 @@ window.QcmAnnales = {
       "consigne_nombre_reponses": "Pour chaque question, une seule bonne réponse est possible.",
       "page_pdf_consignes": 2,
       "bareme": "sarah-royon-sciences-po-entrainement"
+    },
+    "saeg-2027-externe-questions-europeennes": {
+      "type": "annale",
+      "concours": "Secrétaire des affaires étrangères",
+      "code_concours": "SAEG",
+      "cadre": "général",
+      "voie": "externe",
+      "annee_concours": 2027,
+      "date_epreuve": "2026-09-24",
+      "epreuve": "Questions européennes",
+      "numero_epreuve": 2,
+      "nature_epreuve": "Épreuve écrite d’admissibilité",
+      "duree_minutes": 120,
+      "coefficient": 3,
+      "editeur": "Ministère de l’Europe et des Affaires étrangères",
+      "url": "data/annales/saeg-2027-questions-europeennes-qcm-qrc-externe.pdf",
+      "sha256": "0b10affea4e434bb8238821849d7f4de2fca120f916fed0a67fa62eafac1da01",
+      "mode_reponse_qcm": "une_ou_plusieurs",
+      "consigne_qcm": "Pour répondre, vous cocherez les cases correspondant à vos réponses sur la copie prévue à cet effet.",
+      "page_pdf_consignes": 3,
+      "bareme": "saeg-2027-externe-questions-europeennes",
+      "consigne_nombre_reponses": "Pour chaque question, une ou plusieurs réponses sont possibles.",
+      "correction_type": "pedagogique",
+      "date_verification_correction": "2026-09-30",
+      "date_reference_correction": "2026-09-24"
+    },
+    "saeo-2027-externe-questions-europeennes": {
+      "type": "annale",
+      "concours": "Secrétaire des affaires étrangères",
+      "code_concours": "SAEO",
+      "cadre": "Orient",
+      "voie": "externe",
+      "annee_concours": 2027,
+      "date_epreuve": "2026-09-24",
+      "epreuve": "Questions européennes",
+      "numero_epreuve": 2,
+      "nature_epreuve": "Épreuve écrite d’admissibilité",
+      "duree_minutes": 120,
+      "coefficient": 3,
+      "editeur": "Ministère de l’Europe et des Affaires étrangères",
+      "url": "data/annales/saeo-2027-questions-europeennes-externe.pdf",
+      "sha256": "ae73e9520a1f4402c867bd1e02986f22bc3bc9e6f29840b323dbde88d9334ea8",
+      "mode_reponse_qcm": "une_ou_plusieurs",
+      "consigne_qcm": "Pour répondre, vous cocherez les cases correspondant à vos réponses sur la copie prévue à cet effet.",
+      "page_pdf_consignes": 3,
+      "bareme": "saeo-2027-externe-questions-europeennes",
+      "consigne_nombre_reponses": "Pour chaque question, une ou plusieurs réponses sont possibles.",
+      "correction_type": "pedagogique",
+      "date_verification_correction": "2026-09-30",
+      "date_reference_correction": "2026-09-24"
     }
   },
   "baremes": {
@@ -159,6 +209,26 @@ window.QcmAnnales = {
       "qrc_total_points": 10,
       "qrc_points_par_question": 5,
       "selection_partielle": null
+    },
+    "saeg-2027-externe-questions-europeennes": {
+      "bonne_reponse": 0.2,
+      "mauvaise_reponse": -0.1,
+      "absence_de_reponse": -0.05,
+      "qcm_total_points": 12,
+      "qrc_total_points": 8,
+      "qrc_points_par_question": 4,
+      "selection_partielle": -0.1,
+      "qcm_minimum_points": 0
+    },
+    "saeo-2027-externe-questions-europeennes": {
+      "bonne_reponse": 0.2,
+      "mauvaise_reponse": -0.1,
+      "absence_de_reponse": -0.05,
+      "qcm_total_points": 12,
+      "qrc_total_points": 8,
+      "qrc_points_par_question": 4,
+      "selection_partielle": null,
+      "qcm_minimum_points": 0
     }
   },
   "questions": [
@@ -8126,6 +8196,3612 @@ window.QcmAnnales = {
         "id": "sarah-royon-sciences-po-entrainement",
         "numero": 2,
         "page_pdf": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-001",
+      "type": "qcm",
+      "enonce": "L’initiative législative revient, parmi les institutions européennes :",
+      "choix": {
+        "a": "au Conseil européen",
+        "b": "au Parlement",
+        "c": "à la Commission",
+        "d": "à la Banque centrale européenne"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Commission dispose en principe de l’initiative législative, selon l’article 17, paragraphe 2, TUE. Il existe des exceptions prévues par les traités ; le Parlement peut notamment demander une proposition, sans disposer d’un pouvoir général équivalent.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 1,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-002",
+      "type": "qcm",
+      "enonce": "Le Haut représentant de l’Union pour les affaires étrangères et la politique de sécurité :",
+      "choix": {
+        "a": "conduit l’action extérieure de l’Union européenne",
+        "b": "siège à la Commission européenne en tant que vice-président",
+        "c": "préside la formation Affaires étrangères du Conseil de l’Union européenne",
+        "d": "participe au Conseil européen"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "explication": "Le Haut représentant conduit la politique étrangère et de sécurité commune, assure la cohérence de l’action extérieure, est vice-président de la Commission et préside le Conseil des affaires étrangères. Il participe aux travaux du Conseil européen sans en être membre. Son rôle ne remplace pas toutes les autres compétences extérieures de l’Union.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 18",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M018"
+          },
+          {
+            "titre": "EUR-Lex — TUE, article 15",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M015"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 2,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-003",
+      "type": "qcm",
+      "enonce": "Quand le vote à la majorité qualifiée a-t-il été introduit au Conseil ?",
+      "choix": {
+        "a": "En 1986 avec l’Acte unique européen",
+        "b": "En 2009 avec le Traité de Lisbonne",
+        "c": "En 2003 avec le Traité de Nice",
+        "d": "En 1999 avec le Traité d’Amsterdam"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée : la majorité qualifiée était déjà prévue par le traité de Rome de 1957. L’Acte unique européen, signé en 1986, en étend l’usage ; il ne l’introduit pas pour la première fois. Aucune des dates proposées ne répond exactement à l’énoncé.",
+        "sources": [
+          {
+            "titre": "Conseil — Le vote à la majorité qualifiée, évolution depuis 1957",
+            "url": "https://www.consilium.europa.eu/media/25279/144964.pdf"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 3,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-004",
+      "type": "qcm",
+      "enonce": "Combien de députés européens siègent actuellement au Parlement européen ?",
+      "choix": {
+        "a": "420",
+        "b": "640",
+        "c": "720",
+        "d": "830"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La législature 2024-2029 compte 720 sièges au Parlement européen. C’est le nombre de sièges fixé pour cette législature, indépendamment de vacances temporaires.",
+        "sources": [
+          {
+            "titre": "Parlement européen — 720 sièges pour la législature 2024-2029",
+            "url": "https://www.europarl.europa.eu/topics/en/article/20180126STO94114/how-many-meps-will-each-eu-country-get-in-2024"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 4,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-005",
+      "type": "qcm",
+      "enonce": "Selon les traités, à partir du 1er novembre 2014, la Commission européenne est composée :",
+      "choix": {
+        "a": "de deux membres par État membre",
+        "b": "d’un membre par État membre",
+        "c": "d’un nombre de membres correspondant à la moitié du nombre d’États membres",
+        "d": "d’un nombre de membres correspondant aux deux tiers du nombre d’États membres, sauf décision contraire du Conseil européen à l’unanimité"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 17, paragraphe 5, TUE prévoit deux tiers du nombre des États membres à partir du 1er novembre 2014, sauf décision unanime contraire du Conseil européen. Celui-ci a maintenu un commissaire par État : b décrit donc la composition effective, tandis que d reproduit la règle du traité avec sa dérogation.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 5,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-006",
+      "type": "qcm",
+      "enonce": "Le Comité des régions :",
+      "choix": {
+        "a": "peut émettre des avis contraignants pour les autres institutions",
+        "b": "ne peut pas émettre d’avis de sa propre initiative",
+        "c": "est composé d’un nombre de membres défini qui se répartissent proportionnellement à la population de chaque État-membre",
+        "d": "est composé de membres proposés par les États membres et confirmés par le Parlement"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée : la répartition des sièges tient compte de la population, mais elle n’est pas strictement proportionnelle, contrairement à c. Les membres sont nommés par le Conseil sur proposition des États, et non confirmés par le Parlement. Les avis sont consultatifs et peuvent être émis à l’initiative du Comité.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 305",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E305"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 307",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E307"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 6,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-007",
+      "type": "qcm",
+      "enonce": "Le Tribunal de l’Union européenne est composé de :",
+      "choix": {
+        "a": "13 juges",
+        "b": "20 juges",
+        "c": "27 juges",
+        "d": "54 juges"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le Tribunal comprend deux juges par État membre, soit 54 postes pour 27 États. Il faut le distinguer de la Cour de justice, qui compte un juge par État membre.",
+        "sources": [
+          {
+            "titre": "Cour de justice — Présentation du Tribunal",
+            "url": "https://curia.europa.eu/jcms/jcms/Jo2_7033/fr/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 7,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-008",
+      "type": "qcm",
+      "enonce": "Où se trouve le siège de Frontex ?",
+      "choix": {
+        "a": "Paris",
+        "b": "Vienne",
+        "c": "Varsovie",
+        "d": "Athènes"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Frontex, l’Agence européenne de garde-frontières et de garde-côtes, a son siège à Varsovie, en Pologne.",
+        "sources": [
+          {
+            "titre": "Frontex — Coordonnées du siège à Varsovie",
+            "url": "https://european-union.europa.eu/institutions-law-budget/institutions-and-bodies/search-all-eu-institutions-and-bodies/frontex_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 8,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-009",
+      "type": "qcm",
+      "enonce": "Le médiateur européen est nommé :",
+      "choix": {
+        "a": "par la Commission européenne",
+        "b": "par le Conseil européen",
+        "c": "par le Parlement européen",
+        "d": "par le Comité économique et social européen"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Médiateur européen est élu par le Parlement européen après chaque élection européenne, pour la durée de la législature. Le terme « nommé » du sujet renvoie ici à cette élection.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 228",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E228"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 9,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-010",
+      "type": "qcm",
+      "enonce": "Qu’est-ce qu’une clause passerelle ?",
+      "choix": {
+        "a": "Une procédure permettant, dans certains domaines, de passer du vote à l’unanimité à la majorité qualifiée, ou d’une procédure législative spéciale à la procédure législative ordinaire",
+        "b": "Une procédure permettant, dans certains domaines, à un État membre de suspendre l’application du droit de l’Union européenne sur son territoire",
+        "c": "Une procédure permettant d’accélérer la fermeture d’un chapitre d’adhésion",
+        "d": "Une procédure permettant le recours à une procédure accélérée devant la Cour de justice"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Une clause passerelle permet, sous les conditions des traités, de remplacer l’unanimité par la majorité qualifiée ou une procédure législative spéciale par la procédure ordinaire. La passerelle générale figure à l’article 48, paragraphe 7, TUE.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 48",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M048"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 10,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-011",
+      "type": "qcm",
+      "enonce": "Quand la clause de défense mutuelle (article 42, paragraphe 7, TUE) a-t-elle été enclenchée pour la première fois ?",
+      "choix": {
+        "a": "En 2007 par l’Estonie suite à la vague de cyberattaques russes",
+        "b": "En 2015 par la France à la suite des attentats de Paris.",
+        "c": "En 2022 par la Pologne à la suite de l’invasion russe en Ukraine",
+        "d": "En 2026 par la Roumanie suite à l’incursion de drones russes dans son espace aérien"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La France a invoqué pour la première fois l’article 42, paragraphe 7, TUE le 17 novembre 2015, après les attentats de Paris. Cette clause d’assistance mutuelle est distincte de la clause de solidarité de l’article 222 TFUE.",
+        "sources": [
+          {
+            "titre": "Parlement européen — La clause de défense mutuelle",
+            "url": "https://www.europarl.europa.eu/thinktank/en/document/EPRS_BRI%282015%29572799"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 11,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-012",
+      "type": "qcm",
+      "enonce": "Une initiative citoyenne européenne peut être valable si elle a recueilli le soutien d’au moins :",
+      "choix": {
+        "a": "250 000 personnes dans un Etat membre",
+        "b": "500 000 personnes dans trois Etats membres",
+        "c": "un million de personnes dans cinq États membres",
+        "d": "deux millions de personnes dans huit États membres"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Une initiative peut être recevable avec deux millions de soutiens dans huit États : ce nombre dépasse les minima d’un million de citoyens et de sept États membres. Les seuils nationaux doivent aussi être atteints. Le choix d est donc une situation possible, et non la définition du minimum légal.",
+        "sources": [
+          {
+            "titre": "Initiative citoyenne européenne — Comment ça marche",
+            "url": "https://citizens-initiative.europa.eu/how-it-works_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 12,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-013",
+      "type": "qcm",
+      "enonce": "La citoyenneté de l’Union européenne :",
+      "choix": {
+        "a": "n’existe pas",
+        "b": "a vocation à remplacer la citoyenneté nationale",
+        "c": "donne le droit de circuler et de séjourner librement sur le territoire des États membres",
+        "d": "concerne les résidents sur le territoire des États membres indépendamment de leur nationalité"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La citoyenneté de l’Union s’ajoute à la citoyenneté nationale et bénéficie aux ressortissants des États membres. Elle comprend notamment le droit de circuler et de séjourner dans l’Union, sous les conditions prévues par le droit européen.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 20",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E020"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 13,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-014",
+      "type": "qcm",
+      "enonce": "Quels États membres composent le trio de présidences du Conseil à partir de janvier 2027 ?",
+      "choix": {
+        "a": "Lituanie, Grèce, Italie",
+        "b": "Irlande, Lituanie, Italie",
+        "c": "Lettonie, Irlande, Grèce",
+        "d": "Italie, Lettonie, Grèce"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée : le trio couvrant juillet 2026 à décembre 2027 réunit l’Irlande, la Lituanie et la Grèce, combinaison absente des choix. Lituanie, Grèce et Italie sont bien trois présidences successives à partir de janvier 2027, mais elles ne constituent pas un même trio institutionnel.",
+        "sources": [
+          {
+            "titre": "Présidence irlandaise — Trio Irlande, Lituanie et Grèce, juillet 2026 à décembre 2027",
+            "url": "https://irish-presidency.consilium.europa.eu/fr/programme/programme-du-trio-1er-juillet-2026-31-decembre-2027/"
+          },
+          {
+            "titre": "Conseil — Liste des présidences du Conseil de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/presidency-council-eu/list-of-presidencies-of-the-council-of-the-european-union/"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 14,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-015",
+      "type": "qcm",
+      "enonce": "Combien d’États membres de l’Union européenne font partie de l’OTAN ?",
+      "choix": {
+        "a": "18",
+        "b": "22",
+        "c": "23",
+        "d": "26"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "L’UE et l’OTAN ont 23 États membres en commun depuis l’entrée de la Suède dans l’Alliance en 2024. Les quatre membres de l’UE hors OTAN sont l’Autriche, Chypre, l’Irlande et Malte.",
+        "sources": [
+          {
+            "titre": "OTAN — Relations avec l’Union européenne",
+            "url": "https://nato.int/en/what-we-do/partnerships-and-cooperation/relations-with-the-european-union"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 15,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-016",
+      "type": "qcm",
+      "enonce": "La Grèce intègre l’Union européenne en :",
+      "choix": {
+        "a": "1973",
+        "b": "1981",
+        "c": "1986",
+        "d": "1995"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Grèce adhère aux Communautés européennes le 1er janvier 1981. Le sujet emploie rétrospectivement le nom d’Union européenne, introduit par le traité de Maastricht.",
+        "sources": [
+          {
+            "titre": "Union européenne — Histoire, 1980-1989",
+            "url": "https://european-union.europa.eu/principles-countries-history/history-eu/1980-89_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 16,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-017",
+      "type": "qcm",
+      "enonce": "Quel pays n’a pas le statut officiel d’État candidat à l’Union européenne ?",
+      "choix": {
+        "a": "Albanie",
+        "b": "Ukraine",
+        "c": "Kosovo",
+        "d": "Serbie"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Kosovo est un candidat potentiel, sans statut officiel de pays candidat à la date de l’épreuve. L’Albanie, l’Ukraine et la Serbie disposent de ce statut.",
+        "sources": [
+          {
+            "titre": "Conseil — Élargissement de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/policies/enlargement/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 17,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-018",
+      "type": "qcm",
+      "enonce": "Quel État membre n’a pas adopté l’euro comme monnaie ?",
+      "choix": {
+        "a": "La Bulgarie",
+        "b": "Chypre",
+        "c": "Malte",
+        "d": "La Roumanie"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "La Roumanie n’a pas adopté l’euro à la date du 24 septembre 2026. La Bulgarie l’a adopté le 1er janvier 2026 ; Chypre et Malte l’utilisent depuis 2008.",
+        "sources": [
+          {
+            "titre": "Conseil — La Bulgarie adopte l’euro le 1er janvier 2026",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2025/07/08/bulgaria-ready-to-use-the-euro-from-1-january-2026-council-takes-final-steps/"
+          },
+          {
+            "titre": "Conseil — Critères de convergence pour adhérer à la zone euro",
+            "url": "https://www.consilium.europa.eu/en/policies/join-the-euro-area/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 18,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-019",
+      "type": "qcm",
+      "enonce": "Quels sont les 4 pays non membres de l’Union européenne associés à l’espace Schengen ?",
+      "choix": {
+        "a": "Norvège, Islande, Liechtenstein et Suisse",
+        "b": "Royaume-Uni, Norvège, Turquie et Suisse",
+        "c": "Royaume-Uni, Islande, Monaco, Suisse",
+        "d": "Royaume-Uni, Liechtenstein, Monaco, Saint-Marin"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La Norvège, l’Islande, le Liechtenstein et la Suisse sont associés à Schengen sans appartenir à l’Union européenne. L’appartenance à l’UE et la participation à Schengen sont deux statuts distincts.",
+        "sources": [
+          {
+            "titre": "Conseil — L’espace Schengen",
+            "url": "https://www.consilium.europa.eu/fr/policies/schengen-area/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 19,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-020",
+      "type": "qcm",
+      "enonce": "Quel est le montant du budget de l’Union européenne en 2026 ?",
+      "choix": {
+        "a": "1074,3 milliards d’euros",
+        "b": "750 milliards d’euros",
+        "c": "190 milliards d’euros",
+        "d": "305,7 milliards d’euros"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le budget initial adopté pour 2026 prévoit 190,1 milliards d’euros en paiements et 192,8 milliards en engagements. Le choix c correspond à l’arrondi des paiements ; il faut distinguer les dépenses payées dans l’année des engagements juridiques de financement.",
+        "sources": [
+          {
+            "titre": "Conseil — Budget de l’UE pour 2026",
+            "url": "https://www.consilium.europa.eu/fr/policies/eu-annual-budget/2026-budget/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 20,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-021",
+      "type": "qcm",
+      "enonce": "Les recettes du budget de l’Union européenne sont issues notamment :",
+      "choix": {
+        "a": "d’une contribution basée sur les déchets en plastique non recyclés",
+        "b": "d’une contribution calculée sur la base des émissions de gaz à effet de serre",
+        "c": "d’une ressource fondée sur l’impôt sur les sociétés",
+        "d": "de la TVA européenne"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "Les ressources propres comprennent la contribution sur les déchets d’emballages plastiques non recyclés et une ressource calculée sur une assiette TVA harmonisée. « TVA européenne » désigne ici cette ressource, pas un impôt directement prélevé par l’Union. Les projets liés aux émissions et aux entreprises ne sont pas à confondre avec les ressources déjà en vigueur.",
+        "sources": [
+          {
+            "titre": "Conseil — Financement du budget de l’Union",
+            "url": "https://www.consilium.europa.eu/en/policies/financing-the-eu-budget/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 21,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-022",
+      "type": "qcm",
+      "enonce": "L’un des principes suivants n’encadre pas l’élaboration du budget de l’Union européenne :",
+      "choix": {
+        "a": "la bonne gestion",
+        "b": "la pluri annualité",
+        "c": "la transparence",
+        "d": "l’équilibre"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le budget de l’Union est annuel : l’annualité fait partie des principes budgétaires, avec notamment l’équilibre, la bonne gestion financière et la transparence. Le cadre financier pluriannuel fixe des plafonds sur plusieurs années, sans transformer le budget annuel en budget pluriannuel.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Règlement financier 2024/2509, article 6",
+            "url": "https://eur-lex.europa.eu/eli/reg/2024/2509/oj/fra"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 22,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-023",
+      "type": "qcm",
+      "enonce": "Au sens du Traité de Maastricht de 1992, quels sont les grands critères de convergence économique nécessaires pour adhérer à la zone euro ?",
+      "choix": {
+        "a": "Viabilité des finances publiques, taux d’intérêt viables, balance commerciale positive",
+        "b": "Stabilité des prix, viabilité des finances publiques, expression politique de soutien à l’euro",
+        "c": "Stabilité des prix, viabilité des finances publiques, taux d’intérêt viables, taux de change viables",
+        "d": "Stabilité des prix, viabilité des finances publiques, taux d’intérêt viables, taux de change viables, balance commerciale positive"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les critères économiques concernent la stabilité des prix, des finances publiques soutenables, la stabilité du taux de change et les taux d’intérêt à long terme. Une balance commerciale positive n’est pas un critère de Maastricht pour adopter l’euro.",
+        "sources": [
+          {
+            "titre": "Conseil — Critères de convergence pour adhérer à la zone euro",
+            "url": "https://www.consilium.europa.eu/en/policies/join-the-euro-area/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 23,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-024",
+      "type": "qcm",
+      "enonce": "La Banque centrale européenne :",
+      "choix": {
+        "a": "est seule habilitée à autoriser l’émission de l’euro",
+        "b": "dépend de la Commission dans l’exercice de ses pouvoirs",
+        "c": "ne dispose pas de la personnalité juridique",
+        "d": "accueille dans son organe de direction les gouverneurs des banques centrales nationales"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "La BCE autorise seule l’émission des billets en euros et approuve le volume des pièces émises par les États. Son Conseil des gouverneurs réunit le directoire et les gouverneurs des banques centrales de la zone euro ; ces derniers ne siègent pas au directoire lui-même. La BCE est indépendante et possède la personnalité juridique.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 128",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E128"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 283",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E283"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 24,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-025",
+      "type": "qcm",
+      "enonce": "Quel est le rôle du parquet européen ?",
+      "choix": {
+        "a": "Rechercher, poursuivre et traduire en justice les auteurs d’infractions portant atteinte aux intérêts financiers de l’Union européenne",
+        "b": "Appuyer les autorités policières nationales à combattre la criminalité internationale et le terrorisme",
+        "c": "Aider les autorités nationales à coopérer pour combattre le terrorisme et les formes graves de criminalité organisée touchant plusieurs pays de l’Union européenne",
+        "d": "Fournir des conseils, fondés sur des éléments factuels, dans le domaine des droits fondamentaux"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Parquet européen mène des enquêtes et des poursuites pénales sur les infractions affectant les intérêts financiers de l’Union. Europol et Eurojust soutiennent la coopération policière ou judiciaire ; ils n’exercent pas cette même fonction de poursuite.",
+        "sources": [
+          {
+            "titre": "Parquet européen — Missions et compétences",
+            "url": "https://www.eppo.europa.eu/about/mission-and-tasks_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 25,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-026",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le registre de transparence ?",
+      "choix": {
+        "a": "Une base de données répertoriant l’ensemble des propositions de textes législatifs de la Commission",
+        "b": "Une base de données répertoriant les organisations qui cherchent à influencer le processus législatif et de mise en œuvre des politiques des institutions européennes",
+        "c": "Une base de données répertoriant les déclarations de patrimoine des députés européens",
+        "d": "Une base de données répertoriant les entreprises ayant remporté un appel d’offre de l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le registre de transparence rend visibles les représentants d’intérêts qui cherchent à influencer les décisions et les politiques des institutions européennes. Il renseigne notamment leurs activités et les moyens qui y sont consacrés.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Registre de transparence",
+            "url": "https://transparency-register.europa.eu/index_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 26,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-027",
+      "type": "qcm",
+      "enonce": "Le mécanisme de contrôle de subsidiarité (dit « carton jaune ») permet :",
+      "choix": {
+        "a": "au Parlement européen de bloquer l’adoption d’un acte législatif",
+        "b": "à la Commission de saisir la Cour de justice sur l’application d’un acte par un ou plusieurs États membres",
+        "c": "aux parlements nationaux de contester un projet d’acte législatif par avis motivé auprès de la Commission",
+        "d": "aux juges nationaux de suspendre provisoirement l’application d’un acte législatif européen"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les parlements nationaux peuvent adresser des avis motivés sur le non-respect de la subsidiarité. Si le seuil du carton jaune est atteint, le projet doit être réexaminé ; cela ne constitue pas un veto automatique sur son adoption.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Contrôle de subsidiarité",
+            "url": "https://commission.europa.eu/law/law-making-process/adopting-eu-law/relations-national-parliaments/subsidiarity-control-mechanism_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 27,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-028",
+      "type": "qcm",
+      "enonce": "L’Union européenne dispose de la personnalité juridique depuis :",
+      "choix": {
+        "a": "le Traité de Rome",
+        "b": "le Traité de Maastricht",
+        "c": "le Traité de Nice",
+        "d": "le Traité de Lisbonne"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Le traité de Lisbonne attribue explicitement la personnalité juridique à l’Union, à l’article 47 TUE, depuis son entrée en vigueur le 1er décembre 2009. La Communauté européenne disposait auparavant de sa propre personnalité juridique.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 47",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M047"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 28,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-029",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que la conditionnalité liée à l’État de droit ?",
+      "choix": {
+        "a": "Des mesures visant à protéger le budget et les intérêts financiers de l’Union européenne",
+        "b": "Un critère d’adhésion à l’Union européenne",
+        "c": "Un mécanisme permettant de suspendre le droit de vote au Conseil d’un État membre",
+        "d": "Une condition de la conclusion d’un accord de libre-échange avec un État tiers"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le mécanisme de conditionnalité protège le budget de l’Union lorsque des violations de l’État de droit affectent, ou risquent sérieusement d’affecter, sa bonne gestion ou ses intérêts financiers de manière suffisamment directe. Il se distingue de la suspension des droits de vote prévue par l’article 7 TUE.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Conditionnalité liée à l’État de droit",
+            "url": "https://commission.europa.eu/strategy-and-policy/eu-budget/protection-eu-budget/rule-law-conditionality-regulation_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 29,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-030",
+      "type": "qcm",
+      "enonce": "Quel arrêt de la Cour de justice consacre le principe de primauté du droit de l’Union européenne :",
+      "choix": {
+        "a": "l’arrêt Costa c. ENEL",
+        "b": "l’arrêt Van Gend en Loos",
+        "c": "l’arrêt Francovich",
+        "d": "l’arrêt Cassis de Dijon"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "L’arrêt Costa contre ENEL, rendu le 15 juillet 1964, consacre la primauté du droit communautaire. Van Gend en Loos concerne l’effet direct ; Francovich, la responsabilité de l’État ; Cassis de Dijon, la reconnaissance mutuelle des marchandises.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Primauté du droit de l’Union européenne",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=LEGISSUM%3Al14548"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 30,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-031",
+      "type": "qcm",
+      "enonce": "La charte des droits fondamentaux de l’Union européenne :",
+      "choix": {
+        "a": "a été créée par le traité de Lisbonne",
+        "b": "fait partie intégrante des traités",
+        "c": "doit être respectée par les institutions",
+        "d": "s’impose aux Etats membres en toute circonstance"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Charte s’impose aux institutions de l’Union et aux États lorsqu’ils mettent en œuvre le droit de l’Union. Proclamée en 2000, elle a acquis avec Lisbonne la même valeur juridique que les traités, sans être incorporée à leur texte. Elle ne s’applique pas à toute situation nationale.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 6",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M006"
+          },
+          {
+            "titre": "EUR-Lex — Charte, article 51",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016P051"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 31,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-032",
+      "type": "qcm",
+      "enonce": "Le mécanisme du renvoi préjudiciel :",
+      "choix": {
+        "a": "permet au juge national d’interroger la Cour de justice sur l’interprétation et la validité d’un acte de l’Union",
+        "b": "permet au juge national d’interroger la Cour de justice sur la conformité d’une loi de son Etat membre au droit de l’Union",
+        "c": "vise à assurer l’application uniforme du droit de l’Union",
+        "d": "est obligatoire en cas de doute sérieux sur la validité d’un acte de l’Union"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "c",
+          "d"
+        ],
+        "explication": "Le renvoi permet de faire préciser le sens du droit de l’Union ou la validité de ses actes, afin d’en assurer une application uniforme. La Cour n’annule pas elle-même une loi nationale par cette voie. Un juge national ne peut déclarer un acte de l’Union invalide : il doit saisir la Cour s’il estime les objections fondées.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 267",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E267"
+          },
+          {
+            "titre": "Cour de justice — Foto-Frost, 22 octobre 1987, affaire 314/85",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61985CJ0314"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 32,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-033",
+      "type": "qcm",
+      "enonce": "Un recours en manquement peut être formé par :",
+      "choix": {
+        "a": "la Commission européenne",
+        "b": "le Parlement européen",
+        "c": "un État membre",
+        "d": "tout citoyen directement et individuellement affecté par une violation du droit de l’Union"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "c"
+        ],
+        "explication": "La Commission peut engager un recours en manquement au titre de l’article 258 TFUE ; un État membre peut également agir selon l’article 259. Le Parlement et les particuliers ne disposent pas de cette voie de recours.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 258",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E258"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 259",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E259"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 33,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-034",
+      "type": "qcm",
+      "enonce": "Quel article de la Constitution prévoit la participation de la France à l’Union européenne ?",
+      "choix": {
+        "a": "l’article 1",
+        "b": "l’article 51-1",
+        "c": "l’article 66-1",
+        "d": "l’article 88-1"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 88-1 de la Constitution fonde la participation de la République française à l’Union européenne. Il appartient au titre XV consacré à l’Union.",
+        "sources": [
+          {
+            "titre": "Conseil constitutionnel — Constitution du 4 octobre 1958, article 88-1",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000018077095"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 34,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-035",
+      "type": "qcm",
+      "enonce": "Combien de fonds européens la France a-t-elle perçu en moyenne chaque année entre 2021 et 2024 ?",
+      "choix": {
+        "a": "985 millions d’euros",
+        "b": "4,3 milliards d’euros",
+        "c": "25,1 milliards d’euros",
+        "d": "38,1 milliards d’euros"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Commission indique une moyenne annuelle de 25,1 milliards d’euros reçus par la France entre 2021 et 2024, en incluant les financements du plan de relance. Ce montant brut reçu ne constitue pas le solde net entre contribution française et retours.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Fonds européens reçus par la France entre 2021 et 2024",
+            "url": "https://france.representation.ec.europa.eu/informations-et-evenements/informations/combien-nous-coute-leurope-2025-11-17_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 35,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-036",
+      "type": "qcm",
+      "enonce": "Les critères d’adhésion à l’Union européenne sont les suivants :",
+      "choix": {
+        "a": "le respect de l’Etat de droit, l’économie de marché, la reprise de l’acquis communautaire",
+        "b": "le respect de la démocratie, des droits de l’homme et des libertés fondamentales, ainsi que l’absence de dette publique",
+        "c": "la solidité des institutions, l’adhésion à l’OTAN, le respect du libre-échange",
+        "d": "la stabilité des institutions, l’adoption préalable de l’euro, l’intégration dans la législation nationale des principes, règles et objectifs de l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Les critères de Copenhague regroupent des exigences politiques, une économie de marché viable et la capacité à reprendre les obligations de l’adhésion, dont l’acquis de l’Union. L’absence de dette, l’adhésion à l’OTAN ou l’adoption préalable de l’euro ne sont pas des conditions d’adhésion.",
+        "sources": [
+          {
+            "titre": "Conseil — Élargissement de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/policies/enlargement/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 36,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-037",
+      "type": "qcm",
+      "enonce": "En quelle année la France a-t-elle assuré la présidence du Conseil pour la dernière fois ?",
+      "choix": {
+        "a": "2001",
+        "b": "2007",
+        "c": "2015",
+        "d": "2022"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "À la date de l’épreuve, la dernière présidence française du Conseil de l’Union s’est déroulée du 1er janvier au 30 juin 2022. Elle a précédé la présidence tchèque.",
+        "sources": [
+          {
+            "titre": "Conseil — Liste des présidences du Conseil de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/presidency-council-eu/list-of-presidencies-of-the-council-of-the-european-union/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 37,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-038",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le semestre européen ?",
+      "choix": {
+        "a": "Le processus européen de coordination des politiques socio-économiques des États membres",
+        "b": "Le mécanisme de rotation de la présidence du Conseil de l’Union européenne",
+        "c": "La session semestrielle du parlement européen consacrée au vote du budget de l’Union",
+        "d": "Le programme de financement du programme Erasmus"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Semestre européen est le cycle annuel de coordination des politiques économiques, budgétaires, sociales et de l’emploi. Il comprend l’analyse des situations nationales et des recommandations par pays.",
+        "sources": [
+          {
+            "titre": "Conseil — Le Semestre européen",
+            "url": "https://www.consilium.europa.eu/fr/policies/european-semester/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 38,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-039",
+      "type": "qcm",
+      "enonce": "Lesquelles de ces priorités correspondent aux piliers de la politique agricole commune ?",
+      "choix": {
+        "a": "Le soutien des marchés et des revenus agricoles",
+        "b": "Le financement des exportations agricoles",
+        "c": "Le soutien au développement durable",
+        "d": "La sécurité alimentaire de l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "c"
+        ],
+        "explication": "Le premier pilier soutient les revenus agricoles et les marchés ; le second finance le développement rural, notamment durable, via le FEADER. Le choix c résume ce second objectif de façon large : son intitulé précis est « développement rural ». La sécurité alimentaire est un objectif transversal, pas un pilier distinct.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Financement de la PAC : FEAGA et FEADER",
+            "url": "https://agriculture.ec.europa.eu/common-agricultural-policy/financing-cap/cap-funds_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 39,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-040",
+      "type": "qcm",
+      "enonce": "Quelle politique ne relève pas d’une compétence partagée entre l’Union européenne et ses États membres ?",
+      "choix": {
+        "a": "La politique agricole commune",
+        "b": "La politique commerciale commune",
+        "c": "La politique énergétique",
+        "d": "La politique de coopération au développement et d’aide humanitaire"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La politique commerciale commune relève de la compétence exclusive de l’Union. L’agriculture et l’énergie sont des compétences partagées ; la coopération au développement et l’aide humanitaire relèvent d’un partage particulier, qui ne prive pas les États de leur capacité d’agir.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 3",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E003"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 4",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E004"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 40,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-041",
+      "type": "qcm",
+      "enonce": "En 2025, les trois principaux fournisseurs de pétrole de l’Union européenne étaient :",
+      "choix": {
+        "a": "les États-Unis, l’Algérie et le Kazakhstan",
+        "b": "les États-Unis, le Kazakhstan et la Norvège",
+        "c": "les États-Unis, la Norvège et l’Azerbaïdjan",
+        "d": "la Norvège, l’Arabie saoudite et la Libye"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Selon Eurostat, les premiers fournisseurs d’huiles de pétrole à l’UE en 2025 sont les États-Unis (15,1 %), la Norvège (14,4 %) et le Kazakhstan (12,7 %). Le choix b contient ces trois pays, sans les classer dans leur ordre statistique.",
+        "sources": [
+          {
+            "titre": "Eurostat — Importations européennes d’énergie en 2025",
+            "url": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260325-3"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 41,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-042",
+      "type": "qcm",
+      "enonce": "Parmi les objectifs du « Critical raw materials Act », on retrouve :",
+      "choix": {
+        "a": "au moins 10 % de la consommation annuelle de matériaux critiques destinée à l’extraction devra provenir de l’Union européenne",
+        "b": "80 % de la consommation annuelle destinée à la transformation se fera au sein de l’Union européenne",
+        "c": "25 % de la consommation annuelle de matériaux critiques proviendra de recyclage domestique",
+        "d": "l’importation de matériaux critiques depuis la Chine sera interdite"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "c"
+        ],
+        "explication": "Pour 2030, le règlement fixe des références de capacité dans l’Union : 10 % pour l’extraction, 40 % pour la transformation et 25 % pour le recyclage, rapportées à la consommation annuelle des matières premières stratégiques. Le seuil de transformation n’est donc pas 80 %. Il prévoit une diversification, pas une interdiction générale des importations chinoises.",
+        "sources": [
+          {
+            "titre": "Conseil — Règlement sur les matières premières critiques",
+            "url": "https://www.consilium.europa.eu/en/policies/the-critical-raw-materials-act/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 42,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-043",
+      "type": "qcm",
+      "enonce": "Qu’est-ce qu’INTERREG ?",
+      "choix": {
+        "a": "Un programme de coopération des régions ultrapériphériques et pays et territoires d’outre-mer européens",
+        "b": "Un programme de coopération territoriale européenne",
+        "c": "Un programme de coopération au développement",
+        "d": "Un programme de coopération agricole européen"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Interreg est le dispositif de coopération territoriale européenne : coopération transfrontalière, transnationale et interrégionale, avec aussi un volet pour les régions ultrapériphériques. Il ne se limite donc pas aux outre-mer.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Coopération territoriale européenne, Interreg",
+            "url": "https://ec.europa.eu/regional_policy/policy/cooperation/european-territorial_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 43,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-044",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le FEADER ?",
+      "choix": {
+        "a": "Un instrument de financement de la politique de cohésion, économique, sociale et territoriale",
+        "b": "Un instrument de financement de la politique agricole commune",
+        "c": "Un instrument de financement pour les affaires maritimes, la pêche et l’aquaculture",
+        "d": "Un instrument de financement dans les domaines de l’emploi, de l’éducation, du développement des compétences et de l’inclusion sociale"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le FEADER est le Fonds européen agricole pour le développement rural. Il finance le second pilier de la PAC, avec un cofinancement national ; il se distingue du FEAGA, qui finance notamment les aides directes et les mesures de marché.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Financement de la PAC : FEAGA et FEADER",
+            "url": "https://agriculture.ec.europa.eu/common-agricultural-policy/financing-cap/cap-funds_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 44,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-045",
+      "type": "qcm",
+      "enonce": "Le mécanisme d’ajustement carbone aux frontières (MACF) :",
+      "choix": {
+        "a": "remplace les instruments de tarification du carbone applicables aux producteurs européens",
+        "b": "vise à assurer une équivalence de tarification du carbone entre certains produits importés et les produits soumis au marché carbone européen, dans le respect des engagements internationaux de l’Union",
+        "c": "constitue un droit de douane environnemental appliqué indistinctement à toutes les importations",
+        "d": "repose sur une harmonisation des prix nationaux du carbone appliqués par les principaux partenaires commerciaux de l’Union"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le MACF vise à appliquer aux émissions incorporées de certains produits importés un coût carbone comparable à celui supporté dans l’Union. Il complète le marché européen du carbone et cherche à prévenir les fuites de carbone, sans taxer indistinctement toutes les importations.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Mécanisme d’ajustement carbone aux frontières",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 45,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-046",
+      "type": "qcm",
+      "enonce": "Qu’est-ce qu’Eurodac ?",
+      "choix": {
+        "a": "Une base de données permettant de comparer les casiers judiciaires de certaines personnes",
+        "b": "L’agence de l’Union européenne en charge des statistiques",
+        "c": "Une base de données permettant de comparer les données biométriques de certaines personnes",
+        "d": "Un système de délivrance des visas électroniques pour les personnes entrant dans l’espace Schengen"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Eurodac est une base européenne de données biométriques utilisée dans la gestion de l’asile et des migrations. Elle permet notamment de comparer les empreintes digitales et, dans son cadre révisé, les images faciales. Elle ne doit pas être confondue avec Eurostat ou un système de visas.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Eurodac",
+            "url": "https://home-affairs.ec.europa.eu/policies/migration-and-asylum/migration-management-eu-member-states/digital-border-and-migration-management-eu_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 46,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-047",
+      "type": "qcm",
+      "enonce": "Quand le mécanisme de protection temporaire a-t-il été activé pour la première fois ?",
+      "choix": {
+        "a": "En 2011",
+        "b": "En 2015",
+        "c": "En 2022",
+        "d": "En 2026"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le mécanisme prévu par la directive de 2001 a été activé pour la première fois le 4 mars 2022 pour les personnes fuyant l’invasion de l’Ukraine. La date de création du dispositif et celle de sa première activation sont distinctes.",
+        "sources": [
+          {
+            "titre": "Conseil — Première activation de la protection temporaire, le 4 mars 2022",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/06/25/ukrainian-refugees-council-extends-temporary-protection-until-march-2026/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 47,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-048",
+      "type": "qcm",
+      "enonce": "Une mesure d’effet équivalent désigne :",
+      "choix": {
+        "a": "une norme nationale bénéficiant du principe de reconnaissance mutuelle",
+        "b": "une restriction aux échanges entre États membres",
+        "c": "une sanction en cas d’atteinte au droit de la concurrence",
+        "d": "une forme de transposition des directives"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Une mesure d’effet équivalent à une restriction quantitative peut entraver les échanges entre États membres, directement ou indirectement, effectivement ou potentiellement. Cette notion issue notamment de l’arrêt Dassonville permet de contrôler les obstacles nationaux à la libre circulation des marchandises.",
+        "sources": [
+          {
+            "titre": "Cour de justice — Dassonville, 11 juillet 1974, affaire 8/74",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61974CJ0008"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 48,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-049",
+      "type": "qcm",
+      "enonce": "Que prône le rapport Niinistö ?",
+      "choix": {
+        "a": "La protection des enfants en ligne",
+        "b": "Le renforcement de la préparation civile et militaire de l’Europe",
+        "c": "Les droits de douane sur les colis de faible valeur",
+        "d": "Une boussole pour la compétitivité"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le rapport remis par Sauli Niinistö en 2024 porte sur la préparation et la capacité de réaction civiles et militaires de l’Europe face aux crises. Il recommande notamment une approche associant pouvoirs publics, entreprises et société.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Rapport Niinistö sur la préparation civile et militaire",
+            "url": "https://commission.europa.eu/document/download/5bb2881f-9e29-42f2-8b77-8739b19d047c_en?filename=2024_Niinisto-report_Book_VF.pdf"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 49,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-050",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le ciel unique européen ?",
+      "choix": {
+        "a": "Un objectif de mutualisation des systèmes de contrôle à la circulation aérienne",
+        "b": "Un objectif de suppression de toutes les taxes sur les vols à l’intérieur de l’Union européenne",
+        "c": "Un objectif d’harmonisation des règles de délivrance des passeports européens",
+        "d": "Un objectif de libre circulation des avions militaires dans l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le ciel unique européen vise à mieux intégrer la gestion du trafic aérien et les services de navigation aérienne. Il cherche à réduire la fragmentation de l’espace aérien européen et à améliorer sécurité, efficacité et performance environnementale.",
+        "sources": [
+          {
+            "titre": "Conseil — Réforme du ciel unique européen",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2024/09/26/single-sky-reform-council-adopts-first-reading-position-to-improve-efficiency-of-air-space-management-in-the-eu/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 50,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-051",
+      "type": "qcm",
+      "enonce": "Une initiative Équipe Europe permet la coordination des principaux acteurs européens :",
+      "choix": {
+        "a": "de la défense",
+        "b": "de l’humanitaire",
+        "c": "de la santé",
+        "d": "de la coopération au développement"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Les initiatives Équipe Europe coordonnent l’Union, ses États membres et leurs institutions de financement du développement autour d’objectifs communs dans les pays partenaires. Elles peuvent porter sur la santé, entre autres secteurs, mais relèvent de la coopération au développement.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Approche Équipe Europe",
+            "url": "https://international-partnerships.ec.europa.eu/policies/team-europe-initiatives_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 51,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-052",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que l’accord de Samoa ?",
+      "choix": {
+        "a": "L’accord instituant une union douanière avec l’Union économique et monétaire ouest-africaine",
+        "b": "L’accord destiné à financer l’aide au commerce avec les pays d’Amérique latine",
+        "c": "Le cadre dans lequel s’inscrivent les relations entre l’Union européenne et l’Union africaine",
+        "d": "Le cadre général dans lequel s’inscrivent les relations entre l’Union européenne et les pays d’Afrique, des Caraïbes et du Pacifique"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’accord de Samoa est le cadre général des relations entre l’UE, ses États membres et les membres de l’Organisation des États d’Afrique, des Caraïbes et du Pacifique. Signé en novembre 2023, il succède à l’accord de Cotonou.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Samoa",
+            "url": "https://www.consilium.europa.eu/fr/policies/samoa-agreement/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 52,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-053",
+      "type": "qcm",
+      "enonce": "À quel(s) acte(s) l’Union européenne a-t-elle adhéré ?",
+      "choix": {
+        "a": "La Convention européenne des droits de l’Homme",
+        "b": "Le Traité de l’Atlantique Nord",
+        "c": "L’accord de Marrakech",
+        "d": "La Convention d’Istanbul"
+      },
+      "correction": {
+        "reponses": [
+          "c",
+          "d"
+        ],
+        "explication": "L’Union est membre de l’OMC, fondée par l’accord de Marrakech, et partie à la Convention d’Istanbul depuis le 1er octobre 2023. Elle n’est pas membre de l’OTAN ; son adhésion à la Convention européenne des droits de l’homme est un processus distinct, non achevé à la date de l’épreuve.",
+        "sources": [
+          {
+            "titre": "OMC — L’Union européenne et l’OMC",
+            "url": "https://www.wto.org/french/thewto_f/countries_f/european_communities_f.htm"
+          },
+          {
+            "titre": "Conseil — Adhésion de l’UE à la Convention d’Istanbul",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2023/06/01/combatting-violence-against-women-council-adopts-decision-about-eu-s-accession-to-istanbul-convention/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 53,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-054",
+      "type": "qcm",
+      "enonce": "Les mesures restrictives de l’Union européenne peuvent prendre la forme :",
+      "choix": {
+        "a": "de gels d’avoirs",
+        "b": "d’un mandat d’arrêt européen",
+        "c": "d’une réduction des relations économiques",
+        "d": "d’interdictions d’entrée de territoire"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "c",
+          "d"
+        ],
+        "explication": "Les sanctions de l’UE peuvent comprendre gels d’avoirs, restrictions économiques et interdictions d’entrée ou de transit. Le mandat d’arrêt européen est un instrument de coopération judiciaire pénale entre États membres, pas une sanction de politique étrangère.",
+        "sources": [
+          {
+            "titre": "Conseil — Comment et quand l’UE adopte des sanctions",
+            "url": "https://www.consilium.europa.eu/fr/policies/how-and-when-the-eu-adopts-sanctions/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 54,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-055",
+      "type": "qcm",
+      "enonce": "Les pays dans lesquels un régime de sanctions de l’Union européenne est actuellement appliqué incluent :",
+      "choix": {
+        "a": "la Russie",
+        "b": "le Mexique",
+        "c": "Israël",
+        "d": "l’Afrique du sud"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée en raison du périmètre imprécis de « pays dans lesquels ». La Russie relève bien de régimes de sanctions territoriaux. Des personnes et organisations israéliennes sont aussi sanctionnées au titre du régime mondial des droits de l’homme, notamment pour des violences en Cisjordanie, sans que cela équivaille à un régime général contre Israël. La formulation ne permet pas de trancher sûrement entre a et a+c.",
+        "sources": [
+          {
+            "titre": "Conseil — Comment et quand l’UE adopte des sanctions",
+            "url": "https://www.consilium.europa.eu/fr/policies/how-and-when-the-eu-adopts-sanctions/"
+          },
+          {
+            "titre": "Conseil — Sanctions contre des colons israéliens extrémistes, 28 mai 2026",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/28/extremist-israeli-settlers-eu-lists-four-entities-and-three-individuals/"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 55,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-056",
+      "type": "qcm",
+      "enonce": "Parmi ces pays, quel État membre n’a pas reconnu l’État de Palestine ?",
+      "choix": {
+        "a": "La Slovénie",
+        "b": "Malte",
+        "c": "L’Irlande",
+        "d": "L’Allemagne"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "À la date de l’épreuve, l’Allemagne n’a pas reconnu l’État de Palestine. L’Irlande et la Slovénie l’ont reconnu en 2024 ; Malte a officialisé sa reconnaissance en septembre 2025. Il faut donc tenir compte de cette évolution par rapport aux anciens sujets.",
+        "sources": [
+          {
+            "titre": "Ministère allemand des Affaires étrangères — Relations avec les territoires palestiniens",
+            "url": "https://www.auswaertiges-amt.de/en/aussenpolitik/palestinianterritories-228226"
+          },
+          {
+            "titre": "Gouvernement maltais — Reconnaissance de l’État de Palestine, septembre 2025",
+            "url": "https://www.gov.mt/en/Government/DOI/Press%20Releases/Pages/2025/09/23/PR251629en.aspx"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 56,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-057",
+      "type": "qcm",
+      "enonce": "Le Groenland :",
+      "choix": {
+        "a": "ne fait pas partie de l’Union européenne",
+        "b": "fait partie des pays et territoires d’outre-mer de l’Union européenne",
+        "c": "fait partie des collectivités ultramarines de l’Union européenne",
+        "d": "fait partie des régions ultrapériphériques de l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b"
+        ],
+        "explication": "Le Groenland est un pays et territoire d’outre-mer associé à l’Union, lié au Danemark. Il ne fait pas partie du territoire de l’Union et n’est pas une région ultrapériphérique. « Collectivités ultramarines » n’est pas ici une catégorie juridique distincte des traités.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Pays et territoires d’outre-mer",
+            "url": "https://international-partnerships.ec.europa.eu/countries/overseas-countries-and-territories_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 57,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-058",
+      "type": "qcm",
+      "enonce": "L’Union européenne n’a pas signé d’accord de libre-échange avec :",
+      "choix": {
+        "a": "la Nouvelle-Zélande",
+        "b": "l’Inde",
+        "c": "le Vietnam",
+        "d": "les États-Unis d’Amérique"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "d"
+        ],
+        "explication": "À la date de référence, l’UE n’a pas signé d’accord de libre-échange avec les États-Unis. Avec l’Inde, les négociations ont été conclues le 27 janvier 2026, mais la Commission distingue les textes négociés de leur future signature. Les accords avec la Nouvelle-Zélande et le Vietnam sont déjà signés et en vigueur.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Textes négociés de l’accord UE-Inde, statut avant signature",
+            "url": "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/india/eu-india-agreements/text-agreements_en"
+          },
+          {
+            "titre": "Conseil — Accords commerciaux de l’UE",
+            "url": "https://www.consilium.europa.eu/fr/policies/trade-agreements/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 58,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-059",
+      "type": "qcm",
+      "enonce": "L’Union européenne reçoit le prix Nobel de la paix :",
+      "choix": {
+        "a": "en 2001",
+        "b": "en 2008",
+        "c": "en 2012",
+        "d": "en 2018"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le prix Nobel de la paix a été attribué à l’Union européenne en 2012 pour sa contribution à la paix, à la réconciliation, à la démocratie et aux droits humains en Europe.",
+        "sources": [
+          {
+            "titre": "Fondation Nobel — Prix Nobel de la paix 2012",
+            "url": "https://www.nobelprize.org/prizes/peace/2012/summary/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 59,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeg-2027-externe-questions-europeennes-qcm-060",
+      "type": "qcm",
+      "enonce": "Selon l’Eurobaromètre (2025), l’opinion publique de la zone euro au sujet de la monnaie unique est globalement :",
+      "choix": {
+        "a": "négative, avec un niveau de soutien à la monnaie unique de 28%",
+        "b": "neutre, avec un niveau de soutien à la monnaie unique de 48%",
+        "c": "positive, avec un niveau de soutien à la monnaie unique de 68%",
+        "d": "positive, avec un niveau de soutien à la monnaie unique de 83%"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’Eurobaromètre du printemps 2025 mesure un soutien à l’euro de 83 % dans la zone euro, contre 74 % dans l’ensemble de l’Union. La population interrogée est essentielle pour interpréter le pourcentage.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Eurobaromètre du printemps 2025",
+            "url": "https://france.representation.ec.europa.eu/informations-et-evenements/informations/sondage-eurobarometre-niveau-record-de-confiance-dans-lue-soutien-leuro-et-la-politique-commune-de-2025-05-28_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeg-2027-externe-questions-europeennes",
+        "numero": 60,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-001",
+      "type": "qcm",
+      "enonce": "A quelle date a été signé le traité de Rome ?",
+      "choix": {
+        "a": "Le 9 mai 1950",
+        "b": "Le 18 avril 1951",
+        "c": "Le 25 mars 1957",
+        "d": "Le 18 avril 1957"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les traités de Rome instituant la Communauté économique européenne et Euratom ont été signés le 25 mars 1957. Ils sont entrés en vigueur le 1er janvier 1958.",
+        "sources": [
+          {
+            "titre": "Union européenne — Les traités fondateurs, 1950-1959",
+            "url": "https://european-union.europa.eu/principles-countries-history/history-eu/1945-59_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 1,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-002",
+      "type": "qcm",
+      "enonce": "Quel État membre prendra la présidence du Conseil de l’Union européenne au 1er janvier 2027 ?",
+      "choix": {
+        "a": "Lituanie",
+        "b": "Chypre",
+        "c": "Pologne",
+        "d": "Irlande"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La Lituanie exerce la présidence du Conseil de janvier à juin 2027, après l’Irlande et avant la Grèce. La rotation a lieu tous les six mois.",
+        "sources": [
+          {
+            "titre": "Conseil — Liste des présidences du Conseil de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/council-eu/presidency-council-eu/list-of-presidencies-of-the-council-of-the-european-union/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 2,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-003",
+      "type": "qcm",
+      "enonce": "Quel a été le résultat de la « politique de la chaise vide » mise en œuvre par le Général De Gaulle entre le 1er juillet 1965 et le 30 janvier 1966 ?",
+      "choix": {
+        "a": "Une déclaration politique commune est adoptée, indiquant que lorsque des « intérêts très importants » sont invoqués par un Etat, le Conseil doit s’efforcer d’arriver à des solutions unanimes",
+        "b": "La création d’une Europe de la défense est abandonnée",
+        "c": "La possibilité de recourir à la majorité qualifiée en cas de désaccord entre les Etats membres est supprimée",
+        "d": "L’adhésion du Royaume-Uni à la CEE est refusée"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le compromis de Luxembourg de janvier 1966 prévoit la recherche d’une solution unanime lorsqu’un État invoque des intérêts très importants. Il s’agit d’un compromis politique : les dispositions des traités permettant le vote à la majorité qualifiée ne sont pas supprimées.",
+        "sources": [
+          {
+            "titre": "Conseil — Compromis de Luxembourg",
+            "url": "https://www.consilium.europa.eu/media/30558/qc3112311en.pdf"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 3,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-004",
+      "type": "qcm",
+      "enonce": "Quels sont les grands apports du Traité de Maastricht ?",
+      "choix": {
+        "a": "Il crée l’Union européenne, il étend le champ de la majorité qualifiée, il prévoit l’achèvement de l’Union économique et monétaire, il instaure la procédure de codécision",
+        "b": "Il crée l’Union européenne, il instaure l’élection du Parlement européen au suffrage universel direct, il crée la monnaie unique, il étend la majorité qualifiée à la politique étrangère et de sécurité commune",
+        "c": "Il crée l’Union européenne, il introduit des adaptations institutionnelles pour préparer l’entrée dans l’Union de douze nouveaux membres, il généralise les décisions à la majorité qualifiée",
+        "d": "Il crée l’Union européenne, il prévoit l’achèvement de l’Union économique et monétaire, il crée la monnaie unique, il introduit des adaptations institutionnelles pour préparer l’entrée dans l’Union de douze nouveaux membres"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Maastricht crée l’Union européenne, organise le passage à l’Union économique et monétaire et introduit la codécision, tout en étendant la majorité qualifiée. L’élection directe du Parlement date de 1979 ; les adaptations pour le grand élargissement relèvent notamment du traité de Nice.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Le traité de Maastricht",
+            "url": "https://www.europarl.europa.eu/about-parliament/fr/in-the-past/the-parliament-and-the-treaties/maastricht-treaty"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 4,
+        "page_pdf": 3,
+        "page_imprimee": 1
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-005",
+      "type": "qcm",
+      "enonce": "Qu’implique le principe de primauté du droit de l’Union ?",
+      "choix": {
+        "a": "En cas de litige avec un pays étranger, le droit de l’Union prime le droit du pays étranger",
+        "b": "En cas de litige entre deux Etats membres, le droit de l’Union prime le droit des deux Etats membres",
+        "c": "En cas de contradiction entre une norme nationale et une norme de l’Union, la norme de l’Union prime la norme nationale",
+        "d": "En cas de contradiction entre une norme nationale et une norme de l’Union, la norme de l’Union prime la norme nationale, à l’exception des normes nationales de valeur constitutionnelle"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Du point de vue du droit de l’Union, une norme nationale incompatible doit être laissée inappliquée, y compris si elle a valeur constitutionnelle. Le principe concerne les matières relevant du droit de l’Union ; il ne constitue pas une supériorité générale sur le droit de tout pays étranger.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Primauté du droit de l’Union européenne",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=LEGISSUM%3Al14548"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 5,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-006",
+      "type": "qcm",
+      "enonce": "Le Conseil constitutionnel français accepte-t-il le principe de primauté du droit de l’Union ?",
+      "choix": {
+        "a": "Oui, depuis la révision constitutionnelle de 2008 et l’ajout de l’article 88-1 sur la participation de la République à l’Union européenne",
+        "b": "Oui, depuis sa décision Interruption volontaire de grossesse du 15 janvier 1975",
+        "c": "Oui, avec des réserves. Par exemple, la transposition d’une directive ne saurait « aller à l’encontre d’une règle ou d’un principe inhérent à l’identité constitutionnelle de la France »",
+        "d": "Non, car cela porterait atteinte à « l’identité constitutionnelle de la France »"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Conseil constitutionnel reconnaît l’exigence constitutionnelle de transposition découlant de l’article 88-1, sous réserve d’une règle ou d’un principe inhérent à l’identité constitutionnelle de la France, sauf consentement du constituant. Cette réserve figure notamment dans la décision 2006-540 DC. L’article 88-1 a été introduit en 1992, pas en 2008.",
+        "sources": [
+          {
+            "titre": "Conseil constitutionnel — Identité constitutionnelle et transposition, commentaire de la décision 2014-694 DC",
+            "url": "https://qpc360.conseil-constitutionnel.fr/commentaire-decision-2014-694-dc"
+          },
+          {
+            "titre": "Conseil constitutionnel — Constitution du 4 octobre 1958, article 88-1",
+            "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000018077095"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 6,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-007",
+      "type": "qcm",
+      "enonce": "Quels États membres de l’Union européenne ne reconnaissent pas le Kosovo ?",
+      "choix": {
+        "a": "Espagne",
+        "b": "Chypre",
+        "c": "Allemagne",
+        "d": "Roumanie"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "d"
+        ],
+        "explication": "Parmi les choix proposés, l’Espagne, Chypre et la Roumanie ne reconnaissent pas le Kosovo. La Grèce et la Slovaquie sont les deux autres États membres dans cette situation ; l’Allemagne le reconnaît.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Les Balkans occidentaux",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/168/les-balkans-occidentaux"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 7,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-008",
+      "type": "qcm",
+      "enonce": "Quelle est la durée du mandat des députés au Parlement européen ?",
+      "choix": {
+        "a": "4 ans",
+        "b": "5 ans",
+        "c": "6 ans",
+        "d": "7 ans"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les députés européens sont élus pour cinq ans au suffrage universel direct. Cette durée ne doit pas être confondue avec le mandat de deux ans et demi du président du Parlement.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 14",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M014"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 8,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-009",
+      "type": "qcm",
+      "enonce": "De quand date la première élection du Parlement européen au suffrage universel direct ?",
+      "choix": {
+        "a": "1974",
+        "b": "1979",
+        "c": "1981",
+        "d": "1986"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les premières élections européennes au suffrage universel direct ont eu lieu du 7 au 10 juin 1979. Auparavant, les membres du Parlement étaient désignés par les parlements nationaux.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Premières élections européennes de 1979",
+            "url": "https://www.europarl.europa.eu/topics/fr/article/20240516STO21528/european-elections-highlights-from-the-past"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 9,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-010",
+      "type": "qcm",
+      "enonce": "Quel est le dernier État à avoir intégré la zone euro ?",
+      "choix": {
+        "a": "Croatie",
+        "b": "Bulgarie",
+        "c": "Roumanie",
+        "d": "République tchèque"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "La Bulgarie est entrée dans la zone euro le 1er janvier 2026. Elle est donc le dernier État à l’avoir rejointe à la date de l’épreuve, après la Croatie en 2023.",
+        "sources": [
+          {
+            "titre": "Conseil — La Bulgarie adopte l’euro le 1er janvier 2026",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2025/07/08/bulgaria-ready-to-use-the-euro-from-1-january-2026-council-takes-final-steps/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 10,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-011",
+      "type": "qcm",
+      "enonce": "Combien la zone euro compte-t-elle d’États membres ?",
+      "choix": {
+        "a": "15",
+        "b": "17",
+        "c": "19",
+        "d": "21"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Depuis l’adoption de l’euro par la Bulgarie le 1er janvier 2026, la zone euro comprend 21 États membres de l’Union. Les États tiers utilisant l’euro ne sont pas comptés comme membres de la zone.",
+        "sources": [
+          {
+            "titre": "Conseil — La Bulgarie adopte l’euro le 1er janvier 2026",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2025/07/08/bulgaria-ready-to-use-the-euro-from-1-january-2026-council-takes-final-steps/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 11,
+        "page_pdf": 4,
+        "page_imprimee": 2
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-012",
+      "type": "qcm",
+      "enonce": "Un citoyen peut-il former un recours contre des actes de droit européen ?",
+      "choix": {
+        "a": "Non",
+        "b": "Oui, mais seulement contre des actes dont il est le destinataire (actes individuels)",
+        "c": "Oui, mais seulement contre des actes qui le concernent directement et individuellement, ainsi que contre des actes d’exécution de portée générale qui ne comportent pas de mesure nationale d’exécution",
+        "d": "Oui, mais seulement contre des actes qui le concernent directement et individuellement, ainsi que contre des actes d’exécution qui le concernent directement et ne comportent pas de mesure nationale d’exécution"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée : l’article 263 TFUE permet aux particuliers d’attaquer les actes dont ils sont destinataires, ceux qui les concernent directement et individuellement, ainsi que les actes réglementaires les concernant directement sans mesures d’exécution. Les choix c et d substituent « actes d’exécution » à « actes réglementaires » ; aucun choix ne décrit correctement l’ensemble des cas.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 263",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E263"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 12,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      },
+      "note": "Les termes « actes d’exécution » figurent dans le PDF et sont conservés ; ils ne remplacent pas juridiquement les actes réglementaires de l’article 263 TFUE."
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-013",
+      "type": "qcm",
+      "enonce": "Qu’est-ce qu’une délégation de l’Union européenne ?",
+      "choix": {
+        "a": "Un bureau de représentation au sein des pays membres de l’UE",
+        "b": "Un bureau de représentation de l’Union européenne chargée de sa représentation à l’extérieur du territoire européen",
+        "c": "Une délégation de pouvoir ou de signature de la présidente de la Commission",
+        "d": "Un office de représentation au sein du collège des Commissaires"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Une délégation représente l’Union dans un pays tiers ou auprès d’une organisation internationale, sous l’autorité du Haut représentant. Dans les États membres, la Commission dispose de représentations, et non de délégations diplomatiques de ce type.",
+        "sources": [
+          {
+            "titre": "Service européen pour l’action extérieure — Délégations de l’UE",
+            "url": "https://www.eeas.europa.eu/topic-page/about-european-external-action-service_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 13,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-014",
+      "type": "qcm",
+      "enonce": "Quelle est la période d’exercice de l’actuel cadre financier pluriannuel ?",
+      "choix": {
+        "a": "2023-2029",
+        "b": "2019-2027",
+        "c": "2021-2027",
+        "d": "2025-2030"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le cadre financier pluriannuel applicable lors de l’épreuve couvre 2021-2027. Il fixe notamment les plafonds de dépenses sur cette période ; chaque exercice fait aussi l’objet d’un budget annuel.",
+        "sources": [
+          {
+            "titre": "Conseil — Budget à long terme de l’UE pour 2021-2027",
+            "url": "https://www.consilium.europa.eu/fr/policies/eu-long-term-budget/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 14,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-015",
+      "type": "qcm",
+      "enonce": "Quel Traité a consacré le Service européen pour l’action extérieure ?",
+      "choix": {
+        "a": "Le Traité d’Amsterdam, 1997",
+        "b": "Le Traité de Nice, 2001",
+        "c": "Le Traité de Lisbonne, 2007",
+        "d": "Le Traité de Paris, 1951"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le traité de Lisbonne prévoit le Service européen pour l’action extérieure à l’article 27, paragraphe 3, TUE. Son organisation et son fonctionnement ont ensuite été définis par une décision du Conseil en 2010.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 27",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M027"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 15,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-016",
+      "type": "qcm",
+      "enonce": "Lequel de ces pays n’a pas adhéré à l’Union européenne en 2004 ?",
+      "choix": {
+        "a": "Estonie",
+        "b": "Hongrie",
+        "c": "Roumanie",
+        "d": "Malte"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Roumanie a adhéré le 1er janvier 2007, avec la Bulgarie. L’Estonie, la Hongrie et Malte font partie des dix États entrés le 1er mai 2004.",
+        "sources": [
+          {
+            "titre": "Union européenne — Élargissements des années 2000",
+            "url": "https://european-union.europa.eu/principles-countries-history/history-eu/2000-09_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 16,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-017",
+      "type": "qcm",
+      "enonce": "Quels Etats membres de l’UE sont également membres du G7 ?",
+      "choix": {
+        "a": "Allemagne",
+        "b": "Italie",
+        "c": "Espagne",
+        "d": "Belgique"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b"
+        ],
+        "explication": "L’Allemagne et l’Italie font partie du G7, de même que la France, le Canada, les États-Unis, le Japon et le Royaume-Uni. L’Union participe elle aussi aux travaux, mais n’est pas l’un des sept États du groupe.",
+        "sources": [
+          {
+            "titre": "Conseil — Le rôle de l’UE au sein du G7",
+            "url": "https://www.consilium.europa.eu/media/35558/180605-g7-background.pdf"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 17,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-018",
+      "type": "qcm",
+      "enonce": "Quel traité introduit la disposition législative de coopération renforcée ?",
+      "choix": {
+        "a": "Le traité de Nice",
+        "b": "Le traité du Luxembourg",
+        "c": "Le traité d’Amsterdam",
+        "d": "Le traité de Maastricht"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le traité d’Amsterdam introduit le mécanisme de coopération renforcée, qui permet à certains États d’avancer ensemble sous conditions dans le cadre de l’Union. Nice puis Lisbonne en ont aménagé les règles.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Le traité d’Amsterdam",
+            "url": "https://www.europarl.europa.eu/about-parliament/fr/in-the-past/the-parliament-and-the-treaties/treaty-of-amsterdam"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 18,
+        "page_pdf": 5,
+        "page_imprimee": 3
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-019",
+      "type": "qcm",
+      "enonce": "Lors de la procédure de nomination du président de la Commission européenne, laquelle de ces affirmations est inexacte :",
+      "choix": {
+        "a": "le président de la Commission européenne est élu par le Parlement européen",
+        "b": "le Parlement européen peut proposer un candidat au Conseil européen",
+        "c": "le Conseil européen propose un candidat à la majorité qualifiée",
+        "d": "le Conseil européen doit choisir un candidat en tenant compte du résultat des élections au Parlement européen"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Conseil européen propose le candidat à la majorité qualifiée, en tenant compte des élections européennes, puis le Parlement l’élit. Des préférences peuvent être exprimées politiquement par les députés, mais le pouvoir formel de proposition appartient au Conseil européen.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TUE, article 17",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016M017"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 19,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-020",
+      "type": "qcm",
+      "enonce": "Selon la hiérarchie des normes européennes, les principes généraux du droit de l’Union européenne et les droits fondamentaux sont :",
+      "choix": {
+        "a": "inférieurs au droit dérivé",
+        "b": "supérieurs au droit primaire",
+        "c": "supérieurs aux accords externes",
+        "d": "inférieurs au droit national"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les droits fondamentaux et les principes généraux ont rang de droit primaire dans l’ordre juridique de l’Union. Les accords internationaux conclus par l’Union doivent les respecter et s’imposent, pour leur part, aux actes de droit dérivé.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Sources et portée du droit de l’Union européenne",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/6/sources-et-portee-du-droit-de-l-union-europeenne"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 20,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-021",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes, quelle(s) est (sont) la (les) missions du Secrétariat général des affaires européennes ?",
+      "choix": {
+        "a": "Il coordonne les positions des Etats membres en amont des négociations en COREPER",
+        "b": "Il assure la coordination interministérielle française sur les questions relatives à l’Union européenne",
+        "c": "Il coordonne la position française au sein de la Commission, du Conseil et du Parlement européen",
+        "d": "Il assure l’information du Parlement français sur les activités de l’Union européenne"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "d"
+        ],
+        "explication": "Le SGAE coordonne les positions des administrations françaises et assure l’information du Parlement national sur les activités européennes. Il ne coordonne pas les positions des autres États. La Commission et les députés européens n’obéissent pas à une « position française » impérative, même si le SGAE mène un travail d’information et d’influence auprès des institutions.",
+        "sources": [
+          {
+            "titre": "Secrétariat général des affaires européennes — Missions",
+            "url": "https://sgae.gouv.fr/sites/SGAE/accueil/a-propos-du-sgae/missions.html"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 21,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-022",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que la clause de flexibilité ?",
+      "choix": {
+        "a": "Le fait de permettre à l’échelon inférieur de conserver les compétences qu’il est capable de gérer efficacement et de transférer celles qu’il ne peut exercer de manière satisfaisante à l’échelon supérieur",
+        "b": "Le fait que les institutions européennes doivent choisir le moyen d’action laissant le plus de liberté d’Etat, dans le cadre de ce qui est nécessaire pour atteindre les objectifs des traités",
+        "c": "Le fait que les Etats membres peuvent intervenir dans le champ d’une compétence exclusive de l’Union si certaines conditions spécifiques sont réunies",
+        "d": "Le fait que l’Union peut intervenir dans des domaines non prévus par les traités si certaines conditions spécifiques sont réunies"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "L’article 352 TFUE permet d’agir pour réaliser un objectif des traités lorsque les pouvoirs nécessaires ne sont pas expressément prévus, avec unanimité au Conseil et approbation du Parlement. Le choix d doit être compris ainsi : la clause ne crée pas une compétence générale dans des domaines étrangers aux objectifs des traités.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 352",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E352"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 22,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-023",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que la comitologie ?",
+      "choix": {
+        "a": "Les procédures permettant d’associer les Etats membres à la définition des mesures contenues dans un acte d’exécution de la Commission européenne",
+        "b": "L’étude savante de la nature et du fonctionnement des comités, qui s’est beaucoup développée depuis la création de l’Union européenne",
+        "c": "Un terme ironique désignant le recours excessif de l’Union européenne à des comités pour résoudre les problèmes auxquels elle est confrontée",
+        "d": "Les procédures que la Commission européenne doit suivre lorsqu’elle adopte un texte"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "La comitologie associe des comités de représentants des États au contrôle des actes d’exécution de la Commission. Elle ne désigne pas toutes les procédures que la Commission suit lorsqu’elle adopte un texte, ni les procédures propres aux actes délégués.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Comitologie",
+            "url": "https://commission.europa.eu/law/law-making-process/adopting-eu-law/implementing-and-delegated-acts/comitology_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 23,
+        "page_pdf": 6,
+        "page_imprimee": 4
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-024",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes au sujet du Pacte Vert, laquelle (lesquelles) est (sont) correcte(s) ?",
+      "choix": {
+        "a": "Il fixe un objectif de neutralité climatique de l’Union européenne à l’horizon 2050",
+        "b": "Il prévoit que l’Union européenne parvienne à l’autonomie énergétique à l’horizon 2050",
+        "c": "Il prévoit l’interdiction de la vente de véhicules thermiques neufs en 2030",
+        "d": "Certaines de ses dispositions ont été abandonnées, notamment la révision du règlement sur les substances chimiques dangereuses (« REACH »)"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "Le Pacte vert vise la neutralité climatique en 2050. Le 27 avril 2026, la Commission a annoncé ne pas ouvrir la révision générale de REACH envisagée auparavant : d est donc à apprécier dans le contexte de septembre 2026. Cela ne signifie pas l’abrogation du règlement REACH existant. L’objectif automobile initial visait 2035, pas 2030.",
+        "sources": [
+          {
+            "titre": "Conseil — Objectif climatique de 90 % de réduction en 2040, adoption du 5 mars 2026",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/03/05/2040-climate-target-council-gives-final-green-light/"
+          },
+          {
+            "titre": "Parlement européen — Révision de REACH, annonce du 27 avril 2026",
+            "url": "https://www.europarl.europa.eu/legislative-train/theme-a-new-plan-for-europe-s-sustainable-prosperity-and-competitiveness/file-revision-of-the-reach-regulation"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 24,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-025",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que le mécanisme d’ajustement carbone aux frontières ?",
+      "choix": {
+        "a": "Un dispositif autorisant l’UE à recalculer le bilan carbone des produits importés pour éviter les déclarations frauduleuses",
+        "b": "Un dispositif de compensation des émissions carbone entre Etats membres mis en œuvre au niveau des frontières nationales",
+        "c": "Un dispositif de taxe sur les importations dans l’UE de certains produits dont la fabrication est très polluante pour éviter la délocalisation de la production et de la pollution hors de l’UE et garantir l’efficacité de la règlementation environnementale européenne",
+        "d": "Un projet scientifique novateur qui permettrait d’empêcher le passage des frontières par le CO2, afin de protéger les populations voisines de pays pollueurs"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le MACF impose un ajustement du coût carbone pour certains produits importés afin de limiter les fuites de carbone. Le choix c décrit son objectif ; techniquement, le dispositif repose sur des obligations déclaratives et des certificats liés aux émissions incorporées, en articulation avec le marché carbone européen.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Mécanisme d’ajustement carbone aux frontières",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 25,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-026",
+      "type": "qcm",
+      "enonce": "Qui peut saisir la Cour de justice de l’Union européenne d’un recours en manquement contre un État membre ?",
+      "choix": {
+        "a": "Uniquement la Commission européenne",
+        "b": "Uniquement un Etat membre",
+        "c": "La Commission européenne ou un Etat membre",
+        "d": "La Commission européenne, le Parlement européen, un Etat membre, ou un citoyen s’il a un intérêt à agir"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La Commission peut saisir la Cour sur le fondement de l’article 258 TFUE ; un État membre peut le faire selon l’article 259, après la procédure prévue. Un citoyen peut signaler une violation à la Commission, mais ne forme pas lui-même ce recours.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 258",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E258"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 259",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E259"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 26,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-027",
+      "type": "qcm",
+      "enonce": "Quel a été l’effet de l’arrêt Cassis de Dijon (25 juin 1979) de la Cour de justice de l’Union européenne sur le marché commun ?",
+      "choix": {
+        "a": "Une amélioration de la coordination des politiques nationales de lutte contre l’alcoolisme au niveau de l’Union européenne",
+        "b": "Un principe de reconnaissance mutuelle des règlementations respectives en l’absence d’harmonisation communautaire et par conséquent une facilitation de la libre circulation des marchandises",
+        "c": "Une remise en cause des appellations d’origine contrôlée et par conséquent une hausse de la fraude dans les échanges économiques entre Etats membres",
+        "d": "Un refroidissement de la confiance des citoyens dans le marché commun"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Cassis de Dijon consacre la reconnaissance mutuelle : en l’absence d’harmonisation, un produit légalement commercialisé dans un État doit en principe pouvoir l’être dans les autres, sous réserve de restrictions justifiées. L’arrêt date du 20 février 1979 : la date du 25 juin indiquée dans le sujet est erronée.",
+        "sources": [
+          {
+            "titre": "Cour de justice — Cassis de Dijon, 20 février 1979, affaire 120/78",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:61978CJ0120"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 27,
+        "page_pdf": 7,
+        "page_imprimee": 5
+      },
+      "note": "La date « 25 juin 1979 » est reproduite fidèlement ; la date correcte de l’arrêt est précisée dans le corrigé."
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-028",
+      "type": "qcm",
+      "enonce": "Parmi les propositions suivantes au sujet de l’Office européen de lutte antifraude (OLAF), laquelle (lesquelles) est (sont) correcte(s) ?",
+      "choix": {
+        "a": "Il a été créé avec le Traité de Maastricht pour accompagner la montée en puissance du projet d’Union économique et monétaire",
+        "b": "C’est un organisme qui fait partie de la Commission et bénéficie d’une indépendance fonctionnelle",
+        "c": "Il peut mener des enquêtes administratives sur les fraudes dans l’utilisation des fonds de l’Union",
+        "d": "Il peut mener des enquêtes administratives sur le territoire de tous les Etats membres au sujet de n’importe quelle fraude à condition d’être accompagné de personnels administratifs nationaux"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "c"
+        ],
+        "explication": "Créé en 1999, l’OLAF appartient à la Commission tout en bénéficiant d’une indépendance dans ses enquêtes. Il conduit des enquêtes administratives sur les fraudes affectant les intérêts financiers de l’UE et certaines fautes graves ; il n’a pas une compétence générale sur toute fraude nationale.",
+        "sources": [
+          {
+            "titre": "Office européen de lutte antifraude — Mandat et missions",
+            "url": "https://anti-fraud.ec.europa.eu/about-us/what-we-do_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 28,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-029",
+      "type": "qcm",
+      "enonce": "La Commission peut-elle négocier seule les accords commerciaux avec des États tiers ?",
+      "choix": {
+        "a": "Oui, il s’agit d’une compétence exclusive de la Commission",
+        "b": "Non, il s’agit d’une compétence partagée entre la Commission et les États membres",
+        "c": "Cela dépend du contenu des accords : certains peuvent être négociés par la Commission seule, d’autres requièrent la participation des États membres",
+        "d": "Cela dépend du contenu des accords : si ceux-ci comprennent des dispositions relatives aux droits de l’Homme, le Parlement européen doit être consulté dès l’ouverture des négociations"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Il faut distinguer les accords relevant exclusivement des compétences de l’Union et les accords mixtes, qui engagent aussi les États membres. La Commission négocie sur mandat du Conseil ; il ne s’agit donc jamais d’une compétence propre lui permettant de négocier sans cadre. Le contenu de l’accord détermine la participation des États.",
+        "sources": [
+          {
+            "titre": "Conseil — Accords commerciaux de l’UE",
+            "url": "https://www.consilium.europa.eu/fr/policies/trade-agreements/"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 3",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E003"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 29,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-030",
+      "type": "qcm",
+      "enonce": "Lesquels de ces commissaires sont également vice-présidents de la Commission européenne ?",
+      "choix": {
+        "a": "Olivér Várhelyi",
+        "b": "Stéphane Séjourné",
+        "c": "Andrius Kubilius",
+        "d": "Raffaele Fitto"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "d"
+        ],
+        "explication": "Dans la Commission 2024-2029, Stéphane Séjourné et Raffaele Fitto sont vice-présidents exécutifs. Olivér Várhelyi et Andrius Kubilius sont commissaires sans cette fonction de vice-président.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Collège des commissaires 2024-2029",
+            "url": "https://commission.europa.eu/about/organisation/college-commissioners_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 30,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-031",
+      "type": "qcm",
+      "enonce": "Laquelle (lesquelles) de ces propositions est (sont) un (des) format(s) du Conseil des affaires étrangères ?",
+      "choix": {
+        "a": "Le format défense",
+        "b": "Le format développement",
+        "c": "Le format commerce",
+        "d": "Aucune"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "c"
+        ],
+        "explication": "Le Conseil des affaires étrangères peut réunir les ministres compétents pour les affaires étrangères, la défense, le développement ou le commerce. Les trois formats proposés existent donc. La présidence du format commerce relève de la présidence tournante.",
+        "sources": [
+          {
+            "titre": "Conseil — Formation Affaires étrangères",
+            "url": "https://www.consilium.europa.eu/en/council-eu/council-meetings-explained/fac/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 31,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-032",
+      "type": "qcm",
+      "enonce": "Quel est le nom du Commissaire en charge de l’humanitaire ?",
+      "choix": {
+        "a": "Jozef Síkela",
+        "b": "Dubravca Suica",
+        "c": "Hadja Lahbib",
+        "d": "Kaja Kallas"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Hadja Lahbib est chargée notamment de la préparation et de la gestion des crises dans la Commission 2024-2029, portefeuille comprenant l’aide humanitaire. Les partenariats internationaux, la Méditerranée et les affaires étrangères relèvent d’autres responsables.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Hadja Lahbib",
+            "url": "https://commission.europa.eu/about/organisation/college-commissioners/hadja-lahbib_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 32,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-033",
+      "type": "qcm",
+      "enonce": "Lorsqu’un citoyen européen séjourne hors de l’Union européenne dans un Etat auprès duquel son pays d’origine ne possède ni ambassade ni consulat, il peut tout de même bénéficier en cas de difficultés :",
+      "choix": {
+        "a": "de l’effet direct des Conventions de Vienne",
+        "b": "du financement de son rapatriement par la Commission européenne",
+        "c": "de la protection consulaire d’un Etat membre présent sur place",
+        "d": "de laissez-passer et autres titres de voyage délivrés par un Etat membre présent sur place"
+      },
+      "correction": {
+        "reponses": [
+          "c",
+          "d"
+        ],
+        "explication": "Un citoyen de l’Union non représenté dans un pays tiers peut demander une protection consulaire à un autre État membre dans les mêmes conditions que ses ressortissants. Cette assistance peut comprendre un titre de voyage provisoire, sous conditions ; elle n’implique pas un rapatriement automatiquement financé par la Commission.",
+        "sources": [
+          {
+            "titre": "Union européenne — Protection consulaire hors de l’UE",
+            "url": "https://europa.eu/youreurope/citizens/travel/security-and-emergencies/consular-protection/index_fr.htm"
+          },
+          {
+            "titre": "EUR-Lex — TFUE, article 23",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E023"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 33,
+        "page_pdf": 8,
+        "page_imprimee": 6
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-034",
+      "type": "qcm",
+      "enonce": "Laquelle de ces propositions est le projet de corridor qui ambitionne de connecter l’Union européenne et l’Asie centrale dans le cadre de la stratégie Global Gateway ?",
+      "choix": {
+        "a": "Le transgabonais",
+        "b": "Le transsibérien",
+        "c": "Le transcaspien",
+        "d": "Le transcaucasien"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le corridor transcaspien relie l’Europe et l’Asie centrale via la mer Caspienne et le Caucase du Sud. Son développement est une priorité de connectivité de Global Gateway, avec des investissements dans les transports et la facilitation des échanges.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Corridor transcaspien et connectivité en Asie centrale",
+            "url": "https://international-partnerships.ec.europa.eu/policies/global-gateway/sustainable-transport-connectivity-central-asia_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 34,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-035",
+      "type": "qcm",
+      "enonce": "Quel est l’instrument de l’action extérieure qui finance les coopérations dans le voisinage ?",
+      "choix": {
+        "a": "La Facilité pour les Balkans occidentaux",
+        "b": "Le pacte pour la Méditerranée",
+        "c": "IPA III",
+        "d": "NDICI-GE"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "NDICI – Global Europe, ou IVCDCI – L’Europe dans le monde, finance notamment le voisinage oriental et méridional dans le cadre 2021-2027. IPA III est l’instrument distinct d’aide de préadhésion.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Instrument NDICI – L’Europe dans le monde",
+            "url": "https://international-partnerships.ec.europa.eu/funding-and-technical-assistance/funding-instruments/global-europe-neighbourhood-development-and-international-cooperation-instrument_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 35,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-036",
+      "type": "qcm",
+      "enonce": "Quel accord signé en 2021 a renouvelé la relation entre l’Union européenne et les pays membres de l’Organisation des Etats d’Afrique, des Caraïbes et du Pacifique (OEACP) ?",
+      "choix": {
+        "a": "L’accord de Djedda",
+        "b": "L’accord de Pointe-à-Pitre",
+        "c": "L’accord de Cotonou",
+        "d": "L’accord de Samoa"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Il s’agit de l’accord de Samoa, qui remplace Cotonou. Attention à la date du sujet : les négociateurs ont paraphé le texte en avril 2021, mais sa signature officielle a eu lieu le 15 novembre 2023. Le paraphe et la signature sont deux étapes différentes.",
+        "sources": [
+          {
+            "titre": "Conseil — Accord de Samoa",
+            "url": "https://www.consilium.europa.eu/fr/policies/samoa-agreement/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 36,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      },
+      "note": "La mention « signé en 2021 » est conservée ; le corrigé distingue le paraphe de 2021 de la signature de 2023."
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-037",
+      "type": "qcm",
+      "enonce": "Quelle est la méthode d’adoption des « paquets de sanctions » (mesures restrictives) ?",
+      "choix": {
+        "a": "La majorité simple",
+        "b": "La double-majorité",
+        "c": "L’unanimité",
+        "d": "Le consensus"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Conseil adopte à l’unanimité la décision de politique étrangère instituant les sanctions. Les mesures économiques nécessaires sont ensuite mises en œuvre, le cas échéant, par un règlement au titre de l’article 215 TFUE. Il faut distinguer cette décision initiale des actes d’exécution.",
+        "sources": [
+          {
+            "titre": "Conseil — Comment et quand l’UE adopte des sanctions",
+            "url": "https://www.consilium.europa.eu/fr/policies/how-and-when-the-eu-adopts-sanctions/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 37,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-038",
+      "type": "qcm",
+      "enonce": "Qu’est-ce que la mission ASPIDES ?",
+      "choix": {
+        "a": "Une mission militaire de sécurisation de la mer rouge dans le cadre de la politique de sécurité et de défense commune",
+        "b": "Une mission spatiale européenne menée par l’Autriche, la Suède, la Pologne, l’Italie, le Danemark, l’Estonie et la Slovénie",
+        "c": "Une mission civile au Mali dans le cadre de la politique de sécurité et de défense commune",
+        "d": "Un opérateur européen chargé de l’exécution d’une mission de service d’intérêt économique général"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "ASPIDES est une opération militaire maritime de l’UE lancée en 2024, à mandat défensif. Elle protège la liberté de navigation et les navires dans le contexte des attaques en mer Rouge ; elle relève de la politique de sécurité et de défense commune.",
+        "sources": [
+          {
+            "titre": "Service européen pour l’action extérieure — Opération ASPIDES",
+            "url": "https://www.eeas.europa.eu/eunavfor-aspides_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 38,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-039",
+      "type": "qcm",
+      "enonce": "Quels sont les pays du voisinage oriental qui ne sont pas candidats à l’adhésion à l’Union européenne ?",
+      "choix": {
+        "a": "Géorgie",
+        "b": "Arménie",
+        "c": "Azerbaïdjan",
+        "d": "Turquie"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "c"
+        ],
+        "explication": "L’Arménie et l’Azerbaïdjan appartiennent au Partenariat oriental sans avoir le statut de pays candidat à l’UE. La Géorgie possède ce statut depuis 2023, malgré l’arrêt de fait de son processus. La Turquie est candidate, mais ne fait pas partie du Partenariat oriental.",
+        "sources": [
+          {
+            "titre": "Conseil — Partenariat oriental",
+            "url": "https://www.consilium.europa.eu/fr/policies/eastern-partnership/"
+          },
+          {
+            "titre": "Conseil — Élargissement de l’Union européenne",
+            "url": "https://www.consilium.europa.eu/fr/policies/enlargement/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 39,
+        "page_pdf": 9,
+        "page_imprimee": 7
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-040",
+      "type": "qcm",
+      "enonce": "Lesquelles de ces mesures ont été intégrées dans les clauses de l’accord global entre les pays membres de l’Union européenne et du MERCOSUR ?",
+      "choix": {
+        "a": "Des clauses environnementales visant à améliorer la compétitivité hors-prix des entreprises européennes dans les passations de marchés publics en Amérique latine",
+        "b": "Les clauses miroirs pour assurer la réciprocité des normes entre les deux organisations parties à l’accord",
+        "c": "Des clauses fixant des seuils de financements minimaux de l’action humanitaire des parties à l’accord",
+        "d": "Des clauses de sauvegardes, qui permettraient de remettre en place des droits de douanes pour prévenir un risque de déstabilisation de l’un des secteurs concernés par l’accord"
+      },
+      "correction": {
+        "reponses": [
+          "d"
+        ],
+        "explication": "Les clauses de sauvegarde permettent de suspendre des préférences commerciales ou de rétablir des droits en cas de risque de préjudice pour les producteurs européens. Elles se distinguent des clauses miroirs, qui visent la réciprocité des normes et ne sont pas instituées de façon générale par l’accord.",
+        "sources": [
+          {
+            "titre": "Conseil — Clauses de sauvegarde UE-Mercosur, 5 mars 2026",
+            "url": "https://www.consilium.europa.eu/fr/press/press-releases/2026/03/05/eu-mercosur-council-greenlights-safeguards-for-agricultural-products/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 40,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-041",
+      "type": "qcm",
+      "enonce": "Lesquels de ces territoires font partie des régions ultrapériphériques (RUP) au titre de l’article 349 du TFUE ?",
+      "choix": {
+        "a": "La Réunion",
+        "b": "Les Canaries",
+        "c": "Saint-Barthélemy",
+        "d": "Les Açores"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "d"
+        ],
+        "explication": "La Réunion, les Canaries et les Açores sont des régions ultrapériphériques et font partie de l’Union. Saint-Barthélemy est devenu un pays et territoire d’outre-mer le 1er janvier 2012.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Les régions ultrapériphériques",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/100/regions-ultraperipheriques-rup"
+          },
+          {
+            "titre": "Commission européenne — Pays et territoires d’outre-mer",
+            "url": "https://international-partnerships.ec.europa.eu/countries/overseas-countries-and-territories_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 41,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-042",
+      "type": "qcm",
+      "enonce": "Lesquels de ces territoires sont des « Pays et territoires d’outre-mer » (PTOM) au sens des Traités ?",
+      "choix": {
+        "a": "Groenland",
+        "b": "La Réunion",
+        "c": "Les Îles Canaries",
+        "d": "La Polynésie"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "Le Groenland et la Polynésie française sont des PTOM associés à l’Union. La Réunion et les Canaries sont des régions ultrapériphériques, qui ont un statut différent et font partie du territoire de l’UE.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Pays et territoires d’outre-mer",
+            "url": "https://international-partnerships.ec.europa.eu/countries/overseas-countries-and-territories_en"
+          },
+          {
+            "titre": "Parlement européen — Les régions ultrapériphériques",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/100/regions-ultraperipheriques-rup"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 42,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-043",
+      "type": "qcm",
+      "enonce": "Lesquels de ces États membres disposent de Régions ultrapériphériques au sens de l’article 349 du TFUE ?",
+      "choix": {
+        "a": "France, Danemark, Espagne",
+        "b": "Espagne, Danemark, Portugal",
+        "c": "France, Espagne, Portugal",
+        "d": "France, Espagne, Pays-Bas"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Les neuf régions ultrapériphériques relèvent de trois États membres : la France, l’Espagne et le Portugal. Le Danemark et les Pays-Bas possèdent des PTOM, pas de RUP.",
+        "sources": [
+          {
+            "titre": "Parlement européen — Les régions ultrapériphériques",
+            "url": "https://www.europarl.europa.eu/factsheets/fr/sheet/100/regions-ultraperipheriques-rup"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 43,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-044",
+      "type": "qcm",
+      "enonce": "Lesquels de ces États-membres disposent de Pays et Territoires d’Outre-mer (PTOM) au sens des Traités ?",
+      "choix": {
+        "a": "France, Espagne, Pays-Bas,",
+        "b": "France, Danemark, Pays-Bas",
+        "c": "Espagne, Portugal, Danemark",
+        "d": "France, Pays-Bas, Portugal"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Les PTOM sont liés à la France, au Danemark et aux Pays-Bas. Ils sont associés à l’Union sans faire partie de son territoire ; il ne faut pas les confondre avec les régions ultrapériphériques.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Pays et territoires d’outre-mer",
+            "url": "https://international-partnerships.ec.europa.eu/countries/overseas-countries-and-territories_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 44,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-045",
+      "type": "qcm",
+      "enonce": "Quel est le statut de l’Union européenne à l’ONU ?",
+      "choix": {
+        "a": "Elle est membre observateur",
+        "b": "Elle est État membre",
+        "c": "Elle est membre invité",
+        "d": "Elle n’est pas membre"
+      },
+      "correction": {
+        "reponses": [],
+        "explication": "Question neutralisée : l’Union bénéficie d’un statut d’observateur renforcé à l’Assemblée générale des Nations unies, mais elle n’est pas membre de l’ONU. Le choix a vise manifestement ce statut tout en parlant de « membre observateur » ; d est littéralement vrai. Cette opposition rend la question ambiguë.",
+        "sources": [
+          {
+            "titre": "Service européen pour l’action extérieure — L’UE et les Nations unies",
+            "url": "https://www.eeas.europa.eu/un-geneva/european-union-and-united-nations_en"
+          }
+        ],
+        "neutralisee": true
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 45,
+        "page_pdf": 10,
+        "page_imprimee": 8
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-046",
+      "type": "qcm",
+      "enonce": "La révision de décembre 2025 du règlement établissant un cadre pour la réalisation de la neutralité climatique, dite « loi climat », prévoit :",
+      "choix": {
+        "a": "la neutralité carbone à l’horizon 2040",
+        "b": "un objectif intermédiaire de réduction des émissions de gaz à effet de serre de 90 % d’ici 2040",
+        "c": "l’arrêt total de l’usage des moteurs thermiques automobiles d’ici 2035",
+        "d": "l’interdiction des trajets en avion lorsqu’une alternative ferroviaire existe"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le compromis politique de décembre 2025 fixe un objectif de réduction des émissions nettes de gaz à effet de serre de 90 % en 2040 par rapport à 1990. L’adoption définitive par le Conseil date du 5 mars 2026. La neutralité climatique reste l’objectif de 2050.",
+        "sources": [
+          {
+            "titre": "Conseil — Objectif climatique de 90 % de réduction en 2040, adoption du 5 mars 2026",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/03/05/2040-climate-target-council-gives-final-green-light/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 46,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      },
+      "note": "Décembre 2025 correspond à l’accord politique ; l’adoption définitive de la modification intervient en 2026."
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-047",
+      "type": "qcm",
+      "enonce": "Quelle direction de la Commission est en charge du suivi des coopérations dans le voisinage méridional ?",
+      "choix": {
+        "a": "DG INTPA",
+        "b": "DG ENEST",
+        "c": "DG MENA",
+        "d": "DG TRADE"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "La DG MENA traite le Moyen-Orient, l’Afrique du Nord et le Golfe, dont le voisinage méridional. La DG ENEST couvre l’élargissement et le voisinage oriental ; la DG INTPA s’occupe des partenariats internationaux.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Direction générale du Moyen-Orient, de l’Afrique du Nord et du Golfe",
+            "url": "https://commission.europa.eu/about/departments-and-executive-agencies/middle-east-north-africa-and-gulf_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 47,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-048",
+      "type": "qcm",
+      "enonce": "Quel est le nom du groupe de travail informel chargé de la préparation des COPS ?",
+      "choix": {
+        "a": "Ajedrez",
+        "b": "Antici",
+        "c": "Nicolaïdis",
+        "d": "Mertens"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le groupe Nicolaïdis aide à préparer les réunions du Comité politique et de sécurité. Les groupes Antici et Mertens préparent respectivement les travaux du Coreper II et du Coreper I.",
+        "sources": [
+          {
+            "titre": "Conseil — Comité politique et de sécurité et groupe Nicolaïdis",
+            "url": "https://www.consilium.europa.eu/en/council-eu/search-the-list-of-council-preparatory-bodies/political-security-committee/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 48,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-049",
+      "type": "qcm",
+      "enonce": "A quelle date a expiré le traité de la communauté européenne du charbon et de l’acier (CECA) ?",
+      "choix": {
+        "a": "2007",
+        "b": "1992",
+        "c": "2002",
+        "d": "2012"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le traité CECA est entré en vigueur le 23 juillet 1952 pour une durée de cinquante ans. Il a donc expiré le 23 juillet 2002.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Traité instituant la Communauté européenne du charbon et de l’acier",
+            "url": "https://eur-lex.europa.eu/EN/legal-content/summary/treaty-establishing-the-european-coal-and-steel-community-ecsc-treaty.html"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 49,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-050",
+      "type": "qcm",
+      "enonce": "Qui a été le premier président de la Commission européenne ?",
+      "choix": {
+        "a": "Walter Hallstein",
+        "b": "Jacques Delors",
+        "c": "Romano Prodi",
+        "d": "Paul-Henri Spaak"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Walter Hallstein a été le premier président de la Commission de la Communauté économique européenne, de 1958 à 1967. Jean Monnet présidait auparavant la Haute Autorité de la CECA, institution différente.",
+        "sources": [
+          {
+            "titre": "Union européenne — Walter Hallstein",
+            "url": "https://european-union.europa.eu/principles-countries-history/history-eu/eu-pioneers/walter-hallstein_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 50,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-051",
+      "type": "qcm",
+      "enonce": "Quel pays a rejeté une première fois le traité de Maastricht en 1992 ?",
+      "choix": {
+        "a": "Danemark",
+        "b": "Norvège",
+        "c": "Pays-Bas",
+        "d": "France"
+      },
+      "correction": {
+        "reponses": [
+          "a"
+        ],
+        "explication": "Le Danemark a rejeté Maastricht lors du référendum du 2 juin 1992, puis l’a accepté en mai 1993 après l’obtention de dérogations. Le rejet néerlandais de 2005 concernait le traité établissant une Constitution pour l’Europe.",
+        "sources": [
+          {
+            "titre": "Union européenne — Histoire, 1990-1999",
+            "url": "https://european-union.europa.eu/principles-countries-history/history-eu/1990-99_fr"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 51,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-052",
+      "type": "qcm",
+      "enonce": "S’agissant du contrôle du Parlement européen sur l’exécutif de l’Union européenne, lesquelles de ces propositions sont exactes :",
+      "choix": {
+        "a": "le Parlement européen peut amener la Commission à démissionner collectivement à la majorité des 2/3 des voix exprimées et à la majorité de ses membres",
+        "b": "le Parlement européen peut poser des questions écrites ou orales à la Commission européenne ou au Conseil de l’UE",
+        "c": "le Parlement européen peut constituer des commissions d’enquête",
+        "d": "le Parlement européen peut amener la Commission à démissionner collectivement à la majorité des 3/5èmes des voix exprimées et à la majorité de ses membres"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "c"
+        ],
+        "explication": "La motion de censure exige les deux tiers des suffrages exprimés représentant la majorité des membres du Parlement. Le Parlement peut aussi poser des questions à la Commission et au Conseil, et créer des commissions d’enquête. Le seuil de trois cinquièmes est incorrect.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — TFUE, article 234",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E234"
+          },
+          {
+            "titre": "Parlement européen — Pouvoir de contrôle",
+            "url": "https://www.europarl.europa.eu/about-parliament/fr/powers-and-procedures/supervisory-powers"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 52,
+        "page_pdf": 11,
+        "page_imprimee": 9
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-053",
+      "type": "qcm",
+      "enonce": "Combien de sessions plénières mensuelles du Parlement européen doivent a minima se tenir à Strasbourg ?",
+      "choix": {
+        "a": "10",
+        "b": "12",
+        "c": "15",
+        "d": "Aucune"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le protocole n° 6 fixe le siège du Parlement à Strasbourg, où se tiennent douze périodes de sessions plénières mensuelles, y compris la session budgétaire. Des sessions additionnelles ont lieu à Bruxelles.",
+        "sources": [
+          {
+            "titre": "EUR-Lex — Protocole n° 6 sur les sièges des institutions",
+            "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:12016E/PRO/06"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 53,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-054",
+      "type": "qcm",
+      "enonce": "Comment s’appelle le mécanisme permettant aux Parlements nationaux de soulever un manquement aux principes de subsidiarité et de proportionnalité :",
+      "choix": {
+        "a": "le mécanisme national intégré",
+        "b": "le mécanisme d’alerte précoce",
+        "c": "le mécanisme national de surveillance",
+        "d": "le mécanisme de surveillance unique"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le mécanisme d’alerte précoce permet aux parlements nationaux d’adresser des avis motivés dans les huit semaines. Précision : la procédure de carton jaune porte juridiquement sur la subsidiarité ; le titre du protocole vise aussi la proportionnalité, ce que le sujet résume de façon large.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Contrôle de subsidiarité",
+            "url": "https://commission.europa.eu/law/law-making-process/adopting-eu-law/relations-national-parliaments/subsidiarity-control-mechanism_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 54,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-055",
+      "type": "qcm",
+      "enonce": "Quels sont les objectifs de transposition des directives fixés par le Conseil européen de mars 2007 :",
+      "choix": {
+        "a": "ne pas dépasser 5% des directives non transposées",
+        "b": "ne pas dépasser 1 % de directives non transposées",
+        "c": "aucune directive de plus de deux ans non transposée",
+        "d": "90% des directives doivent être transposées"
+      },
+      "correction": {
+        "reponses": [
+          "b"
+        ],
+        "explication": "Le Conseil européen des 8 et 9 mars 2007 fixe un objectif de déficit de transposition de 1 %. La tolérance zéro pour les directives en retard de deux ans ou plus est un objectif distinct, fixé à Barcelone en mars 2002 : c ne répond donc pas à la date expressément demandée. Il s’agit du retard après l’échéance de transposition, pas de l’âge de la directive.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Tableau de bord, transposition des directives du marché unique",
+            "url": "https://single-market-scoreboard.ec.europa.eu/enforcement-tools/transposition_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 55,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-056",
+      "type": "qcm",
+      "enonce": "La réforme du Pacte de stabilité et de croissance (PSC), adoptée au printemps 2024 prévoit (plusieurs réponses possibles) :",
+      "choix": {
+        "a": "la présentation par les Etats-membres d’un plan budgétaire et structurel à moyen terme",
+        "b": "la possibilité d’allonger la trajectoire d’ajustement budgétaire jusqu’à à sept ans en contrepartie de réformes et d’investissements",
+        "c": "le déclenchement plus automatique de procédures pour déficit excessif par la Commission",
+        "d": "l’annulation de la dette en cas de difficultés économiques avérées"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "b",
+          "c"
+        ],
+        "explication": "La réforme prévoit des plans nationaux à moyen terme et un ajustement pouvant aller jusqu’à sept ans contre des réformes et investissements. Elle encadre davantage le déclenchement du volet correctif : la Commission prépare un rapport lorsque les seuils d’écart à la trajectoire sont franchis. Le choix c vise ce contrôle renforcé ; l’ouverture formelle reste une décision du Conseil après examen des facteurs pertinents, sans automatisme absolu. Aucune annulation de dette n’est prévue.",
+        "sources": [
+          {
+            "titre": "Conseil — Réforme de la gouvernance économique, 29 avril 2024",
+            "url": "https://www.consilium.europa.eu/en/press/press-releases/2024/04/29/economic-governance-review-council-adopts-reform-of-fiscal-rules/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 56,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-057",
+      "type": "qcm",
+      "enonce": "Parmi la liste suivante, quels sont les pays à ne pas avoir conclu le processus de pleine intégration à l’espace Schengen :",
+      "choix": {
+        "a": "Norvège",
+        "b": "Irlande",
+        "c": "Malte",
+        "d": "Chypre"
+      },
+      "correction": {
+        "reponses": [
+          "b",
+          "d"
+        ],
+        "explication": "À la date de l’épreuve, l’Irlande et Chypre ne font pas partie de l’espace Schengen sans contrôles aux frontières intérieures. L’Irlande dispose d’un régime particulier ; la Norvège et Malte participent pleinement à Schengen.",
+        "sources": [
+          {
+            "titre": "Conseil — L’espace Schengen",
+            "url": "https://www.consilium.europa.eu/fr/policies/schengen-area/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 57,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-058",
+      "type": "qcm",
+      "enonce": "Lesquels de ces États font partie de l’espace Schengen ?",
+      "choix": {
+        "a": "Suisse",
+        "b": "Chypre",
+        "c": "Irlande",
+        "d": "Norvège"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "La Suisse et la Norvège sont associées à Schengen sans être membres de l’UE. Chypre et l’Irlande sont membres de l’UE, mais ne participent pas à l’espace sans contrôles aux frontières intérieures à la date du sujet.",
+        "sources": [
+          {
+            "titre": "Conseil — L’espace Schengen",
+            "url": "https://www.consilium.europa.eu/fr/policies/schengen-area/"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 58,
+        "page_pdf": 12,
+        "page_imprimee": 10
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-059",
+      "type": "qcm",
+      "enonce": "Dans le cadre de la PAC, la conditionnalité des aides directes aux agriculteurs repose principalement sur (plusieurs réponses possibles) :",
+      "choix": {
+        "a": "le respect des exigences réglementaires en matière de gestion",
+        "b": "l’adhésion à une certification biologique européenne",
+        "c": "la participation obligatoire à un éco-régime",
+        "d": "le respect des normes relatives aux bonnes conditions agricoles et environnementales"
+      },
+      "correction": {
+        "reponses": [
+          "a",
+          "d"
+        ],
+        "explication": "La conditionnalité lie les aides au respect des exigences réglementaires de gestion et des bonnes conditions agricoles et environnementales. Les éco-régimes sont volontaires pour les agriculteurs ; la certification biologique n’est pas une condition générale d’accès aux aides directes.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Conditionnalité des aides de la PAC",
+            "url": "https://agriculture.ec.europa.eu/common-agricultural-policy/income-support/conditionality_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 59,
+        "page_pdf": 13,
+        "page_imprimee": 11
+      }
+    },
+    {
+      "id": "saeo-2027-externe-questions-europeennes-qcm-060",
+      "type": "qcm",
+      "enonce": "Parmi ces fonds, lequel ne relève pas de la politique de cohésion :",
+      "choix": {
+        "a": "le Fonds européen de développement régional",
+        "b": "le Fonds pour une transition juste",
+        "c": "le Fonds européen d’ajustement à la mondialisation",
+        "d": "le Fonds social européen"
+      },
+      "correction": {
+        "reponses": [
+          "c"
+        ],
+        "explication": "Le Fonds européen d’ajustement à la mondialisation accompagne des travailleurs ayant perdu leur emploi lors de restructurations. Il est distinct des fonds de cohésion, qui comprennent notamment le FEDER, le FSE+ et le Fonds pour une transition juste.",
+        "sources": [
+          {
+            "titre": "Commission européenne — Fonds de la politique de cohésion",
+            "url": "https://ec.europa.eu/regional_policy/funding_en"
+          },
+          {
+            "titre": "Commission européenne — Fonds européen d’ajustement à la mondialisation",
+            "url": "https://employment-social-affairs.ec.europa.eu/policies-and-activities/funding/european-globalisation-adjustment-fund-displaced-workers-egf_en"
+          }
+        ]
+      },
+      "source": {
+        "id": "saeo-2027-externe-questions-europeennes",
+        "numero": 60,
+        "page_pdf": 13,
+        "page_imprimee": 11
       }
     }
   ]

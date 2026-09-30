@@ -22,8 +22,8 @@ function getCategoryQuestions(base, categoryId) {
 }
 
 function getPracticeQuestions(base) {
-  // Questions with multiple correct choices remain available only in their original annales.
-  return base.questions.filter(question => question.type === "qcm" && (question.correction?.reponses?.length || 0) <= 1);
+  // Multiple-answer and neutralized questions remain available only in their original annales.
+  return base.questions.filter(question => question.type === "qcm" && !isNeutralized(question) && (question.correction?.reponses?.length || 0) <= 1);
 }
 
 function drawQuestions(base, count, categoryId) {

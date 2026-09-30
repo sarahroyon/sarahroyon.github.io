@@ -47,7 +47,7 @@
     assert(base.categories.length === 5 && base.categories.every((c, i) => QcmCore.getCategoryQuestions(base, c.id).length === [75, 75, 73, 72, 75][i]), 'Effectifs des cinq catégories');
     const selected = base.categories.flatMap(c => c.question_ids);
     assert(new Set(selected).size === 370 && selected.every(id => QcmCore.hasCorrection(byId.get(id)) && byId.get(id).correction.explication && byId.get(id).correction.sources.length && byId.get(id).correction.reponses.length === 1), '370 corrigés complets distincts à une bonne réponse');
-    assert(QcmCore.drawQuestions(base, 465).length === 465 && QcmCore.getPracticeQuestions(base).every(q => q.correction.reponses.length === 1), '465 QCM sans réponse partielle dans le tirage');
+    assert(QcmCore.drawQuestions(base, 552).length === 552 && QcmCore.getPracticeQuestions(base).every(q => q.correction.reponses.length === 1), '552 QCM sans réponse partielle dans le tirage');
     assert(!QcmCore.contributorName({}) && !QcmCore.contributorName({ contribution: { nom: 'Pseudonyme proposé', validee: false } }), 'Aucun crédit non validé');
     assert(QcmCore.contributorName({ contribution: { nom: 'Camille M.', validee: true } }) === 'Camille M.', 'Crédit validé disponible');
     const sample = { id: 'sample', type: 'qcm', choix: { a: 'A', b: 'B', c: 'C' }, correction: { reponses: ['a', 'b'] } };
@@ -59,8 +59,8 @@
     assert(QcmCore.evaluateQuestion({ ...sample, correction: { neutralisee: true } }, []).points === null, 'Question neutralisée exclue');
     const allQuestions = base.questions.filter(q => q.type === 'qcm');
     const perfect = QcmCore.summarize(allQuestions, Object.fromEntries(allQuestions.map(q => [q.id, q.correction.reponses])));
-    assert(perfect.score === 95 && perfect.maximum === 95, 'Même barème sur toutes les origines');
-    for (const source of Object.values(base.sources).filter(s => s.type === 'annale')) {
+    assert(perfect.score === 117.8 && perfect.maximum === 117.8, 'Même barème sur toutes les origines');
+    for (const source of Object.values(base.sources).filter(s => s.type === 'annale' && s.annee_concours === 2026)) {
       for (const key of Object.keys(QcmCore.quizBareme)) {
         assert(QcmCore.quizBareme[key] === base.baremes[source.bareme][key], 'Barème conforme aux annales : ' + key);
       }
@@ -71,7 +71,7 @@
     const mixed = QcmCore.summarize(mixedQuestions, { 'mixed-0': ['a', 'b'], 'mixed-1': ['c'] });
     assert(mixed.score === 0.05 && mixed.maximum === 0.6, 'Arrondi du score et du maximum');
     const blank = QcmCore.summarize(allQuestions, {});
-    assert(blank.score === -23.75 && blank.maximum === 95, 'Pénalité des absences et score négatif');
+    assert(blank.score === -29.45 && blank.maximum === 117.8, 'Pénalité des absences et score négatif');
     pass('Barème commun : réponses exactes, partielles, fausses, absentes et questions exclues');
     for (const c of base.categories) {
       assert(new Set(QcmCore.drawQuestions(base, c.question_ids.length, c.id).map(q => q.id)).size === c.question_ids.length, 'Tirage complet ' + c.id);
@@ -95,12 +95,13 @@
     for (const key of [...QcmCore.getSourceIds(base), 'aleatoire', ...base.categories.map(c => 'categorie:' + c.id)]) {
       originalSessions.set(prefix + key, win.localStorage.getItem(prefix + key));
     }
+    const newOfficialIds = ['saeg-2027-externe-questions-europeennes', 'saeo-2027-externe-questions-europeennes'];
     const officialIds = ['saeg-2026-externe-questions-europeennes', 'saeo-2026-externe-questions-europeennes', 'meae-sujet-v0-officiel-questions-europeennes'];
-    assert(doc.querySelectorAll('input[name=source]').length === 9 && doc.querySelectorAll('#category-source-options input').length === 5, 'Trois annales, cinq catégories et un quiz aléatoire');
+    assert(doc.querySelectorAll('input[name=source]').length === 11 && doc.querySelectorAll('#category-source-options input').length === 5, 'Cinq annales, cinq catégories et un quiz aléatoire');
     assert(!el('training-sources'), 'Section des entraînements retirée');
     assert([...doc.querySelectorAll('.source-group h2')].map(h => h.textContent).join('|') === 'Annales|Catégories|Quiz aléatoire', 'Ordre des sections');
-    assert(JSON.stringify([...doc.querySelectorAll('#official-source-options input')].map(input => input.value)) === JSON.stringify(officialIds), 'Ordre SAEG, SAEO, V0');
-    assert(doc.querySelector('input[name=source]:checked').value === officialIds[0], 'SAEG sélectionné par défaut');
+    assert(JSON.stringify([...doc.querySelectorAll('#official-source-options input')].map(input => input.value)) === JSON.stringify([...newOfficialIds, ...officialIds]), 'Ordre SAEG et SAEO 2027, SAEG et SAEO 2026, V0');
+    assert(doc.querySelector('input[name=source]:checked').value === newOfficialIds[0], 'SAEG 2027 sélectionné par défaut');
     const copyrightName = doc.querySelector('footer').textContent.split('©')[1].trim();
     assert(copyrightName && !doc.title.includes(copyrightName) && !doc.querySelector('main').textContent.includes(copyrightName), 'Nom réservé au copyright');
     for (const [index, sourceId] of officialIds.entries()) {
@@ -130,6 +131,30 @@
       }
       answer(ids()[0], byId.get(ids()[0]).correction.reponses); back();
       pass('Annale ' + ['SAEG', 'SAEO', 'V0'][index] + ' : questions dans l’ordre, correction, barème, chrono, reprise et reset');
+    }
+    for (const [index, sourceId] of newOfficialIds.entries()) {
+      const questions = QcmCore.getQuestions(base, sourceId);
+      const expectedIds = questions.map(q => q.id);
+      const neutralized = index === 0 ? 4 : 2;
+      assert(questions.length === 60 && QcmAnnales.questions.filter(q => q.source.id === sourceId).length === 60, '2027 : uniquement 60 QCM, aucune QRC importée');
+      assert(questions.every((q, i) => q.type === 'qcm' && q.source.numero === i + 1 && Object.keys(q.choix).join('') === 'abcd' && q.correction.explication && q.correction.sources.length), '2027 : ordre, choix et corrigés sourcés complets');
+      assert(questions.filter(QcmCore.isNeutralized).length === neutralized, '2027 : questions ambiguës neutralisées');
+      assert(base.baremes[base.sources[sourceId].bareme].qcm_minimum_points === 0 && base.baremes[base.sources[sourceId].bareme].selection_partielle === (index === 0 ? -0.1 : null), '2027 : barème du PDF conservé');
+      select(sourceId); start(); el('reset').click();
+      assert(JSON.stringify(ids()) === JSON.stringify(expectedIds) && doc.querySelectorAll('.choices input[type=checkbox]').length === 240, '2027 : toutes les questions et choix multiples');
+      assert(el('quiz-title').textContent.includes('2027') && el('annale-link').getAttribute('href') === base.sources[sourceId].url, '2027 : titre et lien PDF');
+      assert(el('scoring-instructions').textContent.includes('minimum de zéro'), '2027 : différence avec le barème commun annoncée');
+      for (const q of questions) answer(q.id, q.correction.reponses);
+      el('quiz-form').requestSubmit();
+      const maximum = new Intl.NumberFormat('fr-FR').format((60 - neutralized) * 0.2);
+      assert(el('results-title').textContent === maximum + ' / ' + maximum + ' points', '2027 : neutralisations exclues du score');
+      assert(doc.querySelectorAll('.feedback.neutralized').length === neutralized && doc.querySelectorAll('.feedback a').length >= 60, '2027 : explications et références des 60 QCM');
+      await reload(); select(sourceId); start();
+      assert(!el('results').hidden && el('results-title').textContent === maximum + ' / ' + maximum + ' points', '2027 : bilan sauvegardé');
+      el('reset').click();
+      assert(JSON.stringify(ids()) === JSON.stringify(expectedIds) && el('results').hidden && !doc.querySelector('.choices input:checked'), '2027 : remise à zéro');
+      back();
+      pass('Annale ' + (index === 0 ? 'SAEG' : 'SAEO') + ' 2027 : QCM seuls, corrigés, neutralisations, PDF et sauvegarde');
     }
     const officialSessions = officialIds.map(sourceId => win.localStorage.getItem(prefix + sourceId));
     const legacyOfficialId = QcmCore.getQuestions(base, officialIds[0])[0].id;
@@ -178,22 +203,22 @@
     const preserved = win.localStorage.getItem(prefix + 'categorie:histoire');
     select('aleatoire'); count(9, 'random-count'); start(); assert(ids().length === 9, 'Quiz général'); el('regenerate').click(); back();
     assert(win.localStorage.getItem(prefix + 'categorie:histoire') === preserved, 'Isolation du quiz général');
-    select('aleatoire'); count(465, 'random-count'); start();
+    select('aleatoire'); count(552, 'random-count'); start();
     for (const id of ids()) answer(id, byId.get(id).correction.reponses);
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '93 / 93 points', 'Barème du quiz aléatoire complet');
+    assert(el('results-title').textContent === '110,4 / 110,4 points', 'Barème du quiz aléatoire complet');
     const randomIds = ids(); el('reset').click();
     assert(JSON.stringify(ids()) === JSON.stringify(randomIds) && !doc.querySelector('.choices input:checked') && el('timer').textContent === '00:00', 'Reset du quiz aléatoire');
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '-23,25 / 93 points', 'Quiz sans réponse');
+    assert(el('results-title').textContent === '-27,6 / 110,4 points', 'Quiz sans réponse');
     assert(ids().every(id => byId.get(id).correction.reponses.length === 1) && !el('result-stats').textContent.includes('Réponses partielles'), 'Questions à réponses partielles absentes du quiz aléatoire');
     el('edit').click();
     const single = byId.get(ids()[0]);
     answer(single.id, [Object.keys(single.choix).find(letter => !single.correction.reponses.includes(letter))]);
     el('quiz-form').requestSubmit();
-    assert(el('results-title').textContent === '-23,3 / 93 points', 'Pénalité de réponse incorrecte affichée');
+    assert(el('results-title').textContent === '-27,65 / 110,4 points', 'Pénalité de réponse incorrecte affichée');
     back();
-    pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 465 questions aléatoires');
+    pass('Sauvegarde, reprise, isolation des thèmes, barème et reset des 552 questions aléatoires');
     assert(officialIds.every((sourceId, index) => win.localStorage.getItem(prefix + sourceId) === officialSessions[index]), 'Sauvegardes des annales indépendantes des catégories et du quiz aléatoire');
 
     select('categorie:histoire'); count(2); start(); el('reset').click();

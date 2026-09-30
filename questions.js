@@ -6,7 +6,7 @@ const { quizBareme, getQuestions, getCategoryQuestions, getPracticeQuestions, dr
 const $ = id => document.getElementById(id);
 const storagePrefix = "sarahroyon-qcm-v1:";
 const randomSourceId = "aleatoire";
-const officialSourceIds = ["saeg-2026-externe-questions-europeennes", "saeo-2026-externe-questions-europeennes", "meae-sujet-v0-officiel-questions-europeennes"];
+const officialSourceIds = ["saeg-2027-externe-questions-europeennes", "saeo-2027-externe-questions-europeennes", "saeg-2026-externe-questions-europeennes", "saeo-2026-externe-questions-europeennes", "meae-sujet-v0-officiel-questions-europeennes"];
 const numberFormat = new Intl.NumberFormat("fr-FR", { maximumFractionDigits: 2 });
 const statusLabels = { correct: "Bonne réponse", incorrect: "Réponse incorrecte", skipped: "Sans réponse", pending: "Corrigé à venir", partial: "Réponse partielle", neutralized: "Question neutralisée" };
 let base;
@@ -241,10 +241,12 @@ async function loadData() {
       input.checked = index === 0;
       input.required = true;
       const year = sourceYear(source);
+      const neutralized = questions.filter(isNeutralized).length;
       label.append(element("span", "source-code", officialCode(source) + (year ? " · " + year : "")), input,
         element("span", "source-title", sourceTitle(source)),
         element("span", "source-details", (source.type === "sujet_zero" ? "Sujet fictif officiel" : "Annale officielle") + " · Concours externe"),
-        element("span", "source-status", questions.length + " QCM · " + questions.filter(hasCorrection).length + " corrigés disponibles"));
+        element("span", "source-status", questions.length + " QCM · " + questions.filter(hasCorrection).length + " corrigés disponibles"
+          + (neutralized ? " · " + neutralized + " neutralisés" : "")));
       $("official-source-options").append(label);
     }
     $("category-source-options").replaceChildren();
@@ -389,15 +391,19 @@ function startQuiz(sourceId, regenerate = false) {
   $("question-cards").replaceChildren();
   $("question-index").replaceChildren();
   setIndexExpanded(false);
-  $("quiz-title").textContent = official ? officialCode(official) + " · " + sourceTitle(official) : category ? category.titre : "Quiz aléatoire";
+  $("quiz-title").textContent = official ? officialCode(official) + (sourceYear(official) ? " · " + sourceYear(official) : "") + " · " + sourceTitle(official) : category ? category.titre : "Quiz aléatoire";
   $("quiz-eyebrow").textContent = official ? questions.length + " questions · Ordre du sujet original"
     : questions.length + (questions.length > 1 ? " questions tirées au hasard" : " question tirée au hasard");
   $("regenerate").hidden = Boolean(official);
   $("annale-link").hidden = !official?.url;
   if (official?.url) $("annale-link").href = official.url;
   else $("annale-link").removeAttribute("href");
-  $("answer-instructions").textContent = "Répondez aux questions dans l’ordre de votre choix. Le mode de réponse est indiqué pour chaque question ; vous pourrez modifier vos choix avant de terminer.";
+  $("answer-instructions").textContent = "Répondez aux questions dans l’ordre de votre choix. Vous pourrez modifier vos choix avant de terminer.";
   $("scoring-instructions").textContent = scoringText();
+  if (official?.annee_concours === 2027) {
+    $("scoring-instructions").textContent += " Pour l’entraînement, les scores négatifs sont conservés et les réponses partielles sans choix faux restent non notées. Le PDF 2027 prévoit un minimum de zéro"
+      + (base.baremes[official.bareme].selection_partielle === -0.1 ? " et pénalise aussi les réponses incomplètes." : ".");
+  }
   const corrected = questions.filter(hasCorrection).length;
   const neutralized = questions.filter(isNeutralized).length;
   const available = corrected + neutralized;
@@ -480,7 +486,7 @@ function renderFeedback(question, result) {
     feedback.append(element("p", "", (correction.reponses.length > 1 ? "Réponses attendues : " : "Réponse attendue : ") + correction.reponses.map(letter => letter.toUpperCase()).join(", ") + "."));
   }
   if (result.status === "partial") {
-    feedback.append(element("p", "", "Votre sélection ne contient que de bonnes réponses, mais elle est incomplète. Les annales ne précisent pas la notation de ce cas : cette question est exclue du score et de son maximum."));
+    feedback.append(element("p", "", "Votre sélection ne contient que de bonnes réponses, mais elle est incomplète. Le barème commun du site laisse ce cas non noté : cette question est exclue du score et de son maximum."));
   }
   if (correction.explication) feedback.append(element("p", "", correction.explication));
   if (correction.sources?.length) {
